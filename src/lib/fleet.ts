@@ -1,9 +1,40 @@
-export type Vehicle = { id: string; name: string; category: 'SUV' | 'Sedán' | 'Pickup'; tag: string; price: number; seats: number; transmission: string; image: string; description: string };
-export const fleet: Vehicle[] = [
- { id: 'suv', name: 'SUV Explorer', category: 'SUV', tag: 'Espacio para más planes', price: 220, seats: 5, transmission: 'Automática', image: 'photo-1519641471654-76ce0107ad1b', description: 'Comodidad y espacio para compartir el camino. Una opción versátil para escapadas y viajes en familia.' },
- { id: 'sedan', name: 'Sedán Urban', category: 'Sedán', tag: 'La ciudad es tuya', price: 140, seats: 5, transmission: 'Automática', image: 'photo-1555215695-3004980ad54e', description: 'Diseñado para moverte a tu ritmo. Una propuesta de categoría sedán para tus recorridos urbanos.' },
- { id: 'pickup', name: 'Pickup Adventure', category: 'Pickup', tag: 'Ve un poco más lejos', price: 280, seats: 5, transmission: 'Manual', image: 'photo-1551830820-330a71b99659', description: 'Más espacio para el equipaje y los grandes planes. Consulta las rutas y usos permitidos antes de viajar.' }
+import { referenceImages, type CatalogImage } from './media';
+
+export const categories = ['Todos', 'SUV', 'Sedán', 'Familiar / 7 asientos'] as const;
+export type Category = Exclude<(typeof categories)[number], 'Todos'>;
+export type Vehicle = {
+  id: string;
+  name: string;
+  category: Category;
+  description: string;
+  images: CatalogImage[];
+  // Incorporar únicamente especificaciones y tarifas aprobadas de la unidad real.
+  specifications?: { label: string; value: string }[];
+  dailyRate?: number;
+};
+
+const models: { id: string; name: string; category: Category }[] = [
+  { id: 'ford-territory', name: 'Ford Territory', category: 'SUV' },
+  { id: 'changan-x7-plus', name: 'Changan X7 Plus', category: 'SUV' },
+  { id: 'changan-cx70', name: 'Changan CX70', category: 'SUV' },
+  { id: 'jetur-x70', name: 'Jetur X70', category: 'SUV' },
+  { id: 'glory-580', name: 'Glory 580', category: 'SUV' },
+  { id: 'glory-560', name: 'Glory 560', category: 'SUV' },
+  { id: 'jac-s8', name: 'JAC S8', category: 'SUV' },
+  { id: 'toyota-yaris', name: 'Toyota Yaris', category: 'Sedán' },
+  { id: 'hyundai-verna', name: 'Hyundai Verna', category: 'Sedán' },
+  { id: 'hyundai-accent', name: 'Hyundai Accent', category: 'Sedán' },
+  { id: 'changan-alsvin', name: 'Changan Alsvin', category: 'Sedán' },
+  { id: 'suzuki-ertiga', name: 'Suzuki Ertiga', category: 'Familiar / 7 asientos' },
 ];
-export const photo = (id: string, width = 900) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=85`;
-export function rentalDays(start: string, end: string) { if (!start || !end) return 0; const days = (Date.parse(end + 'T00:00:00Z') - Date.parse(start + 'T00:00:00Z')) / 86400000; return Number.isFinite(days) && days > 0 ? days : 0; }
-export function localDate() { const now = new Date(); return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`; }
+
+export const fleet: Vehicle[] = models.map(model => ({
+  ...model,
+  description: `Solicite una cotización para el alquiler de ${model.name}. Nuestro equipo le ayudará a coordinar las fechas, el lugar de recojo y las condiciones del servicio.`,
+  images: [model.category === 'Sedán' ? referenceImages.sedan : referenceImages.suv],
+}));
+
+export const featuredFleet = ['ford-territory', 'changan-x7-plus', 'changan-cx70', 'jetur-x70', 'toyota-yaris', 'suzuki-ertiga']
+  .map(id => fleet.find(vehicle => vehicle.id === id)!);
+
+export const vehicleMessage = (vehicle: Vehicle) => `Hola, deseo cotizar el alquiler de un ${vehicle.name}. Quisiera coordinar fechas, lugar de recojo y disponibilidad.`;

@@ -1,50 +1,68 @@
-# RentingCar AyM
+# Renting Car A&M
 
-Web de alquiler de vehículos con Next.js, React y TypeScript. Diseño adaptable, animaciones CSS, filtro por categoría, ficha modal accesible y cálculo de cotización por días. Exportación estática para Cloudflare Pages.
+Web estática de vehículos, maquinaria y transporte de carga, con Next.js, React y TypeScript. Exporta HTML a `out/`; no necesita servidor de aplicación, base de datos ni credenciales.
 
-## Desarrollo
+## Desarrollo y comprobación
 
 Requiere Node.js 22+ y pnpm 11.19.0.
 
 ```sh
 pnpm install --frozen-lockfile
 pnpm dev
-```
-
-Abrir http://localhost:3000.
-
-```sh
+pnpm test
 pnpm typecheck
 pnpm build
 pnpm preview
 ```
 
-La compilación produce `out/`. El comando preview sirve esa carpeta en el puerto 3000, para revisión local; no es un servidor de producción.
+Abrir http://localhost:3000. `preview` sirve la compilación de `out/`; volver a compilar tras editar. Si Node del sistema es anterior a 22, usar un runtime compatible.
 
-## Contenido y contacto
+## Páginas
 
-- `src/lib/fleet.ts`: catálogo, fotografías y tarifas referenciales.
-- `src/lib/business.ts`: WhatsApp, central, correos, dirección, mapa y enlace a Grupo AyM.
-- `src/app/page.tsx`: portada, secciones y flujo de cotización.
-- `src/app/globals.css`: identidad visual, puntos de adaptación y movimiento reducido.
-- Copiar `.env.example` a `.env.local` y definir `NEXT_PUBLIC_WHATSAPP_NUMBER` con el número del negocio en formato internacional, sin signos ni espacios. Recompilar después de cambiarlo.
+Inicio, catálogo con filtros y 12 fichas de modelos, maquinaria y transporte con 3 fichas de servicio, nosotros, contacto y cómo trabajamos. Se conserva `/planear/` como entrada a la cotización. También hay páginas informativas de privacidad, condiciones, reclamaciones y continuidad de solicitud, más sitemap XML y robots.
 
-El WhatsApp público predeterminado es +51 993 334 984; la variable de entorno permite reemplazarlo. La web no envía formularios a un servidor, procesa pagos ni confirma reservas. Los contactos y la sede de Surco fueron proporcionados por la empresa. Las categorías, tarifas y fotografías del catálogo son ejemplos; reemplazarlos y definir condiciones comerciales antes de usarla como catálogo real. Las fotografías de Unsplash son referenciales y se cargan remotamente; las tipografías se cargan de Google Fonts con fuentes de sistema de respaldo.
+## Cotizaciones: siempre estáticas
 
-## GitHub y Cloudflare Pages
+El formulario prepara un mensaje en el navegador, valida los campos y permite revisarlo o copiarlo. El cliente debe abrir WhatsApp y enviar el mensaje allí. No hay envío automático de correo, registro de reservas, pagos ni confirmación ficticia de recepción. Los enlaces de correo usan `mailto:` y requieren una aplicación de correo del visitante. El formulario no persiste datos personales ni usa almacenamiento local.
 
-El workflow `.github/workflows/ci.yml` comprueba tipos y compilación al subir cambios y abrir pull requests. No necesita credenciales de Cloudflare.
+## Contenido y fotos
 
-1. Subir este proyecto a tu repositorio de GitHub, incluyendo `pnpm-lock.yaml`.
-2. En Cloudflare, crear un proyecto **Pages** e importar el repositorio.
-3. Usar el preset **Next.js (Static HTML Export)**.
-4. Comando de compilación: `pnpm build`. Carpeta de salida: `out`.
-5. Configurar Node.js 22 y pnpm 11.19.0 en el entorno de compilación (`NODE_VERSION` y `PNPM_VERSION`).
-6. Agregar `NEXT_PUBLIC_WHATSAPP_NUMBER` al entorno de producción y de previews si se desea activar el enlace.
-7. Elegir tu rama de producción; la integración de Pages reconstruye el sitio con cada push y puede generar previews para pull requests.
+- `src/lib/fleet.ts`: modelos, categorías, imágenes por vehículo y campos opcionales de especificaciones y tarifa aprobada.
+- `src/lib/services.ts`: equipos, servicios y datos necesarios para cotizarlos.
+- `src/lib/media.ts`: fotos temporales centralizadas; `reference: true` muestra el aviso de fotografía referencial.
+- `public/images/`: fotografías WebP servidas localmente.
+- `src/lib/business.ts`: WhatsApp, central, correos, dirección y mapas.
+- `src/lib/quote.ts`: validación y construcción del mensaje.
+- `src/lib/seo.ts`: metadatos por página.
+- `src/app/globals.css`: paleta, tipografía y adaptación a pantallas.
 
-CI y despliegue de Pages se ejecutan por separado; configurar protección de rama si se necesita que la validación sea obligatoria antes de integrar cambios.
+Para reemplazar fotos, guardar el archivo real optimizado en `public/images/` y asignar `{ src: '/images/unidad.webp', alt: 'Descripción real', reference: false }` en las imágenes del modelo o equipo correspondiente. Pueden añadirse más imágenes para la galería. No marcar una foto genérica como real. Para incorporar unidades, agregar un modelo con un `id` único sin tildes: la ficha y el sitemap se generan al compilar.
 
-Documentación: https://developers.cloudflare.com/pages/framework-guides/nextjs/deploy-a-static-nextjs-site/
+El WhatsApp confirmado es **+51 993 334 984**. `.env.example` documenta `NEXT_PUBLIC_WHATSAPP_NUMBER`; un cambio requiere recompilar. El número mostrado y todos los enlaces usan la misma configuración. Se conservan los correos existentes hasta confirmar que la nueva casilla comercial está activa.
 
-Esta versión no requiere Workers, base de datos ni servidor Next.js. Las reservas reales, inventario en tiempo real y panel de administración requieren una integración posterior.
+## Pendientes del PDF antes de publicación
+
+- Fotos reales, características de las unidades, capacidades, tarifas, modalidades, coberturas, seguros y requisitos comerciales aprobados.
+- Historia, cifras de experiencia, razón social/RUC, horarios, misión/visión, equipo y testimonios autorizados. No se inventaron estos datos ni se publicaron bloques vacíos.
+- Confirmación de `rentals@rentingcaraym.com`; por ahora se mantiene `rentingcaraym@gmail.com` y administración sin tilde.
+- Política de privacidad completa y términos de alquiler aprobados. Las páginas actuales describen el funcionamiento y explicitan lo pendiente; están marcadas `noindex`.
+- Libro de Reclamaciones real o enlace a un proveedor externo autorizado: la página actual informa que no hay registro habilitado y no simula recepción.
+- Versión oficial de logo para fondo oscuro y favicon de marca. El footer conserva el logo original sobre una superficie blanca.
+- IDs/accesos de Analytics, Google Business y Search Console si se decide habilitarlos. No se añadieron identificadores ficticios ni seguimiento de datos personales.
+
+Por decisión del propietario el sitio seguirá siendo estático. El envío automático de formularios/correos, un CMS con escritura y la recepción de reclamaciones requieren un servicio externo independiente; no se agregan como supuestos de esta web.
+
+## Fotos temporales
+
+Autorizadas por el propietario mientras llegan las reales. No representan unidades de A&M y se identifican en la web.
+
+- SUV y sedán: imágenes Unsplash ya usadas en el proyecto (`photo-1519641471654-76ce0107ad1b`, `photo-1555215695-3004980ad54e`).
+- Excavadora: [Caspar Rae / Unsplash](https://unsplash.com/photos/5kC7MgYArbY).
+- Transporte: [Scott Horn / Unsplash](https://unsplash.com/photos/l9U4QP8BEVk).
+- Volquete: [Corey Willett / Unsplash](https://unsplash.com/photos/L6yvv2Byy3c).
+
+## Hosting
+
+Se mantiene la exportación estática para Cloudflare Pages. Comando `pnpm build`, salida `out/`, Node.js 22+ y pnpm 11.19.0. No se publican cambios automáticamente desde esta revisión local.
+
+El workflow existente comprueba tipos y compilación. `pnpm test` verifica los cinco tipos de cotización, datos opcionales, solicitudes inválidas y codificación de mensajes sin contactar a WhatsApp.

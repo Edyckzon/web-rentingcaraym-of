@@ -1,1 +1,11 @@
-export { default } from '../page';
+import { Suspense } from 'react';
+import Contact from '@/components/Contact';
+import QuoteForm from '@/components/QuoteForm';
+import { PageIntro } from '@/components/Sections';
+import { pageMetadata } from '@/lib/seo';
+
+export const metadata = pageMetadata('Contacto y cotizaciones', 'Cotice su vehículo, maquinaria o transporte de carga. Visítenos en Av. Santiago de Surco 3573, Lima, o contáctenos por WhatsApp.', '/contacto/');
+
+export default function ContactPage() {
+  return <><PageIntro label="Contacto" title="Conversemos de su servicio." description="Cotice su vehículo, maquinaria o transporte de carga con nuestro equipo."/><section className="section soft"><div className="container contact-layout"><Suspense fallback={<p>Cargando formulario de cotización…</p>}><QuoteForm/></Suspense><Contact/></div></section></>;
+}
