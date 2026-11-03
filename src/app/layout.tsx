@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import './gallery.css';
 import brandLogo from '@/lib/img/RENTING-CAR.png';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';

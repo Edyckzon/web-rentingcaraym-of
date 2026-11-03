@@ -28,6 +28,7 @@ El formulario prepara un mensaje en el navegador, valida los campos y permite re
 ## Contenido y fotos
 
 - `src/lib/fleet.ts`: modelos, categorías, imágenes por vehículo y campos opcionales de especificaciones y tarifa aprobada.
+- `src/lib/technicalSheets.ts`: referencias técnicas de versiones comerciales de Perú, con fuente y versión identificadas. Se muestran en la vista rápida y en la ficha. No certifican la configuración de la unidad alquilada.
 - `src/lib/services.ts`: equipos, servicios y datos necesarios para cotizarlos.
 - `src/lib/media.ts`: fotos temporales centralizadas; `reference: true` muestra el aviso de fotografía referencial.
 - `public/images/`: fotografías WebP servidas localmente.
@@ -37,6 +38,8 @@ El formulario prepara un mensaje en el navegador, valida los campos y permite re
 - `src/app/globals.css`: paleta, tipografía y adaptación a pantallas.
 
 Para reemplazar fotos, guardar el archivo real optimizado en `public/images/` y asignar `{ src: '/images/unidad.webp', alt: 'Descripción real', reference: false }` en las imágenes del modelo o equipo correspondiente. Pueden añadirse más imágenes para la galería. No marcar una foto genérica como real. Para incorporar unidades, agregar un modelo con un `id` único sin tildes: la ficha y el sitemap se generan al compilar.
+
+En `models` de `fleet.ts`, el orden del arreglo `images` de cada vehículo define su portada y miniaturas. Con una sola foto se puede ampliar; con dos o más aparecen flechas y miniaturas, y se puede deslizar en móvil. Los identificadores históricos `jac-s8` y `jetur-x70` conservan sus URL; los nombres visibles son JAC JS8 y Jetour X70.
 
 El WhatsApp confirmado es **+51 993 334 984**. `.env.example` documenta `NEXT_PUBLIC_WHATSAPP_NUMBER`; un cambio requiere recompilar. El número mostrado y todos los enlaces usan la misma configuración. Se conservan los correos existentes hasta confirmar que la nueva casilla comercial está activa.
 
