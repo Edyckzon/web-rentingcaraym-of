@@ -83,3 +83,9 @@ Las imágenes migradas conservan los créditos y las licencias de las fotografí
 Desarrollo: guarda SUPABASE_PUBLISHABLE_KEY en .marketing/auth.env (ignorado por Git) y ejecuta npm run marketing:local con Node 22+. Usa http://127.0.0.1:4318/admin/.
 Cloudflare Pages: usa la raíz de la app que contiene functions/, comando pnpm build, salida out/ y el binding de servidor SUPABASE_PUBLISHABLE_KEY en el entorno correspondiente.
 Despliega con integración Git o Wrangler Pages desde esa raíz para incluir las Functions; subir solo out/ no incluye la API.
+En producción vincula una base Cloudflare D1 con el nombre de binding LOGIN_GUARD_DB.
+La API crea su tabla automáticamente. Solo /marketing-api/login/ requiere el binding;
+sin él se mantiene el login anterior con los límites de Supabase. Un error de D1 una vez vinculado no permite saltarse la protección. El séptimo error de credenciales del mismo correo en una ventana
+de 15 minutos bloquea ese login durante otros 15 minutos. Una contraseña correcta
+antes del bloqueo reinicia el contador. No afecta a sesiones abiertas ni al login
+directo de Supabase. En desarrollo se usa SQLite en .marketing/ (excluido de Git).

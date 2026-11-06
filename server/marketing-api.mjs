@@ -1,3 +1,4 @@
+import {guardPassword} from './login-guard.mjs';
 const project='https://pjkcihdiasktmwdpcmpt.supabase.co';
 const bucket='/storage/v1/object/renting-fotos/', publicRoot=project+bucket.replace('/object/','/object/public/');
 const fields={title:'titulo',accent:'destacado',slogan:'eslogan',hero:'portada',firstLabel:'boton_1',firstUrl:'destino_1',secondLabel:'boton_2',secondUrl:'destino_2',phone:'telefono',whatsapp:'whatsapp',maps:'maps',waze:'waze'};
@@ -15,7 +16,8 @@ export async function marketingAPI(req,env){
  if(req.method!=='GET' && (req.method!=='POST'||origin!==u.origin))fail(403,'Origen no permitido.');
  async function sup(path,options={},bearer=token){
    const r=await fetch(project+path,{...options,headers:{apikey:env.SUPABASE_PUBLISHABLE_KEY,...(bearer?{Authorization:'Bearer '+bearer}:{}),'Content-Type':'application/json',...options.headers}});
-   if(!r.ok){const error=await r.json().catch(()=>({}));fail(r.status===401?401:r.status===403?403:r.status===409?409:r.status===429?429:400,error.code==='23503'?'La categoría se está usando. Reasigna sus vehículos antes de eliminarla.':error.code==='23505'?'Ese nombre ya existe.':error.code==='PGRST202'?'Ejecuta la migración 03 en Supabase.':r.status===401||path.startsWith('/auth/')?'Correo o contraseña incorrectos, o sesión vencida.':'Supabase rechazó la operación ('+(error.code||r.status)+').');}
+   if(!r.ok){const error=await r.json().catch(()=>({}));if(path.startsWith('/auth/v1/token') && (error.error_code??error.code)==='invalid_credentials')throw Object.assign(new Error('Correo o contraseña incorrectos.'),{status:401,authCode:'invalid_credentials'});
+   fail(r.status===401?401:r.status===403?403:r.status===409?409:r.status===429?429:400,error.code==='23503'?'La categoría se está usando. Reasigna sus vehículos antes de eliminarla.':error.code==='23505'?'Ese nombre ya existe.':error.code==='PGRST202'?'Ejecuta la migración 03 en Supabase.':r.status===401||path.startsWith('/auth/')?'Correo o contraseña incorrectos, o sesión vencida.':'Supabase rechazó la operación ('+(error.code||r.status)+').');}
    const t=await r.text();return t?JSON.parse(t):null;
  }
  const rest=(p,o,b)=>sup('/rest/v1/'+p,o,b),post=body=>({method:'POST',body:JSON.stringify(body)});
@@ -26,7 +28,11 @@ export async function marketingAPI(req,env){
  }
  if(req.method==='GET'&&path==='public')return json(await snapshot());
  if(path==='login'&&req.method==='POST'){
-   const {email,password}=await req.json();const r=await sup('/auth/v1/token?grant_type=password',post({email,password}),null);
+   const data=await req.json();const email=typeof data?.email==='string'?data.email.trim().toLowerCase():'';
+   const password=data?.password;if(!email || email.length>254 || !email.includes('@') || typeof password!=='string'||!password||password.length>4096)fail(400,'Ingresa un correo y una contraseña válidos.');
+   const verify=()=>sup('/auth/v1/token?grant_type=password',post({email,password}),null);
+   // Staged rollout: enable when D1 is bound. Database errors never bypass the guard.
+   const r=env.LOGIN_GUARD_DB?await guardPassword(env.LOGIN_GUARD_DB,email,verify):await verify();
    if(!r.user?.email_confirmed_at||!await rest('rpc/renting_admin',post({}),r.access_token))fail(403,'Esta cuenta no es administradora.');
    return json({},200,{'Set-Cookie':cookie(r.access_token,Math.min(3600,r.expires_in))});
  }
@@ -60,5 +66,5 @@ export async function marketingAPI(req,env){
    else if(data.action==='delete')await rest(target,{method:'DELETE'});else fail(400,'Acción no válida.');
  }else fail(405,'Método no permitido.');
  return json({});
- }catch(e){return json({error:e.status?e.message:'No se pudo contactar con Supabase.'},e.status||502);}
+ }catch(e){return json({error:e.status?e.message:'No se pudo contactar con Supabase.'},e.status||502,e.retryAfter?{'Retry-After':String(e.retryAfter)}:{});}
 }
