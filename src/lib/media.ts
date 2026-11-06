@@ -1,4 +1,4 @@
-export type CatalogImage = { src: string; alt: string; reference?: boolean; credit?: string };
+export type CatalogImage = { src: string; alt: string; reference?: boolean; credit?: string; sourceUrl?: string; license?: string; licenseUrl?: string };
 
 // Fotografías temporales autorizadas para la revisión. Sustituir por imágenes reales
 // de A&M y quitar reference solo cuando la foto corresponda a la unidad anunciada.

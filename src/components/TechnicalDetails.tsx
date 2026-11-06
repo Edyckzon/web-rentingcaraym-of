@@ -24,7 +24,7 @@ export default function TechnicalDetails({ sheet, compact = false, showIdentity 
       const Icon = fieldIcons[label as keyof typeof fieldIcons] || Cog;
       return <div key={label}><dt><Icon size={24} strokeWidth={1.5} aria-hidden="true"/><span>{label}</span></dt><dd>{value}</dd></div>;
     })}</dl>
-    <p className="tech-note">{sheet.year ? 'Año y transmisión confirmados por A&M. ' : ''}Las cifras de motor corresponden a la versión técnica indicada; confirme el acabado y equipamiento al cotizar.</p>
+    <p className="tech-note">{sheet.year ? 'Año y transmisión de la unidad confirmados por A&M. ' : ''}Esta ficha técnica de referencia puede corresponder a otra versión o año; confirme motor, caja y equipamiento de la unidad al cotizar.</p>
     <a className="tech-source" href={sheet.source} target="_blank" rel="noopener noreferrer">Fuente: {sheet.publisher} ↗</a>
   </section>;
 }

@@ -1,5 +1,7 @@
 import { referenceImages, type CatalogImage } from './media';
 import { technicalSheets, type TechnicalSheet } from './technicalSheets';
+import { fleetDetails } from './fleetDetails';
+import { modelReferenceImages } from './modelReferenceImages';
 
 export const categories = ['Todos', 'SUV', 'Sedán', 'Familiar / 7 asientos'] as const;
 export type Category = Exclude<(typeof categories)[number], 'Todos'>;
@@ -19,7 +21,6 @@ export type Vehicle = {
 type Model = Omit<Vehicle, 'description' | 'images'> & Partial<Pick<Vehicle, 'description' | 'images'>>;
 const models: Model[] = [
   { id: 'ford-territory', name: 'Ford Territory', category: 'SUV' },
-  { id: 'geely-okavango', name: 'Geely Okavango', category: 'SUV' },
   {
     id: 'changan-x7-plus', name: 'Changan X7 Plus', category: 'SUV',
     images: [
@@ -49,7 +50,14 @@ const models: Model[] = [
   { id: 'toyota-yaris', name: 'Toyota Yaris', category: 'Sedán' },
   { id: 'hyundai-verna', name: 'Hyundai Verna', category: 'Sedán' },
   { id: 'hyundai-accent', name: 'Hyundai Accent', category: 'Sedán' },
-  { id: 'changan-alsvin', name: 'Changan Alsvin', category: 'Sedán' },
+  {
+    id: 'changan-alsvin', name: 'Changan Alsvin', category: 'Sedán',
+    images: [
+      ['1.png', 'Changan Alsvin plateado, vista frontal de tres cuartos'],
+      ['2.png', 'Changan Alsvin plateado, vista frontal'],
+      ['3.png', 'Changan Alsvin plateado, vista lateral'],
+    ].map(([file, alt]) => ({ src: encodeURI(`/images/Changan Alsvin (1600x1000)/${file}`), alt, reference: false })),
+  },
   {
     id: 'suzuki-ertiga', name: 'Suzuki Ertiga', category: 'Familiar / 7 asientos',
     images: [
@@ -65,9 +73,16 @@ const models: Model[] = [
 
 export const fleet: Vehicle[] = models.map(model => ({
   ...model,
-  referenceSheet: technicalSheets[model.id],
+  referenceSheet: technicalSheets[model.id] && {
+    ...technicalSheets[model.id]!,
+    ...(fleetDetails[model.id] && { year: fleetDetails[model.id].year, transmission: fleetDetails[model.id].transmission }),
+  },
+  specifications: [
+    ...(model.specifications ?? []),
+    ...(fleetDetails[model.id] ? [{ label: 'Combustible', value: fleetDetails[model.id].fuel }] : []),
+  ],
   description: model.description ?? `Solicite una cotización para el alquiler de ${model.name}. Nuestro equipo le ayudará a coordinar las fechas, el lugar de recojo y las condiciones del servicio.`,
-  images: model.images?.length ? model.images : [model.category === 'Sedán' ? referenceImages.sedan : referenceImages.suv],
+  images: model.images?.length ? model.images : modelReferenceImages[model.id] ?? [model.category === 'Sedán' ? referenceImages.sedan : referenceImages.suv],
 }));
 
 export const featuredFleet = ['ford-territory', 'changan-x7-plus', 'changan-cx70', 'jetur-x70', 'toyota-yaris', 'suzuki-ertiga']

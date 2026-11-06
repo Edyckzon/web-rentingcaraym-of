@@ -20,7 +20,7 @@ export default function VehiclePreview({ vehicle }: { vehicle: Vehicle }) {
         if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
         event.preventDefault(); setOpen(true);
       }}>
-      {cover && <figure className="catalog-photo"><img src={cover.src} alt={cover.alt} width={1200} height={900} loading="lazy"/>{cover.reference && <figcaption>Imagen referencial · No es la unidad ofrecida</figcaption>}</figure>}
+      {cover && <figure className="catalog-photo"><img src={cover.src} alt={cover.alt} width={1200} height={900} loading="lazy"/>{cover.reference && <figcaption>Imagen referencial · No es la unidad ofrecida{cover.credit && <> · {cover.credit}{cover.license && ` / ${cover.license}`}</>}</figcaption>}</figure>}
       <span className="category-badge">{vehicle.category}</span><span className="eye-badge"><Eye size={20}/></span>
     </Link>
     {open && <GalleryDialog labelId={titleId} className="quick-view" onDismiss={() => setOpen(false)}>

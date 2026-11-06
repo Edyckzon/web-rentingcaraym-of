@@ -48,8 +48,9 @@ export default function VehicleGallery({ images, name, compact = false }: {
     <figure className="gallery-stage" onTouchStart={touchStart} onTouchEnd={touchEnd} onTouchCancel={() => { start.current = null; }}>
       <img src={photo.src} alt={photo.alt} width={1200} height={900}/>
       {!compact && <button className="gallery-expand" type="button" onClick={() => setExpanded(true)} aria-haspopup="dialog" aria-label={`Ampliar foto de ${name}`}><Expand size={18}/><span>Ampliar</span></button>}
-      <figcaption>{caption}</figcaption>
+      <figcaption>{caption}{photo.credit && <> · {photo.credit}{photo.license && ` / ${photo.license}`}</>}</figcaption>
     </figure>
+    {photo.sourceUrl && <small><a href={photo.sourceUrl} target="_blank" rel="noopener noreferrer">Fuente: {photo.credit}</a>{photo.licenseUrl && <> · <a href={photo.licenseUrl} target="_blank" rel="noopener noreferrer">{photo.license}</a></>}</small>}
     {multiple && <><div className="gallery-bar"><span>Galería de fotos</span>{controls}</div>
       <div className="gallery-thumbs" role="group" aria-label="Seleccionar fotografía">
         {images.map((image, i) => <button type="button" key={image.src} aria-label={`Ver foto ${i + 1}: ${image.alt}`} aria-pressed={i === index} onClick={() => select(i)}>
@@ -61,7 +62,7 @@ export default function VehicleGallery({ images, name, compact = false }: {
       <div key={index} className={`viewer-viewport${zoomed ? ' zoomed' : ''}`} onTouchStart={touchStart} onTouchEnd={touchEnd} onTouchCancel={() => { start.current = null; }} tabIndex={zoomed ? 0 : undefined} aria-label="Fotografía ampliada">
         <img src={photo.src} alt={photo.alt}/>
       </div>
-      <div className="viewer-footer"><p>{caption}</p>{controls}
+      <div className="viewer-footer"><p>{caption}{photo.credit && <> · {photo.credit}{photo.license && ` / ${photo.license}`}</>}</p>{controls}
         <button className="viewer-zoom" type="button" aria-pressed={zoomed} onClick={() => setZoomed(!zoomed)}>{zoomed ? <ZoomOut size={18}/> : <ZoomIn size={18}/>} {zoomed ? 'Ajustar' : 'Zoom 2×'}</button>
       </div>
     </GalleryDialog>}

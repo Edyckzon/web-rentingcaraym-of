@@ -143,17 +143,4 @@ export const technicalSheets: Partial<Record<string, TechnicalSheet>> = {
       'Tracción': 'Delantera',
     },
   },
-  'geely-okavango': {
-    year: 2023, transmission: 'Automática',
-    version: 'Okavango 1.5T MHEV · acabado por confirmar', publisher: 'Mundomotriz · Geely Perú',
-    // Coincide con la ficha Geely FT_OKAVANGO_2023_OCT (188 hp / 300 Nm).
-    source: 'https://www.mundomotriz.pe/geely/p/okavango-mild-hybrid',
-    fields: {
-      'Motor': '1.5 L turbo con sistema MHEV de 48 V',
-      'Potencia': '188 hp con sistema MHEV',
-      'Torque': '300 Nm con sistema MHEV',
-      'Transmisión': 'Automática DCT de 7 velocidades',
-      'Plazas': '7 en tres filas',
-    },
-  },
 };
