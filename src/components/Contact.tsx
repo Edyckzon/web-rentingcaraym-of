@@ -1,7 +1,10 @@
+'use client';
+import {useMarketing} from '@/components/MarketingProvider';
 import { Mail, MapPin, MessageCircle, Phone, ArrowUpRight } from 'lucide-react';
-import { business, whatsappLabel, whatsappLink } from '@/lib/business';
+
 
 export default function Contact() {
+  const {business,whatsappLabel,whatsappLink}=useMarketing();
   return <aside className="contact-details" aria-label="Datos de contacto">
     <div className="contact-card"><p className="eyebrow">Conversemos directamente</p><h2>Estamos en Surco.</h2><p>Vehículos, maquinaria, transporte y taller de reparación.</p>
       <a className="contact-row" href={whatsappLink('Hola, Renting Car A&M. Deseo una cotización.')} target="_blank" rel="noopener noreferrer"><MessageCircle/><span><small>WhatsApp de consultas</small><strong>{whatsappLabel}</strong></span><ArrowUpRight size={18}/></a>

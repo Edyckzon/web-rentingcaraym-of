@@ -1,11 +1,13 @@
 'use client';
+import {useMarketing} from '@/components/MarketingProvider';
+
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ArrowLeft, ArrowUpRight, Menu, MessageCircle, Phone, X } from 'lucide-react';
 import brandLogo from '@/lib/img/RENTING-CAR.png';
-import { business, whatsappLabel, whatsappLink } from '@/lib/business';
+
 
 export const navigation = [
   ['Inicio', '/'], ['Flota de vehículos', '/flota/'],
@@ -14,6 +16,7 @@ export const navigation = [
 ] as const;
 
 export default function Header() {
+  const {business,whatsappLabel,whatsappLink}=useMarketing();
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const toggle = useRef<HTMLButtonElement>(null);

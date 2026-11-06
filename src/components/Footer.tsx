@@ -1,9 +1,12 @@
+'use client';
+import {useMarketing} from '@/components/MarketingProvider';
 import Link from 'next/link';
 import { ArrowUpRight, BookOpen, MapPin, MessageCircle } from 'lucide-react';
 import brandLogo from '@/lib/img/RENTING-CAR.png';
-import { business, whatsappLabel, whatsappLink } from '@/lib/business';
+
 
 export default function Footer() {
+  const {business,whatsappLabel,whatsappLink}=useMarketing();
   return <>
     <footer className="footer"><div className="container">
       <div className="footer-grid">

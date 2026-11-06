@@ -1,6 +1,8 @@
+'use client';
+import {useMarketing} from '@/components/MarketingProvider';
 import Link from 'next/link';
 import { ArrowUpRight, Building2, CarFront, ChevronDown, MapPin, MessageCircle, Wrench } from 'lucide-react';
-import { whatsappLink } from '@/lib/business';
+
 
 export function PageIntro({ label, title, description }: { label: string; title: string; description: string }) {
   return <section className="page-intro"><div className="container"><p className="eyebrow">{label}</p><h1>{title}</h1><p className="lead">{description}</p></div></section>;
@@ -38,5 +40,6 @@ export function Faq() {
 }
 
 export function Closing() {
+  const {whatsappLink}=useMarketing();
   return <section className="closing"><div className="container closing-inner"><div><p className="eyebrow">Hablemos de su próximo proyecto</p><h2>¿Necesita un vehículo o equipo?</h2><p>Solicite una cotización con los detalles de su servicio.</p></div><div className="button-row"><Link className="button accent" href="/contacto/#cotizacion">Solicitar cotización <ArrowUpRight size={18}/></Link><a className="button secondary" href={whatsappLink('Hola, Renting Car A&M. Deseo una cotización.')} target="_blank" rel="noopener noreferrer"><MessageCircle size={18}/>WhatsApp</a></div></div></section>;
 }

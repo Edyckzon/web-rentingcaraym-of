@@ -1,14 +1,17 @@
 'use client';
+import {useMarketing} from '@/components/MarketingProvider';
+
 
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight, Check, Copy, MessageCircle } from 'lucide-react';
-import { fleet } from '@/lib/fleet';
+
 import { buildQuote, serviceOptions, todayInLima, type ServiceId } from '@/lib/quote';
-import { whatsappLink } from '@/lib/business';
+
 
 export default function QuoteForm({ initialService = 'vehiculos' }: { initialService?: ServiceId }) {
+  const {fleet}=useMarketing();
   const params = useSearchParams();
   const requestedService = params.get('servicio');
   const requestedModel = params.get('modelo');
@@ -18,6 +21,7 @@ export default function QuoteForm({ initialService = 'vehiculos' }: { initialSer
 }
 
 function QuoteFields({ defaultService, defaultModel }: { defaultService: ServiceId; defaultModel: string }) {
+  const {fleet,whatsappLink}=useMarketing();
   const [service, setService] = useState<ServiceId>(defaultService);
   const [today, setToday] = useState('');
   const [summary, setSummary] = useState('');

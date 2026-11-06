@@ -31,13 +31,13 @@ El formulario prepara un mensaje en el navegador, valida los campos y permite re
 - `src/lib/technicalSheets.ts`: referencias técnicas de versiones comerciales de Perú, con fuente y versión identificadas. Se muestran en la vista rápida y en la ficha. No certifican la configuración de la unidad alquilada.
 - `src/lib/services.ts`: equipos, servicios y datos necesarios para cotizarlos.
 - `src/lib/media.ts`: fotos temporales centralizadas; `reference: true` muestra el aviso de fotografía referencial.
-- `public/images/`: fotografías WebP servidas localmente.
+- `public/images/`: imágenes estáticas que no pertenecen al catálogo de marketing.
 - `src/lib/business.ts`: WhatsApp, central, correos, dirección y mapas.
 - `src/lib/quote.ts`: validación y construcción del mensaje.
 - `src/lib/seo.ts`: metadatos por página.
 - `src/app/globals.css`: paleta, tipografía y adaptación a pantallas.
 
-Para reemplazar fotos, guardar el archivo real optimizado en `public/images/` y asignar `{ src: '/images/unidad.webp', alt: 'Descripción real', reference: false }` en las imágenes del modelo o equipo correspondiente. Pueden añadirse más imágenes para la galería. No marcar una foto genérica como real. Para incorporar unidades, agregar un modelo con un `id` único sin tildes: la ficha y el sitemap se generan al compilar.
+Para administrar la flota y sus galerías, usa el panel de marketing. Las fotos se guardan en Supabase Storage; el sitio conserva una instantánea de metadatos públicos para generar las páginas estáticas.
 
 En `models` de `fleet.ts`, el orden del arreglo `images` de cada vehículo define su portada y miniaturas. Con una sola foto se puede ampliar; con dos o más aparecen flechas y miniaturas, y se puede deslizar en móvil. Los identificadores históricos `jac-s8` y `jetur-x70` conservan sus URL; los nombres visibles son JAC JS8 y Jetour X70.
 
@@ -69,3 +69,17 @@ Autorizadas por el propietario mientras llegan las reales. No representan unidad
 Se mantiene la exportación estática para Cloudflare Pages. Comando `pnpm build`, salida `out/`, Node.js 22+ y pnpm 11.19.0. No se publican cambios automáticamente desde esta revisión local.
 
 El workflow existente comprueba tipos y compilación. `pnpm test` verifica los cinco tipos de cotización, datos opcionales, solicitudes inválidas y codificación de mensajes sin contactar a WhatsApp.
+
+### Marketing con Supabase y Cloudflare Pages
+
+El sitio y el editor leen la configuración, la flota y sus categorías desde Supabase.
+Los cambios en marketing se guardan directamente en Postgres; los archivos subidos se guardan en el bucket público renting-fotos. No se usa el contenido de .marketing/content.json.
+El orden de la galería determina la principal. Una categoría no se puede eliminar mientras tenga vehículos asignados.
+
+En una instalación nueva aplica los SQL 01, 02 y 03 en orden, creando primero la cuenta de marketing en Authentication > Users antes del 02.
+Desactiva el registro público de Auth. El panel verifica el rol de administrador por UID en la base usando el token personal de sesión y las políticas RLS. El navegador recibe una cookie HttpOnly; no se necesita una clave de servicio.
+Las imágenes migradas conservan los créditos y las licencias de las fotografías referenciales.
+
+Desarrollo: guarda SUPABASE_PUBLISHABLE_KEY en .marketing/auth.env (ignorado por Git) y ejecuta npm run marketing:local con Node 22+. Usa http://127.0.0.1:4318/admin/.
+Cloudflare Pages: usa la raíz de la app que contiene functions/, comando pnpm build, salida out/ y el binding de servidor SUPABASE_PUBLISHABLE_KEY en el entorno correspondiente.
+Despliega con integración Git o Wrangler Pages desde esa raíz para incluir las Functions; subir solo out/ no incluye la API.

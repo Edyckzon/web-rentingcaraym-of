@@ -23,6 +23,7 @@
       }
     ],
     "paths": {
+      "marketing-content": ["./src/lib/marketing-public.json"],
       "@/*": [
         "./src/*"
       ]

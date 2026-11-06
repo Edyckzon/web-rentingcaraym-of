@@ -1,18 +1,21 @@
 'use client';
+import {useMarketing,detailUrl} from '@/components/MarketingProvider';
+
 
 import { useId, useState } from 'react';
 import Link from 'next/link';
 import { ArrowUpRight, Eye, X } from 'lucide-react';
 import { type Vehicle, vehicleMessage } from '@/lib/fleet';
-import { whatsappLink } from '@/lib/business';
+
 import GalleryDialog from './GalleryDialog';
 import VehicleGallery from './VehicleGallery';
 import TechnicalDetails, { VehicleIdentity } from './TechnicalDetails';
 
 export default function VehiclePreview({ vehicle }: { vehicle: Vehicle }) {
+  const {whatsappLink}=useMarketing();
   const [open, setOpen] = useState(false);
   const titleId = useId();
-  const detail = `/flota/${vehicle.id}/`;
+  const detail = detailUrl(vehicle.id);
   const cover = vehicle.images[0];
   return <>
     <Link href={detail} className="card-image-link preview-trigger" aria-label={`Vista rápida de ${vehicle.name}`} aria-haspopup="dialog"

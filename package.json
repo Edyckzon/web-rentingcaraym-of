@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "marketing:local": "node scripts/marketing-local.mjs",
     "dev": "next dev --hostname 0.0.0.0",
-    "build": "next build",
+    "build": "node scripts/public-snapshot.mjs && next build",
     "typecheck": "next typegen && tsc --noEmit",
-    "test": "node --test scripts/quote.test.mjs",
+    "test": "node --test scripts/quote.test.mjs scripts/marketing-auth.test.mjs",
     "preview": "node scripts/preview.mjs"
   },
   "dependencies": {

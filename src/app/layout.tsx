@@ -1,3 +1,4 @@
+import { MarketingProvider } from '@/components/MarketingProvider';
 import type { Metadata } from 'next';
 import './globals.css';
 import './gallery.css';
@@ -22,5 +23,5 @@ const localBusiness = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="es"><body><a className="skip" href="#contenido">Ir al contenido</a><Header/><main id="contenido" tabIndex={-1}>{children}</main><Footer/><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness).replace(/</g, '\\u003c') }}/></body></html>;
+  return <html lang="es"><body><a className="skip" href="#contenido">Ir al contenido</a><MarketingProvider><Header/><main id="contenido" tabIndex={-1}>{children}</main><Footer/></MarketingProvider><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness).replace(/</g, '\\u003c') }}/></body></html>;
 }
