@@ -1,4 +1,5 @@
 'use client';
+import SiteSignature from '@/components/SiteSignature';
 import {useMarketing} from '@/components/MarketingProvider';
 import Link from 'next/link';
 import { ArrowUpRight, BookOpen, MapPin, MessageCircle } from 'lucide-react';
@@ -19,10 +20,7 @@ export default function Footer() {
         <p>© {new Date().getFullYear()} <a href={business.groupUrl}>Grupo A&amp;M</a>. Todos los derechos reservados.</p>
         <div><Link href="/politica-de-privacidad/">Privacidad</Link><Link href="/terminos-y-condiciones/">Términos</Link><Link href="/libro-de-reclamaciones/"><BookOpen size={14}/>Libro de Reclamaciones</Link></div>
       </div>
-      <p className="footer-signature" lang="en">
-        <span>Designed &amp; powered by <a href="https://onesecurezone.com/">onesecurezone.com</a></span>
-        <span className="footer-developer">Dev EPB</span>
-      </p>
+      <SiteSignature/>
     </div></footer>
     <a className="floating-whatsapp" href={whatsappLink('Hola, Renting Car A&M. Deseo información sobre sus servicios.')} target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp"><MessageCircle size={26}/><span>¿Le ayudamos?</span></a>
   </>;
