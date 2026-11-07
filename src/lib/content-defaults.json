@@ -1,0 +1,398 @@
+[
+  {
+    "id": "rental-header",
+    "group": "Alquiler",
+    "label": "Encabezado",
+    "title": "Prepare su alquiler con tranquilidad",
+    "body": "Información para comenzar. Las condiciones se confirman en su propuesta.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "rental-requirements",
+    "group": "Alquiler",
+    "label": "Requisitos",
+    "title": "Documentación en regla",
+    "body": "Tenga a mano su documento de identidad vigente y, si conducirá, una licencia vigente que corresponda al vehículo. Para empresas, prepare el RUC y los datos de la persona responsable.\n\nEl equipo confirmará la documentación, edad y experiencia de conducción requeridas según la unidad y el servicio. Envíe documentos únicamente por el canal que le indiquemos.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "rental-duration",
+    "group": "Alquiler",
+    "label": "Duración",
+    "title": "El tiempo que necesita",
+    "body": "Cuéntenos si busca una unidad por días, semanas o meses, las fechas previstas y el uso que le dará. Evaluaremos la disponibilidad y una propuesta para su solicitud.\n\nPara movilidad empresarial, indique cuántas unidades necesita y los lugares de operación. La duración y las condiciones se acuerdan antes de contratar.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "rental-guarantee",
+    "group": "Alquiler",
+    "label": "Garantía",
+    "title": "Garantía y condiciones claras",
+    "body": "Consulte por WhatsApp el importe y la modalidad de garantía, así como las condiciones y plazos de devolución aplicables a su alquiler.\n\nRevise también la tarifa, kilometraje, combustible, coberturas, exclusiones y entrega de la unidad. Una consulta no confirma una reserva ni genera un pago.",
+    "linkLabel": "Consultar requisitos y garantía",
+    "linkUrl": ""
+  },
+  {
+    "id": "rental-rates",
+    "group": "Alquiler",
+    "label": "Tarifas",
+    "title": "Tarifas según su solicitud",
+    "body": "Solicite una cotización indicando el modelo, las fechas y el recorrido previsto. Confirme el importe total, los conceptos incluidos, las formas de pago y cualquier cargo adicional antes de contratar. Las tarifas se acuerdan en la propuesta; enviar una consulta no realiza un pago.",
+    "linkLabel": "Consultar tarifas",
+    "linkUrl": "/contacto/"
+  },
+  {
+    "id": "rental-coverage",
+    "group": "Alquiler",
+    "label": "Coberturas",
+    "title": "Revise las coberturas",
+    "body": "Pida al equipo el detalle de las coberturas aplicables a la unidad, sus límites, exclusiones y deducibles, si corresponden. Confirme también el uso autorizado, el kilometraje y las indicaciones ante un incidente. No asuma una cobertura que no figure en las condiciones del servicio.",
+    "linkLabel": "Consultar coberturas",
+    "linkUrl": "/contacto/"
+  },
+  {
+    "id": "faq-header",
+    "group": "Preguntas frecuentes",
+    "label": "Encabezado",
+    "title": "Preguntas frecuentes sobre el alquiler de autos",
+    "body": "Estamos para ayudarle a elegir el servicio adecuado.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "faq-01",
+    "group": "Preguntas frecuentes",
+    "label": "¿Cómo solicito una cotización?",
+    "title": "¿Cómo solicito una cotización?",
+    "body": "Elija un modelo o servicio y pulse Cotizar. También puede completar el formulario de contacto para preparar un mensaje y enviarlo por WhatsApp.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "faq-02",
+    "group": "Preguntas frecuentes",
+    "label": "¿Cuáles son los requisitos para alquilar un auto en Lima?",
+    "title": "¿Cuáles son los requisitos para alquilar un auto en Lima?",
+    "body": "Prepare su documento de identidad vigente y la licencia vigente de quien conducirá. Para empresas, indique el RUC y un contacto responsable. El equipo confirmará los requisitos específicos, la documentación y las condiciones de garantía según el servicio.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "faq-03",
+    "group": "Preguntas frecuentes",
+    "label": "¿Cuánto es la garantía y cuándo se devuelve?",
+    "title": "¿Cuánto es la garantía y cuándo se devuelve?",
+    "body": "Consulte por WhatsApp el importe, la modalidad y las condiciones y plazos de devolución. Estos puntos deben quedar definidos en su propuesta y contrato antes de confirmar el alquiler.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "faq-04",
+    "group": "Preguntas frecuentes",
+    "label": "¿Puedo solicitar alquiler por días, semanas o meses?",
+    "title": "¿Puedo solicitar alquiler por días, semanas o meses?",
+    "body": "Indique las fechas y la duración que necesita. Nuestro equipo evaluará disponibilidad y condiciones para su solicitud, tanto personal como empresarial.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "faq-05",
+    "group": "Preguntas frecuentes",
+    "label": "¿Pueden entregar el vehículo y emitir un comprobante?",
+    "title": "¿Pueden entregar el vehículo y emitir un comprobante?",
+    "body": "Indique el lugar de entrega y recojo, y los datos de facturación al cotizar. Confirme con el equipo el comprobante correspondiente, las opciones de entrega y cualquier costo adicional antes de contratar.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "faq-06",
+    "group": "Preguntas frecuentes",
+    "label": "¿Qué incluye la tarifa y el seguro?",
+    "title": "¿Qué incluye la tarifa y el seguro?",
+    "body": "La tarifa, el kilometraje, las coberturas y las formas de pago se detallan en la propuesta. Consúltelos antes de confirmar el alquiler.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "faq-07",
+    "group": "Preguntas frecuentes",
+    "label": "¿Puedo alquilar con chofer o sin chofer?",
+    "title": "¿Puedo alquilar con chofer o sin chofer?",
+    "body": "Indique si necesita conductor u operador al solicitar la cotización. Nuestro equipo confirmará las opciones para su servicio.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "faq-08",
+    "group": "Preguntas frecuentes",
+    "label": "¿Atienden proyectos fuera de Lima?",
+    "title": "¿Atienden proyectos fuera de Lima?",
+    "body": "Indique el lugar de obra o el origen y destino de la carga. La cobertura y movilización se evalúan para cada solicitud.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "faq-09",
+    "group": "Preguntas frecuentes",
+    "label": "¿Enviar una consulta confirma mi reserva?",
+    "title": "¿Enviar una consulta confirma mi reserva?",
+    "body": "La solicitud inicia una conversación. La disponibilidad, las condiciones y la contratación se coordinan directamente con nuestro equipo.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "why-header",
+    "group": "Ventajas",
+    "label": "Encabezado",
+    "title": "¿Por qué alquilar con Renting Car A&M?",
+    "body": "Conozca nuestra atención y servicios.",
+    "linkLabel": "Conozca Renting Car A&M",
+    "linkUrl": "/nosotros/"
+  },
+  {
+    "id": "why-01",
+    "group": "Ventajas",
+    "label": "Dos líneas de servicio",
+    "title": "Dos líneas de servicio",
+    "body": "Vehículos livianos, maquinaria y transporte de carga en un mismo lugar.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "why-02",
+    "group": "Ventajas",
+    "label": "Taller propio en Surco",
+    "title": "Taller propio en Surco",
+    "body": "Contamos con un taller de reparación en nuestra sede de Santiago de Surco.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "why-03",
+    "group": "Ventajas",
+    "label": "Personas y empresas",
+    "title": "Personas y empresas",
+    "body": "Cuéntenos su necesidad de movilidad o el trabajo que requiere su proyecto.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "why-04",
+    "group": "Ventajas",
+    "label": "Atención directa",
+    "title": "Atención directa",
+    "body": "Visítenos en Surco o converse con nuestro equipo por WhatsApp.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "steps-header",
+    "group": "Cómo trabajamos",
+    "label": "Encabezado",
+    "title": "Pasos para alquilar su vehículo",
+    "body": "Coordinamos los detalles de su servicio con atención personalizada.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "step-01",
+    "group": "Cómo trabajamos",
+    "label": "Paso 1",
+    "title": "Elija su vehículo o servicio",
+    "body": "Explore nuestra flota liviana y las opciones de maquinaria y transporte.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "step-02",
+    "group": "Cómo trabajamos",
+    "label": "Paso 2",
+    "title": "Solicite su cotización",
+    "body": "Indique fechas, ubicación y necesidades para recibir una propuesta.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "step-03",
+    "group": "Cómo trabajamos",
+    "label": "Paso 3",
+    "title": "Coordine documentos y contrato",
+    "body": "Revise con nuestro equipo los requisitos, las condiciones y la disponibilidad.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "step-04",
+    "group": "Cómo trabajamos",
+    "label": "Paso 4",
+    "title": "Reciba su unidad",
+    "body": "Una vez acordado el servicio, coordine la entrega o el inicio del trabajo.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "closing",
+    "group": "Contacto y llamados",
+    "label": "Invitación a cotizar",
+    "title": "¿Necesita un vehículo o equipo?",
+    "body": "Solicite una cotización con los detalles de su servicio.",
+    "linkLabel": "Solicitar cotización",
+    "linkUrl": "/contacto/#cotizacion"
+  },
+  {
+    "id": "vehicle-conditions",
+    "group": "Alquiler",
+    "label": "Condiciones en las fichas",
+    "title": "Condiciones de su alquiler",
+    "body": "La propuesta detalla tarifa, requisitos, garantía, kilometraje y coberturas. Confirme disponibilidad y condiciones con nuestro equipo.",
+    "linkLabel": "Consultar condiciones",
+    "linkUrl": "/como-funciona/"
+  },
+  {
+    "id": "complaints-header",
+    "group": "Reclamaciones",
+    "label": "Encabezado",
+    "title": "Libro de Reclamaciones",
+    "body": "Información del canal de atención.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "complaints-status",
+    "group": "Reclamaciones",
+    "label": "Estado del registro",
+    "title": "Registro virtual pendiente de habilitación",
+    "body": "El Libro de Reclamaciones virtual aún no está habilitado en esta web. Esta página no registra una reclamación ni emite una constancia.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "complaints-channel",
+    "group": "Reclamaciones",
+    "label": "Canal y enlace al Libro",
+    "title": "Consulte el canal de registro",
+    "body": "Para consultar por el canal de registro disponible, contacte a Renting Car A&M mediante los datos de atención indicados en esta página.\n\nUna consulta por correo, teléfono o WhatsApp no se presenta aquí como sustituto del Libro de Reclamaciones.",
+    "linkLabel": "Consultar canal de atención",
+    "linkUrl": "/contacto/"
+  },
+  {
+    "id": "terms-header",
+    "group": "Condiciones",
+    "label": "Encabezado",
+    "title": "Condiciones de cotización",
+    "body": "Revise las condiciones de su servicio con nuestro equipo antes de confirmar.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "terms-01",
+    "group": "Condiciones",
+    "label": "Solicitud de información",
+    "title": "Solicitud de información",
+    "body": "El catálogo y el formulario permiten solicitar una propuesta. Preparar o enviar un mensaje no confirma una reserva ni realiza un pago.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "terms-02",
+    "group": "Condiciones",
+    "label": "Disponibilidad y características",
+    "title": "Disponibilidad y características",
+    "body": "Solicite la confirmación del modelo, versión, características y disponibilidad de la unidad para sus fechas. Las fotografías identificadas como referenciales no corresponden a la unidad ofrecida.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "terms-03",
+    "group": "Condiciones",
+    "label": "Condiciones de cada servicio",
+    "title": "Condiciones de cada servicio",
+    "body": "La propuesta y el contrato deben precisar tarifa, garantía, documentos requeridos, coberturas, kilometraje, entrega y devolución. Para maquinaria y transporte, consulte también operador o conductor, combustible, movilización y alcance del trabajo.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "terms-04",
+    "group": "Condiciones",
+    "label": "Documento pendiente",
+    "title": "Documento pendiente",
+    "body": "Los términos y condiciones completos de alquiler están pendientes de aprobación por A&M. Esta página contiene información sobre la solicitud de cotización y no sustituye el contrato del servicio.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "privacy-header",
+    "group": "Privacidad",
+    "label": "Encabezado",
+    "title": "Privacidad de su solicitud",
+    "body": "Cómo funciona el formulario de cotización de esta web.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "privacy-01",
+    "group": "Privacidad",
+    "label": "Datos que usted decide compartir",
+    "title": "Datos que usted decide compartir",
+    "body": "El formulario le permite preparar una consulta con su nombre, teléfono, correo opcional, empresa y RUC opcionales, fechas, ubicación y descripción del servicio. Estos datos se incorporan al mensaje que usted revisa antes de enviarlo.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "privacy-02",
+    "group": "Privacidad",
+    "label": "Preparación y envío del mensaje",
+    "title": "Preparación y envío del mensaje",
+    "body": "El formulario prepara el resumen en su navegador. Esta web no envía el formulario a un servidor ni guarda sus datos en una base de datos. Al pulsar «Abrir WhatsApp», el mensaje se comparte con WhatsApp mediante un enlace. Para que Renting Car A&M lo reciba, debe enviarlo dentro de esa aplicación.\n\nLos datos que envíe se solicitan para atender su consulta y coordinar la cotización. No incluya números de tarjeta, documentos de identidad ni información que no sea necesaria para describir el servicio.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "privacy-03",
+    "group": "Privacidad",
+    "label": "Servicios externos",
+    "title": "Servicios externos",
+    "body": "Los enlaces de WhatsApp, correo, Google Maps y Waze abren servicios de terceros. El mapa integrado y las fuentes de Google también pueden establecer conexiones con sus proveedores. El uso de esos servicios se rige por sus propias condiciones de privacidad.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "privacy-04",
+    "group": "Privacidad",
+    "label": "Consultas sobre sus datos",
+    "title": "Consultas sobre sus datos",
+    "body": "Puede comunicarse con Renting Car A&M por los canales de atención indicados en esta página para consultar sobre los datos que ha compartido.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "privacy-05",
+    "group": "Privacidad",
+    "label": "Alcance de esta información",
+    "title": "Alcance de esta información",
+    "body": "Este aviso describe el funcionamiento actual del sitio. La política completa de la empresa, con identificación de la entidad responsable y condiciones de tratamiento, está pendiente de validación por A&M.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "footer-summary",
+    "group": "Contacto y llamados",
+    "label": "Presentación del pie",
+    "title": "Renting Car A&M",
+    "body": "Alquiler de autos, camionetas y maquinaria pesada en Santiago de Surco, Lima.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "contact-intro",
+    "group": "Contacto y llamados",
+    "label": "Tarjeta de contacto",
+    "title": "Alquiler de autos en Santiago de Surco: visítenos",
+    "body": "Vehículos, maquinaria, transporte y taller de reparación.",
+    "linkLabel": "",
+    "linkUrl": ""
+  }
+]

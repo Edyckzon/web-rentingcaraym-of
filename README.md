@@ -1,6 +1,6 @@
 # Renting Car A&M
 
-Web estática de vehículos, maquinaria y transporte de carga, con Next.js, React y TypeScript. Exporta HTML a `out/`; no necesita servidor de aplicación, base de datos ni credenciales.
+Web estática de vehículos, maquinaria y transporte de carga, con Next.js, React y TypeScript. Exporta HTML a `out/` y utiliza Cloudflare Pages Functions para el panel y la API. Supabase gestiona autenticación, catálogo, galerías y contenido administrable.
 
 ## Desarrollo y comprobación
 
@@ -39,7 +39,7 @@ El formulario prepara un mensaje en el navegador, valida los campos y permite re
 
 Para administrar la flota y sus galerías, usa el panel de marketing. Las fotos se guardan en Supabase Storage; el sitio conserva una instantánea de metadatos públicos para generar las páginas estáticas.
 
-En `models` de `fleet.ts`, el orden del arreglo `images` de cada vehículo define su portada y miniaturas. Con una sola foto se puede ampliar; con dos o más aparecen flechas y miniaturas, y se puede deslizar en móvil. Los identificadores históricos `jac-s8` y `jetur-x70` conservan sus URL; los nombres visibles son JAC JS8 y Jetour X70.
+En `models` de `fleet.ts`, el orden del arreglo `images` de cada vehículo define su portada y miniaturas. Con una sola foto se puede ampliar; con dos o más aparecen flechas y miniaturas, y se puede deslizar en móvil. Los identificadores internos `jac-s8` y `jetur-x70` se conservan en Supabase. Sus URL públicas son `/flota/jac-js8/` y `/flota/jetour-x70/`; `public/_redirects` conserva los enlaces anteriores mediante 301 en Cloudflare Pages.
 
 El WhatsApp confirmado es **+51 993 334 984**. `.env.example` documenta `NEXT_PUBLIC_WHATSAPP_NUMBER`; un cambio requiere recompilar. El número mostrado y todos los enlaces usan la misma configuración. Se conservan los correos existentes hasta confirmar que la nueva casilla comercial está activa.
 
@@ -53,7 +53,7 @@ El WhatsApp confirmado es **+51 993 334 984**. `.env.example` documenta `NEXT_PU
 - Versión oficial de logo para fondo oscuro y favicon de marca. El footer conserva el logo original sobre una superficie blanca.
 - IDs/accesos de Analytics, Google Business y Search Console si se decide habilitarlos. No se añadieron identificadores ficticios ni seguimiento de datos personales.
 
-Por decisión del propietario el sitio seguirá siendo estático. El envío automático de formularios/correos, un CMS con escritura y la recepción de reclamaciones requieren un servicio externo independiente; no se agregan como supuestos de esta web.
+La presentación pública se exporta como HTML. El panel sí escribe en Supabase mediante Pages Functions. Las cotizaciones siguen preparándose para WhatsApp; el envío automático de correo y el registro de reclamaciones aún no están implementados.
 
 ## Fotos temporales
 
@@ -66,7 +66,7 @@ Autorizadas por el propietario mientras llegan las reales. No representan unidad
 
 ## Hosting
 
-Se mantiene la exportación estática para Cloudflare Pages. Comando `pnpm build`, salida `out/`, Node.js 22+ y pnpm 11.19.0. No se publican cambios automáticamente desde esta revisión local.
+Se mantiene la exportación estática para Cloudflare Pages. Comando `pnpm build`, salida `out/`, Node.js 22+ y pnpm 11.19.0. La integración Git de Pages publica los commits enviados a main.
 
 El workflow existente comprueba tipos y compilación. `pnpm test` verifica los cinco tipos de cotización, datos opcionales, solicitudes inválidas y codificación de mensajes sin contactar a WhatsApp.
 
@@ -89,3 +89,26 @@ sin él se mantiene el login anterior con los límites de Supabase. Un error de 
 de 15 minutos bloquea ese login durante otros 15 minutos. Una contraseña correcta
 antes del bloqueo reinicia el contador. No afecta a sesiones abiertas ni al login
 directo de Supabase. En desarrollo se usa SQLite en .marketing/ (excluido de Git).
+
+
+## SEO administrable y publicación (noviembre de 2026)
+
+- Migraciones `05-seo-administrable.sql` y `06-contenido-seo.sql`: campos SEO e Ideal para en vehículos, tabla `paginas_web` con RLS y fechas de modificación. La RPC sigue aceptando al panel anterior sin borrar los campos nuevos.
+- `07-textos-alternativos.sql` mejora los alt referenciales conservando los archivos y créditos.
+- El admin permite editar títulos, descripciones, encabezados e introducciones de 10 páginas. El texto del inicio se edita ahora en Páginas y SEO; Portada administra su imagen.
+- Guardar actualiza Supabase. **Publicar SEO en Cloudflare** solicita una compilación mediante el secreto de servidor `CLOUDFLARE_DEPLOY_HOOK`; no afirma que el despliegue haya terminado. Crear el hook para `main` en el proyecto Pages correcto. Se mantiene el plan Free; cada publicación consume una compilación del plan.
+- `SUPABASE_PUBLISHABLE_KEY` debe estar tanto en el entorno de compilación como disponible para las Functions. La compilación refresca la instantánea pública; en Pages falla si falta esta configuración, evitando publicar datos antiguos silenciosamente.
+- Un vehículo nuevo usa temporalmente `/flota/ficha/?id=...` (noindex) hasta compilar su URL propia. Las fichas exportadas tienen metadatos por vehículo; el sitemap incluye las rutas corregidas y fechas reales guardadas en la base.
+- Las redirecciones 301 de `_redirects` se aplican en Pages, no en el servidor simple `pnpm preview`.
+
+### Textos comerciales y legales
+
+Las migraciones de `supabase/migrations/` añaden el horario, los textos Ideal para y 44 bloques de contenido ya cargados. Aplicarlas después de los SQL 01 a 07; ya están aplicadas en el proyecto actual. No ejecutar `db push` sobre una instalación vacía sin los SQL anteriores.
+
+**Textos y enlaces** administra requisitos, duración, garantías, tarifas, coberturas, pasos, ventajas, preguntas frecuentes, llamadas a cotizar, condiciones, privacidad y reclamaciones. **Contacto** administra correos, dirección, horario y enlaces de ubicación/grupo. La lectura es pública; la escritura requiere el rol administrador mediante RLS. Se guardan textos simples, sin HTML, y enlaces internos o HTTPS. Los bloques no se pueden borrar ni dejar sin título/contenido desde el editor.
+
+El horario confirmado es 9:00 a. m. a 6:00 p. m.; no se inventan días de atención. Tarifas, garantías, coberturas y disponibilidad se consultan y confirman en la propuesta. El enlace del Libro puede cambiarse cuando la empresa entregue un sistema real; editar un texto no crea un registro ni envía constancias.
+
+En local, el Deploy Hook debe configurarse aparte en `.marketing/auth.env` y requiere reiniciar `marketing:local`. No copiar el secreto al frontend ni al repositorio. La variable configurada en Cloudflare no se hereda en el equipo local. El botón solicita una compilación; no garantiza su finalización.
+
+Pendientes del requerimiento: Libro de Reclamaciones operativo con constancias, validación final de políticas de la empresa, datos comerciales específicos, página para conductores condicionada a autorización y fotos reales faltantes. Por decisión del usuario se posponen `www`, Search Console y mediciones PageSpeed. La propuesta de contenido está implementada con textos conservadores, sin promesas comerciales no confirmadas.

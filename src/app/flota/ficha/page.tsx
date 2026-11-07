@@ -1,6 +1,4 @@
-'use client';
 import { Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
-import VehicleDetail from '@/components/VehicleDetail';
-function Ficha(){return <VehicleDetail slug={useSearchParams().get('id')??''}/>;}
-export default function Page(){return <Suspense><Ficha/></Suspense>;}
+import VehicleLookup from '@/components/VehicleLookup';
+export const metadata={title:'Ficha de vehículo',robots:{index:false,follow:true}};
+export default function Page(){return <Suspense fallback={<p>Cargando ficha…</p>}><VehicleLookup/></Suspense>;}

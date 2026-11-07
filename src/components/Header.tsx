@@ -12,7 +12,7 @@ import brandLogo from '@/lib/img/RENTING-CAR.png';
 export const navigation = [
   ['Inicio', '/'], ['Flota de vehículos', '/flota/'],
   ['Maquinaria y transporte', '/maquinaria-y-transporte/'],
-  ['Nosotros', '/nosotros/'], ['Contacto', '/contacto/'],
+  ['Empresas', '/alquiler-para-empresas/'], ['Nosotros', '/nosotros/'], ['Contacto', '/contacto/'],
 ] as const;
 
 export default function Header() {

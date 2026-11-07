@@ -31,3 +31,11 @@
 .footer-signature a:hover,.footer-signature a:focus-visible{color:var(--accent)}
 .footer-developer{border-inline-start:1px solid #ffffff40;padding-inline-start:12px;letter-spacing:.06em}
 @media(max-width:700px){.footer-signature{justify-content:flex-start}}
+
+/* Longer descriptive links retain usable card layouts. */
+.card-actions{flex-wrap:wrap}.card-actions .button{white-space:normal;text-align:center}.hero h1{text-wrap:balance}.benefits-grid h2{font-size:1.35rem}.detail-specifications p{max-width:75ch}
+@media(min-width:1021px) and (max-width:1280px){.header-cta{display:none}.nav{gap:16px}}
+
+@media(max-width:700px){.company-benefits{grid-template-columns:1fr}}
+
+.rental-info-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.rental-info-grid article{padding:30px;border:1px solid var(--line,#e6e2dc);border-radius:20px;background:var(--surface,#fff)}.rental-info-grid article>svg{color:#e87800}.rental-info-grid h3{margin:20px 0 14px}.rental-info-grid p{line-height:1.75;margin:0 0 18px}.rental-info-grid .text-link{flex-wrap:wrap}@media(max-width:900px){.rental-info-grid{grid-template-columns:1fr}}

@@ -1,13 +1,14 @@
 import { edits } from './marketing';
 export const business = {
+  hours: edits.hours || '9:00 a. m. a 6:00 p. m.',
   whatsapp: '51993334984',
   whatsappLabel: '+51 993 334 984',
   phone: edits.phone?.replace(/[^+0-9]/g, "") || '+5114800300',
   phoneLabel: edits.phone || '01 4800-300',
-  email: 'rentingcaraym@gmail.com',
-  adminEmail: 'administracion@grupoaym.com',
-  address: 'Av. Santiago de Surco 3573, Santiago de Surco 15038',
-  groupUrl: 'https://grupoaym.com/',
+  email: edits.email || 'rentingcaraym@gmail.com',
+  adminEmail: edits.adminEmail || 'administracion@grupoaym.com',
+  address: edits.address || 'Av. Santiago de Surco 3573, Santiago de Surco 15038',
+  groupUrl: edits.groupUrl || 'https://grupoaym.com/',
   siteUrl: 'https://rentingcaraym.com',
   wazeUrl: edits.waze || 'https://waze.com/ul?q=Av.%20Santiago%20de%20Surco%203573%2C%20Lima&navigate=yes',
   mapsUrl: edits.maps || 'https://www.google.com/maps/search/?api=1&query=Av.%20Santiago%20de%20Surco%203573%2C%20Santiago%20de%20Surco%2015038',

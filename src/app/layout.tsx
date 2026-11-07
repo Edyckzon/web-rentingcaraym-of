@@ -16,7 +16,9 @@ export const metadata: Metadata = {
 };
 
 const localBusiness = {
-  '@context': 'https://schema.org', '@type': 'LocalBusiness', name: 'Renting Car A&M',
+  '@context': 'https://schema.org', '@type': 'AutoRental', '@id': `${business.siteUrl}/#empresa`, name: 'Renting Car A&M',
+  description: 'Alquiler de autos, camionetas y maquinaria pesada en Santiago de Surco, Lima.',
+  image: `${business.siteUrl}/brand/social.png`, areaServed: {'@type':'City',name:'Lima'},
   url: business.siteUrl, telephone: business.phone, email: business.email,
   logo: `${business.siteUrl}/brand/logo.png`,
   address: { '@type': 'PostalAddress', streetAddress: 'Av. Santiago de Surco 3573', addressLocality: 'Santiago de Surco', addressRegion: 'Lima', postalCode: '15038', addressCountry: 'PE' },

@@ -1,7 +1,4 @@
-import Link from 'next/link';
-import { PageIntro } from '@/components/Sections';
-import { pageMetadata } from '@/lib/seo';
+import ManagedLegalContent from '@/components/ManagedLegalContent';
+import {pageMetadata} from '@/lib/seo';
 export const metadata = { ...pageMetadata('Condiciones de cotización', 'Información para consultar disponibilidad y condiciones del servicio con Renting Car A&M.', '/terminos-y-condiciones/'), robots: { index: false, follow: true } };
-export default function TermsPage() {
-  return <><PageIntro label="Antes de contratar" title="Condiciones de cotización" description="Revise las condiciones de su servicio con nuestro equipo antes de confirmar."/><article className="section container prose"><h2>Solicitud de información</h2><p>El catálogo y el formulario permiten solicitar una propuesta. Preparar o enviar un mensaje no confirma una reserva ni realiza un pago.</p><h2>Disponibilidad y características</h2><p>Solicite la confirmación del modelo, versión, características y disponibilidad de la unidad para sus fechas. Las fotografías identificadas como referenciales no corresponden a la unidad ofrecida.</p><h2>Condiciones de cada servicio</h2><p>La propuesta y el contrato deben precisar tarifa, garantía, documentos requeridos, coberturas, kilometraje, entrega y devolución. Para maquinaria y transporte, consulte también operador o conductor, combustible, movilización y alcance del trabajo.</p><div className="detail-note"><h2>Documento pendiente</h2><p>Los términos y condiciones completos de alquiler están pendientes de aprobación por A&M. Esta página contiene información sobre la solicitud de cotización y no sustituye el contrato del servicio.</p></div><Link className="button accent" href="/contacto/">Consultar condiciones</Link></article></>;
-}
+export default function TermsPage() { return <ManagedLegalContent prefix="terms" label="Antes de contratar"/>; }

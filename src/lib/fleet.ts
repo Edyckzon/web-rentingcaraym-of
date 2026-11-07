@@ -1,3 +1,4 @@
+import type { Listing } from './marketing';
 import snapshot from './marketing-public.json';
 import type { CatalogImage } from './media';
 import { technicalSheets, type TechnicalSheet } from './technicalSheets';
@@ -14,13 +15,15 @@ export type Vehicle = {
   // Incorporar únicamente especificaciones y tarifas aprobadas de la unidad real.
   specifications?: { label: string; value: string }[];
   dailyRate?: number;
+  seoTitle?: string; seoDescription?: string; idealFor?: string; updatedAt?: string;
 };
 
 // Los archivos originales del catálogo se sirven desde Supabase Storage.
-export const baseFleet: Vehicle[] = snapshot.listings.map(model => {
+export const baseFleet: Vehicle[] = (snapshot.listings as Listing[]).map(model => {
   const details = fleetDetails[model.id];
   const sheet = technicalSheets[model.id];
   return {
+    seoTitle:model.seoTitle, seoDescription:model.seoDescription, idealFor:model.idealFor, updatedAt:model.updatedAt,
     id: model.id, name: model.name, category: model.category, description: model.description,
     referenceSheet: sheet && {...sheet, ...(details && {year: details.year, transmission: details.transmission})},
     specifications: details ? [{label: 'Combustible', value: details.fuel}] : [],

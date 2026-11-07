@@ -1,4 +1,484 @@
 {
+  "blocks": [
+    {
+      "id": "rental-header",
+      "group": "Alquiler",
+      "label": "Encabezado",
+      "title": "Prepare su alquiler con tranquilidad",
+      "body": "Información para comenzar. Las condiciones se confirman en su propuesta.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "rental-requirements",
+      "group": "Alquiler",
+      "label": "Requisitos",
+      "title": "Documentación en regla",
+      "body": "Tenga a mano su documento de identidad vigente y, si conducirá, una licencia vigente que corresponda al vehículo. Para empresas, prepare el RUC y los datos de la persona responsable.\r\n\r\nEl equipo confirmará la documentación, edad y experiencia de conducción requeridas según la unidad y el servicio. Envíe documentos únicamente por el canal que le indiquemos.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "rental-duration",
+      "group": "Alquiler",
+      "label": "Duración",
+      "title": "El tiempo que necesita",
+      "body": "Cuéntenos si busca una unidad por días, semanas o meses, las fechas previstas y el uso que le dará. Evaluaremos la disponibilidad y una propuesta para su solicitud.\r\n\r\nPara movilidad empresarial, indique cuántas unidades necesita y los lugares de operación. La duración y las condiciones se acuerdan antes de contratar.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "rental-guarantee",
+      "group": "Alquiler",
+      "label": "Garantía",
+      "title": "Garantía y condiciones claras",
+      "body": "Consulte por WhatsApp el importe y la modalidad de garantía, así como las condiciones y plazos de devolución aplicables a su alquiler.\r\n\r\nRevise también la tarifa, kilometraje, combustible, coberturas, exclusiones y entrega de la unidad. Una consulta no confirma una reserva ni genera un pago.",
+      "linkLabel": "Consultar requisitos y garantía",
+      "linkUrl": ""
+    },
+    {
+      "id": "rental-rates",
+      "group": "Alquiler",
+      "label": "Tarifas",
+      "title": "Tarifas según su solicitud",
+      "body": "Solicite una cotización indicando el modelo, las fechas y el recorrido previsto. Confirme el importe total, los conceptos incluidos, las formas de pago y cualquier cargo adicional antes de contratar. Las tarifas se acuerdan en la propuesta; enviar una consulta no realiza un pago.",
+      "linkLabel": "Consultar tarifas",
+      "linkUrl": "/contacto/"
+    },
+    {
+      "id": "rental-coverage",
+      "group": "Alquiler",
+      "label": "Coberturas",
+      "title": "Revise las coberturas",
+      "body": "Pida al equipo el detalle de las coberturas aplicables a la unidad, sus límites, exclusiones y deducibles, si corresponden. Confirme también el uso autorizado, el kilometraje y las indicaciones ante un incidente. No asuma una cobertura que no figure en las condiciones del servicio.",
+      "linkLabel": "Consultar coberturas",
+      "linkUrl": "/contacto/"
+    },
+    {
+      "id": "faq-header",
+      "group": "Preguntas frecuentes",
+      "label": "Encabezado",
+      "title": "Preguntas frecuentes sobre el alquiler de autos",
+      "body": "Estamos para ayudarle a elegir el servicio adecuado.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "faq-01",
+      "group": "Preguntas frecuentes",
+      "label": "¿Cómo solicito una cotización?",
+      "title": "¿Cómo solicito una cotización?",
+      "body": "Elija un modelo o servicio y pulse Cotizar. También puede completar el formulario de contacto para preparar un mensaje y enviarlo por WhatsApp.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "faq-02",
+      "group": "Preguntas frecuentes",
+      "label": "¿Cuáles son los requisitos para alquilar un auto en Lima?",
+      "title": "¿Cuáles son los requisitos para alquilar un auto en Lima?",
+      "body": "Prepare su documento de identidad vigente y la licencia vigente de quien conducirá. Para empresas, indique el RUC y un contacto responsable. El equipo confirmará los requisitos específicos, la documentación y las condiciones de garantía según el servicio.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "faq-03",
+      "group": "Preguntas frecuentes",
+      "label": "¿Cuánto es la garantía y cuándo se devuelve?",
+      "title": "¿Cuánto es la garantía y cuándo se devuelve?",
+      "body": "Consulte por WhatsApp el importe, la modalidad y las condiciones y plazos de devolución. Estos puntos deben quedar definidos en su propuesta y contrato antes de confirmar el alquiler.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "faq-04",
+      "group": "Preguntas frecuentes",
+      "label": "¿Puedo solicitar alquiler por días, semanas o meses?",
+      "title": "¿Puedo solicitar alquiler por días, semanas o meses?",
+      "body": "Indique las fechas y la duración que necesita. Nuestro equipo evaluará disponibilidad y condiciones para su solicitud, tanto personal como empresarial.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "faq-05",
+      "group": "Preguntas frecuentes",
+      "label": "¿Pueden entregar el vehículo y emitir un comprobante?",
+      "title": "¿Pueden entregar el vehículo y emitir un comprobante?",
+      "body": "Indique el lugar de entrega y recojo, y los datos de facturación al cotizar. Confirme con el equipo el comprobante correspondiente, las opciones de entrega y cualquier costo adicional antes de contratar.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "faq-06",
+      "group": "Preguntas frecuentes",
+      "label": "¿Qué incluye la tarifa y el seguro?",
+      "title": "¿Qué incluye la tarifa y el seguro?",
+      "body": "La tarifa, el kilometraje, las coberturas y las formas de pago se detallan en la propuesta. Consúltelos antes de confirmar el alquiler.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "faq-07",
+      "group": "Preguntas frecuentes",
+      "label": "¿Puedo alquilar con chofer o sin chofer?",
+      "title": "¿Puedo alquilar con chofer o sin chofer?",
+      "body": "Indique si necesita conductor u operador al solicitar la cotización. Nuestro equipo confirmará las opciones para su servicio.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "faq-08",
+      "group": "Preguntas frecuentes",
+      "label": "¿Atienden proyectos fuera de Lima?",
+      "title": "¿Atienden proyectos fuera de Lima?",
+      "body": "Indique el lugar de obra o el origen y destino de la carga. La cobertura y movilización se evalúan para cada solicitud.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "faq-09",
+      "group": "Preguntas frecuentes",
+      "label": "¿Enviar una consulta confirma mi reserva?",
+      "title": "¿Enviar una consulta confirma mi reserva?",
+      "body": "La solicitud inicia una conversación. La disponibilidad, las condiciones y la contratación se coordinan directamente con nuestro equipo.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "why-header",
+      "group": "Ventajas",
+      "label": "Encabezado",
+      "title": "¿Por qué alquilar con Renting Car A&M?",
+      "body": "Conozca nuestra atención y servicios.",
+      "linkLabel": "Conozca Renting Car A&M",
+      "linkUrl": "/nosotros/"
+    },
+    {
+      "id": "why-01",
+      "group": "Ventajas",
+      "label": "Dos líneas de servicio",
+      "title": "Dos líneas de servicio",
+      "body": "Vehículos livianos, maquinaria y transporte de carga en un mismo lugar.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "why-02",
+      "group": "Ventajas",
+      "label": "Taller propio en Surco",
+      "title": "Taller propio en Surco",
+      "body": "Contamos con un taller de reparación en nuestra sede de Santiago de Surco.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "why-03",
+      "group": "Ventajas",
+      "label": "Personas y empresas",
+      "title": "Personas y empresas",
+      "body": "Cuéntenos su necesidad de movilidad o el trabajo que requiere su proyecto.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "why-04",
+      "group": "Ventajas",
+      "label": "Atención directa",
+      "title": "Atención directa",
+      "body": "Visítenos en Surco o converse con nuestro equipo por WhatsApp.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "steps-header",
+      "group": "Cómo trabajamos",
+      "label": "Encabezado",
+      "title": "Pasos para alquilar su vehículo",
+      "body": "Coordinamos los detalles de su servicio con atención personalizada.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "step-01",
+      "group": "Cómo trabajamos",
+      "label": "Paso 1",
+      "title": "Elija su vehículo o servicio",
+      "body": "Explore nuestra flota liviana y las opciones de maquinaria y transporte.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "step-02",
+      "group": "Cómo trabajamos",
+      "label": "Paso 2",
+      "title": "Solicite su cotización",
+      "body": "Indique fechas, ubicación y necesidades para recibir una propuesta.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "step-03",
+      "group": "Cómo trabajamos",
+      "label": "Paso 3",
+      "title": "Coordine documentos y contrato",
+      "body": "Revise con nuestro equipo los requisitos, las condiciones y la disponibilidad.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "step-04",
+      "group": "Cómo trabajamos",
+      "label": "Paso 4",
+      "title": "Reciba su unidad",
+      "body": "Una vez acordado el servicio, coordine la entrega o el inicio del trabajo.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "closing",
+      "group": "Contacto y llamados",
+      "label": "Invitación a cotizar",
+      "title": "¿Necesita un vehículo o equipo?",
+      "body": "Solicite una cotización con los detalles de su servicio.",
+      "linkLabel": "Solicitar cotización",
+      "linkUrl": "/contacto/#cotizacion"
+    },
+    {
+      "id": "vehicle-conditions",
+      "group": "Alquiler",
+      "label": "Condiciones en las fichas",
+      "title": "Condiciones de su alquiler",
+      "body": "La propuesta detalla tarifa, requisitos, garantía, kilometraje y coberturas. Confirme disponibilidad y condiciones con nuestro equipo.",
+      "linkLabel": "Consultar condiciones",
+      "linkUrl": "/como-funciona/"
+    },
+    {
+      "id": "complaints-header",
+      "group": "Reclamaciones",
+      "label": "Encabezado",
+      "title": "Libro de Reclamaciones",
+      "body": "Información del canal de atención.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "complaints-status",
+      "group": "Reclamaciones",
+      "label": "Estado del registro",
+      "title": "Registro virtual pendiente de habilitación",
+      "body": "El Libro de Reclamaciones virtual aún no está habilitado en esta web. Esta página no registra una reclamación ni emite una constancia.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "complaints-channel",
+      "group": "Reclamaciones",
+      "label": "Canal y enlace al Libro",
+      "title": "Consulte el canal de registro",
+      "body": "Para consultar por el canal de registro disponible, contacte a Renting Car A&M mediante los datos de atención indicados en esta página.\r\n\r\nUna consulta por correo, teléfono o WhatsApp no se presenta aquí como sustituto del Libro de Reclamaciones.",
+      "linkLabel": "Consultar canal de atención",
+      "linkUrl": "/contacto/"
+    },
+    {
+      "id": "terms-header",
+      "group": "Condiciones",
+      "label": "Encabezado",
+      "title": "Condiciones de cotización",
+      "body": "Revise las condiciones de su servicio con nuestro equipo antes de confirmar.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "terms-01",
+      "group": "Condiciones",
+      "label": "Solicitud de información",
+      "title": "Solicitud de información",
+      "body": "El catálogo y el formulario permiten solicitar una propuesta. Preparar o enviar un mensaje no confirma una reserva ni realiza un pago.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "terms-02",
+      "group": "Condiciones",
+      "label": "Disponibilidad y características",
+      "title": "Disponibilidad y características",
+      "body": "Solicite la confirmación del modelo, versión, características y disponibilidad de la unidad para sus fechas. Las fotografías identificadas como referenciales no corresponden a la unidad ofrecida.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "terms-03",
+      "group": "Condiciones",
+      "label": "Condiciones de cada servicio",
+      "title": "Condiciones de cada servicio",
+      "body": "La propuesta y el contrato deben precisar tarifa, garantía, documentos requeridos, coberturas, kilometraje, entrega y devolución. Para maquinaria y transporte, consulte también operador o conductor, combustible, movilización y alcance del trabajo.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "terms-04",
+      "group": "Condiciones",
+      "label": "Documento pendiente",
+      "title": "Documento pendiente",
+      "body": "Los términos y condiciones completos de alquiler están pendientes de aprobación por A&M. Esta página contiene información sobre la solicitud de cotización y no sustituye el contrato del servicio.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "privacy-header",
+      "group": "Privacidad",
+      "label": "Encabezado",
+      "title": "Privacidad de su solicitud",
+      "body": "Cómo funciona el formulario de cotización de esta web.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "privacy-01",
+      "group": "Privacidad",
+      "label": "Datos que usted decide compartir",
+      "title": "Datos que usted decide compartir",
+      "body": "El formulario le permite preparar una consulta con su nombre, teléfono, correo opcional, empresa y RUC opcionales, fechas, ubicación y descripción del servicio. Estos datos se incorporan al mensaje que usted revisa antes de enviarlo.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "privacy-02",
+      "group": "Privacidad",
+      "label": "Preparación y envío del mensaje",
+      "title": "Preparación y envío del mensaje",
+      "body": "El formulario prepara el resumen en su navegador. Esta web no envía el formulario a un servidor ni guarda sus datos en una base de datos. Al pulsar «Abrir WhatsApp», el mensaje se comparte con WhatsApp mediante un enlace. Para que Renting Car A&M lo reciba, debe enviarlo dentro de esa aplicación.\r\n\r\nLos datos que envíe se solicitan para atender su consulta y coordinar la cotización. No incluya números de tarjeta, documentos de identidad ni información que no sea necesaria para describir el servicio.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "privacy-03",
+      "group": "Privacidad",
+      "label": "Servicios externos",
+      "title": "Servicios externos",
+      "body": "Los enlaces de WhatsApp, correo, Google Maps y Waze abren servicios de terceros. El mapa integrado y las fuentes de Google también pueden establecer conexiones con sus proveedores. El uso de esos servicios se rige por sus propias condiciones de privacidad.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "privacy-04",
+      "group": "Privacidad",
+      "label": "Consultas sobre sus datos",
+      "title": "Consultas sobre sus datos",
+      "body": "Puede comunicarse con Renting Car A&M por los canales de atención indicados en esta página para consultar sobre los datos que ha compartido.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "privacy-05",
+      "group": "Privacidad",
+      "label": "Alcance de esta información",
+      "title": "Alcance de esta información",
+      "body": "Este aviso describe el funcionamiento actual del sitio. La política completa de la empresa, con identificación de la entidad responsable y condiciones de tratamiento, está pendiente de validación por A&M.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "footer-summary",
+      "group": "Contacto y llamados",
+      "label": "Presentación del pie",
+      "title": "Renting Car A&M",
+      "body": "Alquiler de autos, camionetas y maquinaria pesada en Santiago de Surco, Lima.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "contact-intro",
+      "group": "Contacto y llamados",
+      "label": "Tarjeta de contacto",
+      "title": "Alquiler de autos en Santiago de Surco: visítenos",
+      "body": "Vehículos, maquinaria, transporte y taller de reparación.",
+      "linkLabel": "",
+      "linkUrl": ""
+    }
+  ],
+  "pages": [
+    {
+      "path": "/",
+      "title": "Alquiler de autos y camionetas en Lima",
+      "description": "Alquiler de autos, camionetas y maquinaria en Lima para personas y empresas. Atención desde Santiago de Surco. Solicite su cotización.",
+      "heading": "Alquiler de autos, camionetas y maquinaria en Lima",
+      "intro": "Alquiler de autos y camionetas para personas y empresas, con atención personalizada desde Santiago de Surco, Lima.",
+      "updatedAt": "2026-11-07T16:24:04.041603+00:00"
+    },
+    {
+      "path": "/alquiler-para-empresas/",
+      "title": "Alquiler de camionetas para empresas",
+      "description": "Alquiler de camionetas y autos para empresas en Lima. Atención directa desde Surco y taller propio. Consulte plazos y solicite una propuesta.",
+      "heading": "Alquiler de camionetas para empresas en Lima",
+      "intro": "Camionetas SUV y autos para la movilidad de su equipo de trabajo, con atención directa desde Santiago de Surco.",
+      "updatedAt": "2026-11-07T16:24:04.041603+00:00"
+    },
+    {
+      "path": "/como-funciona/",
+      "title": "Cómo alquilar un auto en Lima",
+      "description": "Conozca los pasos para cotizar un auto o camioneta en Lima. Coordine documentos, garantía y entrega con Renting Car A&M en Surco.",
+      "heading": "Cómo alquilar un auto o camioneta en Lima",
+      "intro": "Elija su modelo y consulte los requisitos aplicables a su unidad antes de confirmar el alquiler.",
+      "updatedAt": "2026-11-07T16:24:04.041603+00:00"
+    },
+    {
+      "path": "/contacto/",
+      "title": "Cotice su alquiler de auto en Surco",
+      "description": "Cotice el alquiler de su auto, camioneta o maquinaria en Lima. Visítenos en Av. Santiago de Surco 3573, Surco, o escríbanos por WhatsApp.",
+      "heading": "Cotice el alquiler de su auto, camioneta o maquinaria",
+      "intro": "Comparta las fechas y características del servicio que necesita. Nuestro equipo en Santiago de Surco preparará su propuesta.",
+      "updatedAt": "2026-11-07T16:24:04.041603+00:00"
+    },
+    {
+      "path": "/flota/",
+      "title": "Alquiler de camionetas y autos en Lima",
+      "description": "Explore camionetas SUV, sedanes y autos familiares en Lima: Ford Territory, Changan X7 Plus, Toyota Yaris y más. Consulte disponibilidad.",
+      "heading": "Flota de autos y camionetas en alquiler en Lima",
+      "intro": "Camionetas SUV, sedanes y vehículos familiares para la movilidad de personas y empresas. Consulte fechas, modelos y condiciones.",
+      "updatedAt": "2026-11-07T16:24:04.041603+00:00"
+    },
+    {
+      "path": "/maquinaria-y-transporte/",
+      "title": "Alquiler de maquinaria pesada en Lima",
+      "description": "Alquiler de maquinaria pesada en Lima: excavadora CAT 330DL, volquetes y transporte de carga con camiones Volvo y Scania. Cotice su proyecto.",
+      "heading": "Alquiler de maquinaria pesada y transporte de carga",
+      "intro": "Excavadora CAT 330DL, volquetes y transporte de carga en Lima. Consulte operador, movilización y condiciones para su proyecto.",
+      "updatedAt": "2026-11-07T16:24:04.041603+00:00"
+    },
+    {
+      "path": "/maquinaria-y-transporte/excavadora-cat-330dl/",
+      "title": "Alquiler de excavadora CAT 330DL en Lima",
+      "description": "Alquiler de excavadora CAT 330DL en Lima para excavación y movimiento de tierras. Comparta ubicación y fechas; consulte operador y movilización.",
+      "heading": "Alquiler de excavadora CAT 330DL en Lima",
+      "intro": "Excavadora para zanjas, movimiento de tierras y carga de volquetes. Cuéntenos el trabajo y la ubicación de la obra para evaluar su solicitud.",
+      "updatedAt": "2026-11-07T16:24:04.041603+00:00"
+    },
+    {
+      "path": "/maquinaria-y-transporte/transporte-de-carga/",
+      "title": "Transporte de carga en Lima",
+      "description": "Transporte de carga en Lima con camiones y tractos Volvo y Scania. Cotice su traslado indicando origen, destino, fechas y tipo de mercancía.",
+      "heading": "Transporte de carga pesada con camiones y tractos",
+      "intro": "Transporte de carga con camiones y tractos Volvo y Scania. Comparta la ruta, el peso y las dimensiones de su carga para evaluar el servicio.",
+      "updatedAt": "2026-11-07T16:24:04.041603+00:00"
+    },
+    {
+      "path": "/maquinaria-y-transporte/volquetes/",
+      "title": "Alquiler de volquetes en Lima",
+      "description": "Alquiler de volquetes en Lima para eliminación de desmonte y traslado de material de obra. Comparta ubicación, fechas y volumen para cotizar.",
+      "heading": "Alquiler de volquetes en Lima",
+      "intro": "Volquetes para eliminación de desmonte, traslado de agregados y apoyo a obras. Indique volumen, tipo de material y recorrido.",
+      "updatedAt": "2026-11-07T16:24:04.041603+00:00"
+    },
+    {
+      "path": "/nosotros/",
+      "title": "Empresa de alquiler de autos en Surco",
+      "description": "Renting Car A&M: alquiler de autos, camionetas y maquinaria con taller propio en Santiago de Surco, Lima. Atención a personas y empresas.",
+      "heading": "Renting Car A&M: alquiler de autos y maquinaria en Surco",
+      "intro": "Alquiler de autos, camionetas, maquinaria y transporte de carga para personas y empresas en Lima.",
+      "updatedAt": "2026-11-07T16:24:04.041603+00:00"
+    }
+  ],
   "title": "Alquiler de vehículos,\r\nmaquinaria y",
   "accent": "transporte de carga.",
   "slogan": "Movilidad para su día a día.\r\nEquipo para sus proyectos.",
@@ -7,6 +487,11 @@
   "firstUrl": "/flota/",
   "secondLabel": "Maquinaria y transporte",
   "secondUrl": "/maquinaria-y-transporte/",
+  "email": "rentingcaraym@gmail.com",
+  "adminEmail": "administracion@grupoaym.com",
+  "address": "Av. Santiago de Surco 3573, Santiago de Surco 15038",
+  "groupUrl": "https://grupoaym.com/",
+  "hours": "9:00 a. m. a 6:00 p. m.",
   "phone": "01 4800-300",
   "whatsapp": "51993334984",
   "maps": "https://www.google.com/maps/search/?api=1&query=Av.%20Santiago%20de%20Surco%203573%2C%20Santiago%20de%20Surco%2015038",
@@ -21,7 +506,11 @@
       "id": "changan-alsvin",
       "name": "Changan Alsvin",
       "category": "Sedán",
-      "description": "Solicite una cotización para el alquiler de Changan Alsvin. Nuestro equipo le ayudará a coordinar las fechas, el lugar de recojo y las condiciones del servicio.",
+      "description": "Alquiler de Changan Alsvin en Lima para sus desplazamientos personales o de trabajo. Nuestra unidad 2022 cuenta con transmisión mecánica y combustible dual gasolina/GLP. Consulte disponibilidad para sus fechas y coordine el recojo con nuestro equipo en Santiago de Surco.",
+      "seoTitle": "Alquiler de Changan Alsvin en Lima",
+      "seoDescription": "Alquiler de Changan Alsvin en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
+      "idealFor": "El Changan Alsvin es una opción para organizar sus desplazamientos personales, visitas a clientes y trámites en Lima. Su formato sedán permite considerar una alternativa a una camioneta cuando la prioridad es la movilidad cotidiana. La unidad de la flota es de transmisión mecánica y bicombustible GLP; consulte si sus características se ajustan al recorrido que tiene previsto.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
+      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
       "featured": false,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/63e5864b5803bd4f7d617b3a4183aea6b42014dd237ce9c4cea848ee74c2410f.png",
@@ -33,7 +522,11 @@
       "id": "changan-cx70",
       "name": "Changan CX70",
       "category": "SUV",
-      "description": "Solicite una cotización para el alquiler de Changan CX70. Nuestro equipo le ayudará a coordinar las fechas, el lugar de recojo y las condiciones del servicio.",
+      "description": "Alquiler de Changan CX70 en Lima para quienes buscan una camioneta SUV para su movilidad familiar o laboral. Contamos con una unidad 2023 de transmisión mecánica y combustible dual gasolina/GLP. Indíquenos las fechas y el número de pasajeros para confirmar la configuración y preparar su cotización desde Surco.",
+      "seoTitle": "Alquiler de Changan CX70 en Lima",
+      "seoDescription": "Alquiler de Changan CX70 en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
+      "idealFor": "El Changan CX70 permite evaluar una opción SUV de transmisión mecánica para movilidad personal o de trabajo. La unidad utiliza sistema bicombustible GLP. Puede compararla con otros modelos del catálogo según su recorrido, número de acompañantes y fechas de alquiler. Si habrá más de un conductor, indíquelo al cotizar para revisar la documentación y las condiciones aplicables antes de contratar.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
+      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
       "featured": true,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/e58a3faa544ab1a2f206f20fa643864df6834791ce036bf7d8afa706614bdc46.jpeg"
@@ -43,7 +536,11 @@
       "id": "changan-x7-plus",
       "name": "Changan X7 Plus",
       "category": "SUV",
-      "description": "Solicite una cotización para el alquiler de Changan X7 Plus. Nuestro equipo le ayudará a coordinar las fechas, el lugar de recojo y las condiciones del servicio.",
+      "description": "Alquiler de Changan X7 Plus en Lima para su movilidad personal, familiar o empresarial. Nuestra unidad 2026 tiene transmisión automática y combustible dual gasolina/GLP. Cuéntenos cuántas personas viajarán y las fechas de uso para confirmar disponibilidad y coordinar su alquiler desde Santiago de Surco.",
+      "seoTitle": "Alquiler de Changan X7 Plus en Lima",
+      "seoDescription": "Alquiler de Changan X7 Plus en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
+      "idealFor": "El Changan X7 Plus puede acompañar una agenda de reuniones, visitas familiares o desplazamientos de trabajo en Lima. Es una alternativa para quienes buscan una SUV de transmisión automática y desean comparar opciones para su movilidad personal o empresarial. Al cotizar, indique cuántas personas viajarán y el equipaje previsto para que nuestro equipo confirme la configuración de la unidad.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
+      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
       "featured": true,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/6c2266d0eebd583289925363b32ec32e4d542173465a28c2a6aa7a07a554cac9.png",
@@ -68,7 +565,11 @@
       "id": "ford-territory",
       "name": "Ford Territory",
       "category": "SUV",
-      "description": "Solicite una cotización para el alquiler de Ford Territory. Nuestro equipo le ayudará a coordinar las fechas, el lugar de recojo y las condiciones del servicio.",
+      "description": "Alquiler de Ford Territory en Lima para sus traslados personales, familiares o ejecutivos. Disponemos de una SUV 2026 con transmisión automática y motor a gasolina. Solicite una propuesta indicando sus fechas y necesidades de movilidad; nuestro equipo en Surco le confirmará disponibilidad, requisitos y condiciones.",
+      "seoTitle": "Alquiler de Ford Territory en Lima",
+      "seoDescription": "Alquiler de Ford Territory en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
+      "idealFor": "La Ford Territory es una alternativa para quienes buscan una SUV automática para su agenda personal o ejecutiva en Lima. Puede considerarla para visitas comerciales, reuniones en distintas sedes o desplazamientos familiares. Esta unidad utiliza gasolina. Cuéntenos el uso previsto, el recorrido y las fechas: así podrá comparar su propuesta con otras camionetas de la flota antes de decidir.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
+      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
       "featured": true,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f341b08ca4143296a7bea8805e9b3bea7c9b4b70c2732958df09b84c99f34a56.jpeg"
@@ -78,7 +579,11 @@
       "id": "glory-560",
       "name": "Glory 560",
       "category": "SUV",
-      "description": "Solicite una cotización para el alquiler de Glory 560. Nuestro equipo le ayudará a coordinar las fechas, el lugar de recojo y las condiciones del servicio.",
+      "description": "Alquiler de Glory 560 en Lima para organizar su movilidad personal o de trabajo con una camioneta SUV. Nuestra unidad 2023 cuenta con transmisión mecánica y combustible dual gasolina/GLP. Consulte con nuestro equipo en Santiago de Surco la disponibilidad, capacidad de la unidad y condiciones para las fechas que necesita.",
+      "seoTitle": "Alquiler de Glory 560 en Lima",
+      "seoDescription": "Alquiler de Glory 560 en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
+      "idealFor": "El Glory 560 es una alternativa SUV de transmisión mecánica para organizar su movilidad en Lima. Puede considerarlo al comparar unidades para una agenda de trabajo o desplazamientos personales. La unidad de la flota utiliza sistema bicombustible GLP. Comparta el lugar de uso, la duración estimada y las necesidades de sus acompañantes para recibir una propuesta ajustada a su solicitud.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
+      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
       "featured": false,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/5f209eca426f950e65b5c40929a1ca60892652726dc6b6d636e82beaa44f7fd3.jpeg"
@@ -88,7 +593,11 @@
       "id": "glory-580",
       "name": "Glory 580",
       "category": "SUV",
-      "description": "Solicite una cotización para el alquiler de Glory 580. Nuestro equipo le ayudará a coordinar las fechas, el lugar de recojo y las condiciones del servicio.",
+      "description": "Alquiler de Glory 580 en Lima para sus planes familiares o necesidades de movilidad empresarial. Contamos con una SUV 2023 de transmisión mecánica y combustible dual gasolina/GLP. Comparta las fechas, el número de pasajeros y el uso previsto para recibir una cotización personalizada desde nuestra sede en Surco.",
+      "seoTitle": "Alquiler de Glory 580 en Lima",
+      "seoDescription": "Alquiler de Glory 580 en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
+      "idealFor": "El Glory 580 puede ser una alternativa para quienes desean comparar una SUV mecánica para sus traslados familiares o de empresa. Su sistema bicombustible GLP forma parte de la información de esta unidad. Confirme la capacidad y disposición de asientos, especialmente si llevará varios pasajeros con equipaje. Explique su itinerario para revisar el uso autorizado y la disponibilidad para sus fechas.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
+      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
       "featured": false,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f6e6528a9fd14a4fde66aeb3a50e59b0720b03e49652d438026fbc160879da5b.jpeg"
@@ -98,7 +607,11 @@
       "id": "hyundai-accent",
       "name": "Hyundai Accent",
       "category": "Sedán",
-      "description": "Solicite una cotización para el alquiler de Hyundai Accent. Nuestro equipo le ayudará a coordinar las fechas, el lugar de recojo y las condiciones del servicio.",
+      "description": "Alquiler de Hyundai Accent en Lima para desplazamientos personales, gestiones o compromisos de trabajo. Consulte la versión, transmisión y características de la unidad disponible antes de reservar. Nuestro equipo en Santiago de Surco le ayudará a coordinar las fechas, los requisitos y el lugar de recojo.",
+      "seoTitle": "Alquiler de Hyundai Accent en Lima",
+      "seoDescription": "Alquiler de Hyundai Accent en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
+      "idealFor": "El Hyundai Accent es una alternativa de formato sedán para organizar una agenda de visitas, trámites o reuniones en Lima. Puede considerarlo para movilidad personal y para desplazamientos de colaboradores, según el uso acordado. Antes de elegir, solicite la versión, transmisión, año y características de la unidad disponible; la ficha del modelo no sustituye esa confirmación para su alquiler.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
+      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
       "featured": false,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/d96af29c5d52ef5857dc9555ac8b12675f58672396b706c3676a4b4e898e2624.jpeg"
@@ -108,7 +621,11 @@
       "id": "hyundai-verna",
       "name": "Hyundai Verna",
       "category": "Sedán",
-      "description": "Solicite una cotización para el alquiler de Hyundai Verna. Nuestro equipo le ayudará a coordinar las fechas, el lugar de recojo y las condiciones del servicio.",
+      "description": "Alquiler de Hyundai Verna en Lima para su movilidad diaria o laboral. Consulte nuestras opciones 2022 con transmisión automática o mecánica y combustible dual gasolina/GLP, sujetas a disponibilidad. Indique qué caja prefiere y sus fechas para que nuestro equipo en Surco prepare una propuesta acorde a su solicitud.",
+      "seoTitle": "Alquiler de Hyundai Verna en Lima",
+      "seoDescription": "Alquiler de Hyundai Verna en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
+      "idealFor": "El Hyundai Verna puede ser una opción para sus traslados cotidianos, reuniones de trabajo y gestiones en Lima. Su formato sedán permite evaluar una unidad para movilidad personal o de empresa sin elegir una SUV. La flota contempla versiones automáticas y mecánicas; indique su preferencia al cotizar. Confirme cuál está disponible para sus fechas y las características de la unidad ofrecida.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
+      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
       "featured": false,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/679fb5e3a2cfb14e886d00a81394224b986a9f4e5cffab7a2b884b3bccf8804b.jpeg"
@@ -118,7 +635,11 @@
       "id": "jac-s8",
       "name": "JAC JS8",
       "category": "SUV",
-      "description": "Solicite una cotización para el alquiler de JAC JS8. Nuestro equipo le ayudará a coordinar las fechas, el lugar de recojo y las condiciones del servicio.",
+      "description": "Alquiler de JAC JS8 en Lima para sus traslados familiares o de empresa. Nuestra SUV 2023 cuenta con transmisión automática y combustible dual gasolina/GLP. Indique las fechas de uso, los pasajeros y el equipaje previsto para confirmar la capacidad de la unidad y coordinar su cotización desde Santiago de Surco.",
+      "seoTitle": "Alquiler de JAC JS8 en Lima",
+      "seoDescription": "Alquiler de JAC JS8 en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
+      "idealFor": "El JAC JS8 es una alternativa SUV para comparar cuando necesita organizar traslados familiares o de trabajo. La unidad de la flota cuenta con transmisión automática y sistema bicombustible GLP. Indique el número de ocupantes, el equipaje y el recorrido previsto para confirmar que la configuración ofrecida se ajusta a su necesidad. La atención y coordinación se realizan desde Surco.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
+      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
       "featured": false,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f27167d00fb1a74c0b16106f473938b7be836dd8eb3b903e9ee82e513af2fd25.jpeg"
@@ -128,7 +649,11 @@
       "id": "jetur-x70",
       "name": "Jetour X70",
       "category": "SUV",
-      "description": "Solicite una cotización para el alquiler de Jetour X70. Nuestro equipo le ayudará a coordinar las fechas, el lugar de recojo y las condiciones del servicio.",
+      "description": "Alquiler de Jetour X70 en Lima para quienes buscan una camioneta SUV para su familia o equipo de trabajo. Consulte la versión, transmisión y capacidad de la unidad disponible. Comparta sus fechas y necesidades con Renting Car A&M para coordinar el recojo y las condiciones del alquiler desde Surco.",
+      "seoTitle": "Alquiler de Jetour X70 en Lima",
+      "seoDescription": "Alquiler de Jetour X70 en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
+      "idealFor": "El Jetour X70 puede considerarse para movilidad familiar o empresarial cuando busca una alternativa SUV. Para elegir con información suficiente, indique cuántas personas viajarán, qué equipaje llevarán y las fechas previstas. Consulte la versión, transmisión y capacidad de la unidad disponible antes de contratar. Nuestro equipo puede orientarle al comparar esta opción con las demás camionetas del catálogo.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
+      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
       "featured": true,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/3eb9969ad7b6f77cc31b7fde8ad8066ba317e8ab350b550324e6a9a44d057710.jpeg"
@@ -138,7 +663,11 @@
       "id": "suzuki-ertiga",
       "name": "Suzuki Ertiga",
       "category": "Familiar / 7 asientos",
-      "description": "Solicite una cotización para el alquiler de Suzuki Ertiga. Nuestro equipo le ayudará a coordinar las fechas, el lugar de recojo y las condiciones del servicio.",
+      "description": "Alquiler de Suzuki Ertiga en Lima para su movilidad familiar o grupal. Nuestra unidad 2020 cuenta con transmisión automática y motor a gasolina. Indíquenos cuántas personas viajarán y cuánto equipaje llevarán para confirmar la distribución disponible y preparar su cotización con atención desde Santiago de Surco.",
+      "seoTitle": "Alquiler de Suzuki Ertiga en Lima",
+      "seoDescription": "Alquiler de Suzuki Ertiga en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
+      "idealFor": "La Suzuki Ertiga es una alternativa de la categoría familiar para quienes necesitan planificar traslados con varios acompañantes. Su transmisión automática puede ser una preferencia al elegir su próxima unidad. Indique la cantidad de pasajeros y el equipaje antes de confirmar: ocupar todas las plazas cambia el espacio disponible para maletas. Consulte la configuración ofrecida y las condiciones del recorrido.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
+      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
       "featured": true,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/49492f2f6d425e5229a9e4a2abdb8a614bea3cdb47ccfd9f7a5d570ecc5ad9fb.png",
@@ -153,7 +682,11 @@
       "id": "toyota-yaris",
       "name": "Toyota Yaris",
       "category": "Sedán",
-      "description": "Solicite una cotización para el alquiler de Toyota Yaris. Nuestro equipo le ayudará a coordinar las fechas, el lugar de recojo y las condiciones del servicio.",
+      "description": "Alquiler de Toyota Yaris en Lima para sus desplazamientos personales, trámites o actividades de trabajo. Nuestra unidad 2010 tiene transmisión mecánica y combustible dual gasolina/GLP. Consulte disponibilidad y requisitos para sus fechas; coordinamos su cotización y recojo desde Santiago de Surco.",
+      "seoTitle": "Alquiler de Toyota Yaris en Lima",
+      "seoDescription": "Alquiler de Toyota Yaris en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
+      "idealFor": "El Toyota Yaris es una alternativa sedán de transmisión mecánica para quienes buscan organizar desplazamientos personales o una agenda de gestiones en Lima. La unidad de la flota es del año 2010 y utiliza sistema bicombustible GLP. Considere esos datos al comparar modelos y solicite información actual de la unidad antes de decidir. La propuesta se prepara según sus fechas y recorrido.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
+      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
       "featured": true,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/24f7a7927c130fc32869506d062ef2a9e563bf367c4b7c05d41ea100c0e05f5d.jpeg"
@@ -190,7 +723,7 @@
     },
     {
       "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/e58a3faa544ab1a2f206f20fa643864df6834791ce036bf7d8afa706614bdc46.jpeg",
-      "alt": "Changan CX70 front",
+      "alt": "SUV Changan CX70 en alquiler en Lima — imagen referencial",
       "credit": "Rutger van der Maar",
       "reference": true,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Changan_CX70_front.jpg",
@@ -343,7 +876,7 @@
     },
     {
       "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f341b08ca4143296a7bea8805e9b3bea7c9b4b70c2732958df09b84c99f34a56.jpeg",
-      "alt": "2023 Ford Territory (China), front 8.3.23",
+      "alt": "SUV Ford Territory en alquiler en Lima — imagen referencial",
       "credit": "Kevauto",
       "reference": true,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:2023_Ford_Territory_(China),_front_8.3.23.jpg",
@@ -352,7 +885,7 @@
     },
     {
       "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/5f209eca426f950e65b5c40929a1ca60892652726dc6b6d636e82beaa44f7fd3.jpeg",
-      "alt": "2019 DFSK Glory 560 L-Type 1.5 (20191020) 01",
+      "alt": "SUV Glory 560 en alquiler en Lima — imagen referencial",
       "credit": "オーバードライブ83",
       "reference": true,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:2019_DFSK_Glory_560_L-Type_1.5_(20191020)_01.jpg",
@@ -361,7 +894,7 @@
     },
     {
       "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f6e6528a9fd14a4fde66aeb3a50e59b0720b03e49652d438026fbc160879da5b.jpeg",
-      "alt": "2017 Dongfeng-Fengguang 580, front 8.3.18",
+      "alt": "SUV Glory 580 en alquiler en Lima — imagen referencial",
       "credit": "Kevauto",
       "reference": true,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017_Dongfeng-Fengguang_580,_front_8.3.18.jpg",
@@ -370,7 +903,7 @@
     },
     {
       "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/d96af29c5d52ef5857dc9555ac8b12675f58672396b706c3676a4b4e898e2624.jpeg",
-      "alt": "2020 Hyundai Accent Essential in Urban Grey, Front Right, 05-23-2023",
+      "alt": "Sedán Hyundai Accent en alquiler en Lima — imagen referencial",
       "credit": "Elise240SX",
       "reference": true,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:2020_Hyundai_Accent_Essential_in_Urban_Grey,_Front_Right,_05-23-2023.jpg",
@@ -379,7 +912,7 @@
     },
     {
       "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/679fb5e3a2cfb14e886d00a81394224b986a9f4e5cffab7a2b884b3bccf8804b.jpeg",
-      "alt": "2020 Hyundai Verna Facelift China RC (1)",
+      "alt": "Sedán Hyundai Verna en alquiler en Lima — imagen referencial",
       "credit": "Avante2025",
       "reference": true,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:2020_Hyundai_Verna_Facelift_China_RC_(1).jpg",
@@ -388,7 +921,7 @@
     },
     {
       "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f27167d00fb1a74c0b16106f473938b7be836dd8eb3b903e9ee82e513af2fd25.jpeg",
-      "alt": "2022 JAC JS8 1.5 TGDi Luxury",
+      "alt": "SUV JAC JS8 en alquiler en Lima — imagen referencial",
       "credit": "RL GNZLZ",
       "reference": true,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:2022_JAC_JS8_1.5_TGDi_Luxury.jpg",
@@ -397,7 +930,7 @@
     },
     {
       "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/3eb9969ad7b6f77cc31b7fde8ad8066ba317e8ab350b550324e6a9a44d057710.jpeg",
-      "alt": "2018 Chery Jetour X70, front 8.7.18",
+      "alt": "SUV Jetour X70 en alquiler en Lima — imagen referencial",
       "credit": "Kevauto",
       "reference": true,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:2018_Chery_Jetour_X70,_front_8.7.18.jpg",
@@ -460,7 +993,7 @@
     },
     {
       "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/24f7a7927c130fc32869506d062ef2a9e563bf367c4b7c05d41ea100c0e05f5d.jpeg",
-      "alt": "2009 Toyota Yaris (NCP93R) YRX sedan (2010-11-09) 01",
+      "alt": "Sedán Toyota Yaris en alquiler en Lima — imagen referencial",
       "credit": "Brenden Ashton",
       "reference": true,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:2009_Toyota_Yaris_(NCP93R)_YRX_sedan_(2010-11-09)_01.jpg",

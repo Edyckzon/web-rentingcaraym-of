@@ -20,7 +20,7 @@ export function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
     <div className="vehicle-info"><p className="eyebrow">Renting Car A&M</p><h3>{vehicle.name}</h3>{vehicle.referenceSheet && <VehicleIdentity sheet={vehicle.referenceSheet}/>}<p className="card-description">Cotización según sus fechas y necesidades.</p>
       {vehicle.specifications && <ul className="compact-specs">{vehicle.specifications.slice(0, 4).map(spec => <li key={spec.label}>{spec.label}: {spec.value}</li>)}</ul>}
       {vehicle.dailyRate !== undefined && <p className="price">Desde S/ {vehicle.dailyRate} por día</p>}
-      <div className="card-actions"><Link className="button secondary" href={detailUrl(vehicle.id)}>Ver detalles</Link><a className="button accent" href={whatsappLink(vehicleMessage(vehicle))} target="_blank" rel="noopener noreferrer" aria-label={`Cotizar ${vehicle.name}`}>Cotizar <ArrowUpRight size={17}/></a></div>
+      <div className="card-actions"><Link className="button secondary" href={detailUrl(vehicle.id)}>Ver {vehicle.name} en alquiler</Link><a className="button accent" href={whatsappLink(vehicleMessage(vehicle))} target="_blank" rel="noopener noreferrer" aria-label={`Cotizar alquiler de ${vehicle.name}`}>Cotizar <ArrowUpRight size={17}/></a></div>
     </div>
   </article>;
 }
