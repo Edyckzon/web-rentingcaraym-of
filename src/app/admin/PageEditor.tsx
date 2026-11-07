@@ -1,4 +1,5 @@
 'use client';
+import {SaveToast} from './Feedback';
 import {useEffect,useState} from 'react';
 import type {WebPage} from '@/lib/page-content';
 
@@ -21,6 +22,6 @@ export default function PageEditor({pages,onSave,onDirtyChange}:{pages:WebPage[]
   <small>{draft.title.length+18} caracteres de título con marca · {draft.description.length} de descripción</small></section>
   <section><h2>Contenido de la página</h2><label>Encabezado principal (H1)<input required maxLength={200} value={draft.heading} onChange={e=>setDraft({...draft,heading:e.target.value})}/></label>
   <label>Introducción<textarea maxLength={1500} value={draft.intro} onChange={e=>setDraft({...draft,intro:e.target.value})}/></label></section>
-  <div className="actions"><button className="gold" disabled={!dirty}>Guardar página</button><button type="button" disabled={!dirty} onClick={()=>setDraft(saved)}>Descartar cambios</button></div></fieldset><p role="status">{message}</p>
+  <div className="actions"><button className="gold" disabled={!dirty}>Guardar página</button><button type="button" disabled={!dirty} onClick={()=>setDraft(saved)}>Descartar cambios</button></div></fieldset><SaveToast message={message} busy={busy}/>
  </form>;
 }

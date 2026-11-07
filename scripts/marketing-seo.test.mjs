@@ -1,9 +1,27 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {marketingAPI} from '../server/marketing-api.mjs';
+import {contentRevision} from '../server/publication.mjs';
 const origin='https://renting.example';
 const env={SUPABASE_PUBLISHABLE_KEY:'sb_publishable_test'};
 const req=(path,data={},extra={})=>new Request(origin+'/marketing-api/'+path+'/',{method:'POST',headers:{origin,cookie:'renting_auth=test',...extra},body:JSON.stringify(data)});
+
+test('la versión publicada coincide con el contenido y cambia al editarlo',async()=>{
+ const content={title:'Título',blocks:[{id:'one',body:'Texto'}]};
+ assert.equal(await contentRevision(content),await contentRevision({blocks:[{body:'Texto',id:'one'}],title:'Título',covers:{}}));
+ assert.notEqual(await contentRevision(content),await contentRevision({...content,title:'Nuevo título'}));
+});
+test('seguimiento exige sesión y solo consulta el marcador público de producción',async t=>{
+ const request=cookie=>new Request(origin+'/marketing-api/publication-status/',{headers:{cookie}});
+ assert.equal((await marketingAPI(request(''),env)).status,401);
+ t.mock.method(globalThis,'fetch',async url=>{
+  if(String(url).endsWith('/rpc/renting_admin'))return Response.json(true);
+  assert.ok(String(url).startsWith('https://rentingcaraym.com/seo-publication.json?check='));
+  return Response.json({revision:'a'.repeat(64),secret:'never return this'});
+ });
+ const result=await marketingAPI(request('renting_auth=test'),env);
+ assert.deepEqual(await result.json(),{revision:'a'.repeat(64)});
+});
 
 test('SEO y publicación requieren sesión y el mismo origen',async()=>{
  for(const path of ['page','block','publish']){
@@ -47,6 +65,7 @@ test('publicar requiere POST y un hook configurado; no revela el secreto',async 
  let deployments=0;
  t.mock.method(globalThis,'fetch',async(url,opts)=>{
   if(String(url).endsWith('/rpc/renting_admin'))return Response.json(true);
+  if(String(url).includes('/rest/v1/'))return Response.json(String(url).includes('configuracion_web')?[{}]:[]);
   assert.equal(String(url),'https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/test-secret');
   assert.equal(opts.method,'POST');deployments++;return Response.json({success:true});
  });

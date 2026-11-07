@@ -1,3 +1,4 @@
+import {contentRevision} from './publication.mjs';
 import {guardPassword} from './login-guard.mjs';
 const project='https://pjkcihdiasktmwdpcmpt.supabase.co';
 const bucket='/storage/v1/object/renting-fotos/', publicRoot=project+bucket.replace('/object/','/object/public/');
@@ -37,17 +38,24 @@ export async function marketingAPI(req,env){
    return json({},200,{'Set-Cookie':cookie(r.access_token,Math.min(3600,r.expires_in))});
  }
  if(path==='logout'&&req.method==='POST'){if(token)await sup('/auth/v1/logout?scope=local',{method:'POST'}).catch(()=>{});return json({},200,{'Set-Cookie':cookie('',0)});}
- if(!['content','vehicle','remove','settings','category','upload','import-photo','page','block','publish'].includes(path))fail(404,'No encontrado.');
+ if(!['content','vehicle','remove','settings','category','upload','import-photo','page','block','publish','publication-status'].includes(path))fail(404,'No encontrado.');
  if(!token||!await rest('rpc/renting_admin',post({})))fail(401,'Inicia sesión con una cuenta administradora.');
  if(path==='content'&&req.method==='GET')return json(await snapshot());
+ if(path==='publication-status'&&req.method==='GET'){
+   const live=await fetch('https://rentingcaraym.com/seo-publication.json?check='+Date.now(),{cache:'no-store',signal:AbortSignal.timeout(8000)});
+   if(!live.ok)return json({revision:null});
+   const marker=await live.json().catch(()=>null);
+   return json({revision:typeof marker?.revision==='string'&&/^[a-f0-9]{64}$/.test(marker.revision)?marker.revision:null});
+ }
  if(req.method!=='POST')fail(405,'Método no permitido.');
  if(path==='publish'){
    if(!env.CLOUDFLARE_DEPLOY_HOOK)fail(503,'Este servidor no tiene CLOUDFLARE_DEPLOY_HOOK configurado. Si estás en local, la variable de Cloudflare no se copia a tu PC. Los datos siguen guardados en Supabase.');
    const hook=new URL(env.CLOUDFLARE_DEPLOY_HOOK);
    if(hook.origin!=='https://api.cloudflare.com'||!hook.pathname.startsWith('/client/v4/pages/webhooks/deploy_hooks/'))fail(503,'Deploy Hook no válido.');
-   const response=await fetch(hook,{method:'POST'});
+   const revision=await contentRevision(await snapshot());
+   const response=await fetch(hook,{method:'POST',signal:AbortSignal.timeout(15000)});
    if(!response.ok)fail(502,'Cloudflare no pudo iniciar la publicación. Inténtalo después.');
-   return json({message:'Publicación solicitada a Cloudflare. Espera a que termine la compilación antes de comprobar el SEO.'});
+   return json({revision,message:'Publicación solicitada a Cloudflare. Espera a que termine la compilación antes de comprobar el SEO.'});
  }
  if(path==='upload'||path==='import-photo'){
    const bytes=await req.arrayBuffer();if(bytes.byteLength>5*1024*1024||bytes.byteLength<12)fail(400,'Tamaño de foto no válido.');
