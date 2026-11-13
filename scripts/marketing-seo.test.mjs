@@ -23,11 +23,34 @@ test('seguimiento exige sesión y solo consulta el marcador público de producci
  assert.deepEqual(await result.json(),{revision:'a'.repeat(64)});
 });
 
-test('SEO y publicación requieren sesión y el mismo origen',async()=>{
- for(const path of ['page','block','publish']){
+test('SEO, tarifas y publicación requieren sesión y el mismo origen',async()=>{
+ for(const path of ['page','block','publish','rates']){
   assert.equal((await marketingAPI(req(path,{}, {cookie:''}),env)).status,401);
   assert.equal((await marketingAPI(req(path,{}, {origin:'https://otro.example'}),env)).status,403);
  }
+});
+test('tarifas actualiza únicamente importes en céntimos de un vehículo',async t=>{
+ let writes=0;
+ t.mock.method(globalThis,'fetch',async(url,opts)=>{
+  if(String(url).endsWith('/rpc/renting_admin'))return Response.json(true);
+  assert.match(String(url), /\/vehiculos\?id=eq\.ford-territory$/);
+  assert.equal(opts.method,'PATCH');
+  assert.deepEqual(JSON.parse(opts.body),{
+   tarifa_diaria_centimos:12000,
+   tarifa_semanal_dia_centimos:null,
+   tarifa_mensual_centimos:250000,
+   garantia_centimos:0,
+  });
+  writes++;
+  return Response.json([{id:'ford-territory'}]);
+ });
+ const rates={daily:12000,weeklyPerDay:null,monthly:250000,deposit:0};
+ for(const daily of [0,120.5,-100,'12000',undefined]){
+  assert.equal((await marketingAPI(req('rates',{id:'ford-territory',rates:{...rates,daily}}),env)).status,400);
+ }
+ assert.equal(writes,0);
+ assert.equal((await marketingAPI(req('rates',{id:'ford-territory',rates,name:'No modificar'}),env)).status,200);
+ assert.equal(writes,1);
 });
 test('textos rechazan enlaces ejecutables y campos vacíos; escritura limitada',async t=>{
  let writes=0;

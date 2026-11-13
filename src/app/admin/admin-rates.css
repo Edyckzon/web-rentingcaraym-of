@@ -1,0 +1,38 @@
+.rate-admin-workspace { display: grid; gap: 20px; min-width: 0; }
+.rate-admin-overview { background: #fff; border: 1px solid #d9e0e8; border-radius: 14px; padding: clamp(14px, 2.8vw, 26px); min-width: 0; }
+.rate-admin-toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin: 16px 0; }
+.rate-admin-filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.studio .rate-admin-toolbar input { width: min(100%, 240px); min-height: 44px; border-color: #b5c0cf; }
+.studio .rate-admin-filters button { min-height: 44px; padding: 7px 10px; border-color: #d7dee8; font-size: .84rem; }
+.studio .rate-admin-filters button[aria-pressed="true"] { background: #e7eefb; border-color: #adbdd7; color: #152747; }
+.rate-admin-filters button span { padding: 1px 6px; background: #f1f4f9; border-radius: 20px; color: #435575; font-variant-numeric: tabular-nums; }
+.rate-admin-scroll { overflow-x: auto; border: 1px solid #dce3ec; border-radius: 10px; }
+.rate-admin-table { width: 100%; border-collapse: collapse; font-size: .86rem; }
+.rate-admin-table :is(th, td) { padding: 9px 12px; text-align: left; vertical-align: middle; border-bottom: 1px solid #e7ecf2; }
+.rate-admin-table thead { background: #f1f5fa; color: #374966; }
+.rate-admin-table tbody tr:last-child > * { border-bottom: 0; }
+.rate-admin-table tr[data-editing="true"] { background: #f0f5ff; }
+.rate-admin-table tbody th { color: #14223c; }
+.rate-admin-money { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.rate-admin-unset { color: #536481; }
+.rate-admin-badge { display: inline-block; padding: 3px 8px; border-radius: 6px; font-size: .76rem; font-weight: 650; white-space: nowrap; color: #40516c; background: #eff2f7; }
+.rate-admin-badge[data-state="complete"] { background: #e5eeff; color: #233e70; }
+.rate-admin-badge[data-state="partial"] { background: #ffedce; color: #172541; }
+.rate-admin-draft { display: block; font-size: .72rem; font-weight: 500; color: #536481; }
+.studio .rate-admin-edit { min-height: 44px; padding: 6px 9px; font-size: .82rem; color: #1c3154; border-color: #d6e0ef; }
+.studio .rate-admin-edit:disabled { opacity: .55; cursor: default; }
+.studio .rate-admin-pending { margin: 0 0 10px; font-size: .85rem; color: #374966; }
+.studio .rate-admin-empty { padding: 16px; margin: 0; }
+.rate-admin-form-head { display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
+.rate-admin-form-head h2 { scroll-margin-top: 20px; }
+.rate-admin-campaign { padding: 14px 16px; border: 1px solid #d9e0e8; border-radius: 10px; background: #f4f7fc; }
+.rate-admin-campaign h3 { margin: 0; font-size: 1rem; }
+.rate-admin-campaign li + li { margin-top: 6px; }
+.rate-admin-campaign p:empty { margin: 0; }
+@media (max-width: 900px) {
+  .rate-admin-table .rate-admin-money { display: none; }
+}
+@media (max-width: 600px) {
+  .studio .rate-admin-toolbar input { width: 100%; }
+  .rate-admin-table :is(th, td) { padding-inline: 8px; }
+}

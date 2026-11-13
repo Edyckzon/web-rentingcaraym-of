@@ -506,22 +506,43 @@
       "id": "changan-alsvin",
       "name": "Changan Alsvin",
       "category": "Sedán",
+      "additionalCategories": [],
+      "published": true,
+      "rates": {
+        "daily": 10000,
+        "weeklyPerDay": 8000,
+        "monthly": 200000,
+        "deposit": 50000
+      },
       "description": "Alquiler de Changan Alsvin en Lima para sus desplazamientos personales o de trabajo. Nuestra unidad 2022 cuenta con transmisión mecánica y combustible dual gasolina/GLP. Consulte disponibilidad para sus fechas y coordine el recojo con nuestro equipo en Santiago de Surco.",
       "seoTitle": "Alquiler de Changan Alsvin en Lima",
       "seoDescription": "Alquiler de Changan Alsvin en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
       "idealFor": "El Changan Alsvin es una opción para organizar sus desplazamientos personales, visitas a clientes y trámites en Lima. Su formato sedán permite considerar una alternativa a una camioneta cuando la prioridad es la movilidad cotidiana. La unidad de la flota es de transmisión mecánica y bicombustible GLP; consulte si sus características se ajustan al recorrido que tiene previsto.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
-      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
+      "updatedAt": "2026-11-12T17:18:53.508269+00:00",
       "featured": false,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/63e5864b5803bd4f7d617b3a4183aea6b42014dd237ce9c4cea848ee74c2410f.png",
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/730f17b5ed51859ffc26e885f692dac23d1ece4c65369e15090a3a21b6eb0db9.png",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/ab319d1ba4d8aa9060f677265e4af172bb1501e17f20292a7f3f146b64080d8b.png"
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/ab319d1ba4d8aa9060f677265e4af172bb1501e17f20292a7f3f146b64080d8b.png",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/15e8a7b53ee4eb962379606fa062d1a3fab97dbfc2f34c4c012116aa105ea101.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/164d8061efba62371870584584889e5d7736a2a9e74ec65612a22dd631b744e5.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/d8ab787b58d945520c0a0de279102b35067320ff96da66bacc3c84493490e983.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/2242adc456b953abba601032caf0b24f9e6e58540a567122a31ac9c589ec857b.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/ea7a52b72ba20e2ad6d2ac7f974967eb765e1cc991b0c90b856b9a6f5d68817e.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/fe11353f00fcc970695284e070df54e148d7ca6cf93f1f76eea5ae07e6082422.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/7de45e9546dd4b2723e4cffca3d2a594c231259dc8eacdf1347ba4b6a218d4a6.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/cb089108eb31df5c5c8ade1e6f71b1084b9e63258eb4776f8aed9d52121d7632.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/48f70d85f1d00a4eb424254e088105d7046eed13eec70e2a1affd83313e92a84.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/0f92a39a46f69cbd457313f291c2d360604c53bccb77f5bf19bee84702ec88e0.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/976e8d246bcc3f846ccc51205f13e9d894d38449e6a3059af21bc01f352d24f4.webp"
       ]
     },
     {
       "id": "changan-cx70",
       "name": "Changan CX70",
       "category": "SUV",
+      "additionalCategories": [],
+      "published": true,
       "description": "Alquiler de Changan CX70 en Lima para quienes buscan una camioneta SUV para su movilidad familiar o laboral. Contamos con una unidad 2023 de transmisión mecánica y combustible dual gasolina/GLP. Indíquenos las fechas y el número de pasajeros para confirmar la configuración y preparar su cotización desde Surco.",
       "seoTitle": "Alquiler de Changan CX70 en Lima",
       "seoDescription": "Alquiler de Changan CX70 en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
@@ -536,35 +557,39 @@
       "id": "changan-x7-plus",
       "name": "Changan X7 Plus",
       "category": "SUV",
+      "additionalCategories": [],
+      "published": true,
       "description": "Alquiler de Changan X7 Plus en Lima para su movilidad personal, familiar o empresarial. Nuestra unidad 2026 tiene transmisión automática y combustible dual gasolina/GLP. Cuéntenos cuántas personas viajarán y las fechas de uso para confirmar disponibilidad y coordinar su alquiler desde Santiago de Surco.",
       "seoTitle": "Alquiler de Changan X7 Plus en Lima",
       "seoDescription": "Alquiler de Changan X7 Plus en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
       "idealFor": "El Changan X7 Plus puede acompañar una agenda de reuniones, visitas familiares o desplazamientos de trabajo en Lima. Es una alternativa para quienes buscan una SUV de transmisión automática y desean comparar opciones para su movilidad personal o empresarial. Al cotizar, indique cuántas personas viajarán y el equipaje previsto para que nuestro equipo confirme la configuración de la unidad.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
-      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
+      "updatedAt": "2026-11-07T23:21:32.783874+00:00",
       "featured": true,
       "images": [
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/6c2266d0eebd583289925363b32ec32e4d542173465a28c2a6aa7a07a554cac9.png",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/6b7d739a5f4b95776b394e6e778f51ca472f2606693d4fcb856d53656d1cd2b4.png",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/a9e316b7865396cb75858ce3766dcf99c65b0c5780f0381467a1a2d35ad7d597.png",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/a698c00a09564d542886b0ce2625ef77380f6a1bbf47a349dec1e4c00e620123.png",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/5e37116e5c65db01de02346bd8e93da226fb7edbbdd62e83afd62035402ab04f.png",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/2583f2ea934785fa6b5b1d655bbdec579c56a4527ddb2e34833db90c1279fe6f.png",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/05e27af01c8e5915ce69b90c82aea19b568099a2a0e58b300bf32d6af0e8ad1b.png",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/6bebaef597508f113dee3c63066414262331058ece93bbb7d15f051713323de9.png",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/128c85bfd93d932d0e1425ad0d83d2432c7a8cd5cc7e975f50791e74c08632be.png",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/6b424baef9abc32ea02f55301553675286980cf044150efd8ec0e5705c6e1f51.png",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/0310fc170fd136a90824ea1dbda38d3eccdfd5c1634b9b21ec16a8919231bdbe.png",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/7c8115ff988562b7bc50a083243724274ea2e2b79f21f428002423a31aa3010e.png",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/1c175c7b7ae5c2cf1242e056e0402359b7636f130810e2b34f6d53f7c8ef7fe2.png",
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/42f0258eb44be63768dfe9f8235a5aac6069834ba54a09dfec3efeb8756999cc.png",
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/b76342a3fdc40cd4e050526ff74dd7687fe700f728058d84013549e7a25eb4a7.png",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/931db69eb615237719eaca09dc5599a44392fb404b2c530e0a24b267cfab4d7b.png"
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/931db69eb615237719eaca09dc5599a44392fb404b2c530e0a24b267cfab4d7b.png",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/a1069f32b0bc313f87f468469ef69b59665bfa07dfa2236d8703fa81d98891a0.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/c6fd643a25b7b67dacaa82314f8aaf0625f1e90d7aff80a3ec949627b0a0208c.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/c1ef5333d59c7e537bebf493745022e2ecebce4d59bf2f2185ae6255a6f0ba5e.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f6decafd85e3a3db3e9ff116546de0cf24d1c218aac551adf347f19960542f99.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/d8c441931cbe5c7675572742ffc5f13a1c234cb3ea6adc9728b0cd3b0c5d09a5.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/b007a6ca072c837f0ce1a2a36864c35c4987e2779d79454622b0cacd7941115d.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/12a0a474062d2688db9fec77e77ff0cbdf829fae35e39a10f0def249dd5b41f4.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f0d8603d998e170b806a466db51e130c8f66325677066f15ae50e9c677c0ed3c.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/26a773eafc680c23b2ed4bbd34c31e1980b0665d27b755a1d3ce83f68f2bf535.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/2edae3d9e1eafadf3fd239d75ff8376dfc37f6e70b25951f4aad5adc8eaf8942.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/cb5b48252f6c43c98c012f72f9b251265b762e57490083b7ebb610f6974e264b.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/de27c1c50fe3bf85819f4aa81d372eda17406d087b3c86007b7798364b9ec994.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/be7e7de1c5c25a377139ea3adf4cc7a818bd57598611e356a4e79da4b458f137.webp"
       ]
     },
     {
       "id": "ford-territory",
       "name": "Ford Territory",
       "category": "SUV",
+      "additionalCategories": [],
+      "published": true,
       "description": "Alquiler de Ford Territory en Lima para sus traslados personales, familiares o ejecutivos. Disponemos de una SUV 2026 con transmisión automática y motor a gasolina. Solicite una propuesta indicando sus fechas y necesidades de movilidad; nuestro equipo en Surco le confirmará disponibilidad, requisitos y condiciones.",
       "seoTitle": "Alquiler de Ford Territory en Lima",
       "seoDescription": "Alquiler de Ford Territory en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
@@ -572,13 +597,27 @@
       "updatedAt": "2026-11-07T16:46:02.248066+00:00",
       "featured": true,
       "images": [
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f341b08ca4143296a7bea8805e9b3bea7c9b4b70c2732958df09b84c99f34a56.jpeg"
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/d3ce3ce1454fff9608ec68eeade5ca8c0f8e8350f142aa8e867f934c004f0e47.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/c517747984cc91f83e12cb047f64b0cd06639b2629da188b50c1669e5e397f49.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/7d5772d37539d19ecaf281da24d6b384edb15c9429281001acf0a882d8786c77.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/3d5a6e02d1c5b48874958ee75c50b80fa7bd157b30f1fd2e8b05e459637ad7d0.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/806844dd1d38a0efacacd238e87c779f00af69ae39ecb77643293bf8965be0c5.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/86f62a4ba562c784e6df8d0495f9ac11f9df46976fed4bd09f299496dae94089.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/af7f40736bfef7b4fa0a177b34d3e997af068f5ff645bc70d8e6611a51eb3996.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/4f5b27c60a9cef613c7b7d4ae1e821c3cbf810dfac63621468c60b736c6f38d2.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/82bd51f4553f2dc9bde4bf2bcb3da50a79d01da89e9f291e9d2a2ec7de14508c.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/70477b94b9a5fdb7a0b6f5fbd99fbe5ef87b338c24a6a2652226c73e7a229b06.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/4eec256c08e29c8cdf94cedf3fce5ef218850315ada18a5234c989de9350fee4.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/b4aec5d68715a79f011c6cc579ba45e7c64cb142cf191bd40a583450ea8a5a9a.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/63714696dcaed90734fee2727a86c33b1fa27853980e560c78a9c6dc13e3d41f.webp"
       ]
     },
     {
       "id": "glory-560",
       "name": "Glory 560",
       "category": "SUV",
+      "additionalCategories": [],
+      "published": true,
       "description": "Alquiler de Glory 560 en Lima para organizar su movilidad personal o de trabajo con una camioneta SUV. Nuestra unidad 2023 cuenta con transmisión mecánica y combustible dual gasolina/GLP. Consulte con nuestro equipo en Santiago de Surco la disponibilidad, capacidad de la unidad y condiciones para las fechas que necesita.",
       "seoTitle": "Alquiler de Glory 560 en Lima",
       "seoDescription": "Alquiler de Glory 560 en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
@@ -586,13 +625,29 @@
       "updatedAt": "2026-11-07T16:46:02.248066+00:00",
       "featured": false,
       "images": [
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/5f209eca426f950e65b5c40929a1ca60892652726dc6b6d636e82beaa44f7fd3.jpeg"
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/0d57af6a723971869771b0e6301e18b7ef9a892fd12f82e393d4e0645a9b8a1a.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/87542e0608b035c91cfadd64d3c046b02c9c2d3bdc6f02be95aafb7f184c0c27.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/ede6dcc29c539ab3b62ef08a2421576f88c917de2cf73f03fe5cdaec3e9ae98a.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/7a20cc3552d8f35f1778229699a68a22d56cce13edf0931452d37350d06ffd01.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/92646a6986b7bd045d78ca017a354cba994069bc131779ef0fd34f3770477546.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/2ffb809aeadb9a1309a079d8144cdc531c9245f79db932ab2d7ec92bf7ed3320.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/ba5ca9bdfcaad0e037d3b493e80ee10bdd86cae0b2e4b11cf50f391d047363c4.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/afb65f5b5682f4347de5586af1dc485d5cce53aa51f7eddaeeaa63b3597cdee2.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/284d590e9af56f0a4fc081c4e042e4606daf5dd007b3d804adf3bcc889b63c3c.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/88579b4d8683dfae0c942b6af3889fa8a04ae089828bbf9e944b7c932c39eb88.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/19032de9a0fa34db8170b8dc372c1d14482cca61d533599726678fac4d283762.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/b243605ffc9906246d885314cf2dcde54a85f93daf5d809821707825a2cdab84.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/d8f94d25ae4d914ff3a7ad3d3e113b339d33abc54be4b48566b92f5e75b42686.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/793e075a07b93ae80637576e4eb00d8b665b592d5fcdab9363d7ed68c4c3f316.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/5d9fceff8f3a62eeb80c9303451e63f6fd8e0614d0460753a57d7e39e5d4f902.webp"
       ]
     },
     {
       "id": "glory-580",
       "name": "Glory 580",
       "category": "SUV",
+      "additionalCategories": [],
+      "published": true,
       "description": "Alquiler de Glory 580 en Lima para sus planes familiares o necesidades de movilidad empresarial. Contamos con una SUV 2023 de transmisión mecánica y combustible dual gasolina/GLP. Comparta las fechas, el número de pasajeros y el uso previsto para recibir una cotización personalizada desde nuestra sede en Surco.",
       "seoTitle": "Alquiler de Glory 580 en Lima",
       "seoDescription": "Alquiler de Glory 580 en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
@@ -600,13 +655,29 @@
       "updatedAt": "2026-11-07T16:46:02.248066+00:00",
       "featured": false,
       "images": [
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f6e6528a9fd14a4fde66aeb3a50e59b0720b03e49652d438026fbc160879da5b.jpeg"
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/0d57af6a723971869771b0e6301e18b7ef9a892fd12f82e393d4e0645a9b8a1a.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/87542e0608b035c91cfadd64d3c046b02c9c2d3bdc6f02be95aafb7f184c0c27.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/ede6dcc29c539ab3b62ef08a2421576f88c917de2cf73f03fe5cdaec3e9ae98a.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/7a20cc3552d8f35f1778229699a68a22d56cce13edf0931452d37350d06ffd01.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/92646a6986b7bd045d78ca017a354cba994069bc131779ef0fd34f3770477546.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/2ffb809aeadb9a1309a079d8144cdc531c9245f79db932ab2d7ec92bf7ed3320.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/ba5ca9bdfcaad0e037d3b493e80ee10bdd86cae0b2e4b11cf50f391d047363c4.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/afb65f5b5682f4347de5586af1dc485d5cce53aa51f7eddaeeaa63b3597cdee2.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/284d590e9af56f0a4fc081c4e042e4606daf5dd007b3d804adf3bcc889b63c3c.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/88579b4d8683dfae0c942b6af3889fa8a04ae089828bbf9e944b7c932c39eb88.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/19032de9a0fa34db8170b8dc372c1d14482cca61d533599726678fac4d283762.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/b243605ffc9906246d885314cf2dcde54a85f93daf5d809821707825a2cdab84.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/d8f94d25ae4d914ff3a7ad3d3e113b339d33abc54be4b48566b92f5e75b42686.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/793e075a07b93ae80637576e4eb00d8b665b592d5fcdab9363d7ed68c4c3f316.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/5d9fceff8f3a62eeb80c9303451e63f6fd8e0614d0460753a57d7e39e5d4f902.webp"
       ]
     },
     {
       "id": "hyundai-accent",
       "name": "Hyundai Accent",
       "category": "Sedán",
+      "additionalCategories": [],
+      "published": true,
       "description": "Alquiler de Hyundai Accent en Lima para desplazamientos personales, gestiones o compromisos de trabajo. Consulte la versión, transmisión y características de la unidad disponible antes de reservar. Nuestro equipo en Santiago de Surco le ayudará a coordinar las fechas, los requisitos y el lugar de recojo.",
       "seoTitle": "Alquiler de Hyundai Accent en Lima",
       "seoDescription": "Alquiler de Hyundai Accent en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
@@ -621,6 +692,8 @@
       "id": "hyundai-verna",
       "name": "Hyundai Verna",
       "category": "Sedán",
+      "additionalCategories": [],
+      "published": true,
       "description": "Alquiler de Hyundai Verna en Lima para su movilidad diaria o laboral. Consulte nuestras opciones 2022 con transmisión automática o mecánica y combustible dual gasolina/GLP, sujetas a disponibilidad. Indique qué caja prefiere y sus fechas para que nuestro equipo en Surco prepare una propuesta acorde a su solicitud.",
       "seoTitle": "Alquiler de Hyundai Verna en Lima",
       "seoDescription": "Alquiler de Hyundai Verna en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
@@ -635,6 +708,8 @@
       "id": "jac-s8",
       "name": "JAC JS8",
       "category": "SUV",
+      "additionalCategories": [],
+      "published": true,
       "description": "Alquiler de JAC JS8 en Lima para sus traslados familiares o de empresa. Nuestra SUV 2023 cuenta con transmisión automática y combustible dual gasolina/GLP. Indique las fechas de uso, los pasajeros y el equipaje previsto para confirmar la capacidad de la unidad y coordinar su cotización desde Santiago de Surco.",
       "seoTitle": "Alquiler de JAC JS8 en Lima",
       "seoDescription": "Alquiler de JAC JS8 en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
@@ -642,13 +717,29 @@
       "updatedAt": "2026-11-07T16:46:02.248066+00:00",
       "featured": false,
       "images": [
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f27167d00fb1a74c0b16106f473938b7be836dd8eb3b903e9ee82e513af2fd25.jpeg"
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/3b6df538429ad22c5cf9d1e87229e4f45de1b7c0283313e96b83bda49bde591a.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/89411f32cd3decc7a61f5e122ad56f4a08da8a55391353293ea92dad82c18111.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/8d639c7ecc1e70e41ea8f01871d226aeceadf6a9d6fd6759ac30f91f53187362.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/fe6e8cecab8b3168bffab5cc63a03b1b51a44e0c7de3c02db973366589730ce8.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/58efc98d9213806d469ceb6e41d7028db44a8074a552b73f8c2b365569474fa8.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/4dce7fbce92bcceb690e29b7cc11c66593d213a18ec669a0147d85f88587b0b8.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/336d86460b88dd55d1b0e97697a8a500d431b215fb9122a823a7bf7b2c90899f.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/313d9a4feb2688f1dcc801991d624ab9646bf97b0d898b65b042fdd845c36224.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/d7ddc17a95625d321b14a4dc58a681aafb74eeccf05c249afe43fe87673546f6.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/bbac70f9351c32a7ca8e27c1e8712167e4352a2fd8611019119bdf5a52da9359.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/08109bf209865843734120365a46f6622f166a14ef2a8d0292796b6c5f565ce5.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/9a0987cd0bdb236f6fe7fe2adf4a0c85dd00fd03a58b8ba1c009cfc9540755b8.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/81fc43d95dc830919be3c410a146bebc1f0e573d45672dcff31c2228bdca2c56.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/01d3fd2cc578e4fb6ba508fbd2fcc5ec590dfa7565f255a2075bcd4d63a40d22.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/06c9d2ce1813518b965cd9fb6b203f70745396ac45d0ebe7e79954772f1d8243.webp"
       ]
     },
     {
       "id": "jetur-x70",
       "name": "Jetour X70",
       "category": "SUV",
+      "additionalCategories": [],
+      "published": true,
       "description": "Alquiler de Jetour X70 en Lima para quienes buscan una camioneta SUV para su familia o equipo de trabajo. Consulte la versión, transmisión y capacidad de la unidad disponible. Comparta sus fechas y necesidades con Renting Car A&M para coordinar el recojo y las condiciones del alquiler desde Surco.",
       "seoTitle": "Alquiler de Jetour X70 en Lima",
       "seoDescription": "Alquiler de Jetour X70 en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
@@ -663,6 +754,8 @@
       "id": "suzuki-ertiga",
       "name": "Suzuki Ertiga",
       "category": "Familiar / 7 asientos",
+      "additionalCategories": [],
+      "published": true,
       "description": "Alquiler de Suzuki Ertiga en Lima para su movilidad familiar o grupal. Nuestra unidad 2020 cuenta con transmisión automática y motor a gasolina. Indíquenos cuántas personas viajarán y cuánto equipaje llevarán para confirmar la distribución disponible y preparar su cotización con atención desde Santiago de Surco.",
       "seoTitle": "Alquiler de Suzuki Ertiga en Lima",
       "seoDescription": "Alquiler de Suzuki Ertiga en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
@@ -670,18 +763,20 @@
       "updatedAt": "2026-11-07T16:46:02.248066+00:00",
       "featured": true,
       "images": [
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/49492f2f6d425e5229a9e4a2abdb8a614bea3cdb47ccfd9f7a5d570ecc5ad9fb.png",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/629fa5b94fdb80a005072f26c63e198df8905e0e4dc3aa55729edc7e37b6b624.png",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f2a2b758b3dcecf2feb1b0a751681bbaadd8cd3d2428df1a38f5cd7d09f7fab9.png",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/67fe0476177998bb8e71e1d5a76e91fbd1444d8aaee4094de57f35c5522ac71a.png",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/8904785c6576f42e039fb5ff0ffa7e0000a17ba053e7e604f9230d2c798b0956.png",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/c4e19f4d84f68356573a9e8f62aca2d9cec5c899b189ff3492b8204ee18d9769.png"
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/ea347c7274f08db744530c07bc9d70922e709bf42ebab0eaa59f36f10428ca74.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/5da5f296f9b30a91d5e7d6f5e6b9d38fbe1014b498843d94cd9ab6dd6546a479.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/82786e527a8684c014c212a89cbca4e70099358c9abd6e24ead66949e49326ee.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/b549d310d81ce36a2775fbb54330b1dcd6363c18862756eb5480e642af141df6.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/2b707f140a9246170acaacc8475b7c8f57e628e353ae049451782c228c8fabd1.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f9e2a0897f1fb1d364266a700ec153aea7be79503183887476394870f184b708.webp"
       ]
     },
     {
       "id": "toyota-yaris",
       "name": "Toyota Yaris",
       "category": "Sedán",
+      "additionalCategories": [],
+      "published": true,
       "description": "Alquiler de Toyota Yaris en Lima para sus desplazamientos personales, trámites o actividades de trabajo. Nuestra unidad 2010 tiene transmisión mecánica y combustible dual gasolina/GLP. Consulte disponibilidad y requisitos para sus fechas; coordinamos su cotización y recojo desde Santiago de Surco.",
       "seoTitle": "Alquiler de Toyota Yaris en Lima",
       "seoDescription": "Alquiler de Toyota Yaris en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
@@ -722,6 +817,105 @@
       "licenseUrl": null
     },
     {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/15e8a7b53ee4eb962379606fa062d1a3fab97dbfc2f34c4c012116aa105ea101.webp",
+      "alt": "Changan Alsvin en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/164d8061efba62371870584584889e5d7736a2a9e74ec65612a22dd631b744e5.webp",
+      "alt": "Changan Alsvin en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/d8ab787b58d945520c0a0de279102b35067320ff96da66bacc3c84493490e983.webp",
+      "alt": "Changan Alsvin en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/2242adc456b953abba601032caf0b24f9e6e58540a567122a31ac9c589ec857b.webp",
+      "alt": "Changan Alsvin en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/ea7a52b72ba20e2ad6d2ac7f974967eb765e1cc991b0c90b856b9a6f5d68817e.webp",
+      "alt": "Changan Alsvin en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/fe11353f00fcc970695284e070df54e148d7ca6cf93f1f76eea5ae07e6082422.webp",
+      "alt": "Changan Alsvin en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/7de45e9546dd4b2723e4cffca3d2a594c231259dc8eacdf1347ba4b6a218d4a6.webp",
+      "alt": "Changan Alsvin en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/cb089108eb31df5c5c8ade1e6f71b1084b9e63258eb4776f8aed9d52121d7632.webp",
+      "alt": "Changan Alsvin en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/48f70d85f1d00a4eb424254e088105d7046eed13eec70e2a1affd83313e92a84.webp",
+      "alt": "Changan Alsvin en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/0f92a39a46f69cbd457313f291c2d360604c53bccb77f5bf19bee84702ec88e0.webp",
+      "alt": "Changan Alsvin en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/976e8d246bcc3f846ccc51205f13e9d894d38449e6a3059af21bc01f352d24f4.webp",
+      "alt": "Changan Alsvin en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
       "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/e58a3faa544ab1a2f206f20fa643864df6834791ce036bf7d8afa706614bdc46.jpeg",
       "alt": "SUV Changan CX70 en alquiler en Lima — imagen referencial",
       "credit": "Rutger van der Maar",
@@ -729,123 +923,6 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Changan_CX70_front.jpg",
       "license": "CC BY 2.0",
       "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
-    },
-    {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/6c2266d0eebd583289925363b32ec32e4d542173465a28c2a6aa7a07a554cac9.png",
-      "alt": "Changan X7 Plus gris de Renting Car A&M, vista frontal de tres cuartos",
-      "credit": null,
-      "reference": false,
-      "sourceUrl": null,
-      "license": null,
-      "licenseUrl": null
-    },
-    {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/6b7d739a5f4b95776b394e6e778f51ca472f2606693d4fcb856d53656d1cd2b4.png",
-      "alt": "Changan X7 Plus gris, vista frontal desde el lado opuesto",
-      "credit": null,
-      "reference": false,
-      "sourceUrl": null,
-      "license": null,
-      "licenseUrl": null
-    },
-    {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/a9e316b7865396cb75858ce3766dcf99c65b0c5780f0381467a1a2d35ad7d597.png",
-      "alt": "Changan X7 Plus, detalle de la parte posterior",
-      "credit": null,
-      "reference": false,
-      "sourceUrl": null,
-      "license": null,
-      "licenseUrl": null
-    },
-    {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/a698c00a09564d542886b0ce2625ef77380f6a1bbf47a349dec1e4c00e620123.png",
-      "alt": "Changan X7 Plus, rueda y aro de aleación",
-      "credit": null,
-      "reference": false,
-      "sourceUrl": null,
-      "license": null,
-      "licenseUrl": null
-    },
-    {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/5e37116e5c65db01de02346bd8e93da226fb7edbbdd62e83afd62035402ab04f.png",
-      "alt": "Changan X7 Plus, volante y tablero",
-      "credit": null,
-      "reference": false,
-      "sourceUrl": null,
-      "license": null,
-      "licenseUrl": null
-    },
-    {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/2583f2ea934785fa6b5b1d655bbdec579c56a4527ddb2e34833db90c1279fe6f.png",
-      "alt": "Changan X7 Plus, controles de ventanas en la puerta",
-      "credit": null,
-      "reference": false,
-      "sourceUrl": null,
-      "license": null,
-      "licenseUrl": null
-    },
-    {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/05e27af01c8e5915ce69b90c82aea19b568099a2a0e58b300bf32d6af0e8ad1b.png",
-      "alt": "Changan X7 Plus, selector de cambios y consola central",
-      "credit": null,
-      "reference": false,
-      "sourceUrl": null,
-      "license": null,
-      "licenseUrl": null
-    },
-    {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/6bebaef597508f113dee3c63066414262331058ece93bbb7d15f051713323de9.png",
-      "alt": "Changan X7 Plus, pantalla multimedia y climatización",
-      "credit": null,
-      "reference": false,
-      "sourceUrl": null,
-      "license": null,
-      "licenseUrl": null
-    },
-    {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/128c85bfd93d932d0e1425ad0d83d2432c7a8cd5cc7e975f50791e74c08632be.png",
-      "alt": "Changan X7 Plus, controles del techo",
-      "credit": null,
-      "reference": false,
-      "sourceUrl": null,
-      "license": null,
-      "licenseUrl": null
-    },
-    {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/6b424baef9abc32ea02f55301553675286980cf044150efd8ec0e5705c6e1f51.png",
-      "alt": "Changan X7 Plus, asientos delanteros",
-      "credit": null,
-      "reference": false,
-      "sourceUrl": null,
-      "license": null,
-      "licenseUrl": null
-    },
-    {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/0310fc170fd136a90824ea1dbda38d3eccdfd5c1634b9b21ec16a8919231bdbe.png",
-      "alt": "Changan X7 Plus, asientos posteriores",
-      "credit": null,
-      "reference": false,
-      "sourceUrl": null,
-      "license": null,
-      "licenseUrl": null
-    },
-    {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/7c8115ff988562b7bc50a083243724274ea2e2b79f21f428002423a31aa3010e.png",
-      "alt": "Changan X7 Plus, maletero y tercera fila",
-      "credit": null,
-      "reference": false,
-      "sourceUrl": null,
-      "license": null,
-      "licenseUrl": null
-    },
-    {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/1c175c7b7ae5c2cf1242e056e0402359b7636f130810e2b34f6d53f7c8ef7fe2.png",
-      "alt": "Changan X7 Plus, compartimento bajo el piso del maletero",
-      "credit": null,
-      "reference": false,
-      "sourceUrl": null,
-      "license": null,
-      "licenseUrl": null
     },
     {
       "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/42f0258eb44be63768dfe9f8235a5aac6069834ba54a09dfec3efeb8756999cc.png",
@@ -875,31 +952,508 @@
       "licenseUrl": null
     },
     {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f341b08ca4143296a7bea8805e9b3bea7c9b4b70c2732958df09b84c99f34a56.jpeg",
-      "alt": "SUV Ford Territory en alquiler en Lima — imagen referencial",
-      "credit": "Kevauto",
-      "reference": true,
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:2023_Ford_Territory_(China),_front_8.3.23.jpg",
-      "license": "CC BY-SA 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/a1069f32b0bc313f87f468469ef69b59665bfa07dfa2236d8703fa81d98891a0.webp",
+      "alt": "Changan X7 Plus en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
     },
     {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/5f209eca426f950e65b5c40929a1ca60892652726dc6b6d636e82beaa44f7fd3.jpeg",
-      "alt": "SUV Glory 560 en alquiler en Lima — imagen referencial",
-      "credit": "オーバードライブ83",
-      "reference": true,
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:2019_DFSK_Glory_560_L-Type_1.5_(20191020)_01.jpg",
-      "license": "CC BY-SA 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/c6fd643a25b7b67dacaa82314f8aaf0625f1e90d7aff80a3ec949627b0a0208c.webp",
+      "alt": "Changan X7 Plus en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
     },
     {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f6e6528a9fd14a4fde66aeb3a50e59b0720b03e49652d438026fbc160879da5b.jpeg",
-      "alt": "SUV Glory 580 en alquiler en Lima — imagen referencial",
-      "credit": "Kevauto",
-      "reference": true,
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017_Dongfeng-Fengguang_580,_front_8.3.18.jpg",
-      "license": "CC BY-SA 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/c1ef5333d59c7e537bebf493745022e2ecebce4d59bf2f2185ae6255a6f0ba5e.webp",
+      "alt": "Changan X7 Plus en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f6decafd85e3a3db3e9ff116546de0cf24d1c218aac551adf347f19960542f99.webp",
+      "alt": "Changan X7 Plus en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/d8c441931cbe5c7675572742ffc5f13a1c234cb3ea6adc9728b0cd3b0c5d09a5.webp",
+      "alt": "Changan X7 Plus en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/b007a6ca072c837f0ce1a2a36864c35c4987e2779d79454622b0cacd7941115d.webp",
+      "alt": "Changan X7 Plus en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/12a0a474062d2688db9fec77e77ff0cbdf829fae35e39a10f0def249dd5b41f4.webp",
+      "alt": "Changan X7 Plus en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f0d8603d998e170b806a466db51e130c8f66325677066f15ae50e9c677c0ed3c.webp",
+      "alt": "Changan X7 Plus en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/26a773eafc680c23b2ed4bbd34c31e1980b0665d27b755a1d3ce83f68f2bf535.webp",
+      "alt": "Changan X7 Plus en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/2edae3d9e1eafadf3fd239d75ff8376dfc37f6e70b25951f4aad5adc8eaf8942.webp",
+      "alt": "Changan X7 Plus en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/cb5b48252f6c43c98c012f72f9b251265b762e57490083b7ebb610f6974e264b.webp",
+      "alt": "Changan X7 Plus en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/de27c1c50fe3bf85819f4aa81d372eda17406d087b3c86007b7798364b9ec994.webp",
+      "alt": "Changan X7 Plus en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/be7e7de1c5c25a377139ea3adf4cc7a818bd57598611e356a4e79da4b458f137.webp",
+      "alt": "Changan X7 Plus en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/d3ce3ce1454fff9608ec68eeade5ca8c0f8e8350f142aa8e867f934c004f0e47.webp",
+      "alt": "Ford Territory en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/c517747984cc91f83e12cb047f64b0cd06639b2629da188b50c1669e5e397f49.webp",
+      "alt": "Ford Territory en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/7d5772d37539d19ecaf281da24d6b384edb15c9429281001acf0a882d8786c77.webp",
+      "alt": "Ford Territory en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/3d5a6e02d1c5b48874958ee75c50b80fa7bd157b30f1fd2e8b05e459637ad7d0.webp",
+      "alt": "Ford Territory en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/806844dd1d38a0efacacd238e87c779f00af69ae39ecb77643293bf8965be0c5.webp",
+      "alt": "Ford Territory en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/86f62a4ba562c784e6df8d0495f9ac11f9df46976fed4bd09f299496dae94089.webp",
+      "alt": "Ford Territory en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/af7f40736bfef7b4fa0a177b34d3e997af068f5ff645bc70d8e6611a51eb3996.webp",
+      "alt": "Ford Territory en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/4f5b27c60a9cef613c7b7d4ae1e821c3cbf810dfac63621468c60b736c6f38d2.webp",
+      "alt": "Ford Territory en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/82bd51f4553f2dc9bde4bf2bcb3da50a79d01da89e9f291e9d2a2ec7de14508c.webp",
+      "alt": "Ford Territory en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/70477b94b9a5fdb7a0b6f5fbd99fbe5ef87b338c24a6a2652226c73e7a229b06.webp",
+      "alt": "Ford Territory en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/4eec256c08e29c8cdf94cedf3fce5ef218850315ada18a5234c989de9350fee4.webp",
+      "alt": "Ford Territory en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/b4aec5d68715a79f011c6cc579ba45e7c64cb142cf191bd40a583450ea8a5a9a.webp",
+      "alt": "Ford Territory en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/63714696dcaed90734fee2727a86c33b1fa27853980e560c78a9c6dc13e3d41f.webp",
+      "alt": "Ford Territory en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/0d57af6a723971869771b0e6301e18b7ef9a892fd12f82e393d4e0645a9b8a1a.webp",
+      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/87542e0608b035c91cfadd64d3c046b02c9c2d3bdc6f02be95aafb7f184c0c27.webp",
+      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/ede6dcc29c539ab3b62ef08a2421576f88c917de2cf73f03fe5cdaec3e9ae98a.webp",
+      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/7a20cc3552d8f35f1778229699a68a22d56cce13edf0931452d37350d06ffd01.webp",
+      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/92646a6986b7bd045d78ca017a354cba994069bc131779ef0fd34f3770477546.webp",
+      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/2ffb809aeadb9a1309a079d8144cdc531c9245f79db932ab2d7ec92bf7ed3320.webp",
+      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/ba5ca9bdfcaad0e037d3b493e80ee10bdd86cae0b2e4b11cf50f391d047363c4.webp",
+      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/afb65f5b5682f4347de5586af1dc485d5cce53aa51f7eddaeeaa63b3597cdee2.webp",
+      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/284d590e9af56f0a4fc081c4e042e4606daf5dd007b3d804adf3bcc889b63c3c.webp",
+      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/88579b4d8683dfae0c942b6af3889fa8a04ae089828bbf9e944b7c932c39eb88.webp",
+      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/19032de9a0fa34db8170b8dc372c1d14482cca61d533599726678fac4d283762.webp",
+      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/b243605ffc9906246d885314cf2dcde54a85f93daf5d809821707825a2cdab84.webp",
+      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/d8f94d25ae4d914ff3a7ad3d3e113b339d33abc54be4b48566b92f5e75b42686.webp",
+      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/793e075a07b93ae80637576e4eb00d8b665b592d5fcdab9363d7ed68c4c3f316.webp",
+      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/5d9fceff8f3a62eeb80c9303451e63f6fd8e0614d0460753a57d7e39e5d4f902.webp",
+      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/0d57af6a723971869771b0e6301e18b7ef9a892fd12f82e393d4e0645a9b8a1a.webp",
+      "alt": "Glory 580 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/87542e0608b035c91cfadd64d3c046b02c9c2d3bdc6f02be95aafb7f184c0c27.webp",
+      "alt": "Glory 580 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/ede6dcc29c539ab3b62ef08a2421576f88c917de2cf73f03fe5cdaec3e9ae98a.webp",
+      "alt": "Glory 580 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/7a20cc3552d8f35f1778229699a68a22d56cce13edf0931452d37350d06ffd01.webp",
+      "alt": "Glory 580 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/92646a6986b7bd045d78ca017a354cba994069bc131779ef0fd34f3770477546.webp",
+      "alt": "Glory 580 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/2ffb809aeadb9a1309a079d8144cdc531c9245f79db932ab2d7ec92bf7ed3320.webp",
+      "alt": "Glory 580 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/ba5ca9bdfcaad0e037d3b493e80ee10bdd86cae0b2e4b11cf50f391d047363c4.webp",
+      "alt": "Glory 580 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/afb65f5b5682f4347de5586af1dc485d5cce53aa51f7eddaeeaa63b3597cdee2.webp",
+      "alt": "Glory 580 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/284d590e9af56f0a4fc081c4e042e4606daf5dd007b3d804adf3bcc889b63c3c.webp",
+      "alt": "Glory 580 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/88579b4d8683dfae0c942b6af3889fa8a04ae089828bbf9e944b7c932c39eb88.webp",
+      "alt": "Glory 580 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/19032de9a0fa34db8170b8dc372c1d14482cca61d533599726678fac4d283762.webp",
+      "alt": "Glory 580 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/b243605ffc9906246d885314cf2dcde54a85f93daf5d809821707825a2cdab84.webp",
+      "alt": "Glory 580 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/d8f94d25ae4d914ff3a7ad3d3e113b339d33abc54be4b48566b92f5e75b42686.webp",
+      "alt": "Glory 580 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/793e075a07b93ae80637576e4eb00d8b665b592d5fcdab9363d7ed68c4c3f316.webp",
+      "alt": "Glory 580 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/5d9fceff8f3a62eeb80c9303451e63f6fd8e0614d0460753a57d7e39e5d4f902.webp",
+      "alt": "Glory 580 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
     },
     {
       "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/d96af29c5d52ef5857dc9555ac8b12675f58672396b706c3676a4b4e898e2624.jpeg",
@@ -920,13 +1474,139 @@
       "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
     },
     {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f27167d00fb1a74c0b16106f473938b7be836dd8eb3b903e9ee82e513af2fd25.jpeg",
-      "alt": "SUV JAC JS8 en alquiler en Lima — imagen referencial",
-      "credit": "RL GNZLZ",
-      "reference": true,
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:2022_JAC_JS8_1.5_TGDi_Luxury.jpg",
-      "license": "CC BY-SA 2.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/3b6df538429ad22c5cf9d1e87229e4f45de1b7c0283313e96b83bda49bde591a.webp",
+      "alt": "JAC JS8 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/89411f32cd3decc7a61f5e122ad56f4a08da8a55391353293ea92dad82c18111.webp",
+      "alt": "JAC JS8 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/8d639c7ecc1e70e41ea8f01871d226aeceadf6a9d6fd6759ac30f91f53187362.webp",
+      "alt": "JAC JS8 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/fe6e8cecab8b3168bffab5cc63a03b1b51a44e0c7de3c02db973366589730ce8.webp",
+      "alt": "JAC JS8 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/58efc98d9213806d469ceb6e41d7028db44a8074a552b73f8c2b365569474fa8.webp",
+      "alt": "JAC JS8 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/4dce7fbce92bcceb690e29b7cc11c66593d213a18ec669a0147d85f88587b0b8.webp",
+      "alt": "JAC JS8 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/336d86460b88dd55d1b0e97697a8a500d431b215fb9122a823a7bf7b2c90899f.webp",
+      "alt": "JAC JS8 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/313d9a4feb2688f1dcc801991d624ab9646bf97b0d898b65b042fdd845c36224.webp",
+      "alt": "JAC JS8 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/d7ddc17a95625d321b14a4dc58a681aafb74eeccf05c249afe43fe87673546f6.webp",
+      "alt": "JAC JS8 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/bbac70f9351c32a7ca8e27c1e8712167e4352a2fd8611019119bdf5a52da9359.webp",
+      "alt": "JAC JS8 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/08109bf209865843734120365a46f6622f166a14ef2a8d0292796b6c5f565ce5.webp",
+      "alt": "JAC JS8 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/9a0987cd0bdb236f6fe7fe2adf4a0c85dd00fd03a58b8ba1c009cfc9540755b8.webp",
+      "alt": "JAC JS8 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/81fc43d95dc830919be3c410a146bebc1f0e573d45672dcff31c2228bdca2c56.webp",
+      "alt": "JAC JS8 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/01d3fd2cc578e4fb6ba508fbd2fcc5ec590dfa7565f255a2075bcd4d63a40d22.webp",
+      "alt": "JAC JS8 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/06c9d2ce1813518b965cd9fb6b203f70745396ac45d0ebe7e79954772f1d8243.webp",
+      "alt": "JAC JS8 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
     },
     {
       "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/3eb9969ad7b6f77cc31b7fde8ad8066ba317e8ab350b550324e6a9a44d057710.jpeg",
@@ -938,8 +1618,8 @@
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
     },
     {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/49492f2f6d425e5229a9e4a2abdb8a614bea3cdb47ccfd9f7a5d570ecc5ad9fb.png",
-      "alt": "Suzuki Ertiga blanca de Renting Car A&M, vista frontal de tres cuartos",
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/ea347c7274f08db744530c07bc9d70922e709bf42ebab0eaa59f36f10428ca74.webp",
+      "alt": "Suzuki Ertiga en alquiler en Lima — Renting Car A&M",
       "credit": null,
       "reference": false,
       "sourceUrl": null,
@@ -947,8 +1627,8 @@
       "licenseUrl": null
     },
     {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/629fa5b94fdb80a005072f26c63e198df8905e0e4dc3aa55729edc7e37b6b624.png",
-      "alt": "Suzuki Ertiga blanca, vista frontal desde el lado opuesto",
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/5da5f296f9b30a91d5e7d6f5e6b9d38fbe1014b498843d94cd9ab6dd6546a479.webp",
+      "alt": "Suzuki Ertiga en alquiler en Lima — Renting Car A&M",
       "credit": null,
       "reference": false,
       "sourceUrl": null,
@@ -956,8 +1636,8 @@
       "licenseUrl": null
     },
     {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f2a2b758b3dcecf2feb1b0a751681bbaadd8cd3d2428df1a38f5cd7d09f7fab9.png",
-      "alt": "Suzuki Ertiga blanca, vista posterior de tres cuartos",
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/82786e527a8684c014c212a89cbca4e70099358c9abd6e24ead66949e49326ee.webp",
+      "alt": "Suzuki Ertiga en alquiler en Lima — Renting Car A&M",
       "credit": null,
       "reference": false,
       "sourceUrl": null,
@@ -965,8 +1645,8 @@
       "licenseUrl": null
     },
     {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/67fe0476177998bb8e71e1d5a76e91fbd1444d8aaee4094de57f35c5522ac71a.png",
-      "alt": "Suzuki Ertiga blanca, vista de tres cuartos sobre fondo de estudio",
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/b549d310d81ce36a2775fbb54330b1dcd6363c18862756eb5480e642af141df6.webp",
+      "alt": "Suzuki Ertiga en alquiler en Lima — Renting Car A&M",
       "credit": null,
       "reference": false,
       "sourceUrl": null,
@@ -974,8 +1654,8 @@
       "licenseUrl": null
     },
     {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/8904785c6576f42e039fb5ff0ffa7e0000a17ba053e7e604f9230d2c798b0956.png",
-      "alt": "Suzuki Ertiga blanca, vista frontal sobre fondo blanco",
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/2b707f140a9246170acaacc8475b7c8f57e628e353ae049451782c228c8fabd1.webp",
+      "alt": "Suzuki Ertiga en alquiler en Lima — Renting Car A&M",
       "credit": null,
       "reference": false,
       "sourceUrl": null,
@@ -983,8 +1663,8 @@
       "licenseUrl": null
     },
     {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/c4e19f4d84f68356573a9e8f62aca2d9cec5c899b189ff3492b8204ee18d9769.png",
-      "alt": "Suzuki Ertiga blanca, vista lateral sobre fondo blanco",
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f9e2a0897f1fb1d364266a700ec153aea7be79503183887476394870f184b708.webp",
+      "alt": "Suzuki Ertiga en alquiler en Lima — Renting Car A&M",
       "credit": null,
       "reference": false,
       "sourceUrl": null,

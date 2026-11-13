@@ -7,7 +7,7 @@
     "dev": "next dev --hostname 0.0.0.0",
     "build": "node scripts/public-snapshot.mjs && next build",
     "typecheck": "next typegen && tsc --noEmit",
-    "test": "node --test scripts/quote.test.mjs scripts/marketing-auth.test.mjs scripts/marketing-seo.test.mjs",
+    "test": "node --test scripts/quote.test.mjs scripts/marketing-auth.test.mjs scripts/marketing-seo.test.mjs scripts/rental-pricing.test.mjs scripts/rental-requests.test.mjs scripts/image-download.test.mjs",
     "preview": "node scripts/preview.mjs"
   },
   "dependencies": {

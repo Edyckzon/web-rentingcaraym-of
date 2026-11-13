@@ -4,6 +4,7 @@ import { useId, useRef, useState, type TouchEvent } from 'react';
 import { ChevronLeft, ChevronRight, Expand, X, ZoomIn, ZoomOut } from 'lucide-react';
 import type { CatalogImage } from '@/lib/media';
 import GalleryDialog from './GalleryDialog';
+import VehiclePlaceholder from './VehiclePlaceholder';
 
 export default function VehicleGallery({ images, name, compact = false }: {
   images: CatalogImage[]; name: string; compact?: boolean;
@@ -14,7 +15,7 @@ export default function VehicleGallery({ images, name, compact = false }: {
   const start = useRef<{ x: number; y: number } | null>(null);
   const titleId = useId();
   const photo = images[index];
-  if (!photo) return <p>Consulte las fotografías disponibles de {name}.</p>;
+  if (!photo) return <VehiclePlaceholder name={name}/>;
   const multiple = images.length > 1;
   function select(next: number) {
     setIndex((next + images.length) % images.length);

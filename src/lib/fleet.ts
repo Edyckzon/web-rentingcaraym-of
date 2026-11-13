@@ -1,7 +1,8 @@
+import type { RentalRates } from './rental-pricing.mjs';
 import type { Listing } from './marketing';
 import snapshot from './marketing-public.json';
 import type { CatalogImage } from './media';
-import { technicalSheets, type TechnicalSheet } from './technicalSheets';
+import { emptyCatalogProfile, type CatalogProfile } from './catalog-profile';
 import { fleetDetails } from './fleetDetails';
 
 export type Category = string;
@@ -11,30 +12,36 @@ export type Vehicle = {
   category: Category;
   description: string;
   images: CatalogImage[];
-  referenceSheet?: TechnicalSheet;
+  profile: CatalogProfile;
+  categories: string[];
   // Incorporar únicamente especificaciones y tarifas aprobadas de la unidad real.
   specifications?: { label: string; value: string }[];
-  dailyRate?: number;
+  rates?: RentalRates;
   seoTitle?: string; seoDescription?: string; idealFor?: string; updatedAt?: string;
 };
 
-// Los archivos originales del catálogo se sirven desde Supabase Storage.
-export const baseFleet: Vehicle[] = (snapshot.listings as Listing[]).map(model => {
-  const details = fleetDetails[model.id];
-  const sheet = technicalSheets[model.id];
+export function vehicleFromListing(model: Listing, photos: CatalogImage[]): Vehicle {
+  const profile = { ...emptyCatalogProfile, ...fleetDetails[model.id], ...model.profile };
+  const specs: [string, string][] = [
+    ['Año', String(profile.year ?? '')], ['Transmisión', profile.transmission], ['Combustible', profile.fuel],
+    ['Pasajeros', String(profile.seats ?? '')], ['Tracción', profile.traction], ['Motor', profile.engine],
+    ['Maletera', profile.luggage], ['Kilometraje incluido', profile.includedKm === null ? '' : `${profile.includedKm} km`],
+  ];
   return {
-    seoTitle:model.seoTitle, seoDescription:model.seoDescription, idealFor:model.idealFor, updatedAt:model.updatedAt,
-    id: model.id, name: model.name, category: model.category, description: model.description,
-    referenceSheet: sheet && {...sheet, ...(details && {year: details.year, transmission: details.transmission})},
-    specifications: details ? [{label: 'Combustible', value: details.fuel}] : [],
-    images: model.images.map(src => {
-      const photo = snapshot.photos.find(p => p.src === src);
-      return {src, alt: photo?.alt ?? model.name, reference: photo?.reference,
-        credit: photo?.credit ?? undefined, sourceUrl: photo?.sourceUrl ?? undefined,
-        license: photo?.license ?? undefined, licenseUrl: photo?.licenseUrl ?? undefined};
+    ...model,
+    profile,
+    categories: [...new Set([model.category, ...(model.additionalCategories ?? [])])],
+    specifications: specs.filter(([, value]) => value).map(([label, value]) => ({ label, value })),
+    images: model.images.flatMap(src => {
+      const photo = photos.find(item => item.src === src);
+      return photo?.reference === false && !photo.sourceUrl ? [photo] : [];
     }),
   };
-});
+}
+
+export const baseFleet: Vehicle[] = (snapshot.listings as Listing[])
+  .filter(model => model.published !== false)
+  .map(model => vehicleFromListing(model, snapshot.photos));
 export const fleet = baseFleet;
 export const featuredFleet = fleet.filter(v => snapshot.listings.some(row => row.id === v.id && row.featured));
 

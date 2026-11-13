@@ -1,3 +1,6 @@
+import { commercialCatalog, saveCommercial, saveFreightDraft } from './commercial.mjs';
+import { validateAdminCredentials } from '../src/lib/admin-credentials.mjs';
+import { receiveRentalRequest, requestSiteKey } from './rental-requests.mjs';
 import {contentRevision} from './publication.mjs';
 import {guardPassword} from './login-guard.mjs';
 const project='https://pjkcihdiasktmwdpcmpt.supabase.co';
@@ -7,6 +10,17 @@ const json=(v,status=200,headers={})=>new Response(JSON.stringify(v),{status,hea
 const fail=(s,m)=>{throw Object.assign(new Error(m),{status:s})};
 const safeAsset=p=>typeof p==='string'&&(p.startsWith(publicRoot)||(/^\/images\/[\w%(). /-]+$/.test(p)&&!decodeURIComponent(p).split('/').includes('..')));
 const safeLink=s=>typeof s==='string'&&!/[\\\s]/.test(s)&&(/^\/(?!\/)/.test(s)||/^https:\/\//.test(s));
+const rateFields = {
+  daily: 'tarifa_diaria_centimos',
+  weeklyPerDay: 'tarifa_semanal_dia_centimos',
+  monthly: 'tarifa_mensual_centimos',
+  deposit: 'garantia_centimos',
+};
+
+function vehicleRates(vehicle) {
+  const rates = Object.fromEntries(Object.entries(rateFields).map(([key, column]) => [key, vehicle[column] ?? null]));
+  return Object.values(rates).some(value => value !== null) ? rates : undefined;
+}
 export async function marketingAPI(req,env){
  const u=new URL(req.url), path=u.pathname.replace(/^\/marketing-api\//,'').replace(/\/$/,'');
  const token=(req.headers.get('cookie')||'').match(/(?:^|;\s*)renting_auth=([\w.-]+)/)?.[1];
@@ -18,19 +32,56 @@ export async function marketingAPI(req,env){
  async function sup(path,options={},bearer=token){
    const r=await fetch(project+path,{...options,headers:{apikey:env.SUPABASE_PUBLISHABLE_KEY,...(bearer?{Authorization:'Bearer '+bearer}:{}),'Content-Type':'application/json',...options.headers}});
    if(!r.ok){const error=await r.json().catch(()=>({}));if(path.startsWith('/auth/v1/token') && (error.error_code??error.code)==='invalid_credentials')throw Object.assign(new Error('Correo o contraseña incorrectos.'),{status:401,authCode:'invalid_credentials'});
+   if(error.code==='22023' && (path.startsWith('/rest/v1/promociones_alquiler')||path==='/rest/v1/rpc/guardar_promocion_categoria'))fail(400,error.message);
    fail(r.status===401?401:r.status===403?403:r.status===409?409:r.status===429?429:400,error.code==='23503'?'La categoría se está usando. Reasigna sus vehículos antes de eliminarla.':error.code==='23505'?'Ese nombre ya existe.':error.code==='PGRST202'?'Ejecuta la migración 03 en Supabase.':r.status===401||path.startsWith('/auth/')?'Correo o contraseña incorrectos, o sesión vencida.':'Supabase rechazó la operación ('+(error.code||r.status)+').');}
    const t=await r.text();return t?JSON.parse(t):null;
  }
  const rest=(p,o,b)=>sup('/rest/v1/'+p,o,b),post=body=>({method:'POST',body:JSON.stringify(body)});
- async function snapshot(){
-   const [settings,vehicles,photos,cats,pages,blocks]=await Promise.all([rest('configuracion_web?id=eq.1',{},null),rest('vehiculos?select=*&order=id',{},null),rest('vehiculo_fotos?select=*&order=vehiculo_id,orden&limit=10000',{},null),rest('categorias?select=nombre&order=nombre',{},null).catch(e=>{if(!e.message.includes('PGRST205'))throw e;return null;}),rest('paginas_web?select=*&order=ruta',{},null),rest('bloques_web?select=*&order=orden',{},null)]);
-   if(!settings[0])fail(503,'Falta la configuración web.');
-   return {blocks:blocks.map(b=>({id:b.id,group:b.grupo,label:b.etiqueta,title:b.titulo,body:b.cuerpo,linkLabel:b.enlace_texto,linkUrl:b.enlace_url})),pages:pages.map(p=>({path:p.ruta,title:p.titulo,description:p.descripcion,heading:p.encabezado,intro:p.introduccion,updatedAt:p.actualizado_en})),...Object.fromEntries(Object.entries(fields).map(([k,v])=>[k,settings[0][v]])),categories:cats?.map(c=>c.nombre)??[...new Set(vehicles.map(v=>v.categoria))],listings:vehicles.map(v=>({id:v.id,name:v.nombre,category:v.categoria,description:v.descripcion,seoTitle:v.seo_titulo,seoDescription:v.seo_descripcion,idealFor:v.ideal_para,updatedAt:v.actualizado_en,featured:v.destacado,images:photos.filter(p=>p.vehiculo_id===v.id).map(p=>p.ruta)})),photos:photos.map(p=>({src:p.ruta,alt:p.alt,credit:p.credito,reference:p.referencial,sourceUrl:p.fuente,license:p.licencia,licenseUrl:p.enlace_licencia}))};
+ async function snapshot(includeDrafts = false) {
+   const catalogToken = includeDrafts ? token : null;
+   const [settings, vehicles, photos, categories, pages, blocks, links] = await Promise.all([
+     rest('configuracion_web?id=eq.1', {}, null),
+     rest('vehiculos?select=*&order=id', {}, catalogToken),
+     rest('vehiculo_fotos?select=*&order=vehiculo_id,orden,id&limit=10000', {}, null),
+     rest('categorias?select=nombre&order=nombre', {}, null).catch(e => {
+       if (!e.message.includes('PGRST205')) throw e;
+       return null;
+     }),
+     rest('paginas_web?select=*&order=ruta', {}, null),
+     rest('bloques_web?select=*&order=orden', {}, null),
+     rest('vehiculo_categorias?select=vehiculo_id,categoria&order=vehiculo_id,categoria', {}, catalogToken).catch(e => {
+       if (!e.message.includes('PGRST205')) throw e;
+       return [];
+     }),
+   ]);
+   if (!settings[0]) fail(503, 'Falta la configuración web.');
+   const visible = new Set(vehicles.map(v => v.id));
+   return {
+     blocks: blocks.map(b => ({ id:b.id, group:b.grupo, label:b.etiqueta, title:b.titulo, body:b.cuerpo, linkLabel:b.enlace_texto, linkUrl:b.enlace_url })),
+     pages: pages.map(p => ({ path:p.ruta, title:p.titulo, description:p.descripcion, heading:p.encabezado, intro:p.introduccion, updatedAt:p.actualizado_en })),
+     ...Object.fromEntries(Object.entries(fields).map(([k,v]) => [k, settings[0][v]])),
+     categories: categories?.map(c => c.nombre) ?? [...new Set(vehicles.map(v => v.categoria))],
+     listings: vehicles.map(v => ({
+       id:v.id, name:v.nombre, category:v.categoria,
+       additionalCategories: links.filter(link => link.vehiculo_id === v.id).map(link => link.categoria),
+       profile: v.ficha_catalogo ?? undefined,
+       published: v.catalogo_publicado ?? true,
+       rates:vehicleRates(v), description:v.descripcion, seoTitle:v.seo_titulo, seoDescription:v.seo_descripcion,
+       idealFor:v.ideal_para, updatedAt:v.actualizado_en, featured:v.destacado,
+       images:photos.filter(p => p.vehiculo_id === v.id).map(p => p.ruta),
+     })),
+     photos: photos.filter(p => visible.has(p.vehiculo_id)).map(p => ({
+       src:p.ruta, alt:p.alt, credit:p.credito, reference:p.referencial, sourceUrl:p.fuente, license:p.licencia, licenseUrl:p.enlace_licencia,
+     })),
+   };
  }
  if(req.method==='GET'&&path==='public')return json(await snapshot());
+ if(req.method==='GET'&&path==='commercial')return json({ ...await commercialCatalog(rest), requestSiteKey: requestSiteKey(env) });
+ if(req.method==='POST'&&path==='rental-request')return json(await receiveRentalRequest(req,env,{ rest, fail, vehicleRates, project }),201);
  if(path==='login'&&req.method==='POST'){
-   const data=await req.json();const email=typeof data?.email==='string'?data.email.trim().toLowerCase():'';
-   const password=data?.password;if(!email || email.length>254 || !email.includes('@') || typeof password!=='string'||!password||password.length>4096)fail(400,'Ingresa un correo y una contraseña válidos.');
+   const data = await req.json().catch(() => null);
+   const { email, password, errors } = validateAdminCredentials(data?.email, data?.password);
+   if (errors.email || errors.password) fail(400, 'Ingresa un correo y una contraseña válidos.');
    const verify=()=>sup('/auth/v1/token?grant_type=password',post({email,password}),null);
    // Staged rollout: enable when D1 is bound. Database errors never bypass the guard.
    const r=env.LOGIN_GUARD_DB?await guardPassword(env.LOGIN_GUARD_DB,email,verify):await verify();
@@ -38,9 +89,13 @@ export async function marketingAPI(req,env){
    return json({},200,{'Set-Cookie':cookie(r.access_token,Math.min(3600,r.expires_in))});
  }
  if(path==='logout'&&req.method==='POST'){if(token)await sup('/auth/v1/logout?scope=local',{method:'POST'}).catch(()=>{});return json({},200,{'Set-Cookie':cookie('',0)});}
- if(!['content','vehicle','remove','settings','category','upload','import-photo','page','block','publish','publication-status'].includes(path))fail(404,'No encontrado.');
+ if(!['content','vehicle','profile','rates','remove','settings','category','upload','import-photo','page','block','publish','publication-status','commercial-admin','rental-rules','rental-extra','rental-promotion','service-rate','rental-history','rental-inbox','freight-draft'].includes(path))fail(404,'No encontrado.');
  if(!token||!await rest('rpc/renting_admin',post({})))fail(401,'Inicia sesión con una cuenta administradora.');
- if(path==='content'&&req.method==='GET')return json(await snapshot());
+ if(path==='content'&&req.method==='GET')return json(await snapshot(true));
+ if(path==='commercial-admin'&&req.method==='GET')return json(await commercialCatalog(rest, token));
+ if(path==='rental-history'&&req.method==='GET')return json(await rest('rpc/historial_tarifas_admin',post({})));
+ if(path==='rental-inbox'&&req.method==='GET')return json(await rest('rpc/solicitudes_alquiler_admin',post({})));
+ if(path==='freight-draft'&&req.method==='GET')return json(await rest('rutas_carga_borrador?order=origen,destino'));
  if(path==='publication-status'&&req.method==='GET'){
    const live=await fetch('https://rentingcaraym.com/seo-publication.json?check='+Date.now(),{cache:'no-store',signal:AbortSignal.timeout(8000)});
    if(!live.ok)return json({revision:null});
@@ -68,7 +123,10 @@ export async function marketingAPI(req,env){
    return json(src);
  }
  const data=await req.json();
- if(path==='block'){
+ if(path==='freight-draft')return json(await saveFreightDraft(data,rest,fail));
+ if(['rental-rules','rental-extra','rental-promotion','service-rate'].includes(path)){
+   return json(await saveCommercial(path,data,rest,fail) ?? {});
+ }else if(path==='block'){
    if(typeof data.id!=='string'||!/^[a-z0-9-]{1,100}$/.test(data.id))fail(400,'Texto no válido.');
    const keys={title:['titulo',200],body:['cuerpo',6000],linkLabel:['enlace_texto',100],linkUrl:['enlace_url',2048]};
    const patch={};
@@ -90,9 +148,41 @@ export async function marketingAPI(req,env){
    }
    const updated=await rest('paginas_web?ruta=eq.'+encodeURIComponent(data.path),{method:'PATCH',headers:{Prefer:'return=representation'},body:JSON.stringify(patch)});
    if(!updated.length)fail(404,'Página no encontrada.');
+ }else if(path==='profile'){
+   if (typeof data?.id !== 'string' || !/^[a-z0-9-]{1,100}$/.test(data.id) || typeof data.published !== 'boolean') fail(400, 'Elija un vehículo y su estado.');
+   if (!Array.isArray(data.categories) || data.categories.length > 12 || data.categories.some(c => typeof c !== 'string' || !c.trim() || c.length > 60)) fail(400, 'Revise las categorías.');
+   const profile = {};
+   for (const [key, min, max] of [['year',1900,2100], ['seats',1,100], ['includedKm',0,1000000]]) {
+     const value = data.profile?.[key];
+     if (value !== null && (!Number.isInteger(value) || value < min || value > max)) fail(400, 'Revise año, plazas y kilometraje.');
+     profile[key] = value;
+   }
+   if (data.published && profile.year === null) fail(400, 'Indique el año confirmado antes de publicar.');
+   for (const key of ['transmission','fuel','traction','engine','luggage']) {
+     const value = data.profile?.[key];
+     if (typeof value !== 'string' || value.length > 100) fail(400, 'Revise las especificaciones del vehículo.');
+     profile[key] = value.trim();
+   }
+   await rest('rpc/guardar_ficha_catalogo', post({ ficha: { id:data.id, published:data.published, categories:data.categories, profile } }));
+ }else if(path==='rates'){
+   if(typeof data?.id!=='string'||!/^[a-z0-9-]{1,100}$/.test(data.id))fail(400,'Elija un vehículo válido.');
+   const patch = {};
+   for (const [key, column] of Object.entries(rateFields)) {
+     const cents = data.rates?.[key];
+     const minimum = key === 'deposit' ? 0 : 1;
+     if (cents !== null && (!Number.isInteger(cents) || cents < minimum || cents > 100000000)) {
+       fail(400,'Indique importes válidos en soles. Las tarifas deben ser mayores que cero.');
+     }
+     patch[column] = cents;
+   }
+   const updated = await rest('vehiculos?id=eq.' + encodeURIComponent(data.id), {
+     method: 'PATCH', headers: { Prefer: 'return=representation' }, body: JSON.stringify(patch),
+   });
+   if (!updated.length) fail(404,'El vehículo ya no está disponible.');
  }else if(path==='vehicle'){
    if(!Array.isArray(data.images)||!data.images.every(safeAsset))fail(400,'Ruta de foto no válida.');
-   await rest('rpc/guardar_vehiculo',post({ficha:data}));
+   if(typeof data.id!=='string'||!/^[a-z0-9-]{1,100}$/.test(data.id)||['ficha','suv','pickup-4x4','7-asientos','sedan'].includes(data.id))fail(400,'El identificador del vehículo coincide con una ruta reservada o no es válido.');
+   await rest('rpc/guardar_vehiculo_catalogo',post({ficha:data}));
  }else if(path==='remove'){await rest('vehiculos?id=eq.'+encodeURIComponent(data.id),{method:'DELETE'});}
  else if(path==='settings'){
    const entries=Object.entries(data);if(!entries.length||entries.some(([k,v])=>!Object.hasOwn(fields,k)||typeof v!=='string'||!v.trim()||v.length>2048||(k==='hours'&&v.length>200)||(['maps','waze','firstUrl','secondUrl','groupUrl'].includes(k)&&!safeLink(v))||(['email','adminEmail'].includes(k)&&!/^[-a-zA-Z0-9.!#$%&'*+/=?^_`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(v))||(k==='hero'&&!safeAsset(v))||(k==='whatsapp'&&!/^\d{8,15}$/.test(v))))fail(400,'Revisa los campos y destinos.');

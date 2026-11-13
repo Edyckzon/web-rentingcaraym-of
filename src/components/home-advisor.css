@@ -1,0 +1,73 @@
+.home-advisor {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  height: 205px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.home-advisor-figure {
+  position: relative;
+  width: 180px;
+}
+
+.home-advisor-portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.home-advisor-logo {
+  position: absolute;
+  inset: 45.4% auto auto 60%;
+  box-sizing: content-box;
+  width: 14%;
+  height: auto;
+  padding: 2px 3px;
+  border-radius: 3px;
+  background: #fff;
+  transform: rotate(-8deg);
+}
+
+@media (max-width: 1020px) {
+  .home-hero .hero-content {
+    min-height: 0;
+  }
+
+  .home-advisor-figure {
+    aspect-ratio: 2 / 3;
+    align-self: start;
+  }
+}
+
+@media (min-width: 1021px) {
+  .home-hero .hero-content {
+    position: relative;
+    z-index: 1;
+    padding-inline-end: clamp(265px, 31vw, 420px);
+  }
+
+  .home-advisor {
+    position: absolute;
+    inset: auto max(4vw, calc((100% - 1216px) / 2)) -56px auto;
+    width: clamp(250px, 27vw, 330px);
+    height: auto;
+    overflow: visible;
+  }
+
+  .home-advisor-figure {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-advisor-figure {
+    animation: home-advisor-enter 700ms cubic-bezier(.22, 1, .36, 1) both;
+  }
+}
+
+@keyframes home-advisor-enter {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}

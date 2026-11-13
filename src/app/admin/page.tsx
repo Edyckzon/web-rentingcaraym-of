@@ -1,2 +1,6 @@
+import type { Metadata } from 'next';
 import Editor from './editor';
-export default function MarketingPage(){return <Editor/>;}
+
+export const metadata: Metadata = { title: 'Administración del sitio' };
+
+export default function AdminPage() { return <Editor/>; }

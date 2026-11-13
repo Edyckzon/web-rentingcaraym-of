@@ -2,10 +2,16 @@ import { MarketingProvider } from '@/components/MarketingProvider';
 import type { Metadata } from 'next';
 import './globals.css';
 import './gallery.css';
+import './rental.css';
+import './navigation.css';
+import './tariff.css';
 import brandLogo from '@/lib/img/RENTING-CAR.png';
 import Header from '@/components/Header';
+import { PromotionRibbon } from '@/components/Promotions';
+import Analytics from '@/components/Analytics';
 import Footer from '@/components/Footer';
 import { business } from '@/lib/business';
+import { publishedRentalGuides } from '@/lib/rental-guides';
 
 export const metadata: Metadata = {
   metadataBase: new URL(business.siteUrl),
@@ -25,5 +31,5 @@ const localBusiness = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="es"><body><a className="skip" href="#contenido">Ir al contenido</a><MarketingProvider><Header/><main id="contenido" tabIndex={-1}>{children}</main><Footer/></MarketingProvider><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness).replace(/</g, '\\u003c') }}/></body></html>;
+  return <html lang="es" data-scroll-behavior="smooth"><body><a className="skip" href="#contenido">Ir al contenido</a><MarketingProvider><PromotionRibbon/><Header showGuides={publishedRentalGuides.length > 0}/><main id="contenido" tabIndex={-1}>{children}</main><Footer/></MarketingProvider><Analytics/><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness).replace(/</g, '\\u003c') }}/></body></html>;
 }

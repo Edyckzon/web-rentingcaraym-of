@@ -1,0 +1,57 @@
+RECORRIDO TIERRA → SURCO — VERSIÓN 2
+
+Vista local: http://127.0.0.1:4318/
+Botón: «De la Tierra a nuestra sede».
+Video: public/brand/journey/tierra-a-surco-v2.mp4
+24 segundos, 1920 × 1080, 30 fps, H.264, sin audio y carga bajo demanda.
+
+Esta versión incluye zoom lento, nubes visibles por capas, una reconstrucción más nítida de la fachada con el SUV rojo y la asesora saludando. El logo del polo usa el archivo original.
+Se usó la herramienta integrada de generación de imágenes para oficina/auto, asesora y nubes. El video se renderiza por código con cámara 2D y una malla que mueve el antebrazo. No es una filmación real ni movimiento humano completo generado por video. Se identifica como recreación visual con IA.
+La versión anterior se conserva para comparar; la portada usa una URL nueva para evitar caché. Correo y suscripciones siguen pendientes. No cambia WhatsApp, Supabase ni Cloudflare.
+
+Regeneración local, con Node 22 o posterior:
+npm install --prefix artifacts/journey-tools --no-save --package-lock=false @napi-rs/canvas ffmpeg-static
+node scripts/render-office-journey-v2.mjs
+Añadir --frames-only para crear solo la portada y los fotogramas de revisión.
+
+QUÉ ADJUNTAR A GEMINI
+El paquete gemini-referencias-v2.zip incluye:
+01-tierra.jpg — apertura.
+02-oficina-real.png — arquitectura real y destino, casa gris de tres pisos 3573.
+03-auto-rojo.png — vehículo exacto, que DEBE aparecer en el video al llegar.
+04-asesora.png — cara, uniforme y pose de la chica.
+05-logo.png — logo del polo.
+
+La escena-final.jpg en public/brand/journey/v2 ya combina oficina, auto y chica. Si Gemini ofrece un fotograma de llegada, puede servir como esa referencia. Respeta el límite de adjuntos que muestre tu cuenta.
+
+PROMPT PRINCIPAL
+
+Create a premium cinematic car-rental commercial for Renting Car A&M. Landscape 16:9, 1080p or the highest available resolution. Target total duration: 20 seconds. Slow, graceful camera movement. This must be a moving cinematic scene, NOT a slideshow, NOT a Ken Burns zoom on a still photo and NOT a fast Earth-to-building crossfade. If one generation cannot reach 20 seconds, create the first 10 seconds, then extend the same shot for another 10 seconds.
+
+REFERENCE ROLES — USE ALL FIVE:
+1. Earth: opening frame and continent orientation.
+2. Office: preserve the THREE-STOREY GREY facade, blue reflective windows, black metal fence, neighboring buildings and number 3573. Destination: Avenida Santiago de Surco 3573, Lima, Peru. Coordinates -12.1339962, -76.9971472. The grey building is the destination, not its neighbors.
+3. Red SUV: this EXACT red JAC vehicle MUST appear in the final video, parked outside the office, clearly visible beside the woman. Preserve body color, grille, headlights, wheels and proportions. Do not use it only as a thumbnail. Remove the studio turntable when integrating it outdoors.
+4. Female advisor: retain her face, ponytail, smile, black polo with orange collar/sleeve trim, black trousers and shoes. Adult, natural human scale, about 1.65 m tall, standing on the sidewalk beside the car with contact shadows. No giant or floating person.
+5. Logo: reproduce it accurately as a small patch on the polo; do not invent another brand.
+
+CAMERA AND TIMING:
+0–5 s: Earth from space, South America visible, a genuinely slow smooth push toward Peru. Natural sunlight and subtle atmospheric glow; no sudden acceleration.
+5–10 s: descend toward Lima through clearly visible volumetric white clouds. Foreground and midground cloud banks pass the camera for several seconds with depth, texture and parallax. NO white flash or flat fog. End immersed in a detailed cloud bank as a natural continuation point.
+10–14 s: continue through that SAME cloud bank. Clouds clear gradually, revealing Surco. Smoothly settle into a street-level view matching the actual grey office. No abrupt photo transition, morphing facade or spinning camera.
+14–20 s: the red SUV and advisor are BOTH clearly visible outside. She looks into the camera, smiles and waves twice, moving wrist and forearm naturally with subtle breathing and hair movement. Five fingers, stable face, no exaggerated gesture. The car remains parked with stationary wheels and natural shifting reflections. Hold the recognizable office, woman and car for the final two seconds.
+
+STYLE:
+Photorealistic, elegant automotive advertisement. Neutral natural daylight. Black, white and orange branding; keep the supplied car RED. Improve clarity while preserving the building design. Stable architecture, coherent perspective and slow movement matter more than flashy effects. No showroom or luxury tower replacing the office, no melting cars, warped windows, duplicated people or extra limbs. No music, voiceover or large generated text. Preserve required source attribution. Captions can be added in editing. Artistic visualization, not documentary aerial footage.
+
+SI LA GENERACIÓN ESTÁ LIMITADA A 10 SEGUNDOS
+Primera parte: al prompt principal añade:
+Generate ONLY seconds 0–10 now. End completely inside a textured cloud bank. Save the office, car and greeting for the continuation.
+
+Continuación: usa el último fotograma/video del primer clip y conserva las referencias:
+Continue the previous shot for 10 seconds, starting exactly inside its final cloud bank. Preserve camera direction, daylight, color and forward speed. During seconds 0–2 gently emerge from the clouds. During seconds 2–4 settle into a street-level view of the GREY office at Av. Santiago de Surco 3573. Park the exact RED SUV from reference 3 in front. The advisor from reference 4 stands beside it at realistic human scale, wearing the black/orange polo with the logo from reference 5. During seconds 4–8 she smiles at the camera and waves twice naturally using wrist and forearm. Keep the red car fully recognizable. Hold the final shot during seconds 8–10. Do not restart at Earth, change the face, redesign the office or change the car model. No still-photo crossfade, titles, music or voice.
+
+PROMPTS DE IMÁGENES LOCALES — HERRAMIENTA INTEGRADA
+Oficina/auto: restaurar la fachada gris de tres pisos sin convertirla en showroom, conservar ventanas azules/reja/vereda/vecinos, sustituir el SUV blanco delantero por el JAC rojo de referencia, 16:9 con espacio a la derecha para la asesora, luz y sombras naturales, conservar atribución Google.
+Asesora: conservar cara y vestuario original, cuerpo completo transparente, mano izquierda levantada y separada del torso para animación, cinco dedos, polo negro/naranja y parche del logo, llaves en otra mano.
+Nubes: capa VFX fotográfica 16:9 con transparencia, bancos volumétricos de cúmulos en lados e inferior, hueco central, detalle blanco/gris y bordes semitransparentes; sin cielo ni fondo plano.

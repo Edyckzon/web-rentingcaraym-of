@@ -10,6 +10,16 @@ test('sin sesión no se puede editar; ni con sesión se acepta otro origen',asyn
  assert.equal((await marketingAPI(request('vehicle',{},{origin:'https://otro.example',cookie:'renting_auth=token'}),env)).status,403);
  assert.equal((await marketingAPI(request('signup',{}),env)).status,404);
 });
+test('el login rechaza correos mal formados y campos vacíos antes de consultar Supabase',async t=>{
+ const fetchMock=t.mock.method(globalThis,'fetch',async()=>{throw new Error('No debe consultar Supabase');});
+ for(const body of [{email:'a@@example.test',password:'test'},{email:'a @example.test',password:'test'},
+  {email:'a@example.test',password:''},{email:['a@example.test'],password:'test'}]){
+  assert.equal((await marketingAPI(request('login',body),env)).status,400);
+ }
+ const invalidJson = new Request(origin+'/marketing-api/login',{method:'POST',headers:{origin},body:'{'});
+ assert.equal((await marketingAPI(invalidJson,env)).status,400);
+ assert.equal(fetchMock.mock.callCount(),0);
+});
 test('el login requiere rol en Supabase; el token no se devuelve en el cuerpo',async(t)=>{
  let admin=false;
  t.mock.method(globalThis,'fetch',async(url,opts)=>{

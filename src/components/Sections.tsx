@@ -1,6 +1,7 @@
 'use client';
 import {useMarketing} from '@/components/MarketingProvider';
 import Link from 'next/link';
+import JsonLd from './JsonLd';
 import {ContentText,ContentLink} from '@/components/ContentText';
 import { ArrowUpRight, Building2, CarFront, ChevronDown, MapPin, MessageCircle, Wrench } from 'lucide-react';
 
@@ -21,9 +22,25 @@ export function Steps() {
   return <section className="section soft" id="como-funciona"><div className="container"><div className="section-heading"><div><p className="eyebrow">Cómo trabajamos</p><h2>{header.title}</h2></div><div><ContentText text={header.body}/><ContentLink block={header}/></div></div><ol className="steps-grid">{[1,2,3,4].map(i=>{const item=block('step-0'+i);return <li key={item.id}><span className="step-number">0{i}</span><h3>{item.title}</h3><ContentText text={item.body}/><ContentLink block={item}/></li>;})}</ol></div></section>;
 }
 
-export function Faq() {
-  const {blocks,block}=useMarketing();const header=block('faq-header');
-  return <section className="section dark-section" id="preguntas-frecuentes"><div className="container faq-layout"><div><p className="eyebrow">Preguntas frecuentes</p><h2>{header.title}</h2><ContentText text={header.body}/><ContentLink block={header}/></div><div className="faq">{blocks.filter(b=>/^faq-\d+$/.test(b.id)).map(item=><details key={item.id}><summary>{item.title}<ChevronDown size={19}/></summary><ContentText text={item.body}/><ContentLink block={item}/></details>)}</div></div></section>;
+export function Faq({ structuredData = false }: { structuredData?: boolean }) {
+  const { blocks, block } = useMarketing();
+  const header = block('faq-header');
+  const questions = blocks.filter(item => /^faq-\d+$/.test(item.id) && item.title.trim() && item.body.trim());
+  return <section className="section dark-section" id="preguntas-frecuentes">
+    {structuredData && questions.length > 0 && <JsonLd data={{
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: questions.map(item => ({
+        '@type': 'Question',
+        name: item.title,
+        acceptedAnswer: { '@type': 'Answer', text: item.body },
+      })),
+    }}/>}
+    <div className="container faq-layout">
+      <div><p className="eyebrow">Preguntas frecuentes</p><h2>{header.title}</h2><ContentText text={header.body}/><ContentLink block={header}/></div>
+      <div className="faq">{questions.map(item => <details key={item.id}><summary>{item.title}<ChevronDown size={19}/></summary><ContentText text={item.body}/><ContentLink block={item}/></details>)}</div>
+    </div>
+  </section>;
 }
 
 export function Closing() {
