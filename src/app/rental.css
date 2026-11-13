@@ -75,7 +75,13 @@
 .rental-search label { display: grid; gap: 6px; min-width: 0; font-size: .9rem; font-weight: 600; }
 .catalog-filters select,
 .rental-search :is(input, select) { width: 100%; min-width: 0; min-height: 44px; padding: 8px; border: 1px solid #999; border-radius: 7px; background: var(--white); color: var(--ink); font: inherit; font-size: 16px; }
-.rental-search-wrap { margin-block: 24px 0; }
+.rental-search-wrap { margin-block: 14px 0; }
+.rental-search { padding: 10px 12px; gap: 10px; border-radius: 10px; border-color: #e1e4e8; }
+.rental-search label { gap: 4px; font-size: 12px; font-weight: 600; line-height: 1.4; color: #505b68; }
+.rental-search :is(input, select) { min-height: 40px; height: 40px; padding: 6px 10px; border-color: #d5dae1; border-radius: 6px; font-size: 14px; font-weight: 500; }
+.rental-search .button { min-height: 40px; padding: 9px 20px; border-radius: 6px; font-size: 14px; }
+@media (min-width: 1100px) { .rental-search { grid-template-columns: 1fr 1.1fr 1.1fr 1fr auto; } .rental-search .button { min-width: 140px; } }
+@media (max-width: 700px), (pointer: coarse) { .rental-search :is(input, select) { min-height: 44px; height: 44px; font-size: 16px; } .rental-search .button { min-height: 44px; } }
 .catalog-empty { padding-block: 30px; }
 .catalog-category-links,
 .vehicle-breadcrumb { display: flex; flex-wrap: wrap; gap: 12px; }
