@@ -28,7 +28,7 @@ export default function HomeContent(){
     <section className="home-showcase" aria-labelledby="hero-title">
       {cover && <figure className="home-showcase-visual">
         <picture>
-          {cover.mobile && <source media="(max-width: 600px)" srcSet={cover.mobile.src} width={cover.mobile.width} height={cover.mobile.height}/>}
+          {cover.mobile && <source media="(max-width: 900px)" srcSet={cover.mobile.src} width={cover.mobile.width} height={cover.mobile.height}/>}
           <img src={cover.src} alt={cover.alt} width={cover.width} height={cover.height} fetchPriority="high"/>
         </picture>
       </figure>}

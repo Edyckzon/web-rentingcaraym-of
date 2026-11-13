@@ -5,15 +5,15 @@ const importedCover = 'https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/objec
 export const limaCover = '/images/portada-lima/portada-lima.webp';
 
 export function resolveHomeCover(src: string, alt = 'Portada de Renting Car A&M') {
-  if (src !== previousCover && src !== limaCover && src !== importedCover) {
+  if (src !== previousCover && src !== limaCover && src !== importedCover && src !== '/images/portada-lima/portada-panoramica.webp') {
     return { src, alt, width: 1600, height: 900, mobile: undefined, original: undefined };
   }
   return {
-    src: limaCover,
-    alt: 'SUV rojo y asesora de Renting Car A&M junto al malecón de Lima. Movilidad que no te detiene.',
-    width: 1672,
-    height: 941,
-    original: '/images/portada-lima/portada-lima-original.png',
-    mobile: { src: '/images/portada-lima/portada-lima-mobile.webp', width: 900, height: 1125, original: '/images/portada-lima/portada-lima-mobile-original.png' },
+    src: '/images/portada-lima/portada-panoramica.webp',
+    alt: 'SUV rojo y asesora de Renting Car A&M junto al malecón de Lima.',
+    width: 2172,
+    height: 724,
+    original: '/images/portada-lima/portada-panoramica-original.png',
+    mobile: { src: '/images/portada-lima/portada-panoramica-mobile.webp', width: 900, height: 1125, original: '/images/portada-lima/portada-panoramica-mobile-original.png' },
   };
 }

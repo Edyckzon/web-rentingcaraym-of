@@ -1,0 +1,5 @@
+Portada panorámica · corrección
+Herramienta: generación y edición de imágenes integrada.
+Referencia: portada anterior de Lima.
+Prompt aplicado: retirar por completo el logo y eslogan del cielo; recomponer como fotografía panorámica 3:1 con el SUV rojo completo y asesora de cuerpo entero a la derecha, avenida de Miraflores y océano; dejar el lado izquierdo disponible para textos HTML. Sin textos, logos, botones ni interfaz en la imagen.
+Variante móvil: recomposición vertical 4:5, cielo despejado en la parte superior para los textos HTML, carro y asesora completos en el 42% inferior.
