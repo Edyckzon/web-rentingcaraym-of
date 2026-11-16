@@ -88,16 +88,8 @@ export const technicalSheets: Partial<Record<string, TechnicalSheet>> = {
       'Plazas': '7 en tres filas',
     },
   },
-  'toyota-yaris': {
-    version: 'Yaris sedán GLI 1.3 CVT', publisher: 'Toyota Perú',
-    source: 'https://www.toyotaperu.com.pe/comparador/generarpdf?modelo=38&version=133',
-    fields: {
-      'Motor': '1.3 L Dual VVT-i, 1329 cm³',
-      'Potencia': '93,8 hp a 6000 rpm',
-      'Torque': '12,2 kgf·m a 4200 rpm',
-      'Transmisión': 'CVT con 7 relaciones simuladas',
-    },
-  },
+  // The legacy ID toyota-yaris belongs to A&M's Corolla 2010 MT / GLP.
+  // Factory engine, power and trim await confirmation of the actual unit.
   'hyundai-verna': {
     year: 2022, transmission: 'Automática y mecánica',
     version: 'Verna 1.4 MPI · AT y MT', publisher: 'Hyundai Perú',

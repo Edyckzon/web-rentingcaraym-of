@@ -433,10 +433,10 @@
     {
       "path": "/flota/",
       "title": "Alquiler de camionetas y autos en Lima",
-      "description": "Explore camionetas SUV, sedanes y autos familiares en Lima: Ford Territory, Changan X7 Plus, Toyota Yaris y más. Consulte disponibilidad.",
+      "description": "Explore camionetas SUV, sedanes y autos familiares en Lima: Ford Territory, Changan X7 Plus, Toyota Corolla y más. Consulte disponibilidad.",
       "heading": "Flota de autos y camionetas en alquiler en Lima",
       "intro": "Camionetas SUV, sedanes y vehículos familiares para la movilidad de personas y empresas. Consulte fechas, modelos y condiciones.",
-      "updatedAt": "2026-11-07T16:24:04.041603+00:00"
+      "updatedAt": "2026-11-16T22:31:53.644074+00:00"
     },
     {
       "path": "/maquinaria-y-transporte/",
@@ -482,7 +482,7 @@
   "title": "Alquiler de vehículos,\r\nmaquinaria y",
   "accent": "transporte de carga.",
   "slogan": "Movilidad para su día a día.\r\nEquipo para sus proyectos.",
-  "hero": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/8a37378a9258429c0a30973e07554a1e3bc0b01ff03025fbc5607f74f0ca9eff.webp",
+  "hero": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/cd516ed409d3b85cf33bb181d41f4ce7166b17a452e58fa70c695cd3d2ec78cc.webp",
   "firstLabel": "Ver flota de vehículos",
   "firstUrl": "/flota/",
   "secondLabel": "Maquinaria y transporte",
@@ -550,7 +550,10 @@
       "updatedAt": "2026-11-07T16:46:02.248066+00:00",
       "featured": true,
       "images": [
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/e58a3faa544ab1a2f206f20fa643864df6834791ce036bf7d8afa706614bdc46.jpeg"
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/999fcb16f789cbab44c5885b4127c4cf6ccdd719b5af7c8a1e94680fb91801cf.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/2e22015e5c8d3283fa0714da42acad4058d26fc6d7a1664cbe6aaa57d41e3cf1.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/08a06c2fc7f5ace1bb5b5f6b583eb7c8f4d71e6e3602db94200eb1d14d3d6e32.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/34ea58483c64dadfbcfdd629f919e7b982cd9633b98d3eabc71278932bbe7388.webp"
       ]
     },
     {
@@ -625,21 +628,12 @@
       "updatedAt": "2026-11-07T16:46:02.248066+00:00",
       "featured": false,
       "images": [
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/0d57af6a723971869771b0e6301e18b7ef9a892fd12f82e393d4e0645a9b8a1a.webp",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/87542e0608b035c91cfadd64d3c046b02c9c2d3bdc6f02be95aafb7f184c0c27.webp",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/ede6dcc29c539ab3b62ef08a2421576f88c917de2cf73f03fe5cdaec3e9ae98a.webp",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/7a20cc3552d8f35f1778229699a68a22d56cce13edf0931452d37350d06ffd01.webp",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/92646a6986b7bd045d78ca017a354cba994069bc131779ef0fd34f3770477546.webp",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/2ffb809aeadb9a1309a079d8144cdc531c9245f79db932ab2d7ec92bf7ed3320.webp",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/ba5ca9bdfcaad0e037d3b493e80ee10bdd86cae0b2e4b11cf50f391d047363c4.webp",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/afb65f5b5682f4347de5586af1dc485d5cce53aa51f7eddaeeaa63b3597cdee2.webp",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/284d590e9af56f0a4fc081c4e042e4606daf5dd007b3d804adf3bcc889b63c3c.webp",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/88579b4d8683dfae0c942b6af3889fa8a04ae089828bbf9e944b7c932c39eb88.webp",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/19032de9a0fa34db8170b8dc372c1d14482cca61d533599726678fac4d283762.webp",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/b243605ffc9906246d885314cf2dcde54a85f93daf5d809821707825a2cdab84.webp",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/d8f94d25ae4d914ff3a7ad3d3e113b339d33abc54be4b48566b92f5e75b42686.webp",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/793e075a07b93ae80637576e4eb00d8b665b592d5fcdab9363d7ed68c4c3f316.webp",
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/5d9fceff8f3a62eeb80c9303451e63f6fd8e0614d0460753a57d7e39e5d4f902.webp"
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/2ac29c824c046d127d6a4336419a45b7f611edf04187a885037eed054834414a.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/7b9efe08607aa7007066026e8095a853e808bdfda967e5ea18bd9f95679281a4.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/d970248d4483e8c1454cb5d3973c100a0e9bcec61c8c5ee8b8df0d31ba1d6510.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f7ba2f45f946d9b6da701e8c2605d8d5ea20b8a3df1e42e50503c22af6087581.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/6bed8b2e0ffec7a54bdcb6a63ae49738ef032b4d046c8b3faf10e47eb523cbf2.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/22ec512de2aec9f7281216efa564f354b9f92842efa2ef5291e9b607297a8bf4.webp"
       ]
     },
     {
@@ -701,7 +695,16 @@
       "updatedAt": "2026-11-07T16:46:02.248066+00:00",
       "featured": false,
       "images": [
-        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/679fb5e3a2cfb14e886d00a81394224b986a9f4e5cffab7a2b884b3bccf8804b.jpeg"
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/4da276db6234cdff24362125fba30cae52a59c635ab33f877af393b600469482.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/48f3292abd63bbc6ba1a4d3738bf87c897c3d1148f4be931d70c136c0775619f.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/8ce7982d3213a8824400c3aa5d03e0284494347fe2fda192049fd8ccc8d3b97e.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/20ab76828d4a9e6b29ad3f386ed14a7a011b2767d802bb8a32a2bd831bf6b1e8.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/55b58eaabed39d31c11b71d50e80416d00a8f295867f4994d4fec8761e0120d0.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/155c899519e65c7255e6f79ec34f593e222643814446bb67539f1a90d72f8485.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/5385b8f9ac0fd674ae8c83790c0eba759f88f12c6d3affca96402f7c77fada1d.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/34016dfe57929904d974030a94d3ca85202b4e27c856711a4a943b1b77b689f2.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f480455a695ec63aeb8bdea4c22c324e54843c9bb22c01f457f0baffa305f510.webp",
+        "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/cfb3259d752bb78dcccc5a1f7676bce6888722d748add7c92ff1c9dad0a074fb.webp"
       ]
     },
     {
@@ -773,15 +776,25 @@
     },
     {
       "id": "toyota-yaris",
-      "name": "Toyota Yaris",
+      "name": "Toyota Corolla",
       "category": "Sedán",
       "additionalCategories": [],
+      "profile": {
+        "fuel": "Bicombustible GLP",
+        "year": 2010,
+        "seats": null,
+        "engine": "",
+        "luggage": "",
+        "traction": "",
+        "includedKm": null,
+        "transmission": "Mecánica"
+      },
       "published": true,
-      "description": "Alquiler de Toyota Yaris en Lima para sus desplazamientos personales, trámites o actividades de trabajo. Nuestra unidad 2010 tiene transmisión mecánica y combustible dual gasolina/GLP. Consulte disponibilidad y requisitos para sus fechas; coordinamos su cotización y recojo desde Santiago de Surco.",
-      "seoTitle": "Alquiler de Toyota Yaris en Lima",
-      "seoDescription": "Alquiler de Toyota Yaris en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
-      "idealFor": "El Toyota Yaris es una alternativa sedán de transmisión mecánica para quienes buscan organizar desplazamientos personales o una agenda de gestiones en Lima. La unidad de la flota es del año 2010 y utiliza sistema bicombustible GLP. Considere esos datos al comparar modelos y solicite información actual de la unidad antes de decidir. La propuesta se prepara según sus fechas y recorrido.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
-      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
+      "description": "Alquiler de Toyota Corolla en Lima para sus desplazamientos personales, trámites o actividades de trabajo. Nuestra unidad 2010 tiene transmisión mecánica y combustible dual gasolina/GLP. Consulte disponibilidad y requisitos para sus fechas; coordinamos su cotización y recojo desde Santiago de Surco.",
+      "seoTitle": "Alquiler de Toyota Corolla en Lima",
+      "seoDescription": "Alquiler de Toyota Corolla en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
+      "idealFor": "El Toyota Corolla es una alternativa sedán de transmisión mecánica para quienes buscan organizar desplazamientos personales o una agenda de gestiones en Lima. La unidad de la flota es del año 2010 y utiliza sistema bicombustible GLP. Considere esos datos al comparar modelos y solicite información actual de la unidad antes de decidir. La propuesta se prepara según sus fechas y recorrido.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
+      "updatedAt": "2026-11-16T22:33:00.210095+00:00",
       "featured": true,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/24f7a7927c130fc32869506d062ef2a9e563bf367c4b7c05d41ea100c0e05f5d.jpeg"
@@ -916,13 +929,40 @@
       "licenseUrl": null
     },
     {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/e58a3faa544ab1a2f206f20fa643864df6834791ce036bf7d8afa706614bdc46.jpeg",
-      "alt": "SUV Changan CX70 en alquiler en Lima — imagen referencial",
-      "credit": "Rutger van der Maar",
-      "reference": true,
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Changan_CX70_front.jpg",
-      "license": "CC BY 2.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/999fcb16f789cbab44c5885b4127c4cf6ccdd719b5af7c8a1e94680fb91801cf.webp",
+      "alt": "Changan CX70 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/2e22015e5c8d3283fa0714da42acad4058d26fc6d7a1664cbe6aaa57d41e3cf1.webp",
+      "alt": "Changan CX70 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/08a06c2fc7f5ace1bb5b5f6b583eb7c8f4d71e6e3602db94200eb1d14d3d6e32.webp",
+      "alt": "Changan CX70 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/34ea58483c64dadfbcfdd629f919e7b982cd9633b98d3eabc71278932bbe7388.webp",
+      "alt": "Changan CX70 en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
     },
     {
       "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/42f0258eb44be63768dfe9f8235a5aac6069834ba54a09dfec3efeb8756999cc.png",
@@ -1186,7 +1226,7 @@
       "licenseUrl": null
     },
     {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/0d57af6a723971869771b0e6301e18b7ef9a892fd12f82e393d4e0645a9b8a1a.webp",
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/2ac29c824c046d127d6a4336419a45b7f611edf04187a885037eed054834414a.webp",
       "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
       "credit": null,
       "reference": false,
@@ -1195,7 +1235,7 @@
       "licenseUrl": null
     },
     {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/87542e0608b035c91cfadd64d3c046b02c9c2d3bdc6f02be95aafb7f184c0c27.webp",
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/7b9efe08607aa7007066026e8095a853e808bdfda967e5ea18bd9f95679281a4.webp",
       "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
       "credit": null,
       "reference": false,
@@ -1204,7 +1244,7 @@
       "licenseUrl": null
     },
     {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/ede6dcc29c539ab3b62ef08a2421576f88c917de2cf73f03fe5cdaec3e9ae98a.webp",
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/d970248d4483e8c1454cb5d3973c100a0e9bcec61c8c5ee8b8df0d31ba1d6510.webp",
       "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
       "credit": null,
       "reference": false,
@@ -1213,7 +1253,7 @@
       "licenseUrl": null
     },
     {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/7a20cc3552d8f35f1778229699a68a22d56cce13edf0931452d37350d06ffd01.webp",
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f7ba2f45f946d9b6da701e8c2605d8d5ea20b8a3df1e42e50503c22af6087581.webp",
       "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
       "credit": null,
       "reference": false,
@@ -1222,7 +1262,7 @@
       "licenseUrl": null
     },
     {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/92646a6986b7bd045d78ca017a354cba994069bc131779ef0fd34f3770477546.webp",
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/6bed8b2e0ffec7a54bdcb6a63ae49738ef032b4d046c8b3faf10e47eb523cbf2.webp",
       "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
       "credit": null,
       "reference": false,
@@ -1231,88 +1271,7 @@
       "licenseUrl": null
     },
     {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/2ffb809aeadb9a1309a079d8144cdc531c9245f79db932ab2d7ec92bf7ed3320.webp",
-      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
-      "credit": null,
-      "reference": false,
-      "sourceUrl": null,
-      "license": null,
-      "licenseUrl": null
-    },
-    {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/ba5ca9bdfcaad0e037d3b493e80ee10bdd86cae0b2e4b11cf50f391d047363c4.webp",
-      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
-      "credit": null,
-      "reference": false,
-      "sourceUrl": null,
-      "license": null,
-      "licenseUrl": null
-    },
-    {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/afb65f5b5682f4347de5586af1dc485d5cce53aa51f7eddaeeaa63b3597cdee2.webp",
-      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
-      "credit": null,
-      "reference": false,
-      "sourceUrl": null,
-      "license": null,
-      "licenseUrl": null
-    },
-    {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/284d590e9af56f0a4fc081c4e042e4606daf5dd007b3d804adf3bcc889b63c3c.webp",
-      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
-      "credit": null,
-      "reference": false,
-      "sourceUrl": null,
-      "license": null,
-      "licenseUrl": null
-    },
-    {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/88579b4d8683dfae0c942b6af3889fa8a04ae089828bbf9e944b7c932c39eb88.webp",
-      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
-      "credit": null,
-      "reference": false,
-      "sourceUrl": null,
-      "license": null,
-      "licenseUrl": null
-    },
-    {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/19032de9a0fa34db8170b8dc372c1d14482cca61d533599726678fac4d283762.webp",
-      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
-      "credit": null,
-      "reference": false,
-      "sourceUrl": null,
-      "license": null,
-      "licenseUrl": null
-    },
-    {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/b243605ffc9906246d885314cf2dcde54a85f93daf5d809821707825a2cdab84.webp",
-      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
-      "credit": null,
-      "reference": false,
-      "sourceUrl": null,
-      "license": null,
-      "licenseUrl": null
-    },
-    {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/d8f94d25ae4d914ff3a7ad3d3e113b339d33abc54be4b48566b92f5e75b42686.webp",
-      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
-      "credit": null,
-      "reference": false,
-      "sourceUrl": null,
-      "license": null,
-      "licenseUrl": null
-    },
-    {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/793e075a07b93ae80637576e4eb00d8b665b592d5fcdab9363d7ed68c4c3f316.webp",
-      "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
-      "credit": null,
-      "reference": false,
-      "sourceUrl": null,
-      "license": null,
-      "licenseUrl": null
-    },
-    {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/5d9fceff8f3a62eeb80c9303451e63f6fd8e0614d0460753a57d7e39e5d4f902.webp",
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/22ec512de2aec9f7281216efa564f354b9f92842efa2ef5291e9b607297a8bf4.webp",
       "alt": "Glory 560 en alquiler en Lima — Renting Car A&M",
       "credit": null,
       "reference": false,
@@ -1465,13 +1424,94 @@
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
     },
     {
-      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/679fb5e3a2cfb14e886d00a81394224b986a9f4e5cffab7a2b884b3bccf8804b.jpeg",
-      "alt": "Sedán Hyundai Verna en alquiler en Lima — imagen referencial",
-      "credit": "Avante2025",
-      "reference": true,
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:2020_Hyundai_Verna_Facelift_China_RC_(1).jpg",
-      "license": "CC BY 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/4da276db6234cdff24362125fba30cae52a59c635ab33f877af393b600469482.webp",
+      "alt": "Hyundai Verna en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/48f3292abd63bbc6ba1a4d3738bf87c897c3d1148f4be931d70c136c0775619f.webp",
+      "alt": "Hyundai Verna en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/8ce7982d3213a8824400c3aa5d03e0284494347fe2fda192049fd8ccc8d3b97e.webp",
+      "alt": "Hyundai Verna en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/20ab76828d4a9e6b29ad3f386ed14a7a011b2767d802bb8a32a2bd831bf6b1e8.webp",
+      "alt": "Hyundai Verna en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/55b58eaabed39d31c11b71d50e80416d00a8f295867f4994d4fec8761e0120d0.webp",
+      "alt": "Hyundai Verna en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/155c899519e65c7255e6f79ec34f593e222643814446bb67539f1a90d72f8485.webp",
+      "alt": "Hyundai Verna en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/5385b8f9ac0fd674ae8c83790c0eba759f88f12c6d3affca96402f7c77fada1d.webp",
+      "alt": "Hyundai Verna en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/34016dfe57929904d974030a94d3ca85202b4e27c856711a4a943b1b77b689f2.webp",
+      "alt": "Hyundai Verna en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/f480455a695ec63aeb8bdea4c22c324e54843c9bb22c01f457f0baffa305f510.webp",
+      "alt": "Hyundai Verna en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
+    },
+    {
+      "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/cfb3259d752bb78dcccc5a1f7676bce6888722d748add7c92ff1c9dad0a074fb.webp",
+      "alt": "Hyundai Verna en alquiler en Lima — Renting Car A&M",
+      "credit": null,
+      "reference": false,
+      "sourceUrl": null,
+      "license": null,
+      "licenseUrl": null
     },
     {
       "src": "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/3b6df538429ad22c5cf9d1e87229e4f45de1b7c0283313e96b83bda49bde591a.webp",
