@@ -1,4 +1,4 @@
-import { defaultRentalRules } from '../src/lib/rental-pricing.mjs';
+import { defaultRentalRules, limaDate } from '../src/lib/rental-pricing.mjs';
 
 export async function commercialCatalog(rest, bearer = null) {
   const read = path => rest(path, {}, bearer).catch(error => {
@@ -13,6 +13,8 @@ export async function commercialCatalog(rest, bearer = null) {
   ]);
   const rules = settings[0];
   return {
+    priceDisplay: { enabled: rules?.mostrar_equivalencias ?? false, showRate:rules?.mostrar_tipo_cambio ?? true, source: rules?.fuente_cambio ?? 'bcrp',
+      manualRate: rules?.cambio_manual == null ? null : Number(rules.cambio_manual), manualDate:rules?.fecha_cambio_manual ?? null },
     rules: rules ? {
       weeklyFrom: rules.semanal_desde, monthlyFrom: rules.mensual_desde,
       monthlyDivisor: rules.dias_prorrateo, stackPromotion: rules.acumular,
@@ -45,6 +47,21 @@ function currencyPatch(input, fail) {
 export async function saveCommercial(path, input, rest, fail) {
   if (!input || typeof input !== 'object') fail(400, 'Revise los campos.');
   const money = currencyPatch(input, fail);
+  if (path === 'rental-display') {
+    const { enabled, showRate, source, manualRate, manualDate } = input;
+    if (typeof enabled !== 'boolean' || typeof showRate !== 'boolean' || !['bcrp','manual'].includes(source)) fail(400,'Revise la visualización de monedas.');
+    if (source === 'manual' && (typeof manualRate !== 'number' || !Number.isFinite(manualRate) || manualRate < 0.1 || manualRate > 100
+      || Math.abs(manualRate * 10000 - Math.round(manualRate * 10000)) > 0.000001
+      || typeof manualDate !== 'string' || !date.test(manualDate) || !Number.isFinite(Date.parse(manualDate))
+      || new Date(manualDate).toISOString().slice(0,10) !== manualDate || manualDate > limaDate())) {
+      fail(400,'Indique un tipo de cambio entre 0.1 y 100, hasta cuatro decimales y una fecha válida hasta hoy.');
+    }
+    await rest('reglas_alquiler?id=eq.1', { method:'PATCH', body:JSON.stringify({
+      mostrar_equivalencias:enabled, mostrar_tipo_cambio:showRate, fuente_cambio:source,
+      cambio_manual:source === 'manual' ? manualRate : null, fecha_cambio_manual:source === 'manual' ? manualDate : null,
+    }) });
+    return;
+  }
   if (path === 'service-rate') {
     const { id, cents } = input;
     const unit = checkedText(input.unit, 40, cents !== null);

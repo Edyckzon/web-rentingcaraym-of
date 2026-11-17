@@ -518,6 +518,18 @@
           "weeklyPerDay": "PEN",
           "monthly": "PEN",
           "deposit": "PEN"
+        },
+        "secondary": {
+          "daily": null,
+          "weeklyPerDay": null,
+          "monthly": null,
+          "deposit": null
+        },
+        "secondaryMode": {
+          "daily": "tc",
+          "weeklyPerDay": "tc",
+          "monthly": "tc",
+          "deposit": "tc"
         }
       },
       "description": "Alquiler de Changan Alsvin en Lima para sus desplazamientos personales o de trabajo. Nuestra unidad 2022 cuenta con transmisión mecánica y combustible dual gasolina/GLP. Consulte disponibilidad para sus fechas y coordine el recojo con nuestro equipo en Santiago de Surco.",
@@ -559,6 +571,18 @@
           "weeklyPerDay": "PEN",
           "monthly": "PEN",
           "deposit": "PEN"
+        },
+        "secondary": {
+          "daily": null,
+          "weeklyPerDay": null,
+          "monthly": null,
+          "deposit": null
+        },
+        "secondaryMode": {
+          "daily": "tc",
+          "weeklyPerDay": "tc",
+          "monthly": "tc",
+          "deposit": "tc"
         }
       },
       "description": "Alquiler de Changan CX70 en Lima para quienes buscan una camioneta SUV para su movilidad familiar o laboral. Contamos con una unidad 2023 de transmisión mecánica y combustible dual gasolina/GLP. Indíquenos las fechas y el número de pasajeros para confirmar la configuración y preparar su cotización desde Surco.",
@@ -590,6 +614,18 @@
           "weeklyPerDay": "PEN",
           "monthly": "PEN",
           "deposit": "PEN"
+        },
+        "secondary": {
+          "daily": null,
+          "weeklyPerDay": null,
+          "monthly": null,
+          "deposit": null
+        },
+        "secondaryMode": {
+          "daily": "tc",
+          "weeklyPerDay": "tc",
+          "monthly": "tc",
+          "deposit": "tc"
         }
       },
       "description": "Alquiler de Changan X7 Plus en Lima para su movilidad personal, familiar o empresarial. Nuestra unidad 2026 tiene transmisión automática y combustible dual gasolina/GLP. Cuéntenos cuántas personas viajarán y las fechas de uso para confirmar disponibilidad y coordinar su alquiler desde Santiago de Surco.",
@@ -633,6 +669,18 @@
           "weeklyPerDay": "PEN",
           "monthly": "PEN",
           "deposit": "PEN"
+        },
+        "secondary": {
+          "daily": null,
+          "weeklyPerDay": null,
+          "monthly": null,
+          "deposit": null
+        },
+        "secondaryMode": {
+          "daily": "tc",
+          "weeklyPerDay": "tc",
+          "monthly": "tc",
+          "deposit": "tc"
         }
       },
       "description": "Alquiler de Ford Territory en Lima para sus traslados personales, familiares o ejecutivos. Disponemos de una SUV 2026 con transmisión automática y motor a gasolina. Solicite una propuesta indicando sus fechas y necesidades de movilidad; nuestro equipo en Surco le confirmará disponibilidad, requisitos y condiciones.",
@@ -673,6 +721,18 @@
           "weeklyPerDay": "PEN",
           "monthly": "PEN",
           "deposit": "PEN"
+        },
+        "secondary": {
+          "daily": null,
+          "weeklyPerDay": null,
+          "monthly": null,
+          "deposit": null
+        },
+        "secondaryMode": {
+          "daily": "tc",
+          "weeklyPerDay": "tc",
+          "monthly": "tc",
+          "deposit": "tc"
         }
       },
       "description": "Alquiler de Glory 560 en Lima para organizar su movilidad personal o de trabajo con una camioneta SUV. Nuestra unidad 2023 cuenta con transmisión mecánica y combustible dual gasolina/GLP. Consulte con nuestro equipo en Santiago de Surco la disponibilidad, capacidad de la unidad y condiciones para las fechas que necesita.",
@@ -706,6 +766,18 @@
           "weeklyPerDay": "PEN",
           "monthly": "PEN",
           "deposit": "PEN"
+        },
+        "secondary": {
+          "daily": null,
+          "weeklyPerDay": null,
+          "monthly": null,
+          "deposit": null
+        },
+        "secondaryMode": {
+          "daily": "tc",
+          "weeklyPerDay": "tc",
+          "monthly": "tc",
+          "deposit": "tc"
         }
       },
       "description": "Alquiler de Glory 580 en Lima para sus planes familiares o necesidades de movilidad empresarial. Contamos con una SUV 2023 de transmisión mecánica y combustible dual gasolina/GLP. Comparta las fechas, el número de pasajeros y el uso previsto para recibir una cotización personalizada desde nuestra sede en Surco.",
@@ -748,6 +820,18 @@
           "weeklyPerDay": "PEN",
           "monthly": "PEN",
           "deposit": "PEN"
+        },
+        "secondary": {
+          "daily": null,
+          "weeklyPerDay": null,
+          "monthly": null,
+          "deposit": null
+        },
+        "secondaryMode": {
+          "daily": "tc",
+          "weeklyPerDay": "tc",
+          "monthly": "tc",
+          "deposit": "tc"
         }
       },
       "description": "Alquiler de Hyundai Accent en Lima para desplazamientos personales, gestiones o compromisos de trabajo. Consulte la versión, transmisión y características de la unidad disponible antes de reservar. Nuestro equipo en Santiago de Surco le ayudará a coordinar las fechas, los requisitos y el lugar de recojo.",
@@ -776,6 +860,18 @@
           "weeklyPerDay": "PEN",
           "monthly": "PEN",
           "deposit": "PEN"
+        },
+        "secondary": {
+          "daily": null,
+          "weeklyPerDay": null,
+          "monthly": null,
+          "deposit": null
+        },
+        "secondaryMode": {
+          "daily": "tc",
+          "weeklyPerDay": "tc",
+          "monthly": "tc",
+          "deposit": "tc"
         }
       },
       "description": "Alquiler de Hyundai Verna en Lima para su movilidad diaria o laboral. Consulte nuestras opciones 2022 con transmisión automática o mecánica y combustible dual gasolina/GLP, sujetas a disponibilidad. Indique qué caja prefiere y sus fechas para que nuestro equipo en Surco prepare una propuesta acorde a su solicitud.",
@@ -813,6 +909,18 @@
           "weeklyPerDay": "PEN",
           "monthly": "PEN",
           "deposit": "PEN"
+        },
+        "secondary": {
+          "daily": null,
+          "weeklyPerDay": null,
+          "monthly": null,
+          "deposit": null
+        },
+        "secondaryMode": {
+          "daily": "tc",
+          "weeklyPerDay": "tc",
+          "monthly": "tc",
+          "deposit": "tc"
         }
       },
       "description": "Alquiler de JAC JS8 en Lima para sus traslados familiares o de empresa. Nuestra SUV 2023 cuenta con transmisión automática y combustible dual gasolina/GLP. Indique las fechas de uso, los pasajeros y el equipaje previsto para confirmar la capacidad de la unidad y coordinar su cotización desde Santiago de Surco.",
@@ -871,6 +979,18 @@
           "weeklyPerDay": "PEN",
           "monthly": "PEN",
           "deposit": "PEN"
+        },
+        "secondary": {
+          "daily": null,
+          "weeklyPerDay": null,
+          "monthly": null,
+          "deposit": null
+        },
+        "secondaryMode": {
+          "daily": "tc",
+          "weeklyPerDay": "tc",
+          "monthly": "tc",
+          "deposit": "tc"
         }
       },
       "description": "Alquiler de Suzuki Ertiga en Lima para su movilidad familiar o grupal. Nuestra unidad 2020 cuenta con transmisión automática y motor a gasolina. Indíquenos cuántas personas viajarán y cuánto equipaje llevarán para confirmar la distribución disponible y preparar su cotización con atención desde Santiago de Surco.",
@@ -914,6 +1034,18 @@
           "weeklyPerDay": "PEN",
           "monthly": "PEN",
           "deposit": "PEN"
+        },
+        "secondary": {
+          "daily": null,
+          "weeklyPerDay": null,
+          "monthly": null,
+          "deposit": null
+        },
+        "secondaryMode": {
+          "daily": "tc",
+          "weeklyPerDay": "tc",
+          "monthly": "tc",
+          "deposit": "tc"
         }
       },
       "description": "Alquiler de Toyota Corolla en Lima para sus desplazamientos personales, trámites o actividades de trabajo. Nuestra unidad 2010 tiene transmisión mecánica y combustible dual gasolina/GLP. Consulte disponibilidad y requisitos para sus fechas; coordinamos su cotización y recojo desde Santiago de Surco.",

@@ -1,11 +1,12 @@
 /** @typedef {'PEN'|'USD'} Currency */
 /** @typedef {'daily'|'weeklyPerDay'|'monthly'|'deposit'} RateKey */
-/** @typedef {{daily:number|null, weeklyPerDay:number|null, monthly:number|null, deposit:number|null, currencies?:Partial<Record<RateKey,Currency>>}} RentalRates */
+/** @typedef {{daily:number|null, weeklyPerDay:number|null, monthly:number|null, deposit:number|null, currencies?:Partial<Record<RateKey,Currency>>, secondary?:Partial<Record<RateKey,number|null>>, secondaryMode?:Partial<Record<RateKey,'manual'|'tc'>>}} RentalRates */
 /** @typedef {{weeklyFrom:number, monthlyFrom:number, monthlyDivisor:number, stackPromotion:boolean}} RentalRules */
 /** @typedef {{id:string, vehicleId:string, campaignId?:string, category?:string, title:string, banner:string, terms:string, starts:string, ends:string, cents:number, currency?:Currency, regularCents:number|null, published:boolean}} RentalPromotion */
 /** @typedef {{id:string, name:string, cents:number, currency?:Currency, active:boolean}} RentalExtra */
 /** @typedef {{id:string, cents:number|null, currency?:Currency, unit:string}} ServiceRate */
-/** @typedef {{rules:RentalRules, promotions:RentalPromotion[], extras:RentalExtra[], services:ServiceRate[], requestSiteKey?:string}} CommercialCatalog */
+/** @typedef {{enabled:boolean,showRate:boolean,source:'bcrp'|'manual',manualRate:number|null,manualDate:string|null}} PriceDisplay */
+/** @typedef {{priceDisplay?:PriceDisplay, rules:RentalRules, promotions:RentalPromotion[], extras:RentalExtra[], services:ServiceRate[], requestSiteKey?:string}} CommercialCatalog */
 
 /** @type {RentalRates} */
 export const emptyRentalRates = { daily: null, weeklyPerDay: null, monthly: null, deposit: null };
@@ -34,11 +35,11 @@ export function startingRentalRate(rates, rules = defaultRentalRules) {
 export function startingRentalRates(rates, rules = defaultRentalRules) {
   if (!rates) return [];
   const options = [
-    { cents: rates.daily, currency: rateCurrency(rates, 'daily'), divisor: 1, term: `De 1 a ${rules.weeklyFrom - 1} días` },
-    { cents: rates.weeklyPerDay, currency: rateCurrency(rates, 'weeklyPerDay'), divisor: 1, term: `De ${rules.weeklyFrom} a ${rules.monthlyFrom - 1} días` },
-    { cents: rates.monthly, currency: rateCurrency(rates, 'monthly'), divisor: rules.monthlyDivisor, term: `Desde ${rules.monthlyFrom} días · equivalente diario` },
+    { key:/** @type {RateKey} */ ('daily'), cents: rates.daily, currency: rateCurrency(rates, 'daily'), divisor: 1, term: `De 1 a ${rules.weeklyFrom - 1} días` },
+    { key:/** @type {RateKey} */ ('weeklyPerDay'), cents: rates.weeklyPerDay, currency: rateCurrency(rates, 'weeklyPerDay'), divisor: 1, term: `De ${rules.weeklyFrom} a ${rules.monthlyFrom - 1} días` },
+    { key:/** @type {RateKey} */ ('monthly'), cents: rates.monthly, currency: rateCurrency(rates, 'monthly'), divisor: rules.monthlyDivisor, term: `Desde ${rules.monthlyFrom} días · equivalente diario` },
   ];
-  const available = options.flatMap(({ cents, currency, divisor, term }) => cents == null ? [] : [{ centsPerDay: Math.round(cents / divisor), currency, term }]);
+  const available = options.flatMap(({ key, cents, currency, divisor, term }) => cents == null ? [] : [{ centsPerDay: Math.round(cents / divisor), currency, term, key, divisor }]);
   return minimumRatesByCurrency(available);
 }
 

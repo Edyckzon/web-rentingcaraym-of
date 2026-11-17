@@ -1,4 +1,5 @@
 'use client';
+import CurrencyEquivalent from './CurrencyEquivalent';
 import {useMarketing} from '@/components/MarketingProvider';
 import {ContentText,ContentLink} from '@/components/ContentText';
 import Link from 'next/link';
@@ -51,7 +52,7 @@ export default function VehicleDetail({slug}:{slug:string}){
 
           <p className="lead">{vehicle.description}</p>
           <RentalPrice rates={vehicle.rates} vehicleId={vehicle.id}/>
-          {vehicle.rates?.daily != null && <p className="rental-regular">Tarifa diaria regular: {formatMoney(vehicle.rates.daily, rateCurrency(vehicle.rates, 'daily'))} · IGV incluido</p>}
+          {vehicle.rates?.daily != null && <p className="rental-regular">Tarifa diaria regular: {formatMoney(vehicle.rates.daily, rateCurrency(vehicle.rates, 'daily'))} · IGV incluido<CurrencyEquivalent cents={vehicle.rates.daily} currency={rateCurrency(vehicle.rates, 'daily')} unit="día" mode={vehicle.rates.secondaryMode?.daily} secondary={vehicle.rates.secondary?.daily}/></p>}
           <RentalCalculator key={vehicle.id} vehicle={vehicle}/>
           <div className="button-row">
             <Link className="button accent" href={`/contacto/?servicio=vehiculos&modelo=${vehicle.id}#cotizacion`}>Solicitar cotización <ArrowUpRight size={18}/></Link>

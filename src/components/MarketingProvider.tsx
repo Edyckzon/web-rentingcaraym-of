@@ -8,12 +8,33 @@ import {business as defaults} from '@/lib/business';
 import {home as defaultHome,type Marketing} from '@/lib/marketing';
 import type {CatalogImage} from '@/lib/media';
 import { promotionIsActive, type CommercialCatalog } from '@/lib/rental-pricing.mjs';
+import type { ExchangeReference } from '@/lib/currency-display.mjs';
 export type Snapshot=Marketing & {categories:string[];photos:CatalogImage[]};
 const State=createContext<Snapshot|null>(null);
 const CommercialState=createContext<CommercialCatalog|null>(null);
+const ExchangeState=createContext<ExchangeReference|null>(null);
 export function MarketingProvider({children}:{children:React.ReactNode}){
  const [data,set]=useState<Snapshot|null>(initialPublic as unknown as Snapshot);
  const [commercial,setCommercial]=useState<CommercialCatalog|null>(null);
+ const [exchange,setExchange]=useState<ExchangeReference|null>(null);
+ useEffect(() => {
+   let active=true;
+   let pending=false;
+   async function read() {
+     if(pending)return;
+     pending=true;
+     try {
+       const response=await fetch('/marketing-api/exchange-rate', {signal:AbortSignal.timeout(8000)});
+       if(!response.ok)throw new Error('Unavailable');
+       const value=await response.json();
+       if(active)setExchange(value);
+     } catch { if(active)setExchange({available:false}); }
+     finally { pending=false; }
+   }
+   void read();
+   const timer=window.setInterval(()=>{if(!document.hidden)void read();},300000);
+   return()=>{active=false;window.clearInterval(timer);};
+ },[]);
  useEffect(()=>{let alive=true;async function read(){try{const r=await fetch('/marketing-api/public/',{cache:'no-store'});if(r.ok){const s=await r.json();if(alive)set(s);}}catch{/* Keep the last successful public view when offline. */}}
  void read();window.addEventListener('focus',read);window.addEventListener('marketing-saved',read);return()=>{alive=false;window.removeEventListener('focus',read);window.removeEventListener('marketing-saved',read);};},[]);
  useEffect(() => {
@@ -43,8 +64,9 @@ export function MarketingProvider({children}:{children:React.ReactNode}){
      window.removeEventListener('marketing-saved', read);
    };
  }, []);
- return <State.Provider value={data}><CommercialState.Provider value={commercial}>{children}</CommercialState.Provider></State.Provider>;
+ return <State.Provider value={data}><CommercialState.Provider value={commercial}><ExchangeState.Provider value={exchange}>{children}</ExchangeState.Provider></CommercialState.Provider></State.Provider>;
 }
+export function useExchangeReference(){return useContext(ExchangeState);}
 export function useCommercial() { return useContext(CommercialState); }
 export function detailUrl(id:string){return baseFleet.some(v=>v.id===id)?'/flota/'+vehicleSlug(id)+'/':'/flota/ficha/?id='+encodeURIComponent(id);}
 export function useMarketing(){

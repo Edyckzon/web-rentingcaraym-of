@@ -36,3 +36,9 @@
   .studio .rate-admin-toolbar input { width: 100%; }
   .rate-admin-table :is(th, td) { padding-inline: 8px; }
 }
+
+.currency-display-admin { padding: 20px; margin-bottom: 24px; border: 1px solid #d5dee8; border-radius: 12px; background: #f5f7fa; }
+.currency-display-admin .check { display: flex; align-items: center; gap: 10px; margin: 12px 0; }
+.currency-display-admin .check input { width: auto; }
+.rate-dual-field { padding: 16px; border: 1px solid #d5dee8; border-radius: 10px; display: grid; gap: 12px; align-content: start; }
+.rate-conversion-preview { color: #334c67; font-size: .85rem; }

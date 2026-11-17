@@ -1,0 +1,4 @@
+.currency-equivalent { display: block; margin: 5px 0 7px; font-size: .88rem; color: #334c67; line-height: 1.5; font-weight: 500; white-space: normal; }
+.currency-equivalent-value { display: block; }
+.currency-equivalent small { display: block; font-size: .68rem; color: #5c6877; font-weight: 400; }
+.currency-equivalent.currency-unavailable { font-size: .75rem; color: #5c6877; }

@@ -22,6 +22,8 @@ function vehicleRates(vehicle) {
   const rates = Object.fromEntries(Object.entries(rateFields).map(([key, column]) => [key, vehicle[column] ?? null]));
   return Object.values(rates).some(value => value !== null) ? { ...rates,
     currencies: Object.fromEntries(Object.entries(rateFields).map(([key, column]) => [key, vehicle[column.replace('_centimos', '_moneda')] ?? 'PEN'])),
+    secondary: Object.fromEntries(Object.entries(rateFields).map(([key, column]) => [key, vehicle[column.replace('_centimos', '_alternativa_centimos')] ?? null])),
+    secondaryMode: Object.fromEntries(Object.entries(rateFields).map(([key, column]) => [key, vehicle[column.replace('_centimos', '_alternativa_modo')] ?? 'tc'])),
   } : undefined;
 }
 export async function marketingAPI(req,env){
@@ -93,7 +95,7 @@ export async function marketingAPI(req,env){
    return json({},200,{'Set-Cookie':cookie(r.access_token,Math.min(3600,r.expires_in))});
  }
  if(path==='logout'&&req.method==='POST'){if(token)await sup('/auth/v1/logout?scope=local',{method:'POST'}).catch(()=>{});return json({},200,{'Set-Cookie':cookie('',0)});}
- if(!['content','vehicle','profile','rates','remove','settings','category','upload','import-photo','page','block','publish','publication-status','commercial-admin','rental-rules','rental-extra','rental-promotion','service-rate','rental-history','rental-inbox','freight-draft'].includes(path))fail(404,'No encontrado.');
+ if(!['content','vehicle','profile','rates','remove','settings','category','upload','import-photo','page','block','publish','publication-status','commercial-admin','rental-display','rental-rules','rental-extra','rental-promotion','service-rate','rental-history','rental-inbox','freight-draft'].includes(path))fail(404,'No encontrado.');
  if(!token||!await rest('rpc/renting_admin',post({})))fail(401,'Inicia sesión con una cuenta administradora.');
  if(path==='content'&&req.method==='GET')return json(await snapshot(true));
  if(path==='commercial-admin'&&req.method==='GET')return json(await commercialCatalog(rest, token));
@@ -128,7 +130,7 @@ export async function marketingAPI(req,env){
  }
  const data=await req.json();
  if(path==='freight-draft')return json(await saveFreightDraft(data,rest,fail));
- if(['rental-rules','rental-extra','rental-promotion','service-rate'].includes(path)){
+ if(['rental-display','rental-rules','rental-extra','rental-promotion','service-rate'].includes(path)){
    return json(await saveCommercial(path,data,rest,fail) ?? {});
  }else if(path==='block'){
    if(typeof data.id!=='string'||!/^[a-z0-9-]{1,100}$/.test(data.id))fail(400,'Texto no válido.');
@@ -178,6 +180,14 @@ export async function marketingAPI(req,env){
        fail(400,'Indique importes válidos. Las tarifas deben ser mayores que cero.');
      }
      patch[column] = cents;
+     if (data.rates.secondary !== undefined || data.rates.secondaryMode !== undefined) {
+       const second = data.rates.secondary?.[key];
+       const mode = data.rates.secondaryMode?.[key];
+       if (!['manual','tc'].includes(mode) || (second !== null && (!Number.isInteger(second) || second < minimum || second > 100000000))
+         || (mode === 'manual' && cents !== null && second === null)) fail(400,'Complete el segundo precio o elija calcularlo con el TC.');
+       patch[column.replace('_centimos', '_alternativa_centimos')] = second;
+       patch[column.replace('_centimos', '_alternativa_modo')] = mode;
+     }
      // Older clients omit currencies: keep the stored currency rather than resetting it.
      if (data.rates.currencies !== undefined) {
        const currency = data.rates.currencies?.[key];

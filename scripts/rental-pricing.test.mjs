@@ -57,7 +57,7 @@ test('una fracción de día cruza el límite de tramo y el precio de partida lo 
   const estimate = estimateRental(rates, pickup, '2026-12-07T10:01', now);
   assert.equal(estimate.days, 7);
   assert.equal(estimate.total, 7 * rates.weeklyPerDay);
-  assert.deepEqual(startingRentalRate(rates), { centsPerDay: 8333, currency: 'PEN', term: 'Desde 30 días · equivalente diario' });
+  assert.deepEqual(startingRentalRate(rates), { centsPerDay: 8333, currency: 'PEN', term: 'Desde 30 días · equivalente diario', key:'monthly', divisor:30 });
 });
 
 test('no inventa tarifas para tramos ausentes y rechaza fechas inválidas', () => {

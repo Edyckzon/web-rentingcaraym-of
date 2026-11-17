@@ -1,4 +1,5 @@
 'use client';
+import CurrencyEquivalent from './CurrencyEquivalent';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -16,9 +17,9 @@ function TariffCard({ vehicle, rules, promotion }: { vehicle: Vehicle; rules: Re
   const photo = vehicle.images[0];
   const detail = detailUrl(vehicle.id);
   const tiers = [
-    { label: `1–${rules.weeklyFrom - 1} días`, cents: vehicle.rates?.daily, currency: rateCurrency(vehicle.rates, 'daily'), unit: 'día' },
-    { label: `${rules.weeklyFrom}–${rules.monthlyFrom - 1} días`, cents: vehicle.rates?.weeklyPerDay, currency: rateCurrency(vehicle.rates, 'weeklyPerDay'), unit: 'día' },
-    { label: `${rules.monthlyFrom} días o más`, cents: vehicle.rates?.monthly, currency: rateCurrency(vehicle.rates, 'monthly'), unit: 'mes' },
+    { label: `1–${rules.weeklyFrom - 1} días`, mode:vehicle.rates?.secondaryMode?.daily, secondary:vehicle.rates?.secondary?.daily, cents: vehicle.rates?.daily, currency: rateCurrency(vehicle.rates, 'daily'), unit: 'día' },
+    { label: `${rules.weeklyFrom}–${rules.monthlyFrom - 1} días`, mode:vehicle.rates?.secondaryMode?.weeklyPerDay, secondary:vehicle.rates?.secondary?.weeklyPerDay, cents: vehicle.rates?.weeklyPerDay, currency: rateCurrency(vehicle.rates, 'weeklyPerDay'), unit: 'día' },
+    { label: `${rules.monthlyFrom} días o más`, mode:vehicle.rates?.secondaryMode?.monthly, secondary:vehicle.rates?.secondary?.monthly, cents: vehicle.rates?.monthly, currency: rateCurrency(vehicle.rates, 'monthly'), unit: 'mes' },
   ];
   return <article className="tariff-card" data-modelo={vehicle.id}>
     <div className="tariff-card-head">
@@ -29,11 +30,11 @@ function TariffCard({ vehicle, rules, promotion }: { vehicle: Vehicle; rules: Re
       <strong>{promotion.title}</strong>
       <RentalPrice vehicleId={vehicle.id} rates={vehicle.rates}/>
     </div>}
-    <dl className="tariff-tiers">{tiers.map(({ label, cents, currency, unit }) => <div key={label}>
-      <dt>{label}</dt><dd>{cents == null ? <span>Por consultar</span> : <><strong>{formatMoney(cents, currency)}</strong><span> / {unit}</span></>}</dd>
+    <dl className="tariff-tiers">{tiers.map(({ label, cents, currency, unit, mode, secondary }) => <div key={label}>
+      <dt>{label}</dt><dd>{cents == null ? <span>Por consultar</span> : <><strong>{formatMoney(cents, currency)}</strong><span> / {unit}</span><CurrencyEquivalent cents={cents} currency={currency} unit={unit} mode={mode} secondary={secondary}/></>}</dd>
     </div>)}</dl>
     <div className="tariff-card-foot">
-      <p><ShieldCheck size={19} aria-hidden="true"/><span>Garantía aparte <strong>{vehicle.rates?.deposit == null ? 'Por consultar' : formatMoney(vehicle.rates.deposit, rateCurrency(vehicle.rates, 'deposit'))}</strong></span></p>
+      <p><ShieldCheck size={19} aria-hidden="true"/><span>Garantía aparte <strong>{vehicle.rates?.deposit == null ? 'Por consultar' : formatMoney(vehicle.rates.deposit, rateCurrency(vehicle.rates, 'deposit'))}</strong>{vehicle.rates?.deposit != null && <CurrencyEquivalent cents={vehicle.rates.deposit} currency={rateCurrency(vehicle.rates, 'deposit')} mode={vehicle.rates.secondaryMode?.deposit} secondary={vehicle.rates.secondary?.deposit}/>}</span></p>
       <Link className="button accent" href={`${detail}#cotizador`} data-origen="tarifario" aria-label={`Cotizar ${vehicle.name}`}>Cotizar <ArrowRight size={16} aria-hidden="true"/></Link>
     </div>
   </article>;
@@ -53,7 +54,7 @@ export default function RentalTariff() {
   const starting = minimumRatesByCurrency(fleet.flatMap(vehicle => {
     const rates = startingRentalRates(vehicle.rates, rules).map(rate => ({ ...rate, name: vehicle.name }));
     const promotion = promotions.get(vehicle.id);
-    if (promotion) rates.push({ centsPerDay: promotion.cents, currency: promotion.currency ?? 'PEN', term: 'Promoción vigente', name: vehicle.name });
+    if (promotion) rates.push({ key:'daily', divisor:1, centsPerDay: promotion.cents, currency: promotion.currency ?? 'PEN', term: 'Promoción vigente', name: vehicle.name });
     return rates;
   }));
 
