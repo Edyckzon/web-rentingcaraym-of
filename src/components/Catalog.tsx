@@ -1,5 +1,5 @@
 'use client';
-import {detailUrl} from '@/components/MarketingProvider';
+import {detailUrl,useMarketing} from '@/components/MarketingProvider';
 import Link from 'next/link';
 import { ArrowUpRight, ImageOff } from 'lucide-react';
 import type { Vehicle } from '@/lib/fleet';
@@ -7,7 +7,6 @@ import RentalPrice from './RentalPrice';
 import ServicePrice from './ServicePrice';
 
 import type { CatalogImage } from '@/lib/media';
-import { heavyServices } from '@/lib/services';
 import VehiclePreview from './VehiclePreview';
 
 export function Photo({ photo, priority = false, className = '' }: { photo: CatalogImage; priority?: boolean; className?: string }) {
@@ -34,7 +33,8 @@ export function VehicleCard({ vehicle, dates }: { vehicle: Vehicle; dates?: { pi
 }
 
 export function ServiceCards() {
-  return <div className="vehicle-grid">{heavyServices.map(service => <article className="vehicle-card service-card" key={service.id}>
+  const {services}=useMarketing();
+  return <div className="vehicle-grid">{services.map(service => <article className="vehicle-card service-card" key={service.id}>
     <Link className="card-image-link" href={`/maquinaria-y-transporte/${service.id}/`} aria-label={`Ver ${service.name}`}><Photo photo={service.images[0]}/><span className="category-badge">Línea pesada</span></Link>
     <div className="vehicle-info"><p className="eyebrow">{service.equipment}</p><h3>{service.name}</h3><p>{service.description}</p><ServicePrice service={service.id}/><Link className="text-link" href={`/maquinaria-y-transporte/${service.id}/`}>Ver servicio <ArrowUpRight size={18}/></Link></div>
   </article>)}</div>;

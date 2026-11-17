@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Calculator, CarFront, ChevronDown, ClipboardList, ExternalLink, FileText, Layers3, LayoutTemplate, Link2, LogOut, Phone, Tags, Truck } from 'lucide-react';
+import { Images, Calculator, CarFront, ChevronDown, ClipboardList, ExternalLink, FileText, Layers3, LayoutTemplate, Link2, LogOut, Phone, Tags, Truck } from 'lucide-react';
 import brandLogo from '@/lib/img/RENTING-CAR.png';
 
 export const adminSections = [
@@ -17,12 +17,15 @@ export const adminSections = [
   { title: 'Promociones y extras', icon: Tags, description: 'Gestiona campañas, extras, tramos e historial.' },
   { title: 'Solicitudes', icon: ClipboardList, description: 'Consulta las solicitudes recibidas y el estado del aviso por correo.' },
   { title: 'Carga en borrador', icon: Truck, description: 'Prepara rutas y cotizador para revisión interna.' },
+  { title: 'Fotos de servicios', icon: Images, description: 'Gestiona las galerías de excavadora, volquetes y transporte de carga.' },
+  { title: 'Requisitos de alquiler', icon: FileText, description: 'Edita los requisitos, garantías y condiciones; publica el documento PDF.' },
 ] as const;
 
 const groups = [
   { title: 'Flota', sections: [0, 8, 4] },
-  { title: 'Gestión comercial', sections: [7, 9, 10, 11] },
-  { title: 'Sitio web', sections: [1, 2, 3, 5, 6] },
+  { title: 'Servicios', sections: [12, 11] },
+  { title: 'Gestión comercial', sections: [7, 9, 10] },
+  { title: 'Sitio web', sections: [1, 2, 3, 13, 5, 6] },
 ] as const;
 
 export default function AdminSidebar({ section, busy, onNavigate, onSignOut }: {

@@ -6,6 +6,7 @@ import {guardPassword} from './login-guard.mjs';
 import { exchangeRate } from './exchange-rate.mjs';
 const project='https://pjkcihdiasktmwdpcmpt.supabase.co';
 const bucket='/storage/v1/object/renting-fotos/', publicRoot=project+bucket.replace('/object/','/object/public/');
+const documentsBucket='/storage/v1/object/renting-documentos/',documentsRoot=project+documentsBucket.replace('/object/','/object/public/');
 const fields={title:'titulo',accent:'destacado',slogan:'eslogan',hero:'portada',firstLabel:'boton_1',firstUrl:'destino_1',secondLabel:'boton_2',secondUrl:'destino_2',email:'email',adminEmail:'email_administracion',address:'direccion',groupUrl:'grupo_url',hours:'horario',phone:'telefono',whatsapp:'whatsapp',maps:'maps',waze:'waze'};
 const json=(v,status=200,headers={})=>new Response(JSON.stringify(v),{status,headers:{'Content-Type':'application/json','Cache-Control':'no-store',...headers}});
 const fail=(s,m)=>{throw Object.assign(new Error(m),{status:s})};
@@ -45,7 +46,7 @@ export async function marketingAPI(req,env){
  const rest=(p,o,b)=>sup('/rest/v1/'+p,o,b),post=body=>({method:'POST',body:JSON.stringify(body)});
  async function snapshot(includeDrafts = false) {
    const catalogToken = includeDrafts ? token : null;
-   const [settings, vehicles, photos, categories, pages, blocks, links] = await Promise.all([
+   const [settings, vehicles, photos, categories, pages, blocks, links, servicePhotos] = await Promise.all([
      rest('configuracion_web?id=eq.1', {}, null),
      rest('vehiculos?select=*&order=id', {}, catalogToken),
      rest('vehiculo_fotos?select=*&order=vehiculo_id,orden,id&limit=10000', {}, null),
@@ -59,10 +60,13 @@ export async function marketingAPI(req,env){
        if (!e.message.includes('PGRST205')) throw e;
        return [];
      }),
+     rest('servicio_fotos?select=*&order=servicio,orden',{},null),
    ]);
    if (!settings[0]) fail(503, 'Falta la configuración web.');
    const visible = new Set(vehicles.map(v => v.id));
    return {
+     requirementsPdf:settings[0].requisitos_pdf??null,
+     servicePhotos:servicePhotos.map(photo=>({serviceId:photo.servicio,src:photo.ruta,alt:photo.alt})),
      blocks: blocks.map(b => ({ id:b.id, group:b.grupo, label:b.etiqueta, title:b.titulo, body:b.cuerpo, linkLabel:b.enlace_texto, linkUrl:b.enlace_url })),
      pages: pages.map(p => ({ path:p.ruta, title:p.titulo, description:p.descripcion, heading:p.encabezado, intro:p.introduccion, updatedAt:p.actualizado_en })),
      ...Object.fromEntries(Object.entries(fields).map(([k,v]) => [k, settings[0][v]])),
@@ -95,7 +99,7 @@ export async function marketingAPI(req,env){
    return json({},200,{'Set-Cookie':cookie(r.access_token,Math.min(3600,r.expires_in))});
  }
  if(path==='logout'&&req.method==='POST'){if(token)await sup('/auth/v1/logout?scope=local',{method:'POST'}).catch(()=>{});return json({},200,{'Set-Cookie':cookie('',0)});}
- if(!['content','vehicle','profile','rates','remove','settings','category','upload','import-photo','page','block','publish','publication-status','commercial-admin','rental-display','rental-rules','rental-extra','rental-promotion','service-rate','rental-history','rental-inbox','freight-draft'].includes(path))fail(404,'No encontrado.');
+ if(!['content','upload-document','requirements-document','service-gallery','vehicle','profile','rates','remove','settings','category','upload','import-photo','page','block','publish','publication-status','commercial-admin','rental-display','rental-rules','rental-extra','rental-promotion','service-rate','rental-history','rental-inbox','freight-draft'].includes(path))fail(404,'No encontrado.');
  if(!token||!await rest('rpc/renting_admin',post({})))fail(401,'Inicia sesión con una cuenta administradora.');
  if(path==='content'&&req.method==='GET')return json(await snapshot(true));
  if(path==='commercial-admin'&&req.method==='GET')return json(await commercialCatalog(rest, token));
@@ -118,6 +122,13 @@ export async function marketingAPI(req,env){
    if(!response.ok)fail(502,'Cloudflare no pudo iniciar la publicación. Inténtalo después.');
    return json({revision,message:'Publicación solicitada a Cloudflare. Espera a que termine la compilación antes de comprobar el SEO.'});
  }
+ if(path==='upload-document'){
+   const bytes=await req.arrayBuffer();
+   if(bytes.byteLength>5*1024*1024||bytes.byteLength<12||new TextDecoder().decode(bytes.slice(0,5))!=='%PDF-')fail(400,'Elige un PDF válido de hasta 5 MB.');
+   const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),n=>n.toString(16).padStart(2,'0')).join('');
+   await sup(documentsBucket+hash+'.pdf',{method:'POST',body:bytes,headers:{'Content-Type':'application/pdf','x-upsert':'true'}});
+   return json(documentsRoot+hash+'.pdf');
+ }
  if(path==='upload'||path==='import-photo'){
    const bytes=await req.arrayBuffer();if(bytes.byteLength>5*1024*1024||bytes.byteLength<12)fail(400,'Tamaño de foto no válido.');
    const a=new Uint8Array(bytes),mime=a[0]===255&&a[1]===216?'image/jpeg':a[0]===137&&a[1]===80?'image/png':String.fromCharCode(...a.slice(0,4))==='RIFF'&&String.fromCharCode(...a.slice(8,12))==='WEBP'?'image/webp':'';
@@ -129,6 +140,20 @@ export async function marketingAPI(req,env){
    return json(src);
  }
  const data=await req.json();
+ if(path==='requirements-document'){
+   const src=data?.src;
+   if(src!==null && (typeof src!=='string'||!src.startsWith(documentsRoot)||!/^[a-f0-9]{64}\.pdf$/.test(src.slice(documentsRoot.length))))fail(400,'Documento no válido.');
+   await rest('configuracion_web?id=eq.1',{method:'PATCH',body:JSON.stringify({requisitos_pdf:src})});
+   return json({});
+ }
+ if(path==='service-gallery'){
+   if(!['excavadora-cat-330dl','volquetes','transporte-de-carga'].includes(data?.id) || !Array.isArray(data.images) || data.images.length>40
+     || data.images.some(photo=>!photo || typeof photo.src!=='string' || (!photo.src.startsWith(publicRoot) || !/^[a-f0-9]{64}\.(webp|png|jpeg)$/.test(photo.src.slice(publicRoot.length)))
+       || typeof photo.alt!=='string' || !photo.alt.trim() || photo.alt.length>200)
+     || new Set(data.images.map(photo=>photo.src)).size!==data.images.length)fail(400,'Revise el servicio y sus fotos (máximo 40).');
+   await rest('rpc/guardar_galeria_servicio',post({ficha:{id:data.id,images:data.images.map(photo=>({src:photo.src,alt:photo.alt.trim()}))}}));
+   return json({});
+ }
  if(path==='freight-draft')return json(await saveFreightDraft(data,rest,fail));
  if(['rental-display','rental-rules','rental-extra','rental-promotion','service-rate'].includes(path)){
    return json(await saveCommercial(path,data,rest,fail) ?? {});

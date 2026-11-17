@@ -149,3 +149,6 @@ body:has(.studio) .promo-ribbon { display: none; }
 .hero-from strong { color: var(--gold); font-size: clamp(1.25rem, 2.5vw, 1.85rem); }
 .hero-from span { display: block; font-size: .82rem; }
 @media (min-width: 1021px) { .home-hero .hero-content { min-height: clamp(460px, 60vh, 620px); } }
+
+.requirements-document { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:20px; padding-block:32px; border-bottom:1px solid var(--line); }
+.requirements-document h2 { font-size:1.35rem; margin:0 0 8px; }

@@ -7,6 +7,8 @@ import ProfileEditor, { type ProfileChange } from './ProfileEditor';
 import CommercialEditor from './CommercialEditor';
 import RentalInbox from './RentalInbox';
 import FreightDraft from './FreightDraft';
+import ServicePhotoEditor from './ServicePhotoEditor';
+import RequirementsEditor from './RequirementsEditor';
 import RateEditor from './RateEditor';
 import type { RentalRates } from '@/lib/rental-pricing.mjs';
 import PageEditor from './PageEditor';
@@ -101,7 +103,7 @@ export default function Editor(){
       mode==='rename'?{title:'¿Cambiar el nombre de la categoría?',detail:'«'+selectedCat+'» pasará a llamarse «'+name+'». Los vehículos conservarán su categoría.',label:'Guardar nombre',apply:()=>changeCategory(mode)}:
       {title:'¿Crear la categoría?',detail:'«'+name+'» estará disponible al crear o editar vehículos.',label:'Crear categoría',apply:()=>changeCategory(mode)});
   }
-  const field=(k:Exclude<keyof Marketing,'covers'|'listings'|'pages'|'blocks'>,label:string,multi=false,limit=2048)=><label>{label}{multi?<textarea required maxLength={limit} value={form[k]??''} onChange={e=>set({...form,[k]:e.target.value})}/>:<input required maxLength={limit} value={form[k]??''} onChange={e=>set({...form,[k]:e.target.value})}/>}</label>;
+  const field=(k:Exclude<keyof Marketing,'covers'|'listings'|'pages'|'blocks'|'servicePhotos'>,label:string,multi=false,limit=2048)=><label>{label}{multi?<textarea required maxLength={limit} value={form[k]??''} onChange={e=>set({...form,[k]:e.target.value})}/>:<input required maxLength={limit} value={form[k]??''} onChange={e=>set({...form,[k]:e.target.value})}/>}</label>;
   function confirmProfile(name: string, change: ProfileChange) {
     ask({
       title: `¿Guardar ficha de ${name}?`,
@@ -167,6 +169,8 @@ export default function Editor(){
     <span className="publish-seo-tooltip" id="publish-seo-tip" role="tooltip">{publishTip}</span>
   </div>
   <p>Guardar actualiza el contenido. Publicar SEO actualiza las páginas generadas y el sitemap cuando Cloudflare termina la compilación.</p>
+  {section === 12 && <ServicePhotoEditor photos={saved.servicePhotos??[]} api={api} upload={photo} onDirtyChange={setPageDirty} onBusyChange={wait} onSaved={async()=>{await load();status('Galería de servicio guardada.');}}/>}
+  {section === 13 && <RequirementsEditor blocks={saved.blocks??[]} src={saved.requirementsPdf} api={api} onDirtyChange={setPageDirty} onBusyChange={wait} onSaved={async()=>{await load();}} onSaveText={async block=>{await api('block',JSON.stringify(block));await load();window.dispatchEvent(new Event('marketing-saved'));}}/>}
   {section === 11 && <FreightDraft api={api} onDirtyChange={setPageDirty}/>}
   {section === 10 && <RentalInbox api={api}/>}
   {section === 9 && <CommercialEditor api={api} vehicles={rows} onDirtyChange={setPageDirty}/>}

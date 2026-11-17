@@ -1,4 +1,6 @@
 import { referenceImages, type CatalogImage } from './media';
+import snapshot from './marketing-public.json';
+export type ServicePhoto = {serviceId:string;src:string;alt:string};
 
 export type HeavyService = {
   id: string; name: string; equipment: string; description: string;
@@ -7,7 +9,7 @@ export type HeavyService = {
   specifications?: { label: string; value: string }[];
 };
 
-export const heavyServices: HeavyService[] = [
+export const baseHeavyServices: HeavyService[] = [
   {
     id: 'excavadora-cat-330dl', name: 'Alquiler de excavadora', equipment: 'CAT 330DL',
     description: 'Maquinaria para sus proyectos de excavación y movimiento de tierras. Cuéntenos el trabajo y la ubicación de su obra para preparar una propuesta.',
@@ -33,3 +35,11 @@ export const heavyServices: HeavyService[] = [
     images: [referenceImages.truck],
   },
 ];
+
+export function withServicePhotos(photos:ServicePhoto[]) {
+  return baseHeavyServices.map(service=>{
+    const images=photos.filter(photo=>photo.serviceId===service.id).map(photo=>({src:photo.src,alt:photo.alt,reference:false}));
+    return {...service,images:images.length?images:service.images};
+  });
+}
+export const heavyServices=withServicePhotos((snapshot as {servicePhotos?:ServicePhoto[]}).servicePhotos??[]);

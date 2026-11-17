@@ -1,4 +1,5 @@
 import { Closing, PageIntro } from '@/components/Sections';
+import RequirementsDocument from '@/components/RequirementsDocument';
 import RentalInformation from '@/components/RentalInformation';
 import BreadcrumbData from '@/components/BreadcrumbData';
 import { pageMetadata } from '@/lib/seo';
@@ -10,5 +11,5 @@ export const metadata = pageMetadata(title, description, path);
 
 export default function RequirementsPage() {
   return <><BreadcrumbData trail={[{ name: 'Requisitos de alquiler', path }]}/>
-    <PageIntro label="Alquiler de vehículos" title={title} description={description}/><RentalInformation/><Closing/></>;
+    <PageIntro label="Alquiler de vehículos" title={title} description={description}/><RequirementsDocument/><RentalInformation/><Closing/></>;
 }

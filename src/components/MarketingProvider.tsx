@@ -9,6 +9,7 @@ import {home as defaultHome,type Marketing} from '@/lib/marketing';
 import type {CatalogImage} from '@/lib/media';
 import { promotionIsActive, type CommercialCatalog } from '@/lib/rental-pricing.mjs';
 import type { ExchangeReference } from '@/lib/currency-display.mjs';
+import {heavyServices,withServicePhotos} from '@/lib/services';
 export type Snapshot=Marketing & {categories:string[];photos:CatalogImage[]};
 const State=createContext<Snapshot|null>(null);
 const CommercialState=createContext<CommercialCatalog|null>(null);
@@ -74,5 +75,6 @@ export function useMarketing(){
  const fleet:Vehicle[]=s?.listings?.filter(v=>v.published!==false).map(v=>vehicleFromListing(v,s.photos))??baseFleet;
  const number=s?.whatsapp??defaults.whatsapp;
  const blocks=defaultBlocks.map(b=>s?.blocks?.find(current=>current.id===b.id)??b);
- return {blocks,block:(id:string)=>blocks.find(b=>b.id===id)!,pages:s?.pages??[],loaded:!!s,home:s??defaultHome,fleet,featuredFleet:s?fleet.filter(v=>s.listings?.some(l=>l.id===v.id&&l.featured)):featuredFleet,categories:['Todos',...(s?.categories??['SUV','Sedán','Familiar / 7 asientos'])],business:{...defaults,email:s?.email||defaults.email,adminEmail:s?.adminEmail||defaults.adminEmail,address:s?.address||defaults.address,groupUrl:s?.groupUrl||defaults.groupUrl,hours:s?.hours||defaults.hours,phone:s?.phone?.replace(/[^+0-9]/g,'')??defaults.phone,phoneLabel:s?.phone??defaults.phoneLabel,mapsUrl:s?.maps??defaults.mapsUrl,wazeUrl:s?.waze??defaults.wazeUrl},whatsappLabel:number===defaults.whatsapp?defaults.whatsappLabel:'+'+number,whatsappLink:(m:string)=>'https://wa.me/'+number+'?text='+encodeURIComponent(m)};
+ const services=s?withServicePhotos(s.servicePhotos??[]):heavyServices;
+ return {services,requirementsPdf:s?.requirementsPdf??null,blocks,block:(id:string)=>blocks.find(b=>b.id===id)!,pages:s?.pages??[],loaded:!!s,home:s??defaultHome,fleet,featuredFleet:s?fleet.filter(v=>s.listings?.some(l=>l.id===v.id&&l.featured)):featuredFleet,categories:['Todos',...(s?.categories??['SUV','Sedán','Familiar / 7 asientos'])],business:{...defaults,email:s?.email||defaults.email,adminEmail:s?.adminEmail||defaults.adminEmail,address:s?.address||defaults.address,groupUrl:s?.groupUrl||defaults.groupUrl,hours:s?.hours||defaults.hours,phone:s?.phone?.replace(/[^+0-9]/g,'')??defaults.phone,phoneLabel:s?.phone??defaults.phoneLabel,mapsUrl:s?.maps??defaults.mapsUrl,wazeUrl:s?.waze??defaults.wazeUrl},whatsappLabel:number===defaults.whatsapp?defaults.whatsappLabel:'+'+number,whatsappLink:(m:string)=>'https://wa.me/'+number+'?text='+encodeURIComponent(m)};
 }

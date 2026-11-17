@@ -1,0 +1,8 @@
+.service-photo-tabs { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-bottom:24px; }
+.service-photo-tabs button { display:grid; justify-items:start; gap:8px; padding:18px; border:1px solid #d4dce6; border-radius:10px; background:white; text-align:left; }
+.service-photo-tabs button[aria-pressed=true] { background:#eef3f9; border-color:#173456; color:#173456; }
+.service-photo-tabs span { font-size:.8rem; }
+.service-photo-gallery article>label { display:grid; gap:5px; padding:12px; }
+.service-photo-empty { padding:24px; background:#f5f7fa; border:1px dashed #aab9ca; border-radius:10px; color:#334c67; }
+.requirements-pdf { margin-bottom:24px; padding:22px; border:1px solid #d4dce6; border-radius:12px; background:#f5f7fa; }
+.requirements-pdf a { text-decoration:underline; }
