@@ -8,7 +8,7 @@ import { VehicleCard } from '@/components/Catalog';
 import VehicleGallery from '@/components/VehicleGallery';
 import RentalCalculator from './RentalCalculator';
 import { fleetCategories } from '@/lib/catalog-profile';
-import { formatSoles } from '@/lib/rental-pricing.mjs';
+import { formatMoney, rateCurrency } from '@/lib/rental-pricing.mjs';
 import RentalPrice from './RentalPrice';
 
 const specificationIcons = new Map([
@@ -51,7 +51,7 @@ export default function VehicleDetail({slug}:{slug:string}){
 
           <p className="lead">{vehicle.description}</p>
           <RentalPrice rates={vehicle.rates} vehicleId={vehicle.id}/>
-          {vehicle.rates?.daily != null && <p className="rental-regular">Tarifa diaria regular: {formatSoles(vehicle.rates.daily)} · IGV incluido</p>}
+          {vehicle.rates?.daily != null && <p className="rental-regular">Tarifa diaria regular: {formatMoney(vehicle.rates.daily, rateCurrency(vehicle.rates, 'daily'))} · IGV incluido</p>}
           <RentalCalculator key={vehicle.id} vehicle={vehicle}/>
           <div className="button-row">
             <Link className="button accent" href={`/contacto/?servicio=vehiculos&modelo=${vehicle.id}#cotizacion`}>Solicitar cotización <ArrowUpRight size={18}/></Link>

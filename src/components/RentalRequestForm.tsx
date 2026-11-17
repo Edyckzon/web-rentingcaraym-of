@@ -6,7 +6,7 @@ import Script from 'next/script';
 import { trackEvent } from '@/lib/analytics';
 
 export type RentalRequestDetails = {
-  vehicleId: string; pickup: string; dropoff: string; place: string; extras: string[]; expectedTotal: number | null;
+  vehicleId: string; pickup: string; dropoff: string; place: string; extras: string[]; expectedTotal: number | null; expectedCurrency: 'PEN' | 'USD'; expectedTotals: Partial<Record<'PEN' | 'USD', number>>;
 };
 
 type Challenge = {

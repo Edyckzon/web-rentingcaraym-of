@@ -3,6 +3,7 @@ import { validateAdminCredentials } from '../src/lib/admin-credentials.mjs';
 import { receiveRentalRequest, requestSiteKey } from './rental-requests.mjs';
 import {contentRevision} from './publication.mjs';
 import {guardPassword} from './login-guard.mjs';
+import { exchangeRate } from './exchange-rate.mjs';
 const project='https://pjkcihdiasktmwdpcmpt.supabase.co';
 const bucket='/storage/v1/object/renting-fotos/', publicRoot=project+bucket.replace('/object/','/object/public/');
 const fields={title:'titulo',accent:'destacado',slogan:'eslogan',hero:'portada',firstLabel:'boton_1',firstUrl:'destino_1',secondLabel:'boton_2',secondUrl:'destino_2',email:'email',adminEmail:'email_administracion',address:'direccion',groupUrl:'grupo_url',hours:'horario',phone:'telefono',whatsapp:'whatsapp',maps:'maps',waze:'waze'};
@@ -19,7 +20,9 @@ const rateFields = {
 
 function vehicleRates(vehicle) {
   const rates = Object.fromEntries(Object.entries(rateFields).map(([key, column]) => [key, vehicle[column] ?? null]));
-  return Object.values(rates).some(value => value !== null) ? rates : undefined;
+  return Object.values(rates).some(value => value !== null) ? { ...rates,
+    currencies: Object.fromEntries(Object.entries(rateFields).map(([key, column]) => [key, vehicle[column.replace('_centimos', '_moneda')] ?? 'PEN'])),
+  } : undefined;
 }
 export async function marketingAPI(req,env){
  const u=new URL(req.url), path=u.pathname.replace(/^\/marketing-api\//,'').replace(/\/$/,'');
@@ -27,6 +30,7 @@ export async function marketingAPI(req,env){
  const origin=req.headers.get('origin');const secure=u.protocol==='https:'?'; Secure':'';
  const cookie=(v,age)=>'renting_auth='+v+'; HttpOnly; SameSite=Strict; Path=/marketing-api; Max-Age='+age+secure;
  try{
+ if(req.method==='GET'&&path==='exchange-rate')return json(await exchangeRate(),200,{'Cache-Control':'public, max-age=300'});
  if(!env.SUPABASE_PUBLISHABLE_KEY?.startsWith('sb_publishable_'))fail(503,'Falta configurar Supabase en el servidor.');
  if(req.method!=='GET' && (req.method!=='POST'||origin!==u.origin))fail(403,'Origen no permitido.');
  async function sup(path,options={},bearer=token){
@@ -171,9 +175,15 @@ export async function marketingAPI(req,env){
      const cents = data.rates?.[key];
      const minimum = key === 'deposit' ? 0 : 1;
      if (cents !== null && (!Number.isInteger(cents) || cents < minimum || cents > 100000000)) {
-       fail(400,'Indique importes válidos en soles. Las tarifas deben ser mayores que cero.');
+       fail(400,'Indique importes válidos. Las tarifas deben ser mayores que cero.');
      }
      patch[column] = cents;
+     // Older clients omit currencies: keep the stored currency rather than resetting it.
+     if (data.rates.currencies !== undefined) {
+       const currency = data.rates.currencies?.[key];
+       if (!['PEN', 'USD'].includes(currency)) fail(400,'Elija soles (PEN) o dólares (USD) para cada importe.');
+       patch[column.replace('_centimos', '_moneda')] = currency;
+     }
    }
    const updated = await rest('vehiculos?id=eq.' + encodeURIComponent(data.id), {
      method: 'PATCH', headers: { Prefer: 'return=representation' }, body: JSON.stringify(patch),

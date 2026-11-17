@@ -13,14 +13,14 @@ const options = [
   ['combustible', 'Combustible', [['glp', 'GLP'], ['gasolina', 'Gasolina'], ['diesel', 'Diésel']]],
   ['traccion', 'Tracción', [['4x4', '4x4']]],
   ['pasajeros', 'Pasajeros', [['5', '5 plazas'], ['7', '7 plazas']]],
-  ['orden', 'Orden', [['precio', 'Menor precio'], ['ano', 'Más recientes']]],
+  ['orden', 'Orden', [['precio', 'Menor precio por moneda'], ['ano', 'Más recientes']]],
 ] as const;
 const fold = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 
 export default function FleetFilter({ category, fuel }: { category?: string; fuel?: string }) {
   const { categories, fleet } = useMarketing();
   const commercial = useCommercial();
-  const promoted = new Map(commercial?.promotions.filter(item => promotionIsActive(item)).map(item => [item.vehicleId, item.cents]));
+  const promoted = new Map(commercial?.promotions.filter(item => promotionIsActive(item)).map(item => [item.vehicleId, { centsPerDay: item.cents, currency: item.currency ?? 'PEN' }]));
   const [search, setSearch] = useState('');
   useEffect(() => {
     function read() { setSearch(window.location.search); }
@@ -44,9 +44,11 @@ export default function FleetFilter({ category, fuel }: { category?: string; fue
   });
   visible.sort((a, b) => {
     if (selected.orden === 'precio') {
-      const left = promoted.get(a.id) ?? startingRentalRate(a.rates, commercial?.rules)?.centsPerDay ?? Infinity;
-      const right = promoted.get(b.id) ?? startingRentalRate(b.rates, commercial?.rules)?.centsPerDay ?? Infinity;
-      if (left !== right) return left - right;
+      const left = promoted.get(a.id) ?? startingRentalRate(a.rates, commercial?.rules);
+      const right = promoted.get(b.id) ?? startingRentalRate(b.rates, commercial?.rules);
+      if (!left || !right) return left ? -1 : right ? 1 : 0;
+      if (left.currency !== right.currency) return left.currency.localeCompare(right.currency);
+      if (left.centsPerDay !== right.centsPerDay) return left.centsPerDay - right.centsPerDay;
     }
     if (!selected.orden && promoted.has(a.id) !== promoted.has(b.id)) return promoted.has(a.id) ? -1 : 1;
     return (b.profile.year ?? 0) - (a.profile.year ?? 0) || a.name.localeCompare(b.name, 'es');

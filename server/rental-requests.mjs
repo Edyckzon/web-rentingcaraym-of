@@ -60,7 +60,12 @@ export async function receiveRentalRequest(request, env, { rest, fail, vehicleRa
   try {
     estimate = estimateRental(vehicleRates(vehicle) ?? emptyRentalRates, input.pickup, input.dropoff, Date.now(), { rules: catalog.rules, promotion, extras });
   } catch (error) { fail(400, error.message); }
-  if (estimate.total !== input.expectedTotal) fail(409, 'La tarifa cambió. Vuelva a calcular antes de enviar.');
+  const expectedCurrency = input.expectedCurrency ?? 'PEN';
+  const totalsMatch = input.expectedTotals && ['PEN','USD'].every(currency => input.expectedTotals[currency] === estimate.totals[currency]);
+  if (estimate.total !== input.expectedTotal || estimate.currency !== expectedCurrency
+    || (input.expectedTotals !== undefined ? !totalsMatch : estimate.mixedCurrencies)) {
+    fail(409, 'La tarifa o moneda cambió. Vuelva a calcular antes de enviar.');
+  }
 
   async function serverRpc(name, payload) {
     const response = await fetch(`${project}/rest/v1/rpc/${name}`, {

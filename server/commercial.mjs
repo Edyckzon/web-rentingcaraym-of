@@ -17,13 +17,13 @@ export async function commercialCatalog(rest, bearer = null) {
       weeklyFrom: rules.semanal_desde, monthlyFrom: rules.mensual_desde,
       monthlyDivisor: rules.dias_prorrateo, stackPromotion: rules.acumular,
     } : defaultRentalRules,
-    extras: extras.map(row => ({ id: row.id, name: row.nombre, cents: row.precio_centimos, active: row.activo })),
+    extras: extras.map(row => ({ id: row.id, name: row.nombre, cents: row.precio_centimos, currency: row.moneda ?? 'PEN', active: row.activo })),
     promotions: promotions.map(row => ({
       id: row.id, vehicleId: row.vehiculo_id, title: row.nombre, banner: row.texto, terms: row.bases,
       ...(row.campania_id ? { campaignId: row.campania_id, category: row.categoria_campania } : {}),
-      starts: row.inicio, ends: row.fin, cents: row.precio_centimos, regularCents: row.regular_centimos, published: row.publicada,
+      starts: row.inicio, ends: row.fin, cents: row.precio_centimos, currency: row.moneda ?? 'PEN', regularCents: row.regular_centimos, published: row.publicada,
     })),
-    services: services.map(row => ({ id:row.servicio, cents:row.precio_centimos, unit:row.unidad })),
+    services: services.map(row => ({ id:row.servicio, cents:row.precio_centimos, currency:row.moneda ?? 'PEN', unit:row.unidad })),
   };
 }
 
@@ -36,15 +36,21 @@ const integer = (value, min, max) => Number.isInteger(value) && value >= min && 
 const uuid = /^[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}$/i;
 const date = /^\d{4}-\d{2}-\d{2}$/;
 const vehicleId = /^[a-z0-9-]{1,100}$/;
+function currencyPatch(input, fail) {
+  if (input.currency === undefined) return {};
+  if (!['PEN','USD'].includes(input.currency)) fail(400, 'Elija soles (PEN) o dólares (USD).');
+  return { moneda: input.currency };
+}
 
 export async function saveCommercial(path, input, rest, fail) {
   if (!input || typeof input !== 'object') fail(400, 'Revise los campos.');
+  const money = currencyPatch(input, fail);
   if (path === 'service-rate') {
     const { id, cents } = input;
     const unit = checkedText(input.unit, 40, cents !== null);
     if (!['empresas','excavadora-cat-330dl','volquetes'].includes(id) || unit === null ||
       (cents !== null && !integer(cents, 1, 100000000))) fail(400, 'Revise el precio y la unidad del servicio.');
-    await rest(`tarifas_servicios?servicio=eq.${id}`, { method:'PATCH', body:JSON.stringify({ precio_centimos:cents, unidad:unit }) });
+    await rest(`tarifas_servicios?servicio=eq.${id}`, { method:'PATCH', body:JSON.stringify({ precio_centimos:cents, unidad:unit, ...money }) });
     return;
   }
   if (path === 'rental-rules') {
@@ -64,7 +70,7 @@ export async function saveCommercial(path, input, rest, fail) {
     table = 'extras_alquiler';
     const name = checkedText(input.name, 100);
     if (!name || !integer(input.cents, 0, 100000000) || typeof input.active !== 'boolean') fail(400, 'Revise el nombre y el precio del extra.');
-    values = { nombre: name, precio_centimos: input.cents, activo: input.active };
+    values = { nombre: name, precio_centimos: input.cents, activo: input.active, ...money };
   } else {
     table = 'promociones_alquiler';
     const title = checkedText(input.title, 100);
@@ -81,14 +87,14 @@ export async function saveCommercial(path, input, rest, fail) {
         || new Set(vehicleIds).size !== vehicleIds.length
         || vehicleIds.some(id => typeof id !== 'string' || !vehicleId.test(id))) fail(400, 'Revise la categoría y sus vehículos.');
       return await rest('rpc/guardar_promocion_categoria', { method: 'POST', body: JSON.stringify({
-        ficha: { campaignId, category, vehicleIds, title, banner, terms, starts: input.starts, ends: input.ends, cents: input.cents, published: input.published },
+        ficha: { campaignId, category, vehicleIds, title, banner, terms, starts: input.starts, ends: input.ends, cents: input.cents, published: input.published, ...(input.currency === undefined ? {} : { currency: input.currency }) },
         simular: preview,
       }) });
     }
     if (typeof input.vehicleId !== 'string' || !vehicleId.test(input.vehicleId)) fail(400, 'Elija un vehículo.');
     values = {
       vehiculo_id: input.vehicleId, nombre: title, texto: banner, bases: terms,
-      inicio: input.starts, fin: input.ends, precio_centimos: input.cents, publicada: input.published,
+      inicio: input.starts, fin: input.ends, precio_centimos: input.cents, publicada: input.published, ...money,
     };
   }
   const individualOnly = table === 'promociones_alquiler' ? '&campania_id=is.null' : '';
@@ -108,7 +114,7 @@ export async function saveFreightDraft(input, rest, fail) {
     (input.cents !== null && !integer(input.cents, 1, 100000000))) fail(400, 'Revise origen, destino y tarifa.');
   const record = await rest(input.id ? `rutas_carga_borrador?id=eq.${input.id}` : 'rutas_carga_borrador', {
     method: input.id ? 'PATCH' : 'POST', headers: { Prefer: 'return=representation' },
-    body: JSON.stringify({ origen:origin, destino:destination, descripcion:description, tiempo_estimado:duration, precio_centimos:input.cents }),
+    body: JSON.stringify({ origen:origin, destino:destination, descripcion:description, tiempo_estimado:duration, precio_centimos:input.cents, ...currencyPatch(input, fail) }),
   });
   if (!record?.length) fail(404, 'No se encontró la ruta.');
   return record[0];

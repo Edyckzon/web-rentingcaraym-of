@@ -19,4 +19,4 @@ export type Marketing = {
   covers: Record<string,string>;
 };
 export const edits = content as Partial<Marketing>;
-export const home = content;
+export const home = content as Marketing;

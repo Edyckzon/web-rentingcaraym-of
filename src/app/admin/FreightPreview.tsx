@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, type FormEvent } from 'react';
-import { formatSoles, limaDate } from '@/lib/rental-pricing.mjs';
+import { formatMoney, limaDate } from '@/lib/rental-pricing.mjs';
 
 export type FreightRoute = {
   id: string;
@@ -10,10 +10,11 @@ export type FreightRoute = {
   descripcion: string;
   tiempo_estimado: string;
   precio_centimos: number | null;
+  moneda?: 'PEN' | 'USD';
 };
 
 function routePrice(route: FreightRoute) {
-  return route.precio_centimos === null ? 'Tarifa a consultar' : `Desde ${formatSoles(route.precio_centimos)} por viaje`;
+  return route.precio_centimos === null ? 'Tarifa a consultar' : `Desde ${formatMoney(route.precio_centimos, route.moneda)} por viaje`;
 }
 
 export default function FreightPreview({ routes, initialRoute }: { routes: FreightRoute[]; initialRoute: string }) {

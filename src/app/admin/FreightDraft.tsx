@@ -33,7 +33,7 @@ export default function FreightDraft({ api, onDirtyChange }: { api: Api; onDirty
       setAction({ title: '¿Guardar esta ruta en borrador?', detail: 'La ruta se podrá revisar desde el administrador.', label:'Guardar borrador', apply: async () => {
         const saved: FreightRoute = JSON.parse(await api('freight-draft', JSON.stringify({
           id: selected, origin:fields.get('origin'), destination:fields.get('destination'), description:fields.get('description'),
-          duration:fields.get('duration'), cents:price === '' ? null : Math.round(Number(price) * 100),
+          duration:fields.get('duration'), currency:fields.get('currency'), cents:price === '' ? null : Math.round(Number(price) * 100),
         })));
         setRoutes(JSON.parse(await api('freight-draft')));
         setSelected(saved.id);
@@ -49,9 +49,10 @@ export default function FreightDraft({ api, onDirtyChange }: { api: Api; onDirty
         <label>Origen<input name="origin" maxLength={100} defaultValue={current?.origen} required/></label>
         <label>Destino<input name="destination" maxLength={100} defaultValue={current?.destino} required/></label>
         <label>Tiempo estimado<input name="duration" maxLength={100} defaultValue={current?.tiempo_estimado}/></label>
-        <label>Precio desde (S/ por viaje)<input name="price" type="number" step="0.01" min={0.01} max={1000000}
+        <label>Precio desde (por viaje)<input name="price" type="number" step="0.01" min={0.01} max={1000000}
           defaultValue={current?.precio_centimos == null ? '' : current.precio_centimos / 100}/></label>
       </div>
+      <label>Moneda<select name="currency" defaultValue={current?.moneda ?? 'PEN'}><option value="PEN">Soles (S/ · PEN)</option><option value="USD">Dólares (US$ · USD)</option></select></label>
       <label>Descripción<textarea name="description" maxLength={4000} defaultValue={current?.descripcion}/></label>
       <div className="actions"><button className="gold" type="submit" disabled={!dirty}>Guardar borrador</button>
         <button type="button" disabled={!dirty} onClick={() => { setDirty(false); setRevision(value => value + 1); }}>Descartar cambios</button></div>

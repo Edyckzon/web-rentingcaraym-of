@@ -509,16 +509,22 @@
       "additionalCategories": [],
       "published": true,
       "rates": {
-        "daily": 10000,
-        "weeklyPerDay": 8000,
-        "monthly": 200000,
-        "deposit": 50000
+        "daily": 16000,
+        "weeklyPerDay": 10000,
+        "monthly": 240000,
+        "deposit": 150000,
+        "currencies": {
+          "daily": "PEN",
+          "weeklyPerDay": "PEN",
+          "monthly": "PEN",
+          "deposit": "PEN"
+        }
       },
       "description": "Alquiler de Changan Alsvin en Lima para sus desplazamientos personales o de trabajo. Nuestra unidad 2022 cuenta con transmisión mecánica y combustible dual gasolina/GLP. Consulte disponibilidad para sus fechas y coordine el recojo con nuestro equipo en Santiago de Surco.",
       "seoTitle": "Alquiler de Changan Alsvin en Lima",
       "seoDescription": "Alquiler de Changan Alsvin en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
       "idealFor": "El Changan Alsvin es una opción para organizar sus desplazamientos personales, visitas a clientes y trámites en Lima. Su formato sedán permite considerar una alternativa a una camioneta cuando la prioridad es la movilidad cotidiana. La unidad de la flota es de transmisión mecánica y bicombustible GLP; consulte si sus características se ajustan al recorrido que tiene previsto.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
-      "updatedAt": "2026-11-12T17:18:53.508269+00:00",
+      "updatedAt": "2026-11-17T15:48:03.63892+00:00",
       "featured": false,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/63e5864b5803bd4f7d617b3a4183aea6b42014dd237ce9c4cea848ee74c2410f.png",
@@ -543,11 +549,23 @@
       "category": "SUV",
       "additionalCategories": [],
       "published": true,
+      "rates": {
+        "daily": 21000,
+        "weeklyPerDay": 17000,
+        "monthly": 390000,
+        "deposit": 150000,
+        "currencies": {
+          "daily": "PEN",
+          "weeklyPerDay": "PEN",
+          "monthly": "PEN",
+          "deposit": "PEN"
+        }
+      },
       "description": "Alquiler de Changan CX70 en Lima para quienes buscan una camioneta SUV para su movilidad familiar o laboral. Contamos con una unidad 2023 de transmisión mecánica y combustible dual gasolina/GLP. Indíquenos las fechas y el número de pasajeros para confirmar la configuración y preparar su cotización desde Surco.",
       "seoTitle": "Alquiler de Changan CX70 en Lima",
       "seoDescription": "Alquiler de Changan CX70 en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
       "idealFor": "El Changan CX70 permite evaluar una opción SUV de transmisión mecánica para movilidad personal o de trabajo. La unidad utiliza sistema bicombustible GLP. Puede compararla con otros modelos del catálogo según su recorrido, número de acompañantes y fechas de alquiler. Si habrá más de un conductor, indíquelo al cotizar para revisar la documentación y las condiciones aplicables antes de contratar.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
-      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
+      "updatedAt": "2026-11-17T16:04:25.716981+00:00",
       "featured": true,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/999fcb16f789cbab44c5885b4127c4cf6ccdd719b5af7c8a1e94680fb91801cf.webp",
@@ -562,11 +580,23 @@
       "category": "SUV",
       "additionalCategories": [],
       "published": true,
+      "rates": {
+        "daily": 24000,
+        "weeklyPerDay": 20000,
+        "monthly": 450000,
+        "deposit": 150000,
+        "currencies": {
+          "daily": "PEN",
+          "weeklyPerDay": "PEN",
+          "monthly": "PEN",
+          "deposit": "PEN"
+        }
+      },
       "description": "Alquiler de Changan X7 Plus en Lima para su movilidad personal, familiar o empresarial. Nuestra unidad 2026 tiene transmisión automática y combustible dual gasolina/GLP. Cuéntenos cuántas personas viajarán y las fechas de uso para confirmar disponibilidad y coordinar su alquiler desde Santiago de Surco.",
       "seoTitle": "Alquiler de Changan X7 Plus en Lima",
       "seoDescription": "Alquiler de Changan X7 Plus en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
       "idealFor": "El Changan X7 Plus puede acompañar una agenda de reuniones, visitas familiares o desplazamientos de trabajo en Lima. Es una alternativa para quienes buscan una SUV de transmisión automática y desean comparar opciones para su movilidad personal o empresarial. Al cotizar, indique cuántas personas viajarán y el equipaje previsto para que nuestro equipo confirme la configuración de la unidad.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
-      "updatedAt": "2026-11-07T23:21:32.783874+00:00",
+      "updatedAt": "2026-11-17T16:04:14.454466+00:00",
       "featured": true,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/42f0258eb44be63768dfe9f8235a5aac6069834ba54a09dfec3efeb8756999cc.png",
@@ -593,11 +623,23 @@
       "category": "SUV",
       "additionalCategories": [],
       "published": true,
+      "rates": {
+        "daily": 25000,
+        "weeklyPerDay": 22000,
+        "monthly": 540000,
+        "deposit": 150000,
+        "currencies": {
+          "daily": "PEN",
+          "weeklyPerDay": "PEN",
+          "monthly": "PEN",
+          "deposit": "PEN"
+        }
+      },
       "description": "Alquiler de Ford Territory en Lima para sus traslados personales, familiares o ejecutivos. Disponemos de una SUV 2026 con transmisión automática y motor a gasolina. Solicite una propuesta indicando sus fechas y necesidades de movilidad; nuestro equipo en Surco le confirmará disponibilidad, requisitos y condiciones.",
       "seoTitle": "Alquiler de Ford Territory en Lima",
       "seoDescription": "Alquiler de Ford Territory en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
       "idealFor": "La Ford Territory es una alternativa para quienes buscan una SUV automática para su agenda personal o ejecutiva en Lima. Puede considerarla para visitas comerciales, reuniones en distintas sedes o desplazamientos familiares. Esta unidad utiliza gasolina. Cuéntenos el uso previsto, el recorrido y las fechas: así podrá comparar su propuesta con otras camionetas de la flota antes de decidir.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
-      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
+      "updatedAt": "2026-11-17T16:02:20.363618+00:00",
       "featured": true,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/d3ce3ce1454fff9608ec68eeade5ca8c0f8e8350f142aa8e867f934c004f0e47.webp",
@@ -621,11 +663,23 @@
       "category": "SUV",
       "additionalCategories": [],
       "published": true,
+      "rates": {
+        "daily": 19000,
+        "weeklyPerDay": 17000,
+        "monthly": 375000,
+        "deposit": 150000,
+        "currencies": {
+          "daily": "PEN",
+          "weeklyPerDay": "PEN",
+          "monthly": "PEN",
+          "deposit": "PEN"
+        }
+      },
       "description": "Alquiler de Glory 560 en Lima para organizar su movilidad personal o de trabajo con una camioneta SUV. Nuestra unidad 2023 cuenta con transmisión mecánica y combustible dual gasolina/GLP. Consulte con nuestro equipo en Santiago de Surco la disponibilidad, capacidad de la unidad y condiciones para las fechas que necesita.",
       "seoTitle": "Alquiler de Glory 560 en Lima",
       "seoDescription": "Alquiler de Glory 560 en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
       "idealFor": "El Glory 560 es una alternativa SUV de transmisión mecánica para organizar su movilidad en Lima. Puede considerarlo al comparar unidades para una agenda de trabajo o desplazamientos personales. La unidad de la flota utiliza sistema bicombustible GLP. Comparta el lugar de uso, la duración estimada y las necesidades de sus acompañantes para recibir una propuesta ajustada a su solicitud.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
-      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
+      "updatedAt": "2026-11-17T16:00:56.679912+00:00",
       "featured": false,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/2ac29c824c046d127d6a4336419a45b7f611edf04187a885037eed054834414a.webp",
@@ -642,11 +696,23 @@
       "category": "SUV",
       "additionalCategories": [],
       "published": true,
+      "rates": {
+        "daily": 19000,
+        "weeklyPerDay": 17000,
+        "monthly": 375000,
+        "deposit": 150000,
+        "currencies": {
+          "daily": "PEN",
+          "weeklyPerDay": "PEN",
+          "monthly": "PEN",
+          "deposit": "PEN"
+        }
+      },
       "description": "Alquiler de Glory 580 en Lima para sus planes familiares o necesidades de movilidad empresarial. Contamos con una SUV 2023 de transmisión mecánica y combustible dual gasolina/GLP. Comparta las fechas, el número de pasajeros y el uso previsto para recibir una cotización personalizada desde nuestra sede en Surco.",
       "seoTitle": "Alquiler de Glory 580 en Lima",
       "seoDescription": "Alquiler de Glory 580 en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
       "idealFor": "El Glory 580 puede ser una alternativa para quienes desean comparar una SUV mecánica para sus traslados familiares o de empresa. Su sistema bicombustible GLP forma parte de la información de esta unidad. Confirme la capacidad y disposición de asientos, especialmente si llevará varios pasajeros con equipaje. Explique su itinerario para revisar el uso autorizado y la disponibilidad para sus fechas.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
-      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
+      "updatedAt": "2026-11-17T16:01:08.933865+00:00",
       "featured": false,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/0d57af6a723971869771b0e6301e18b7ef9a892fd12f82e393d4e0645a9b8a1a.webp",
@@ -672,11 +738,23 @@
       "category": "Sedán",
       "additionalCategories": [],
       "published": true,
+      "rates": {
+        "daily": 17200,
+        "weeklyPerDay": 12500,
+        "monthly": 255000,
+        "deposit": 150000,
+        "currencies": {
+          "daily": "PEN",
+          "weeklyPerDay": "PEN",
+          "monthly": "PEN",
+          "deposit": "PEN"
+        }
+      },
       "description": "Alquiler de Hyundai Accent en Lima para desplazamientos personales, gestiones o compromisos de trabajo. Consulte la versión, transmisión y características de la unidad disponible antes de reservar. Nuestro equipo en Santiago de Surco le ayudará a coordinar las fechas, los requisitos y el lugar de recojo.",
       "seoTitle": "Alquiler de Hyundai Accent en Lima",
       "seoDescription": "Alquiler de Hyundai Accent en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
       "idealFor": "El Hyundai Accent es una alternativa de formato sedán para organizar una agenda de visitas, trámites o reuniones en Lima. Puede considerarlo para movilidad personal y para desplazamientos de colaboradores, según el uso acordado. Antes de elegir, solicite la versión, transmisión, año y características de la unidad disponible; la ficha del modelo no sustituye esa confirmación para su alquiler.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
-      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
+      "updatedAt": "2026-11-17T15:53:13.430614+00:00",
       "featured": false,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/d96af29c5d52ef5857dc9555ac8b12675f58672396b706c3676a4b4e898e2624.jpeg"
@@ -688,11 +766,23 @@
       "category": "Sedán",
       "additionalCategories": [],
       "published": true,
+      "rates": {
+        "daily": 17200,
+        "weeklyPerDay": 12500,
+        "monthly": 255000,
+        "deposit": 150000,
+        "currencies": {
+          "daily": "PEN",
+          "weeklyPerDay": "PEN",
+          "monthly": "PEN",
+          "deposit": "PEN"
+        }
+      },
       "description": "Alquiler de Hyundai Verna en Lima para su movilidad diaria o laboral. Consulte nuestras opciones 2022 con transmisión automática o mecánica y combustible dual gasolina/GLP, sujetas a disponibilidad. Indique qué caja prefiere y sus fechas para que nuestro equipo en Surco prepare una propuesta acorde a su solicitud.",
       "seoTitle": "Alquiler de Hyundai Verna en Lima",
       "seoDescription": "Alquiler de Hyundai Verna en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
       "idealFor": "El Hyundai Verna puede ser una opción para sus traslados cotidianos, reuniones de trabajo y gestiones en Lima. Su formato sedán permite evaluar una unidad para movilidad personal o de empresa sin elegir una SUV. La flota contempla versiones automáticas y mecánicas; indique su preferencia al cotizar. Confirme cuál está disponible para sus fechas y las características de la unidad ofrecida.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
-      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
+      "updatedAt": "2026-11-17T15:53:29.080471+00:00",
       "featured": false,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/4da276db6234cdff24362125fba30cae52a59c635ab33f877af393b600469482.webp",
@@ -713,11 +803,23 @@
       "category": "SUV",
       "additionalCategories": [],
       "published": true,
+      "rates": {
+        "daily": 23000,
+        "weeklyPerDay": 19000,
+        "monthly": 465000,
+        "deposit": 150000,
+        "currencies": {
+          "daily": "PEN",
+          "weeklyPerDay": "PEN",
+          "monthly": "PEN",
+          "deposit": "PEN"
+        }
+      },
       "description": "Alquiler de JAC JS8 en Lima para sus traslados familiares o de empresa. Nuestra SUV 2023 cuenta con transmisión automática y combustible dual gasolina/GLP. Indique las fechas de uso, los pasajeros y el equipaje previsto para confirmar la capacidad de la unidad y coordinar su cotización desde Santiago de Surco.",
       "seoTitle": "Alquiler de JAC JS8 en Lima",
       "seoDescription": "Alquiler de JAC JS8 en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
       "idealFor": "El JAC JS8 es una alternativa SUV para comparar cuando necesita organizar traslados familiares o de trabajo. La unidad de la flota cuenta con transmisión automática y sistema bicombustible GLP. Indique el número de ocupantes, el equipaje y el recorrido previsto para confirmar que la configuración ofrecida se ajusta a su necesidad. La atención y coordinación se realizan desde Surco.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
-      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
+      "updatedAt": "2026-11-17T15:51:55.533959+00:00",
       "featured": false,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/3b6df538429ad22c5cf9d1e87229e4f45de1b7c0283313e96b83bda49bde591a.webp",
@@ -759,11 +861,23 @@
       "category": "Familiar / 7 asientos",
       "additionalCategories": [],
       "published": true,
+      "rates": {
+        "daily": 19000,
+        "weeklyPerDay": 15000,
+        "monthly": 300000,
+        "deposit": 150000,
+        "currencies": {
+          "daily": "PEN",
+          "weeklyPerDay": "PEN",
+          "monthly": "PEN",
+          "deposit": "PEN"
+        }
+      },
       "description": "Alquiler de Suzuki Ertiga en Lima para su movilidad familiar o grupal. Nuestra unidad 2020 cuenta con transmisión automática y motor a gasolina. Indíquenos cuántas personas viajarán y cuánto equipaje llevarán para confirmar la distribución disponible y preparar su cotización con atención desde Santiago de Surco.",
       "seoTitle": "Alquiler de Suzuki Ertiga en Lima",
       "seoDescription": "Alquiler de Suzuki Ertiga en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
       "idealFor": "La Suzuki Ertiga es una alternativa de la categoría familiar para quienes necesitan planificar traslados con varios acompañantes. Su transmisión automática puede ser una preferencia al elegir su próxima unidad. Indique la cantidad de pasajeros y el equipaje antes de confirmar: ocupar todas las plazas cambia el espacio disponible para maletas. Consulte la configuración ofrecida y las condiciones del recorrido.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
-      "updatedAt": "2026-11-07T16:46:02.248066+00:00",
+      "updatedAt": "2026-11-17T15:44:46.35429+00:00",
       "featured": true,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/ea347c7274f08db744530c07bc9d70922e709bf42ebab0eaa59f36f10428ca74.webp",
@@ -790,11 +904,23 @@
         "transmission": "Mecánica"
       },
       "published": true,
+      "rates": {
+        "daily": 17200,
+        "weeklyPerDay": 11000,
+        "monthly": 255000,
+        "deposit": 150000,
+        "currencies": {
+          "daily": "PEN",
+          "weeklyPerDay": "PEN",
+          "monthly": "PEN",
+          "deposit": "PEN"
+        }
+      },
       "description": "Alquiler de Toyota Corolla en Lima para sus desplazamientos personales, trámites o actividades de trabajo. Nuestra unidad 2010 tiene transmisión mecánica y combustible dual gasolina/GLP. Consulte disponibilidad y requisitos para sus fechas; coordinamos su cotización y recojo desde Santiago de Surco.",
       "seoTitle": "Alquiler de Toyota Corolla en Lima",
       "seoDescription": "Alquiler de Toyota Corolla en Lima para su movilidad personal o empresarial. Consulte disponibilidad y condiciones con Renting Car A&M en Surco.",
       "idealFor": "El Toyota Corolla es una alternativa sedán de transmisión mecánica para quienes buscan organizar desplazamientos personales o una agenda de gestiones en Lima. La unidad de la flota es del año 2010 y utiliza sistema bicombustible GLP. Considere esos datos al comparar modelos y solicite información actual de la unidad antes de decidir. La propuesta se prepara según sus fechas y recorrido.\n\nConsulte por WhatsApp la disponibilidad, tarifa, requisitos y garantía. Antes de confirmar, revise el kilometraje acordado, las coberturas, el combustible y las condiciones de entrega y devolución. Indique si necesita el vehículo por días, semanas o meses; el equipo evaluará su solicitud. Enviar una consulta no confirma una reserva.",
-      "updatedAt": "2026-11-16T22:33:00.210095+00:00",
+      "updatedAt": "2026-11-17T15:47:47.174686+00:00",
       "featured": true,
       "images": [
         "https://pjkcihdiasktmwdpcmpt.supabase.co/storage/v1/object/public/renting-fotos/24f7a7927c130fc32869506d062ef2a9e563bf367c4b7c05d41ea100c0e05f5d.jpeg"

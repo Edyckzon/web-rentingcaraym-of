@@ -1,0 +1,47 @@
+.rental-print-sheet { display: none; }
+.rental-result .rental-print-button { display: inline-flex; margin-top: 12px; background: #142b49; border: 1px solid #142b49; color: #fff; }
+.rental-result .rental-print-button:hover { background: #243f60; }
+@media print {
+  @page { size: A4; margin: 14mm; }
+  body.rental-printing { margin: 0 !important; padding: 0 !important; background: #fff !important; }
+  body.rental-printing > :not(.rental-print-sheet) { display: none !important; }
+  body.rental-printing > .rental-print-sheet { display: block !important; }
+  .rental-print-sheet { font: 10pt/1.45 Arial, sans-serif; color: #17273c; background: #fff; width: 100%; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .rental-print-sheet * { box-sizing: border-box; }
+  .rental-print-sheet p { margin: 0 0 5pt; }
+  .rq-header { display: flex; justify-content: space-between; align-items: center; gap: 20pt; border-bottom: 2pt solid #142b49; padding-bottom: 10pt; }
+  .rq-header img { display: block; max-width: 180px; object-fit: contain; }
+  .rq-header p { margin: 5pt 0 0; font-size: 8pt; }
+  .rq-heading { text-align: right; }
+  .rq-heading span { font-size: 8pt; font-weight: 700; letter-spacing: 1pt; }
+  .rq-heading h1 { font-size: 20pt; line-height: 1.2; margin: 5pt 0; color: #142b49; }
+  .rq-issued { margin: 8pt 0 14pt !important; color: #536174; font-size: 8pt; }
+  .rq-model { border-left: 3pt solid #142b49; padding-left: 10pt; margin-bottom: 14pt; }
+  .rq-model p, .rq-model span { font-size: 9pt; color: #536174; }
+  .rq-model h2 { margin: 0; font-size: 18pt; }
+  .rq-dates { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt 20pt; margin: 0 0 16pt; }
+  .rq-dates dt { font-size: 8pt; color: #536174; }
+  .rq-dates dd { margin: 2pt 0 0; font-weight: 700; }
+  .rq-wide { grid-column: 1 / -1; }
+  .rq-section-title, .rq-conditions h2 { font-size: 11pt; margin: 12pt 0 6pt; }
+  .rq-items { width: 100%; border-collapse: collapse; font-size: 9pt; }
+  .rq-items th { background: #142b49; color: #fff; padding: 8pt 7pt; text-align: left; font-weight: 600; }
+  .rq-items td { padding: 8pt 7pt; border-bottom: 1pt solid #d7dfe7; vertical-align: top; }
+  .rq-items th:last-child, .rq-items td:last-child { text-align: right; white-space: nowrap; }
+  .rq-items small { display: block; margin-top: 3pt; color: #536174; }
+  .rq-small { margin-top: 7pt !important; font-size: 8pt; color: #536174; }
+  .rq-totals { margin-top: 14pt; padding: 12pt; background: #eff3f8; border: 1pt solid #d7dfe7; break-inside: avoid; }
+  .rq-totals h2 { font-size: 10pt; margin: 0 0 8pt; }
+  .rq-totals p, .rq-deposit { display: flex; justify-content: space-between; gap: 16pt; }
+  .rq-totals strong { font-size: 16pt; white-space: nowrap; }
+  .rq-totals small { display: block; font-size: 8pt; }
+  .rq-deposit { padding: 10pt 0; border-bottom: 1pt solid #d7dfe7; font-size: 9pt; break-inside: avoid; }
+  .rq-deposit strong { white-space: nowrap; }
+  .rq-conditions { font-size: 8pt; margin-top: 12pt; }
+  .rq-conditions h3 { font-size: 9pt; }
+  .rq-terms { white-space: pre-wrap; overflow-wrap: anywhere; }
+  .rq-footer { border-top: 1pt solid #d7dfe7; margin-top: 16pt; padding-top: 10pt; font-size: 8pt; break-inside: avoid; }
+  .rq-footer small { color: #536174; }
+  .rq-items tr, .rq-header, .rq-model, .rq-dates { break-inside: avoid; }
+  .rq-items thead { display: table-header-group; }
+}

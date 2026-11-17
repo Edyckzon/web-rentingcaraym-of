@@ -2,15 +2,18 @@
 
 import { useEffect, useState, type FormEvent } from 'react';
 import { CalendarDays, MessageCircle } from 'lucide-react';
-import { emptyRentalRates, estimateRental, formatSoles, promotionIsActive } from '@/lib/rental-pricing.mjs';
+import { emptyRentalRates, estimateRental, formatMoney, formatTotals, promotionIsActive } from '@/lib/rental-pricing.mjs';
 import type { Vehicle } from '@/lib/fleet';
 import { useCommercial, useMarketing } from './MarketingProvider';
 import { trackEvent } from '@/lib/analytics';
 import RentalRequestForm, { type RentalRequestDetails } from './RentalRequestForm';
 import RentalPrice from './RentalPrice';
+import ExchangeRate from './ExchangeRate';
+import { useRentalDateBounds } from './useRentalDateBounds';
+import RentalPrintQuote from './RentalPrintQuote';
 
 type Estimate = ReturnType<typeof estimateRental>;
-type Quote = { estimate: Estimate; message: string; ratesVersion: string; details: RentalRequestDetails };
+type Quote = { estimate: Estimate; message: string; ratesVersion: string; details: RentalRequestDetails; createdAt: string };
 
 function displayDate(value: string) {
   const [date, time] = value.split('T');
@@ -26,6 +29,7 @@ export default function RentalCalculator({ vehicle }: { vehicle: Vehicle }) {
   const [pickupInput, setPickup] = useState('');
   const [dropoffInput, setDropoff] = useState('');
   const [placeInput, setPlace] = useState('surco');
+  const { pickupMin, returnMin } = useRentalDateBounds(pickupInput);
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     setPickup(params.get('recojo') ?? '');
@@ -56,14 +60,14 @@ export default function RentalCalculator({ vehicle }: { vehicle: Vehicle }) {
         `Devolución: ${displayDate(dropoff)}`,
         `Duración: ${days} ${days === 1 ? 'día' : 'días'} · Tramo ${tier.toLowerCase()}`,
         `Extras: ${estimate.extras.map(extra => extra.name).join(', ') || 'Ninguno'}`,
-        `Total estimado web: ${total === null ? 'por confirmar' : `${formatSoles(total)} (IGV incluido)`}`,
-        `Garantía aparte: ${deposit === null ? 'por confirmar' : formatSoles(deposit)}`,
+        `Total estimado web: ${estimate.rental === null ? 'por confirmar' : `${formatTotals(estimate.totals)} (IGV incluido)`}`,
+        `Garantía aparte: ${deposit === null ? 'por confirmar' : formatMoney(deposit, estimate.depositCurrency)}`,
         'Por favor, confirmen disponibilidad y condiciones.',
       ].join('\n');
       setError('');
       if (total !== null) trackEvent('cotizador_calculo', { modelo: vehicle.id, dias: days, tramo: tier });
-      setQuote({ estimate, message, ratesVersion, details: {
-        vehicleId: vehicle.id, pickup, dropoff, place: placeInput, extras: selected.map(extra => extra.id), expectedTotal: total,
+      setQuote({ estimate, message, ratesVersion, createdAt:new Date().toISOString(), details: {
+        vehicleId: vehicle.id, pickup, dropoff, place: placeInput, extras: selected.map(extra => extra.id), expectedTotal: total, expectedCurrency: estimate.currency, expectedTotals: estimate.totals,
       } });
     } catch (error) {
       setQuote(null);
@@ -81,30 +85,32 @@ export default function RentalCalculator({ vehicle }: { vehicle: Vehicle }) {
     <h2 id="rental-calculator-title"><CalendarDays size={20} aria-hidden="true"/> Cotice su alquiler</h2>
     <form onSubmit={calculate} onChange={() => { setQuote(null); setCallback(false); setError(''); }}>
       <div className="rental-dates">
-        <label>Recojo<input name="pickup" type="datetime-local" value={pickupInput} onChange={event => setPickup(event.target.value)} required/></label>
-        <label>Devolución<input name="dropoff" type="datetime-local" value={dropoffInput} onChange={event => setDropoff(event.target.value)} required/></label>
+        <label>Recojo<input name="pickup" type="datetime-local" min={pickupMin} value={pickupInput} onChange={event => setPickup(event.target.value)} required/></label>
+        <label>Devolución<input name="dropoff" type="datetime-local" min={returnMin} value={dropoffInput} onChange={event => setDropoff(event.target.value)} required/></label>
       </div>
       <label>Lugar de entrega<select name="place" value={placeInput} onChange={event => setPlace(event.target.value)}><option value="surco">Local Surco</option><option value="lima">Otro punto en Lima (consultar)</option></select></label>
       {extras.length > 0 && <fieldset className="rental-extras"><legend>Extras por día</legend>
-        {extras.map(extra => <label key={extra.id}><input name="extra" value={extra.id} type="checkbox"/>{extra.name} · {formatSoles(extra.cents)}</label>)}
+        {extras.map(extra => <label key={extra.id}><input name="extra" value={extra.id} type="checkbox"/>{extra.name} · {formatMoney(extra.cents, extra.currency)}</label>)}
       </fieldset>}
-      <p className="rental-caption">Hora de Lima. Cada fracción de 24 horas cuenta como un día.</p>
+      <p className="rental-caption">Puede elegir hoy o una fecha futura. Hora de Lima. Cada fracción de 24 horas cuenta como un día.</p>
       <button type="submit" className="button accent">Calcular alquiler</button>
     </form>
+    <ExchangeRate/>
     {error && <p role="alert" className="rental-error">{error}</p>}
     {stale && <p role="status">La tarifa cambió. Calcule nuevamente.</p>}
     {quote && estimate && !stale && <div className="rental-result">
       <div role="status">
         <dl>
           <div><dt>Duración</dt><dd>{estimate.days} {estimate.days === 1 ? 'día' : 'días'}</dd></div>
-          <div><dt>Tarifa {estimate.tier.toLowerCase()}</dt><dd>{estimate.rate === null ? 'Por consultar' : `${formatSoles(estimate.rate)} / ${estimate.rateUnit}`}</dd></div>
-          {estimate.extras.length > 0 && <div><dt>Extras</dt><dd>{formatSoles(estimate.extrasTotal)}</dd></div>}
-          <div><dt>Garantía aparte</dt><dd>{estimate.deposit === null ? 'Por consultar' : formatSoles(estimate.deposit)}</dd></div>
-          <div className="rental-total"><dt>Total estimado</dt><dd>{estimate.total === null ? 'Por consultar' : formatSoles(estimate.total)}</dd></div>
+          <div><dt>Tarifa {estimate.tier.toLowerCase()}</dt><dd>{estimate.rate === null ? 'Por consultar' : `${formatMoney(estimate.rate, estimate.currency)} / ${estimate.rateUnit}`}</dd></div>
+          {estimate.extras.length > 0 && <div><dt>Extras</dt><dd>{formatTotals(estimate.extrasTotals)}</dd></div>}
+          <div><dt>Garantía aparte</dt><dd>{estimate.deposit === null ? 'Por consultar' : formatMoney(estimate.deposit, estimate.depositCurrency)}</dd></div>
+          <div className="rental-total"><dt>Total estimado</dt><dd>{estimate.rental === null ? 'Por consultar' : formatTotals(estimate.totals)}</dd></div>
         </dl>
-        <p className="rental-caption">{estimate.total !== null && 'IGV incluido. '}Sujeto a disponibilidad y verificación de documentos. La reserva se confirma con el equipo de A&M.</p>
+        <p className="rental-caption">{estimate.rental !== null && 'IGV incluido. '}{estimate.mixedCurrencies && 'Importes separados por moneda, sin conversión. '}Sujeto a disponibilidad y verificación de documentos. La reserva se confirma con el equipo de A&M.</p>
       </div>
       <a className="button whatsapp" href={whatsappLink(quote.message)} data-origen="ficha" target="_blank" rel="noopener noreferrer"><MessageCircle size={18}/> Enviar por WhatsApp</a>
+      <RentalPrintQuote vehicle={vehicle} estimate={estimate} details={quote.details} createdAt={quote.createdAt} promotionTerms={estimate.promotion ? promotion?.terms : undefined}/>
       {commercial?.requestSiteKey && <>
         {!callback && <button type="button" className="button secondary" onClick={() => setCallback(true)}>Prefiero que me llamen</button>}
         {callback && <RentalRequestForm siteKey={commercial.requestSiteKey} details={quote.details}/>}

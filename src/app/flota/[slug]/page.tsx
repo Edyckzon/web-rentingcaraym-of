@@ -47,7 +47,7 @@ export default async function VehiclePage({ params }: Props) {
       '@context':'https://schema.org', '@type':'Product', name:vehicle.name,
       description:vehicle.description, url,
       ...(vehicle.images.length ? { image:vehicle.images.map(photo => new URL(photo.src, business.siteUrl).href) } : {}),
-      ...(vehicle.rates?.daily != null ? { offers:{ '@type':'Offer', priceCurrency:'PEN', price:vehicle.rates.daily / 100,
+      ...(vehicle.rates?.daily != null ? { offers:{ '@type':'Offer', priceCurrency:vehicle.rates.currencies?.daily ?? 'PEN', price:vehicle.rates.daily / 100,
         url, description:'Tarifa diaria regular. Consulte disponibilidad y tramos.' } } : {}),
     }}/>}
     <VehicleDetail slug={vehicleId(slug)}/>

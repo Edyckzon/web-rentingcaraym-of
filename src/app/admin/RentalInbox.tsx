@@ -1,12 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { formatSoles } from '@/lib/rental-pricing.mjs';
+import { formatMoney, formatTotals, type Currency } from '@/lib/rental-pricing.mjs';
 
 type RentalRequest = {
   id: string; creado_en: string; vehiculo_id: string; nombre: string; telefono: string;
   correo: string; documento: string; comentario: string; notificado_en: string | null;
-  detalle: { vehicle: string; pickup: string; dropoff: string; days: number; total: number | null; place: string };
+  detalle: { vehicle: string; pickup: string; dropoff: string; days: number; total: number | null; currency?: Currency; totals?: Partial<Record<Currency, number>>; rental?: number | null; place: string };
 };
 
 const date = new Intl.DateTimeFormat('es-PE', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/Lima' });
@@ -29,7 +29,7 @@ export default function RentalInbox({ api }: { api: (path: string) => Promise<st
     {row.documento && <p>Documento: {row.documento}</p>}
     <p>{row.detalle.pickup.replace('T',' ')} a {row.detalle.dropoff.replace('T',' ')} · {row.detalle.days} días</p>
     <p>Entrega: {row.detalle.place === 'surco' ? 'Local Surco' : 'Otro punto en Lima'}</p>
-    <p>Total estimado: {row.detalle.total === null ? 'Por consultar' : formatSoles(row.detalle.total)}</p>
+    <p>Total estimado: {row.detalle.totals && row.detalle.rental != null ? formatTotals(row.detalle.totals) : row.detalle.total === null ? 'Por consultar' : formatMoney(row.detalle.total, row.detalle.currency)}</p>
     {row.comentario && <p>{row.comentario}</p>}
     <p>{row.notificado_en ? 'Correo notificado' : 'Notificación por correo pendiente'}</p>
   </details>)}</div>;

@@ -1,0 +1,4 @@
+.exchange-reference { margin: 1.25rem 0; padding: 1rem 1.25rem; border: 1px solid #d7dfe7; border-left: 3px solid #142b49; border-radius: 10px; background: #f5f7fa; color: #17273c; font-size: .9rem; max-width: 680px; }
+.exchange-reference p { margin: .4rem 0; line-height: 1.6; color: inherit; }
+.exchange-reference small { display: block; line-height: 1.6; }
+.exchange-reference a { text-decoration: underline; text-underline-offset: 3px; }

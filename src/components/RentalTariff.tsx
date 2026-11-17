@@ -4,9 +4,10 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, CalendarDays, CarFront, Search, ShieldCheck } from 'lucide-react';
 import { detailUrl, useCommercial, useMarketing } from './MarketingProvider';
-import { defaultRentalRules, formatSoles, promotionIsActive, startingRentalRate, type RentalPromotion, type RentalRules } from '@/lib/rental-pricing.mjs';
+import { defaultRentalRules, formatMoney, rateCurrency, promotionIsActive, startingRentalRates, minimumRatesByCurrency, type RentalPromotion, type RentalRules } from '@/lib/rental-pricing.mjs';
 import type { Vehicle } from '@/lib/fleet';
 import RentalPrice from './RentalPrice';
+import ExchangeRate from './ExchangeRate';
 
 const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().toLowerCase();
 const hasRates = (vehicle: Vehicle) => vehicle.rates?.daily != null || vehicle.rates?.weeklyPerDay != null || vehicle.rates?.monthly != null;
@@ -15,9 +16,9 @@ function TariffCard({ vehicle, rules, promotion }: { vehicle: Vehicle; rules: Re
   const photo = vehicle.images[0];
   const detail = detailUrl(vehicle.id);
   const tiers = [
-    { label: `1–${rules.weeklyFrom - 1} días`, cents: vehicle.rates?.daily, unit: 'día' },
-    { label: `${rules.weeklyFrom}–${rules.monthlyFrom - 1} días`, cents: vehicle.rates?.weeklyPerDay, unit: 'día' },
-    { label: `${rules.monthlyFrom} días o más`, cents: vehicle.rates?.monthly, unit: 'mes' },
+    { label: `1–${rules.weeklyFrom - 1} días`, cents: vehicle.rates?.daily, currency: rateCurrency(vehicle.rates, 'daily'), unit: 'día' },
+    { label: `${rules.weeklyFrom}–${rules.monthlyFrom - 1} días`, cents: vehicle.rates?.weeklyPerDay, currency: rateCurrency(vehicle.rates, 'weeklyPerDay'), unit: 'día' },
+    { label: `${rules.monthlyFrom} días o más`, cents: vehicle.rates?.monthly, currency: rateCurrency(vehicle.rates, 'monthly'), unit: 'mes' },
   ];
   return <article className="tariff-card" data-modelo={vehicle.id}>
     <div className="tariff-card-head">
@@ -28,11 +29,11 @@ function TariffCard({ vehicle, rules, promotion }: { vehicle: Vehicle; rules: Re
       <strong>{promotion.title}</strong>
       <RentalPrice vehicleId={vehicle.id} rates={vehicle.rates}/>
     </div>}
-    <dl className="tariff-tiers">{tiers.map(({ label, cents, unit }) => <div key={label}>
-      <dt>{label}</dt><dd>{cents == null ? <span>Por consultar</span> : <><strong>{formatSoles(cents)}</strong><span> / {unit}</span></>}</dd>
+    <dl className="tariff-tiers">{tiers.map(({ label, cents, currency, unit }) => <div key={label}>
+      <dt>{label}</dt><dd>{cents == null ? <span>Por consultar</span> : <><strong>{formatMoney(cents, currency)}</strong><span> / {unit}</span></>}</dd>
     </div>)}</dl>
     <div className="tariff-card-foot">
-      <p><ShieldCheck size={19} aria-hidden="true"/><span>Garantía aparte <strong>{vehicle.rates?.deposit == null ? 'Por consultar' : formatSoles(vehicle.rates.deposit)}</strong></span></p>
+      <p><ShieldCheck size={19} aria-hidden="true"/><span>Garantía aparte <strong>{vehicle.rates?.deposit == null ? 'Por consultar' : formatMoney(vehicle.rates.deposit, rateCurrency(vehicle.rates, 'deposit'))}</strong></span></p>
       <Link className="button accent" href={`${detail}#cotizador`} data-origen="tarifario" aria-label={`Cotizar ${vehicle.name}`}>Cotizar <ArrowRight size={16} aria-hidden="true"/></Link>
     </div>
   </article>;
@@ -49,28 +50,26 @@ export default function RentalTariff() {
   const visible = fleet.filter(vehicle => normalize(vehicle.name).includes(normalize(search)) && (!category || vehicle.categories.includes(category)));
   const priced = visible.filter(hasRates);
   const unpriced = visible.filter(vehicle => !hasRates(vehicle));
-  const starting = fleet.flatMap(vehicle => {
-    const rate = startingRentalRate(vehicle.rates, rules);
+  const starting = minimumRatesByCurrency(fleet.flatMap(vehicle => {
+    const rates = startingRentalRates(vehicle.rates, rules).map(rate => ({ ...rate, name: vehicle.name }));
     const promotion = promotions.get(vehicle.id);
-    if (promotion && (!rate || promotion.cents < rate.centsPerDay)) {
-      return [{ centsPerDay: promotion.cents, term: 'Promoción vigente', name: vehicle.name }];
-    }
-    return rate ? [{ ...rate, name: vehicle.name }] : [];
-  }).sort((a, b) => a.centsPerDay - b.centsPerDay)[0];
+    if (promotion) rates.push({ centsPerDay: promotion.cents, currency: promotion.currency ?? 'PEN', term: 'Promoción vigente', name: vehicle.name });
+    return rates;
+  }));
 
   return <>
     <section className="tariff-intro"><div className="container tariff-intro-grid">
       <div><p className="eyebrow">Alquiler en Lima</p><h1>Tarifario de alquiler</h1>
-        <p>Compare los precios por modelo y duración. Todos los importes están en soles e incluyen IGV.</p>
+        <p>Compare los precios por modelo y duración. Cada tarifa indica su moneda: soles (S/) o dólares (US$). Los importes incluyen IGV.</p>
       </div>
       <div className="tariff-intro-price">
         <CalendarDays size={24} aria-hidden="true"/>
-        {starting ? <><p>Desde</p><p className="tariff-headline-price"><strong>{formatSoles(starting.centsPerDay)}</strong> <span>/ día</span></p>
-          <p className="tariff-price-condition">{starting.name} · {starting.term}</p></>
+        {starting.length ? starting.map(rate => <div key={rate.currency}><p>Desde</p><p className="tariff-headline-price"><strong>{formatMoney(rate.centsPerDay, rate.currency)}</strong> <span>/ día</span></p>
+          <p className="tariff-price-condition">{rate.name} · {rate.term}</p></div>)
           : <><strong>Tarifas por modelo</strong><p className="tariff-price-condition">Consulte el precio para sus fechas.</p></>}
       </div>
     </div></section>
-    <section className="section tariff-content"><div className="container">
+    <section className="section tariff-content"><div className="container"><ExchangeRate/>
       <div className="tariff-filters">
         <label>Buscar modelo <span className="tariff-search-field"><Search size={18} aria-hidden="true"/>
           <input type="search" placeholder="Ej. Changan Alsvin" value={search} onChange={event => setSearch(event.target.value)}/></span>

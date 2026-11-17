@@ -4,7 +4,7 @@ import {useCommercial,useMarketing} from '@/components/MarketingProvider';
 import Link from 'next/link';
 import { ArrowUpRight, Building2, Wrench, Truck } from 'lucide-react';
 
-import { formatSoles, startingRentalRate } from '@/lib/rental-pricing.mjs';
+import { formatMoney, startingRentalRates, minimumRatesByCurrency } from '@/lib/rental-pricing.mjs';
 import ServicePrice from './ServicePrice';
 import { VehicleCard } from '@/components/Catalog';
 import RentalSearch from '@/components/RentalSearch';
@@ -18,10 +18,7 @@ import './home-cover.css';
 export default function HomeContent(){
  const {home,fleet,featuredFleet,pages}=useMarketing();
   const commercial = useCommercial();
-  const from = fleet.flatMap(vehicle => {
-    const price = startingRentalRate(vehicle.rates, commercial?.rules);
-    return price ? [price] : [];
-  }).sort((a,b) => a.centsPerDay-b.centsPerDay)[0];
+  const from = minimumRatesByCurrency(fleet.flatMap(vehicle => startingRentalRates(vehicle.rates, commercial?.rules)));
   const cover = resolveHomeCover(home.hero);
   const page=pages.find(p=>p.path==='/');
   return <>
@@ -39,7 +36,7 @@ export default function HomeContent(){
           <p className="home-showcase-intro" style={{whiteSpace:'pre-line'}}>{page?.intro??home.slogan}</p>
         </div>
         <div className="home-showcase-actions">
-          {from && <p className="hero-from"><strong>Desde {formatSoles(from.centsPerDay)} / día</strong><span>{from.term} · IGV incluido</span></p>}
+          {from.map(rate => <p className="hero-from" key={rate.currency}><strong>Desde {formatMoney(rate.centsPerDay, rate.currency)} / día</strong><span>{rate.term} · IGV incluido</span></p>)}
           <div className="button-row"><Link className="button accent" href={home.firstUrl}>{home.firstLabel} <ArrowUpRight size={19}/></Link><Link className="button outline-light" href={home.secondUrl}>{home.secondLabel} <ArrowUpRight size={19}/></Link></div>
         </div>
         <div className="home-showcase-footer"><span>Atención personalizada desde Surco, Lima</span><OfficeJourney/></div>

@@ -52,6 +52,24 @@ test('tarifas actualiza únicamente importes en céntimos de un vehículo',async
  assert.equal((await marketingAPI(req('rates',{id:'ford-territory',rates,name:'No modificar'}),env)).status,200);
  assert.equal(writes,1);
 });
+
+test('API valida monedas por tramo y preserva importes sin conversión',async t=>{
+ let patch;
+ t.mock.method(globalThis,'fetch',async(url,opts)=>{
+  if(String(url).endsWith('/rpc/renting_admin'))return Response.json(true);
+  patch=JSON.parse(opts.body);return Response.json([{id:'ford-territory'}]);
+ });
+ const rates={daily:6000,weeklyPerDay:5000,monthly:300000,deposit:100000,currencies:{daily:'USD',weeklyPerDay:'USD',monthly:'PEN',deposit:'PEN'}};
+ for(const currency of ['EUR',null,'usd']){
+  assert.equal((await marketingAPI(req('rates',{id:'ford-territory',rates:{...rates,currencies:{...rates.currencies,daily:currency}}}),env)).status,400);
+ }
+ assert.equal(patch,undefined);
+ assert.equal((await marketingAPI(req('rates',{id:'ford-territory',rates}),env)).status,200);
+ assert.equal(patch.tarifa_diaria_moneda,'USD');
+ assert.equal(patch.tarifa_diaria_centimos,6000);
+ assert.equal(patch.tarifa_mensual_moneda,'PEN');
+ assert.equal(patch.tarifa_mensual_centimos,300000);
+});
 test('textos rechazan enlaces ejecutables y campos vacíos; escritura limitada',async t=>{
  let writes=0;
  t.mock.method(globalThis,'fetch',async(url,opts)=>{

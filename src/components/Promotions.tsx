@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useCommercial, useMarketing, detailUrl } from './MarketingProvider';
-import { formatSoles, promotionIsActive } from '@/lib/rental-pricing.mjs';
+import { formatMoney, promotionIsActive } from '@/lib/rental-pricing.mjs';
 
 export function PromotionRibbon() {
   const promotion = useCommercial()?.promotions.find(item => promotionIsActive(item));
@@ -21,7 +21,7 @@ export function PromotionList() {
     if (!vehicle) return null;
     return <article className="promotion-card" key={item.id}>
       <h2>{item.title}</h2><p>{vehicle.name}</p>
-      <p><strong>{formatSoles(item.cents)} / día</strong>{item.regularCents && <> <del>{formatSoles(item.regularCents)}</del></>}</p>
+      <p><strong>{formatMoney(item.cents, item.currency)} / día</strong>{item.regularCents && <> <del>{formatMoney(item.regularCents, item.currency)}</del></>}</p>
       <p>Vigente del {item.starts.split('-').reverse().join('/')} al {item.ends.split('-').reverse().join('/')}. IGV incluido.</p>
       <details><summary>Bases de la promoción</summary><p className="promotion-terms">{item.terms}</p></details>
       <Link href={`${detailUrl(item.vehicleId)}#cotizador`} className="button accent">Cotizar</Link>

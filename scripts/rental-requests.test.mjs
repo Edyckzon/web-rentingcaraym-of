@@ -54,3 +54,23 @@ test('formulario sin configuración y bandeja sin sesión permanecen cerrados', 
   assert.equal((await marketingAPI(request(payload), { SUPABASE_PUBLISHABLE_KEY:'sb_publishable_test' })).status, 503);
   assert.equal((await marketingAPI(new Request(`${origin}/marketing-api/rental-inbox/`), env)).status, 401);
 });
+
+test('servidor rechaza fechas pasadas y moneda obsoleta; guarda USD sin convertir', async t => {
+  const saved = [];
+  t.mock.method(globalThis, 'fetch', async (url, options) => {
+    const link = String(url);
+    if (link.includes('/siteverify')) return Response.json({success:true,action:'solicitud_alquiler',hostname:'renting.example'});
+    if (link.includes('/vehiculos?')) return Response.json([{id:'ford-territory',nombre:'Ford',tarifa_diaria_centimos:12000,tarifa_diaria_moneda:'USD',garantia_centimos:80000}]);
+    if (link.includes('/rpc/recibir_solicitud_alquiler')) { saved.push(JSON.parse(options.body).ficha); return Response.json(true); }
+    if (link.includes('/rest/v1/')) return Response.json([]);
+    throw new Error('Unexpected call');
+  });
+  assert.equal((await marketingAPI(request(payload), env)).status,409);
+  const input = {...payload,expectedCurrency:'USD',expectedTotals:{USD:36000}};
+  assert.equal((await marketingAPI(request({...input,pickup:`${day(-1)}T10:00`}),env)).status,400);
+  assert.equal(saved.length,0);
+  assert.equal((await marketingAPI(request(input),env)).status,201);
+  assert.equal(saved[0].quote.currency,'USD');
+  assert.deepEqual(saved[0].quote.totals,{USD:36000});
+  assert.equal(saved[0].quote.depositCurrency,'PEN');
+});

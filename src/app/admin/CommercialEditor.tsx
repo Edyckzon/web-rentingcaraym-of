@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import type { Listing } from '@/lib/marketing';
-import { formatSoles, type CommercialCatalog } from '@/lib/rental-pricing.mjs';
+import { formatMoney, rateCurrency, type CommercialCatalog } from '@/lib/rental-pricing.mjs';
 import ActionDialog, { type EditorAction } from './ActionDialog';
 import { SaveToast } from './Feedback';
 
@@ -72,12 +72,12 @@ export default function CommercialEditor({ api, vehicles, onDirtyChange }: {
       weeklyFrom: Number(value('weekly')), monthlyFrom: Number(value('monthly')),
       monthlyDivisor: Number(value('divisor')), stackPromotion: form.has('stack'),
     } : mode === 'service-rate' ? {
-      id: service?.id, cents: value('price') ? cents : null, unit: value('unit'),
+      id: service?.id, cents: value('price') ? cents : null, unit: value('unit'), currency: value('currency'),
     } : mode === 'rental-extra' ? {
-      id, name: value('name'), cents, active: form.has('active'),
+      id, name: value('name'), cents, currency: value('currency'), active: form.has('active'),
     } : {
       id, title: value('name'), vehicleId: value('vehicle'), starts: value('starts'), ends: value('ends'),
-      cents, banner: value('banner'), terms: value('terms'), published: form.has('published'),
+      cents, currency: value('currency'), banner: value('banner'), terms: value('terms'), published: form.has('published'),
       ...categoryInput,
     };
     if (preview) {
@@ -161,15 +161,18 @@ export default function CommercialEditor({ api, vehicles, onDirtyChange }: {
         <label className="check"><input name="stack" type="checkbox" defaultChecked={rules.stackPromotion}/>Aplicar el porcentaje promocional también a la tarifa por duración</label>
       </>}
       {mode === 'service-rate' && <div className="rate-admin-grid">
-        <label>Precio desde (S/ con IGV)<input name="price" type="number" min={0.01} max={1000000} step="0.01"
+        <label>Precio desde (IGV incluido)<input name="price" type="number" min={0.01} max={1000000} step="0.01"
           defaultValue={service?.cents == null ? '' : service.cents / 100}/></label>
         <label>Unidad de cobro<input name="unit" maxLength={40} defaultValue={service?.unit} placeholder="Ej. mes"/></label>
       </div>}
       {(mode === 'rental-extra' || mode === 'rental-promotion') && <div className="rate-admin-grid">
         <label>Nombre<input name="name" maxLength={100} defaultValue={extra?.name ?? promotion?.title ?? ''} required/></label>
-        <label>Precio diario en soles (IGV incluido)<input name="price" type="number" step="0.01" min={mode === 'rental-extra' ? 0 : 0.01} max={1000000}
+        <label>Precio diario (IGV incluido)<input name="price" type="number" step="0.01" min={mode === 'rental-extra' ? 0 : 0.01} max={1000000}
           defaultValue={(extra?.cents ?? promotion?.cents) == null ? '' : (extra?.cents ?? promotion?.cents ?? 0) / 100} required/></label>
       </div>}
+      {mode !== 'rental-rules' && <label>Moneda<select name="currency" defaultValue={(mode === 'service-rate' ? service?.currency : mode === 'rental-extra' ? extra?.currency : promotion?.currency) ?? 'PEN'}>
+        <option value="PEN">Soles (S/ · PEN)</option><option value="USD">Dólares (US$ · USD)</option>
+      </select><small>Cambiar la moneda no convierte el importe. Una promoción debe usar la misma moneda que la tarifa diaria regular.</small></label>}
       {mode === 'rental-extra' && <label className="check"><input name="active" type="checkbox" defaultChecked={extra?.active}/>Disponible en el cotizador</label>}
       {mode === 'rental-promotion' && <>
         <div className="rate-admin-grid">
@@ -196,7 +199,7 @@ export default function CommercialEditor({ api, vehicles, onDirtyChange }: {
           <ul>{categoryVehicles.map(vehicle => {
             const check = checks.find(item => item.id === vehicle.id);
             const rate = vehicle.rates?.daily;
-            return <li key={vehicle.id}><strong>{vehicle.name}</strong> · {rate == null ? 'Sin tarifa diaria' : `Tarifa diaria ${formatSoles(rate)}`}
+            return <li key={vehicle.id}><strong>{vehicle.name}</strong> · {rate == null ? 'Sin tarifa diaria' : `Tarifa diaria ${formatMoney(rate, rateCurrency(vehicle.rates, 'daily'))}`}
               {check && <span> · {check.reason ?? 'Puede publicar'}</span>}</li>;
           })}</ul>
           <p role="status">{checking ? 'Comprobando tarifas y vigencias…' : checks.length > 0 &&
