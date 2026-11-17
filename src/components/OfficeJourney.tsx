@@ -3,8 +3,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { Play, X } from 'lucide-react';
 import './office-journey.css';
+import {useMarketing} from './MarketingProvider';
 
 export default function OfficeJourney() {
+  const {home}=useMarketing();
   const dialog = useRef<HTMLDialogElement>(null);
   const video = useRef<HTMLVideoElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
@@ -49,7 +51,7 @@ export default function OfficeJourney() {
         {loaded && <video ref={video} controls playsInline preload="metadata" poster="/brand/journey/gemini-poster.jpg"
           width={1280} height={720} aria-label="Video de Renting Car A&M"
           onError={() => setFailed(true)}>
-          <source src="/brand/journey/renting-aym-gemini.mp4" type="video/mp4"/>
+          <source src={home.videoUrl||'/brand/journey/renting-aym-gemini.mp4'} type="video/mp4"/>
           Su navegador no puede reproducir este video.
         </video>}
         {failed && <p role="status" className="journey-error">No se pudo cargar el video. Cierra y vuelve a intentarlo.</p>}

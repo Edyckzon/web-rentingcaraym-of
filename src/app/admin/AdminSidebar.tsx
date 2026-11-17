@@ -19,13 +19,17 @@ export const adminSections = [
   { title: 'Carga en borrador', icon: Truck, description: 'Prepara rutas y cotizador para revisión interna.' },
   { title: 'Fotos de servicios', icon: Images, description: 'Gestiona las galerías de excavadora, volquetes y transporte de carga.' },
   { title: 'Requisitos de alquiler', icon: FileText, description: 'Edita los requisitos, garantías y condiciones; publica el documento PDF.' },
+  {title:'Contenido de servicios',icon:Truck,description:'Gestiona descripciones, fotos, condiciones y precios PEN / USD.'},
+  {title:'Menú de la web',icon:Link2,description:'Edita nombres, destinos, grupos, orden y visibilidad.'},
+  {title:'Nosotros',icon:FileText,description:'Mantén los textos de la empresa y el taller.'},
+  {title:'Páginas informativas',icon:FileText,description:'Gestiona inicio, empresas, cómo funciona, privacidad, condiciones y reclamaciones.'},
 ] as const;
 
 const groups = [
   { title: 'Flota', sections: [0, 8, 4] },
-  { title: 'Servicios', sections: [12, 11] },
+  { title: 'Servicios', sections: [14,12,11] },
   { title: 'Gestión comercial', sections: [7, 9, 10] },
-  { title: 'Sitio web', sections: [1, 2, 3, 13, 5, 6] },
+  { title: 'Sitio web', sections: [1,2,3,15,16,13,17,5,6] },
 ] as const;
 
 export default function AdminSidebar({ section, busy, onNavigate, onSignOut }: {

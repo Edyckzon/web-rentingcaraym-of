@@ -52,3 +52,7 @@ body:has(.studio) :is(.site-header,.footer,.floating-whatsapp){display:none}
 .brand-download-grid img { display: block; width: 100%; height: 160px; object-fit: contain; border-radius: 8px; background: #f4f7fb; }
 .brand-download-grid figcaption { display: grid; gap: 10px; padding-top: 12px; font-size: 13px; }
 @media(max-width: 760px) { .cover-previews { grid-template-columns: 1fr; } .cover-preview-mobile { max-width: 360px; } }
+
+.menu-editor-grid { display:grid;grid-template-columns:minmax(220px,1fr) minmax(260px,1.5fr);gap:24px; }
+.menu-editor-list {display:grid;gap:8px;}.menu-editor-list button{text-align:left;display:grid;gap:5px;}.menu-editor-list button[data-child=true]{margin-left:20px;}.menu-preview-item{display:grid;gap:5px;padding:10px;border:1px solid #d4dce6;border-radius:8px;}.menu-preview-item small{max-width:220px;}
+@media(max-width:800px){.menu-editor-grid{grid-template-columns:1fr;}}

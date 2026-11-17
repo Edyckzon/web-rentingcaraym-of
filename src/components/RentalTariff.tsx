@@ -41,7 +41,7 @@ function TariffCard({ vehicle, rules, promotion }: { vehicle: Vehicle; rules: Re
 }
 
 export default function RentalTariff() {
-  const { fleet } = useMarketing();
+  const { fleet,pages } = useMarketing();
   const commercial = useCommercial();
   const rules = commercial?.rules ?? defaultRentalRules;
   const promotions = new Map(commercial?.promotions.filter(item => promotionIsActive(item)).map(item => [item.vehicleId, item]));
@@ -60,8 +60,8 @@ export default function RentalTariff() {
 
   return <>
     <section className="tariff-intro"><div className="container tariff-intro-grid">
-      <div><p className="eyebrow">Alquiler en Lima</p><h1>Tarifario de alquiler</h1>
-        <p>Compare los precios por modelo y duración. Cada tarifa indica su moneda: soles (S/) o dólares (US$). Los importes incluyen IGV.</p>
+      <div><p className="eyebrow">Alquiler en Lima</p><h1>{pages.find(page=>page.path==='/tarifario/')?.heading??'Tarifario de alquiler'}</h1>
+        <p>{pages.find(page=>page.path==='/tarifario/')?.intro??'Compare las tarifas por modelo y duración.'}</p>
       </div>
       <div className="tariff-intro-price">
         <CalendarDays size={24} aria-hidden="true"/>

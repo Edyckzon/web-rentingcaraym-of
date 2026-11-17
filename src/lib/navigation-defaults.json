@@ -1,0 +1,194 @@
+[
+  {
+    "id": "link-01",
+    "parentId": null,
+    "label": "Inicio",
+    "href": "/",
+    "position": 0,
+    "visible": true
+  },
+  {
+    "id": "flota",
+    "parentId": null,
+    "label": "Flota",
+    "href": null,
+    "position": 10,
+    "visible": true
+  },
+  {
+    "id": "link-02",
+    "parentId": "flota",
+    "label": "Ver toda la flota",
+    "href": "/flota/",
+    "position": 20,
+    "visible": true
+  },
+  {
+    "id": "link-03",
+    "parentId": "flota",
+    "label": "Camionetas SUV",
+    "href": "/flota/suv/",
+    "position": 30,
+    "visible": true
+  },
+  {
+    "id": "link-04",
+    "parentId": "flota",
+    "label": "Pickups 4x4",
+    "href": "/flota/pickup-4x4/",
+    "position": 40,
+    "visible": true
+  },
+  {
+    "id": "link-05",
+    "parentId": "flota",
+    "label": "Familiares de 7 asientos",
+    "href": "/flota/7-asientos/",
+    "position": 50,
+    "visible": true
+  },
+  {
+    "id": "link-06",
+    "parentId": "flota",
+    "label": "Sedanes",
+    "href": "/flota/sedan/",
+    "position": 60,
+    "visible": true
+  },
+  {
+    "id": "link-07",
+    "parentId": "flota",
+    "label": "Autos a GLP",
+    "href": "/alquiler-de-autos-glp/",
+    "position": 70,
+    "visible": true
+  },
+  {
+    "id": "link-08",
+    "parentId": null,
+    "label": "Tarifario",
+    "href": "/tarifario/",
+    "position": 80,
+    "visible": true
+  },
+  {
+    "id": "link-09",
+    "parentId": null,
+    "label": "Promociones",
+    "href": "/promociones/",
+    "position": 90,
+    "visible": true
+  },
+  {
+    "id": "servicios",
+    "parentId": null,
+    "label": "Servicios",
+    "href": null,
+    "position": 100,
+    "visible": true
+  },
+  {
+    "id": "link-10",
+    "parentId": "servicios",
+    "label": "Alquiler para empresas",
+    "href": "/alquiler-para-empresas/",
+    "position": 110,
+    "visible": true
+  },
+  {
+    "id": "link-11",
+    "parentId": "servicios",
+    "label": "Maquinaria y transporte",
+    "href": "/maquinaria-y-transporte/",
+    "position": 120,
+    "visible": true
+  },
+  {
+    "id": "link-12",
+    "parentId": "servicios",
+    "label": "Excavadora CAT 330DL",
+    "href": "/maquinaria-y-transporte/excavadora-cat-330dl/",
+    "position": 130,
+    "visible": true
+  },
+  {
+    "id": "link-13",
+    "parentId": "servicios",
+    "label": "Alquiler de volquetes",
+    "href": "/maquinaria-y-transporte/volquetes/",
+    "position": 140,
+    "visible": true
+  },
+  {
+    "id": "link-14",
+    "parentId": "servicios",
+    "label": "Transporte de carga",
+    "href": "/maquinaria-y-transporte/transporte-de-carga/",
+    "position": 150,
+    "visible": true
+  },
+  {
+    "id": "ayuda",
+    "parentId": null,
+    "label": "Ayuda",
+    "href": null,
+    "position": 160,
+    "visible": true
+  },
+  {
+    "id": "link-15",
+    "parentId": "ayuda",
+    "label": "Cómo funciona",
+    "href": "/como-funciona/",
+    "position": 170,
+    "visible": true
+  },
+  {
+    "id": "link-16",
+    "parentId": "ayuda",
+    "label": "Requisitos de alquiler",
+    "href": "/requisitos/",
+    "position": 180,
+    "visible": true
+  },
+  {
+    "id": "link-17",
+    "parentId": "ayuda",
+    "label": "Nosotros",
+    "href": "/nosotros/",
+    "position": 190,
+    "visible": true
+  },
+  {
+    "id": "link-18",
+    "parentId": "ayuda",
+    "label": "Contacto",
+    "href": "/contacto/",
+    "position": 200,
+    "visible": true
+  },
+  {
+    "id": "link-19",
+    "parentId": "ayuda",
+    "label": "Libro de Reclamaciones",
+    "href": "/libro-de-reclamaciones/",
+    "position": 210,
+    "visible": true
+  },
+  {
+    "id": "link-20",
+    "parentId": "ayuda",
+    "label": "Privacidad",
+    "href": "/politica-de-privacidad/",
+    "position": 220,
+    "visible": true
+  },
+  {
+    "id": "link-21",
+    "parentId": "ayuda",
+    "label": "Términos y condiciones",
+    "href": "/terminos-y-condiciones/",
+    "position": 230,
+    "visible": true
+  }
+]

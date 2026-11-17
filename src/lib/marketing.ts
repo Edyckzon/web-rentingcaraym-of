@@ -2,7 +2,8 @@ import type { RentalRates } from './rental-pricing.mjs';
 import type { CatalogProfile } from './catalog-profile';
 import type { WebPage } from './page-content';
 import type { ContentBlock } from './content-blocks';
-import type { ServicePhoto } from './services';
+import type { ServicePhoto,ServiceContent } from './services';
+import type {NavigationItem} from './navigation';
 import content from 'marketing-content';
 export type Listing = {
   id: string; name: string; category: string; description: string; images: string[]; featured: boolean;
@@ -11,7 +12,10 @@ export type Listing = {
 };
 export type Marketing = {
   servicePhotos?: ServicePhoto[];
+  serviceContent?:ServiceContent[];
+  navigation?:NavigationItem[];
   requirementsPdf?:string|null;
+  mapEmbed?:string|null;videoUrl?:string;
   title: string; accent: string; slogan: string; hero: string;
   firstLabel: string; firstUrl: string; secondLabel: string; secondUrl: string;
   phone: string; whatsapp: string; maps: string; waze: string; hours?: string;

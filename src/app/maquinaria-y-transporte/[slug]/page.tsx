@@ -1,3 +1,4 @@
+import HeavyContent from '@/components/HeavyContent';
 import JsonLd from '@/components/JsonLd';
 import BreadcrumbData from '@/components/BreadcrumbData';
 import ServicePrice from '@/components/ServicePrice';
@@ -23,12 +24,7 @@ export async function generateMetadata({ params }: Props) {
   const title = slug === 'excavadora-cat-330dl' ? 'Alquiler de excavadora CAT 330DL' : service?.name || '';
   return service ? pageMetadata(title, `Cotice ${service.name.toLowerCase()} con Renting Car A&M. Comparta la ubicación, fechas y detalles de su proyecto para recibir una propuesta.`, `/maquinaria-y-transporte/${slug}/`) : {};
 }
-export default async function HeavyDetail({ params }: Props) {
-  const { slug } = await params;
-  const service = heavyServices.find(item => item.id === slug);
-  if (!service) notFound();
-  const path = `/maquinaria-y-transporte/${slug}/`;
-  return <>
-    <BreadcrumbData trail={[{ name: 'Maquinaria y transporte', path: '/maquinaria-y-transporte/' }, { name: service.name, path }]}/>
-    <JsonLd data={{ '@context':'https://schema.org', '@type':'Service', name:service.name, description:service.description, provider:{ '@type':'Organization', name:'Renting Car A&M' }, areaServed:{ '@type':'City', name:'Lima' }, url:`${business.siteUrl}${path}` }}/><section className="section container detail-section"><Link className="back-link" href="/maquinaria-y-transporte/"><ArrowLeft size={17}/>Maquinaria y transporte</Link><div className="detail-grid"><div className="detail-gallery"><ServiceGallery id={service.id}/></div><div className="detail-copy"><p className="eyebrow">{service.equipment}</p><ManagedHeading path={`/maquinaria-y-transporte/${service.id}/`} fallback={service.name}/><ServicePrice service={service.id}/><div className="application-tags">{service.applications.map(item => <span key={item}>{item}</span>)}</div><div className="button-row"><a className="button accent" href="#cotizacion">Solicitar cotización <ArrowUpRight size={18}/></a><ServiceWhatsApp message={service.message}><MessageCircle size={18}/>WhatsApp</ServiceWhatsApp></div></div></div></section><section className="section soft"><div className="container contact-layout"><Suspense fallback={<p>Cargando formulario…</p>}><QuoteForm initialService={service.id as ServiceId}/></Suspense><aside className="service-guidance"><p className="eyebrow">Preparemos su propuesta</p><h2>{service.id==='excavadora-cat-330dl'?'Excavadora para movimiento de tierras':service.id==='volquetes'?'Volquetes para desmonte y agregados':'Camiones Volvo y Scania para carga en Lima'}</h2><p>Para evaluar su servicio, comparta esta información:</p><ul>{service.quoteFields.map(item => <li key={item}><Check size={19}/>{item}</li>)}</ul><div className="detail-note"><h3>Condiciones de {service.name.toLowerCase()}</h3><p>Consulte capacidad del equipo, operador o conductor, combustible, movilización y modalidad de contratación. Las condiciones se acuerdan en su cotización.</p></div>{service.specifications && <dl className="spec-table">{service.specifications.map(spec => <div key={spec.label}><dt>{spec.label}</dt><dd>{spec.value}</dd></div>)}</dl>}</aside></div></section></>;
+export default async function HeavyDetail({params}:Props){
+ const {slug}=await params;const service=heavyServices.find(item=>item.id===slug);if(!service)notFound();
+ return <><BreadcrumbData trail={[{name:'Maquinaria y transporte',path:'/maquinaria-y-transporte/'},{name:service.name,path:`/maquinaria-y-transporte/${slug}/`}]}/><JsonLd data={{'@context':'https://schema.org','@type':'Service',name:service.name,description:service.description,provider:{'@type':'Organization',name:'Renting Car A&M'},url:`${business.siteUrl}/maquinaria-y-transporte/${slug}/`}}/><HeavyContent id={slug}/></>;
 }

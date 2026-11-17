@@ -1,3 +1,4 @@
+import ManagedIntro from '@/components/ManagedIntro';
 import FleetFilter from '@/components/FleetFilter';
 import BreadcrumbData from '@/components/BreadcrumbData';
 import { Closing, PageIntro } from '@/components/Sections';
@@ -10,6 +11,6 @@ export const metadata = pageMetadata(title, description, path);
 
 export default function GlpPage() {
   return <><BreadcrumbData trail={[{ name: 'Flota', path: '/flota/' }, { name: 'Autos a GLP', path }]}/>
-    <PageIntro label="Vehículos bicombustibles" title={title} description={description}/>
+    <ManagedIntro path={path} label="Vehículos bicombustibles"/>
     <section className="section soft"><div className="container"><FleetFilter fuel="glp"/></div></section><Closing/></>;
 }

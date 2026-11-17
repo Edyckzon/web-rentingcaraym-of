@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ArrowUpRight, Building2, Wrench, Truck } from 'lucide-react';
 
 import { formatMoney, startingRentalRates, minimumRatesByCurrency } from '@/lib/rental-pricing.mjs';
+import {ContentText,ContentLink} from './ContentText';
 import ServicePrice from './ServicePrice';
 import { VehicleCard } from '@/components/Catalog';
 import RentalSearch from '@/components/RentalSearch';
@@ -16,7 +17,7 @@ import './home-cover.css';
 
 
 export default function HomeContent(){
- const {home,fleet,featuredFleet,pages}=useMarketing();
+ const {home,fleet,featuredFleet,pages,block}=useMarketing();
   const commercial = useCommercial();
   const from = minimumRatesByCurrency(fleet.flatMap(vehicle => startingRentalRates(vehicle.rates, commercial?.rules)));
   const cover = resolveHomeCover(home.hero);
@@ -43,13 +44,13 @@ export default function HomeContent(){
       </div>
     </section>
     <div className="container rental-search-wrap"><RentalSearch/></div>
-    <section className="section soft" id="flota"><div className="container"><div className="section-heading"><div><p className="eyebrow">Flota destacada</p><h2>Autos y camionetas en alquiler en Lima</h2></div><Link className="text-link" href="/flota/">Ver toda la flota <ArrowUpRight size={18}/></Link></div><div className="vehicle-grid">{featuredFleet.map(vehicle => <VehicleCard key={vehicle.id} vehicle={vehicle}/>)}</div><p className="section-note">Consulte la disponibilidad, versión y características de cada unidad.</p></div></section>
+    <section className="section soft" id="flota"><div className="container"><div className="section-heading"><div><p className="eyebrow">Flota destacada</p><h2>{block('home-fleet').title}</h2></div><ContentLink block={block('home-fleet')}/></div><div className="vehicle-grid">{featuredFleet.map(vehicle => <VehicleCard key={vehicle.id} vehicle={vehicle}/>)}</div><p className="section-note">{block('home-fleet').body}</p></div></section>
     <section className="section container">
       <div className="section-heading"><h2>Servicios para su operación</h2></div>
       <div className="vehicle-grid">
-        <article className="promotion-card"><Building2 aria-hidden="true"/><h3>Alquiler para empresas</h3><p>Coordine la cantidad de unidades y el plazo de alquiler para su equipo.</p><ServicePrice service="empresas"/><Link className="text-link" href="/alquiler-para-empresas/">Ver opciones <ArrowUpRight size={17}/></Link></article>
-        <article className="promotion-card"><Wrench aria-hidden="true"/><h3>Maquinaria pesada</h3><p>Consulte excavadora y volquetes para su obra, ubicación y fechas.</p><ServicePrice service="excavadora-cat-330dl"/><Link className="text-link" href="/maquinaria-y-transporte/">Ver servicios <ArrowUpRight size={17}/></Link></article>
-        <article className="promotion-card"><Truck aria-hidden="true"/><h3>Transporte de carga</h3><p>Indique origen, destino y características de la carga para evaluar el servicio.</p><Link className="text-link" href="/maquinaria-y-transporte/transporte-de-carga/">Consultar transporte <ArrowUpRight size={17}/></Link></article>
+        <article className="promotion-card"><Building2 aria-hidden="true"/><h3>{block('home-company').title}</h3><ContentText text={block('home-company').body}/><ServicePrice service="empresas"/><ContentLink block={block('home-company')}/></article>
+        <article className="promotion-card"><Wrench aria-hidden="true"/><h3>{block('home-machinery').title}</h3><ContentText text={block('home-machinery').body}/><ServicePrice service="excavadora-cat-330dl"/><ContentLink block={block('home-machinery')}/></article>
+        <article className="promotion-card"><Truck aria-hidden="true"/><h3>{block('home-freight').title}</h3><ContentText text={block('home-freight').body}/><ContentLink block={block('home-freight')}/></article>
       </div>
     </section><WhyUs/><Steps/><RentalInformation/><Faq/><Closing/><div className="container section"><Link href="/libro-de-reclamaciones/">Libro de Reclamaciones</Link></div>
   </>;

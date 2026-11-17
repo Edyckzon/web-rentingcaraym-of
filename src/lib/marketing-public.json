@@ -1,4 +1,287 @@
 {
+  "serviceContent": [
+    {
+      "id": "empresas",
+      "name": "Alquiler para empresas",
+      "equipment": "Movilidad empresarial",
+      "description": "Coordine la cantidad de unidades y el plazo de alquiler para su equipo.",
+      "message": "Hola, deseo cotizar un alquiler para empresas.",
+      "guidanceTitle": "Alquiler para empresas",
+      "guidanceIntro": "Para evaluar su servicio, comparta esta información:",
+      "conditions": "Consulte capacidad del equipo, operador o conductor, combustible, movilización y modalidad de contratación. Las condiciones se acuerdan en su cotización.",
+      "applications": [],
+      "quoteFields": []
+    },
+    {
+      "id": "excavadora-cat-330dl",
+      "name": "Alquiler de excavadora",
+      "equipment": "CAT 330DL",
+      "description": "Maquinaria para sus proyectos de excavación y movimiento de tierras. Cuéntenos el trabajo y la ubicación de su obra para preparar una propuesta.",
+      "message": "Hola, deseo cotizar el alquiler de la excavadora CAT 330DL. Quisiera coordinar la obra, fecha de inicio y disponibilidad de operador.",
+      "guidanceTitle": "Excavadora para movimiento de tierras",
+      "guidanceIntro": "Para evaluar su servicio, comparta esta información:",
+      "conditions": "Consulte capacidad del equipo, operador o conductor, combustible, movilización y modalidad de contratación. Las condiciones se acuerdan en su cotización.",
+      "applications": [
+        "Excavación y zanjas",
+        "Movimiento de tierras",
+        "Carga de volquetes"
+      ],
+      "quoteFields": [
+        "Ubicación y acceso a la obra",
+        "Tipo de trabajo y accesorios requeridos",
+        "Fecha de inicio y duración estimada",
+        "Necesidad de operador y movilización"
+      ]
+    },
+    {
+      "id": "maquinaria-y-transporte",
+      "name": "Maquinaria y transporte",
+      "equipment": "Línea pesada",
+      "description": "Excavadora CAT 330DL, volquetes y transporte de carga en Lima. Consulte operador, movilización y condiciones para su proyecto.",
+      "message": "Hola, deseo cotizar maquinaria o transporte de carga.",
+      "guidanceTitle": "Maquinaria y transporte",
+      "guidanceIntro": "Para evaluar su servicio, comparta esta información:",
+      "conditions": "Consulte capacidad del equipo, operador o conductor, combustible, movilización y modalidad de contratación. Las condiciones se acuerdan en su cotización.",
+      "applications": [],
+      "quoteFields": []
+    },
+    {
+      "id": "transporte-de-carga",
+      "name": "Transporte de carga",
+      "equipment": "Volvo y Scania",
+      "description": "Transporte con camiones y tractos Volvo y Scania. Comparta las características de su carga y la ruta para evaluar el servicio que necesita.",
+      "message": "Hola, deseo cotizar un transporte de carga con camiones Volvo y Scania. Quisiera coordinar origen, destino y tipo de carga.",
+      "guidanceTitle": "Camiones Volvo y Scania para carga en Lima",
+      "guidanceIntro": "Para evaluar su servicio, comparta esta información:",
+      "conditions": "Consulte capacidad del equipo, operador o conductor, combustible, movilización y modalidad de contratación. Las condiciones se acuerdan en su cotización.",
+      "applications": [
+        "Carga general",
+        "Mercancías",
+        "Materiales de construcción"
+      ],
+      "quoteFields": [
+        "Origen y destino",
+        "Tipo, peso y dimensiones de la carga",
+        "Fecha de traslado",
+        "Condiciones de carga y descarga"
+      ]
+    },
+    {
+      "id": "volquetes",
+      "name": "Alquiler de volquetes",
+      "equipment": "Volquetes",
+      "description": "Solicite volquetes para el traslado de materiales y apoyo a su obra. Indique el volumen, el tipo de material y el recorrido requerido.",
+      "message": "Hola, deseo cotizar el alquiler de volquetes. Quisiera indicar la cantidad de unidades, el material y la ubicación de la obra.",
+      "guidanceTitle": "Volquetes para desmonte y agregados",
+      "guidanceIntro": "Para evaluar su servicio, comparta esta información:",
+      "conditions": "Consulte capacidad del equipo, operador o conductor, combustible, movilización y modalidad de contratación. Las condiciones se acuerdan en su cotización.",
+      "applications": [
+        "Eliminación de desmonte",
+        "Traslado de agregados",
+        "Apoyo a obras"
+      ],
+      "quoteFields": [
+        "Tipo y volumen de material",
+        "Cantidad de unidades requerida",
+        "Origen, destino y acceso a la obra",
+        "Fecha de inicio y duración estimada"
+      ]
+    }
+  ],
+  "navigation": [
+    {
+      "id": "link-01",
+      "parentId": null,
+      "label": "Inicio",
+      "href": "/",
+      "position": 0,
+      "visible": true
+    },
+    {
+      "id": "flota",
+      "parentId": null,
+      "label": "Flota",
+      "href": null,
+      "position": 10,
+      "visible": true
+    },
+    {
+      "id": "link-02",
+      "parentId": "flota",
+      "label": "Ver toda la flota",
+      "href": "/flota/",
+      "position": 20,
+      "visible": true
+    },
+    {
+      "id": "link-03",
+      "parentId": "flota",
+      "label": "Camionetas SUV",
+      "href": "/flota/suv/",
+      "position": 30,
+      "visible": true
+    },
+    {
+      "id": "link-04",
+      "parentId": "flota",
+      "label": "Pickups 4x4",
+      "href": "/flota/pickup-4x4/",
+      "position": 40,
+      "visible": true
+    },
+    {
+      "id": "link-05",
+      "parentId": "flota",
+      "label": "Familiares de 7 asientos",
+      "href": "/flota/7-asientos/",
+      "position": 50,
+      "visible": true
+    },
+    {
+      "id": "link-06",
+      "parentId": "flota",
+      "label": "Sedanes",
+      "href": "/flota/sedan/",
+      "position": 60,
+      "visible": true
+    },
+    {
+      "id": "link-07",
+      "parentId": "flota",
+      "label": "Autos a GLP",
+      "href": "/alquiler-de-autos-glp/",
+      "position": 70,
+      "visible": true
+    },
+    {
+      "id": "link-08",
+      "parentId": null,
+      "label": "Tarifario",
+      "href": "/tarifario/",
+      "position": 80,
+      "visible": true
+    },
+    {
+      "id": "link-09",
+      "parentId": null,
+      "label": "Promociones",
+      "href": "/promociones/",
+      "position": 90,
+      "visible": true
+    },
+    {
+      "id": "servicios",
+      "parentId": null,
+      "label": "Servicios",
+      "href": null,
+      "position": 100,
+      "visible": true
+    },
+    {
+      "id": "link-10",
+      "parentId": "servicios",
+      "label": "Alquiler para empresas",
+      "href": "/alquiler-para-empresas/",
+      "position": 110,
+      "visible": true
+    },
+    {
+      "id": "link-11",
+      "parentId": "servicios",
+      "label": "Maquinaria y transporte",
+      "href": "/maquinaria-y-transporte/",
+      "position": 120,
+      "visible": true
+    },
+    {
+      "id": "link-12",
+      "parentId": "servicios",
+      "label": "Excavadora CAT 330DL",
+      "href": "/maquinaria-y-transporte/excavadora-cat-330dl/",
+      "position": 130,
+      "visible": true
+    },
+    {
+      "id": "link-13",
+      "parentId": "servicios",
+      "label": "Alquiler de volquetes",
+      "href": "/maquinaria-y-transporte/volquetes/",
+      "position": 140,
+      "visible": true
+    },
+    {
+      "id": "link-14",
+      "parentId": "servicios",
+      "label": "Transporte de carga",
+      "href": "/maquinaria-y-transporte/transporte-de-carga/",
+      "position": 150,
+      "visible": true
+    },
+    {
+      "id": "ayuda",
+      "parentId": null,
+      "label": "Ayuda",
+      "href": null,
+      "position": 160,
+      "visible": true
+    },
+    {
+      "id": "link-15",
+      "parentId": "ayuda",
+      "label": "Cómo funciona",
+      "href": "/como-funciona/",
+      "position": 170,
+      "visible": true
+    },
+    {
+      "id": "link-16",
+      "parentId": "ayuda",
+      "label": "Requisitos de alquiler",
+      "href": "/requisitos/",
+      "position": 180,
+      "visible": true
+    },
+    {
+      "id": "link-17",
+      "parentId": "ayuda",
+      "label": "Nosotros",
+      "href": "/nosotros/",
+      "position": 190,
+      "visible": true
+    },
+    {
+      "id": "link-18",
+      "parentId": "ayuda",
+      "label": "Contacto",
+      "href": "/contacto/",
+      "position": 200,
+      "visible": true
+    },
+    {
+      "id": "link-19",
+      "parentId": "ayuda",
+      "label": "Libro de Reclamaciones",
+      "href": "/libro-de-reclamaciones/",
+      "position": 210,
+      "visible": true
+    },
+    {
+      "id": "link-20",
+      "parentId": "ayuda",
+      "label": "Privacidad",
+      "href": "/politica-de-privacidad/",
+      "position": 220,
+      "visible": true
+    },
+    {
+      "id": "link-21",
+      "parentId": "ayuda",
+      "label": "Términos y condiciones",
+      "href": "/terminos-y-condiciones/",
+      "position": 230,
+      "visible": true
+    }
+  ],
   "requirementsPdf": null,
   "servicePhotos": [],
   "blocks": [
@@ -397,6 +680,132 @@
       "body": "Vehículos, maquinaria, transporte y taller de reparación.",
       "linkLabel": "",
       "linkUrl": ""
+    },
+    {
+      "id": "about-main",
+      "group": "Nosotros",
+      "label": "Empresa",
+      "title": "Empresa de alquiler de vehículos y maquinaria en Santiago de Surco",
+      "body": "Reunimos dos líneas de servicio: vehículos livianos para movilidad personal y corporativa, y maquinaria y transporte para las necesidades de su proyecto.\r\n\r\nDesde nuestra sede en Santiago de Surco, coordinamos con usted las características del servicio, la disponibilidad y las condiciones de cada cotización.",
+      "linkLabel": "Explore nuestros servicios",
+      "linkUrl": "/maquinaria-y-transporte/"
+    },
+    {
+      "id": "about-workshop",
+      "group": "Nosotros",
+      "label": "Taller",
+      "title": "Taller propio en Surco.",
+      "body": "Contamos con un taller de reparación en la misma sede. Consulte con nuestro equipo sobre la atención de su vehículo.",
+      "linkLabel": "Cómo llegar",
+      "linkUrl": ""
+    },
+    {
+      "id": "home-fleet",
+      "group": "Inicio",
+      "label": "Flota destacada",
+      "title": "Autos y camionetas en alquiler en Lima",
+      "body": "Consulte la disponibilidad, versión y características de cada unidad.",
+      "linkLabel": "Ver toda la flota",
+      "linkUrl": "/flota/"
+    },
+    {
+      "id": "home-company",
+      "group": "Inicio",
+      "label": "Servicio de empresas",
+      "title": "Alquiler para empresas",
+      "body": "Coordine la cantidad de unidades y el plazo de alquiler para su equipo.",
+      "linkLabel": "Ver opciones",
+      "linkUrl": "/alquiler-para-empresas/"
+    },
+    {
+      "id": "home-machinery",
+      "group": "Inicio",
+      "label": "Servicio de maquinaria",
+      "title": "Maquinaria pesada",
+      "body": "Consulte excavadora y volquetes para su obra, ubicación y fechas.",
+      "linkLabel": "Ver servicios",
+      "linkUrl": "/maquinaria-y-transporte/"
+    },
+    {
+      "id": "home-freight",
+      "group": "Inicio",
+      "label": "Servicio de carga",
+      "title": "Transporte de carga",
+      "body": "Indique origen, destino y características de la carga para evaluar el servicio.",
+      "linkLabel": "Consultar transporte",
+      "linkUrl": "/maquinaria-y-transporte/transporte-de-carga/"
+    },
+    {
+      "id": "company-01",
+      "group": "Empresas",
+      "label": "Propuesta",
+      "title": "Una propuesta para su operación",
+      "body": "Indique cuántas unidades necesita, las fechas y el uso previsto. Coordinamos la disponibilidad y las condiciones para su equipo.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "company-02",
+      "group": "Empresas",
+      "label": "Plazos",
+      "title": "Plazos según su proyecto",
+      "body": "Comparta la duración estimada del servicio para evaluar las modalidades disponibles y preparar su cotización.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "company-03",
+      "group": "Empresas",
+      "label": "Taller",
+      "title": "Taller propio en Surco",
+      "body": "Contamos con taller de reparación en nuestra sede de Santiago de Surco. Consulte la coordinación del mantenimiento de las unidades.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "company-04",
+      "group": "Empresas",
+      "label": "Atención",
+      "title": "Atención directa",
+      "body": "Converse con nuestro equipo sobre requisitos, documentación y condiciones de contratación para su empresa.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "contact-form",
+      "group": "Contacto",
+      "label": "Presentación del formulario",
+      "title": "Cuéntenos qué necesita",
+      "body": "Complete los datos para preparar su consulta por WhatsApp.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "privacy-request",
+      "group": "Privacidad",
+      "label": "Solicitudes de llamada",
+      "title": "Solicitudes de llamada",
+      "body": "Al enviar una solicitud desde una ficha, guardamos los datos de contacto, los datos opcionales que ingresó y la cotización para que el equipo autorizado de A&M atienda su consulta. El formulario usa Cloudflare Turnstile para verificar el envío.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "privacy-analytics",
+      "group": "Privacidad",
+      "label": "Analítica",
+      "title": "Cookies de analítica",
+      "body": "Si acepta la analítica, medimos páginas visitadas y acciones de cotización mediante Google Tag Manager y Google Analytics. Puede cambiar su elección con el botón Cookies.",
+      "linkLabel": "",
+      "linkUrl": ""
+    },
+    {
+      "id": "tariff-intro",
+      "group": "Tarifario",
+      "label": "Descripción",
+      "title": "Tarifario de alquiler",
+      "body": "Compare los precios por modelo y duración. Cada tarifa indica su moneda: soles (S/) o dólares (US$). Los importes incluyen IGV.",
+      "linkLabel": "",
+      "linkUrl": ""
     }
   ],
   "pages": [
@@ -407,6 +816,14 @@
       "heading": "Alquiler de autos, camionetas y maquinaria en Lima",
       "intro": "Alquiler de autos y camionetas para personas y empresas, con atención personalizada desde Santiago de Surco, Lima.",
       "updatedAt": "2026-11-07T16:24:04.041603+00:00"
+    },
+    {
+      "path": "/alquiler-de-autos-glp/",
+      "title": "Alquiler de autos a GLP en Lima",
+      "description": "Compare modelos bicombustibles y consulte qué unidad está disponible para sus fechas, recorrido y lugar de recojo.",
+      "heading": "Alquiler de autos a GLP en Lima",
+      "intro": "Compare modelos bicombustibles y consulte qué unidad está disponible para sus fechas, recorrido y lugar de recojo.",
+      "updatedAt": "2026-11-17T20:39:10.975893+00:00"
     },
     {
       "path": "/alquiler-para-empresas/",
@@ -479,8 +896,34 @@
       "heading": "Renting Car A&M: alquiler de autos y maquinaria en Surco",
       "intro": "Alquiler de autos, camionetas, maquinaria y transporte de carga para personas y empresas en Lima.",
       "updatedAt": "2026-11-07T16:24:04.041603+00:00"
+    },
+    {
+      "path": "/promociones/",
+      "title": "Promociones de alquiler",
+      "description": "Consulte las promociones vigentes y sus condiciones antes de reservar.",
+      "heading": "Promociones de alquiler",
+      "intro": "Consulte las promociones vigentes y sus condiciones antes de reservar.",
+      "updatedAt": "2026-11-17T20:39:10.975893+00:00"
+    },
+    {
+      "path": "/requisitos/",
+      "title": "Requisitos para alquilar un auto en Lima",
+      "description": "Revise documentación, garantía, coberturas y condiciones antes de alquilar un vehículo con Renting Car A&M.",
+      "heading": "Requisitos para alquilar un auto en Lima",
+      "intro": "Revise documentación, garantía, coberturas y condiciones antes de alquilar un vehículo con Renting Car A&M.",
+      "updatedAt": "2026-11-17T20:39:10.975893+00:00"
+    },
+    {
+      "path": "/tarifario/",
+      "title": "Tarifario de alquiler",
+      "description": "Compare los precios por modelo y duración. Cada tarifa indica su moneda: soles (S/) o dólares (US$). Los importes incluyen IGV.",
+      "heading": "Tarifario de alquiler",
+      "intro": "Compare los precios por modelo y duración. Cada tarifa indica su moneda: soles (S/) o dólares (US$). Los importes incluyen IGV.",
+      "updatedAt": "2026-11-17T20:39:10.975893+00:00"
     }
   ],
+  "mapEmbed": null,
+  "videoUrl": "/brand/journey/renting-aym-gemini.mp4",
   "title": "Alquiler de vehículos,\r\nmaquinaria y",
   "accent": "transporte de carga.",
   "slogan": "Movilidad para su día a día.\r\nEquipo para sus proyectos.",

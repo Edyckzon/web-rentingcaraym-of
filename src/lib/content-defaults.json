@@ -394,5 +394,131 @@
     "body": "Vehículos, maquinaria, transporte y taller de reparación.",
     "linkLabel": "",
     "linkUrl": ""
+  },
+  {
+    "id": "about-main",
+    "group": "Nosotros",
+    "label": "Empresa",
+    "title": "Empresa de alquiler de vehículos y maquinaria en Santiago de Surco",
+    "body": "Reunimos dos líneas de servicio: vehículos livianos para movilidad personal y corporativa, y maquinaria y transporte para las necesidades de su proyecto.\n\nDesde nuestra sede en Santiago de Surco, coordinamos con usted las características del servicio, la disponibilidad y las condiciones de cada cotización.",
+    "linkLabel": "Explore nuestros servicios",
+    "linkUrl": "/maquinaria-y-transporte/"
+  },
+  {
+    "id": "about-workshop",
+    "group": "Nosotros",
+    "label": "Taller",
+    "title": "Taller propio en Surco.",
+    "body": "Contamos con un taller de reparación en la misma sede. Consulte con nuestro equipo sobre la atención de su vehículo.",
+    "linkLabel": "Cómo llegar",
+    "linkUrl": ""
+  },
+  {
+    "id": "home-fleet",
+    "group": "Inicio",
+    "label": "Flota destacada",
+    "title": "Autos y camionetas en alquiler en Lima",
+    "body": "Consulte la disponibilidad, versión y características de cada unidad.",
+    "linkLabel": "Ver toda la flota",
+    "linkUrl": "/flota/"
+  },
+  {
+    "id": "home-company",
+    "group": "Inicio",
+    "label": "Servicio de empresas",
+    "title": "Alquiler para empresas",
+    "body": "Coordine la cantidad de unidades y el plazo de alquiler para su equipo.",
+    "linkLabel": "Ver opciones",
+    "linkUrl": "/alquiler-para-empresas/"
+  },
+  {
+    "id": "home-machinery",
+    "group": "Inicio",
+    "label": "Servicio de maquinaria",
+    "title": "Maquinaria pesada",
+    "body": "Consulte excavadora y volquetes para su obra, ubicación y fechas.",
+    "linkLabel": "Ver servicios",
+    "linkUrl": "/maquinaria-y-transporte/"
+  },
+  {
+    "id": "home-freight",
+    "group": "Inicio",
+    "label": "Servicio de carga",
+    "title": "Transporte de carga",
+    "body": "Indique origen, destino y características de la carga para evaluar el servicio.",
+    "linkLabel": "Consultar transporte",
+    "linkUrl": "/maquinaria-y-transporte/transporte-de-carga/"
+  },
+  {
+    "id": "company-01",
+    "group": "Empresas",
+    "label": "Propuesta",
+    "title": "Una propuesta para su operación",
+    "body": "Indique cuántas unidades necesita, las fechas y el uso previsto. Coordinamos la disponibilidad y las condiciones para su equipo.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "company-02",
+    "group": "Empresas",
+    "label": "Plazos",
+    "title": "Plazos según su proyecto",
+    "body": "Comparta la duración estimada del servicio para evaluar las modalidades disponibles y preparar su cotización.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "company-03",
+    "group": "Empresas",
+    "label": "Taller",
+    "title": "Taller propio en Surco",
+    "body": "Contamos con taller de reparación en nuestra sede de Santiago de Surco. Consulte la coordinación del mantenimiento de las unidades.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "company-04",
+    "group": "Empresas",
+    "label": "Atención",
+    "title": "Atención directa",
+    "body": "Converse con nuestro equipo sobre requisitos, documentación y condiciones de contratación para su empresa.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "contact-form",
+    "group": "Contacto",
+    "label": "Presentación del formulario",
+    "title": "Cuéntenos qué necesita",
+    "body": "Complete los datos para preparar su consulta por WhatsApp.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "privacy-request",
+    "group": "Privacidad",
+    "label": "Solicitudes de llamada",
+    "title": "Solicitudes de llamada",
+    "body": "Al enviar una solicitud desde una ficha, guardamos los datos de contacto, los datos opcionales que ingresó y la cotización para que el equipo autorizado de A&M atienda su consulta. El formulario usa Cloudflare Turnstile para verificar el envío.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "privacy-analytics",
+    "group": "Privacidad",
+    "label": "Analítica",
+    "title": "Cookies de analítica",
+    "body": "Si acepta la analítica, medimos páginas visitadas y acciones de cotización mediante Google Tag Manager y Google Analytics. Puede cambiar su elección con el botón Cookies.",
+    "linkLabel": "",
+    "linkUrl": ""
+  },
+  {
+    "id": "tariff-intro",
+    "group": "Tarifario",
+    "label": "Descripción",
+    "title": "Tarifario de alquiler",
+    "body": "Compare los precios por modelo y duración. Cada tarifa indica su moneda: soles (S/) o dólares (US$). Los importes incluyen IGV.",
+    "linkLabel": "",
+    "linkUrl": ""
   }
 ]

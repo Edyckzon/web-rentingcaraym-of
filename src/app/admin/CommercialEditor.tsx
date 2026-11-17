@@ -8,7 +8,7 @@ import { SaveToast } from './Feedback';
 
 type Api = (path: string, body?: BodyInit) => Promise<string>;
 const modes = [['rental-rules','Tramos'], ['rental-extra','Extras'], ['rental-promotion','Promociones'], ['service-rate','Tarifas de servicios']] as const;
-const serviceNames: Record<string, string> = { empresas:'Empresas', 'excavadora-cat-330dl':'Excavadora CAT 330DL', volquetes:'Volquetes' };
+const serviceNames: Record<string, string> = { empresas:'Empresas', 'excavadora-cat-330dl':'Excavadora CAT 330DL', volquetes:'Volquetes', 'transporte-de-carga':'Transporte de carga','maquinaria-y-transporte':'Maquinaria y transporte' };
 type Mode = typeof modes[number][0];
 type PromotionCheck = { id: string; name: string; reason: string | null };
 
@@ -72,7 +72,7 @@ export default function CommercialEditor({ api, vehicles, onDirtyChange }: {
       weeklyFrom: Number(value('weekly')), monthlyFrom: Number(value('monthly')),
       monthlyDivisor: Number(value('divisor')), stackPromotion: form.has('stack'),
     } : mode === 'service-rate' ? {
-      id: service?.id, cents: value('price') ? cents : null, unit: value('unit'), currency: value('currency'),
+      id: service?.id, cents: value('price') ? cents : null, unit: value('unit'), currency: value('currency'), secondary: value('secondary') ? Math.round(Number(value('secondary'))*100) : null, secondaryMode:value('secondaryMode'),
     } : mode === 'rental-extra' ? {
       id, name: value('name'), cents, currency: value('currency'), active: form.has('active'),
     } : {
@@ -164,6 +164,8 @@ export default function CommercialEditor({ api, vehicles, onDirtyChange }: {
         <label>Precio desde (IGV incluido)<input name="price" type="number" min={0.01} max={1000000} step="0.01"
           defaultValue={service?.cents == null ? '' : service.cents / 100}/></label>
         <label>Unidad de cobro<input name="unit" maxLength={40} defaultValue={service?.unit} placeholder="Ej. mes"/></label>
+        <label>Segundo precio<select name="secondaryMode" defaultValue={service?.secondaryMode??'tc'}><option value="tc">Calcular con TC</option><option value="manual">Digitar ambos precios</option></select></label>
+        <label>Importe en la otra moneda (modo manual)<input name="secondary" type="number" min="0.01" max="1000000" step="0.01" defaultValue={service?.secondary==null?'':service.secondary/100}/></label>
       </div>}
       {(mode === 'rental-extra' || mode === 'rental-promotion') && <div className="rate-admin-grid">
         <label>Nombre<input name="name" maxLength={100} defaultValue={extra?.name ?? promotion?.title ?? ''} required/></label>

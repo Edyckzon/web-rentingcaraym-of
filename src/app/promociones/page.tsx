@@ -1,3 +1,4 @@
+import ManagedIntro from '@/components/ManagedIntro';
 import { PromotionList } from '@/components/Promotions';
 import BreadcrumbData from '@/components/BreadcrumbData';
 import { PageIntro } from '@/components/Sections';
@@ -10,6 +11,6 @@ export const metadata = pageMetadata(title, description, path);
 
 export default function PromotionsPage() {
   return <><BreadcrumbData trail={[{ name: 'Promociones', path }]}/>
-    <PageIntro label="Alquiler de vehículos" title={title} description={description}/>
+    <ManagedIntro path={path} label="Alquiler de vehículos"/>
     <section className="section container"><PromotionList/></section></>;
 }

@@ -20,7 +20,7 @@ export default function BlockEditor({blocks,initialId,onSave,onDirtyChange,onBus
     <section><h2>{draft.group} · {draft.label}</h2><p>Escribe información confirmada. Los saltos de línea se conservan; no se necesita HTML.</p>
     {['Reclamaciones','Privacidad','Condiciones'].includes(draft.group)&&<p>Publica información validada por la empresa. Editar esta página o añadir un enlace no crea un sistema de registro de reclamaciones.</p>}
     <label>Título<input required maxLength={200} value={draft.title} onChange={e=>setDraft({...draft,title:e.target.value})}/></label>
-    <label>Contenido<textarea required rows={9} maxLength={6000} value={draft.body} onChange={e=>setDraft({...draft,body:e.target.value})}/></label>
+    <label>Contenido<textarea aria-label="Contenido" required rows={9} maxLength={6000} value={draft.body} onChange={e=>setDraft({...draft,body:e.target.value})}/></label>
     <div className="pair"><label>Texto del enlace (opcional)<input maxLength={100} value={draft.linkLabel} onChange={e=>setDraft({...draft,linkLabel:e.target.value})}/></label><label>Destino del enlace<input placeholder="/contacto/ o https://…" maxLength={2048} value={draft.linkUrl} onChange={e=>setDraft({...draft,linkUrl:e.target.value})}/></label></div>
     <p>Para retirar el enlace, borra su texto y destino. En las garantías, un texto de enlace sin destino usa el WhatsApp configurado.</p></section>
     <section><h2>Vista previa</h2><h3>{draft.title}</h3><ContentText text={draft.body}/><ContentLink block={draft}/></section>

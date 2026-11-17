@@ -4,10 +4,11 @@ import { receiveRentalRequest, requestSiteKey } from './rental-requests.mjs';
 import {contentRevision} from './publication.mjs';
 import {guardPassword} from './login-guard.mjs';
 import { exchangeRate } from './exchange-rate.mjs';
+import {mapServiceContent,validateServiceContent,validateNavigation} from './website-content.mjs';
 const project='https://pjkcihdiasktmwdpcmpt.supabase.co';
 const bucket='/storage/v1/object/renting-fotos/', publicRoot=project+bucket.replace('/object/','/object/public/');
 const documentsBucket='/storage/v1/object/renting-documentos/',documentsRoot=project+documentsBucket.replace('/object/','/object/public/');
-const fields={title:'titulo',accent:'destacado',slogan:'eslogan',hero:'portada',firstLabel:'boton_1',firstUrl:'destino_1',secondLabel:'boton_2',secondUrl:'destino_2',email:'email',adminEmail:'email_administracion',address:'direccion',groupUrl:'grupo_url',hours:'horario',phone:'telefono',whatsapp:'whatsapp',maps:'maps',waze:'waze'};
+const fields={mapEmbed:'mapa_url',videoUrl:'video_url',title:'titulo',accent:'destacado',slogan:'eslogan',hero:'portada',firstLabel:'boton_1',firstUrl:'destino_1',secondLabel:'boton_2',secondUrl:'destino_2',email:'email',adminEmail:'email_administracion',address:'direccion',groupUrl:'grupo_url',hours:'horario',phone:'telefono',whatsapp:'whatsapp',maps:'maps',waze:'waze'};
 const json=(v,status=200,headers={})=>new Response(JSON.stringify(v),{status,headers:{'Content-Type':'application/json','Cache-Control':'no-store',...headers}});
 const fail=(s,m)=>{throw Object.assign(new Error(m),{status:s})};
 const safeAsset=p=>typeof p==='string'&&(p.startsWith(publicRoot)||(/^\/images\/[\w%(). /-]+$/.test(p)&&!decodeURIComponent(p).split('/').includes('..')));
@@ -39,6 +40,8 @@ export async function marketingAPI(req,env){
  async function sup(path,options={},bearer=token){
    const r=await fetch(project+path,{...options,headers:{apikey:env.SUPABASE_PUBLISHABLE_KEY,...(bearer?{Authorization:'Bearer '+bearer}:{}),'Content-Type':'application/json',...options.headers}});
    if(!r.ok){const error=await r.json().catch(()=>({}));if(path.startsWith('/auth/v1/token') && (error.error_code??error.code)==='invalid_credentials')throw Object.assign(new Error('Correo o contraseña incorrectos.'),{status:401,authCode:'invalid_credentials'});
+   if(error.code==='23503' && path.startsWith('/rest/v1/menu_web'))fail(409,'Retira o mueve los enlaces de este grupo antes de eliminarlo.');
+   if(error.code==='22023' && path==='/rest/v1/rpc/guardar_enlace_menu')fail(400,error.message);
    if(error.code==='22023' && (path.startsWith('/rest/v1/promociones_alquiler')||path==='/rest/v1/rpc/guardar_promocion_categoria'))fail(400,error.message);
    fail(r.status===401?401:r.status===403?403:r.status===409?409:r.status===429?429:400,error.code==='23503'?'La categoría se está usando. Reasigna sus vehículos antes de eliminarla.':error.code==='23505'?'Ese nombre ya existe.':error.code==='PGRST202'?'Ejecuta la migración 03 en Supabase.':r.status===401||path.startsWith('/auth/')?'Correo o contraseña incorrectos, o sesión vencida.':'Supabase rechazó la operación ('+(error.code||r.status)+').');}
    const t=await r.text();return t?JSON.parse(t):null;
@@ -46,7 +49,7 @@ export async function marketingAPI(req,env){
  const rest=(p,o,b)=>sup('/rest/v1/'+p,o,b),post=body=>({method:'POST',body:JSON.stringify(body)});
  async function snapshot(includeDrafts = false) {
    const catalogToken = includeDrafts ? token : null;
-   const [settings, vehicles, photos, categories, pages, blocks, links, servicePhotos] = await Promise.all([
+   const [settings, vehicles, photos, categories, pages, blocks, links, servicePhotos,serviceContent,navigation] = await Promise.all([
      rest('configuracion_web?id=eq.1', {}, null),
      rest('vehiculos?select=*&order=id', {}, catalogToken),
      rest('vehiculo_fotos?select=*&order=vehiculo_id,orden,id&limit=10000', {}, null),
@@ -61,10 +64,14 @@ export async function marketingAPI(req,env){
        return [];
      }),
      rest('servicio_fotos?select=*&order=servicio,orden',{},null),
+     rest('servicios_web?select=*&order=id',{},null),
+     rest('menu_web?select=*&order=orden,id',{},null),
    ]);
    if (!settings[0]) fail(503, 'Falta la configuración web.');
    const visible = new Set(vehicles.map(v => v.id));
    return {
+     serviceContent:serviceContent.map(mapServiceContent),
+     navigation:navigation.map(item=>({id:item.id,parentId:item.padre,label:item.etiqueta,href:item.destino,position:item.orden,visible:item.visible})),
      requirementsPdf:settings[0].requisitos_pdf??null,
      servicePhotos:servicePhotos.map(photo=>({serviceId:photo.servicio,src:photo.ruta,alt:photo.alt})),
      blocks: blocks.map(b => ({ id:b.id, group:b.grupo, label:b.etiqueta, title:b.titulo, body:b.cuerpo, linkLabel:b.enlace_texto, linkUrl:b.enlace_url })),
@@ -99,7 +106,7 @@ export async function marketingAPI(req,env){
    return json({},200,{'Set-Cookie':cookie(r.access_token,Math.min(3600,r.expires_in))});
  }
  if(path==='logout'&&req.method==='POST'){if(token)await sup('/auth/v1/logout?scope=local',{method:'POST'}).catch(()=>{});return json({},200,{'Set-Cookie':cookie('',0)});}
- if(!['content','upload-document','requirements-document','service-gallery','vehicle','profile','rates','remove','settings','category','upload','import-photo','page','block','publish','publication-status','commercial-admin','rental-display','rental-rules','rental-extra','rental-promotion','service-rate','rental-history','rental-inbox','freight-draft'].includes(path))fail(404,'No encontrado.');
+ if(!['content','service-content','navigation','upload-document','requirements-document','service-gallery','vehicle','profile','rates','remove','settings','category','upload','import-photo','page','block','publish','publication-status','commercial-admin','rental-display','rental-rules','rental-extra','rental-promotion','service-rate','rental-history','rental-inbox','freight-draft'].includes(path))fail(404,'No encontrado.');
  if(!token||!await rest('rpc/renting_admin',post({})))fail(401,'Inicia sesión con una cuenta administradora.');
  if(path==='content'&&req.method==='GET')return json(await snapshot(true));
  if(path==='commercial-admin'&&req.method==='GET')return json(await commercialCatalog(rest, token));
@@ -140,6 +147,22 @@ export async function marketingAPI(req,env){
    return json(src);
  }
  const data=await req.json();
+ if(path==='service-content'){
+   const patch=validateServiceContent(data,fail);
+   const result=await rest('servicios_web?id=eq.'+encodeURIComponent(data.id),{method:'PATCH',headers:{Prefer:'return=representation'},body:JSON.stringify(patch)});
+   if(!result.length)fail(404,'Servicio no encontrado.');
+   return json({});
+ }
+ if(path==='navigation'){
+   if(data?.action==='delete'){
+     if(typeof data.id!=='string'||!/^[a-z0-9-]{1,100}$/.test(data.id))fail(400,'Enlace no válido.');
+     await rest('menu_web?id=eq.'+encodeURIComponent(data.id),{method:'DELETE'});
+   }else if(data?.action==='save'){
+     const item=validateNavigation(data.item,fail,safeLink);
+     await rest('rpc/guardar_enlace_menu',post({ficha:item}));
+   }else fail(400,'Acción no válida.');
+   return json({});
+ }
  if(path==='requirements-document'){
    const src=data?.src;
    if(src!==null && (typeof src!=='string'||!src.startsWith(documentsRoot)||!/^[a-f0-9]{64}\.pdf$/.test(src.slice(documentsRoot.length))))fail(400,'Documento no válido.');
@@ -147,7 +170,7 @@ export async function marketingAPI(req,env){
    return json({});
  }
  if(path==='service-gallery'){
-   if(!['excavadora-cat-330dl','volquetes','transporte-de-carga'].includes(data?.id) || !Array.isArray(data.images) || data.images.length>40
+   if(!['empresas','maquinaria-y-transporte','excavadora-cat-330dl','volquetes','transporte-de-carga'].includes(data?.id) || !Array.isArray(data.images) || data.images.length>40
      || data.images.some(photo=>!photo || typeof photo.src!=='string' || (!photo.src.startsWith(publicRoot) || !/^[a-f0-9]{64}\.(webp|png|jpeg)$/.test(photo.src.slice(publicRoot.length)))
        || typeof photo.alt!=='string' || !photo.alt.trim() || photo.alt.length>200)
      || new Set(data.images.map(photo=>photo.src)).size!==data.images.length)fail(400,'Revise el servicio y sus fotos (máximo 40).');
@@ -230,7 +253,7 @@ export async function marketingAPI(req,env){
    await rest('rpc/guardar_vehiculo_catalogo',post({ficha:data}));
  }else if(path==='remove'){await rest('vehiculos?id=eq.'+encodeURIComponent(data.id),{method:'DELETE'});}
  else if(path==='settings'){
-   const entries=Object.entries(data);if(!entries.length||entries.some(([k,v])=>!Object.hasOwn(fields,k)||typeof v!=='string'||!v.trim()||v.length>2048||(k==='hours'&&v.length>200)||(['maps','waze','firstUrl','secondUrl','groupUrl'].includes(k)&&!safeLink(v))||(['email','adminEmail'].includes(k)&&!/^[-a-zA-Z0-9.!#$%&'*+/=?^_`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(v))||(k==='hero'&&!safeAsset(v))||(k==='whatsapp'&&!/^\d{8,15}$/.test(v))))fail(400,'Revisa los campos y destinos.');
+   const entries=Object.entries(data);if(!entries.length||entries.some(([k,v])=>!Object.hasOwn(fields,k)||typeof v!=='string'||!v.trim()||v.length>2048||(k==='hours'&&v.length>200)||(['maps','waze','firstUrl','secondUrl','groupUrl','mapEmbed','videoUrl'].includes(k)&&!safeLink(v))||(['email','adminEmail'].includes(k)&&!/^[-a-zA-Z0-9.!#$%&'*+/=?^_`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(v))||(k==='mapEmbed'&&!/^https:\/\/(www[.])?google[.]com\/maps\/embed[?]/.test(v))||(k==='hero'&&!safeAsset(v))||(k==='whatsapp'&&!/^\d{8,15}$/.test(v))))fail(400,'Revisa los campos y destinos.');
    await rest('configuracion_web?id=eq.1',{method:'PATCH',body:JSON.stringify(Object.fromEntries(entries.map(([k,v])=>[fields[k],v])))});
  }else if(path==='category'){
    const target='categorias?nombre=eq.'+encodeURIComponent(data.old??'');

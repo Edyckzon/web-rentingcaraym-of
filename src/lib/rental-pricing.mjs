@@ -4,7 +4,7 @@
 /** @typedef {{weeklyFrom:number, monthlyFrom:number, monthlyDivisor:number, stackPromotion:boolean}} RentalRules */
 /** @typedef {{id:string, vehicleId:string, campaignId?:string, category?:string, title:string, banner:string, terms:string, starts:string, ends:string, cents:number, currency?:Currency, regularCents:number|null, published:boolean}} RentalPromotion */
 /** @typedef {{id:string, name:string, cents:number, currency?:Currency, active:boolean}} RentalExtra */
-/** @typedef {{id:string, cents:number|null, currency?:Currency, unit:string}} ServiceRate */
+/** @typedef {{id:string, cents:number|null, currency?:Currency, unit:string,secondary?:number|null,secondaryMode?:'manual'|'tc'}} ServiceRate */
 /** @typedef {{enabled:boolean,showRate:boolean,source:'bcrp'|'manual',manualRate:number|null,manualDate:string|null}} PriceDisplay */
 /** @typedef {{priceDisplay?:PriceDisplay, rules:RentalRules, promotions:RentalPromotion[], extras:RentalExtra[], services:ServiceRate[], requestSiteKey?:string}} CommercialCatalog */
 

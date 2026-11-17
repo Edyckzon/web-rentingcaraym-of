@@ -1,3 +1,4 @@
+import ManagedIntro from '@/components/ManagedIntro';
 import { Closing, PageIntro } from '@/components/Sections';
 import RequirementsDocument from '@/components/RequirementsDocument';
 import RentalInformation from '@/components/RentalInformation';
@@ -11,5 +12,5 @@ export const metadata = pageMetadata(title, description, path);
 
 export default function RequirementsPage() {
   return <><BreadcrumbData trail={[{ name: 'Requisitos de alquiler', path }]}/>
-    <PageIntro label="Alquiler de vehículos" title={title} description={description}/><RequirementsDocument/><RentalInformation/><Closing/></>;
+    <ManagedIntro path={path} label="Alquiler de vehículos"/><RequirementsDocument/><RentalInformation/><Closing/></>;
 }

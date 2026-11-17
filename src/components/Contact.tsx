@@ -15,6 +15,6 @@ export default function Contact() {
       <div className="contact-row"><MapPin/><span><small>Visítenos</small><address>{business.address}</address></span></div>
       <div className="contact-row"><Clock/><span><small>Horario de atención</small><strong>{business.hours}</strong><small>Coordine el día de su visita por WhatsApp.</small></span></div>
     </div>
-    <div className="map-panel"><iframe src={business.mapEmbed} title="Ubicación de Renting Car A&M en Av. Santiago de Surco 3573" width="600" height="360" allowFullScreen loading="lazy" referrerPolicy="strict-origin-when-cross-origin"/><div className="map-links"><a href={business.mapsUrl} target="_blank" rel="noopener noreferrer">Google Maps <ArrowUpRight size={16}/></a><a href={business.wazeUrl} target="_blank" rel="noopener noreferrer">Waze <ArrowUpRight size={16}/></a></div></div>
+    <div className="map-panel"><iframe src={business.mapEmbed} title="Ubicación de Renting Car A&M" width="600" height="360" allowFullScreen loading="lazy" referrerPolicy="strict-origin-when-cross-origin"/><div className="map-links"><a href={business.mapsUrl} target="_blank" rel="noopener noreferrer">Google Maps <ArrowUpRight size={16}/></a><a href={business.wazeUrl} target="_blank" rel="noopener noreferrer">Waze <ArrowUpRight size={16}/></a></div></div>
   </aside>;
 }

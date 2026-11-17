@@ -1,21 +1,21 @@
 'use client';
 import {useEffect,useMemo,useState} from 'react';
 import {ArrowDown,ArrowUp,Images,Star} from 'lucide-react';
-import {baseHeavyServices,type ServicePhoto} from '@/lib/services';
+import {baseServicePages,type ServicePhoto} from '@/lib/services';
 import ActionDialog,{type EditorAction} from './ActionDialog';
 import {SaveToast} from './Feedback';
 import ImageDownload from './ImageDownload';
 import './service-photos.css';
 
-type Props={photos:ServicePhoto[];api:(path:string,body?:BodyInit)=>Promise<string>;upload:(file:File,max:number)=>Promise<string>;onSaved:()=>Promise<void>;onDirtyChange:(dirty:boolean)=>void;onBusyChange:(busy:boolean)=>void};
+type Props={fixedId?:string;photos:ServicePhoto[];api:(path:string,body?:BodyInit)=>Promise<string>;upload:(file:File,max:number)=>Promise<string>;onSaved:()=>Promise<void>;onDirtyChange:(dirty:boolean)=>void;onBusyChange:(busy:boolean)=>void};
 export default function ServicePhotoEditor(props:Props) {
-  const [id,setId]=useState(baseHeavyServices[0].id);
+  const [id,setId]=useState(props.fixedId??baseServicePages[0].id);
   const [dirty,setDirty]=useState(false);
   const [busy,setBusy]=useState(false);
   const saved=useMemo(()=>props.photos.filter(photo=>photo.serviceId===id),[props.photos,id]);
   useEffect(()=>props.onDirtyChange(dirty),[dirty,props.onDirtyChange]);
-  const service=baseHeavyServices.find(item=>item.id===id)!;
-  return <><div className="service-photo-tabs" role="group" aria-label="Servicios disponibles">{baseHeavyServices.map(item=><button key={item.id} type="button" disabled={dirty||busy} aria-pressed={id===item.id} onClick={()=>setId(item.id)}><Images size={20}/><strong>{item.name}</strong><span>{props.photos.filter(photo=>photo.serviceId===item.id).length} fotos</span></button>)}</div>
+  const service=baseServicePages.find(item=>item.id===id)!;
+  return <>{!props.fixedId&&<div className="service-photo-tabs" role="group" aria-label="Servicios disponibles">{baseServicePages.map(item=><button key={item.id} type="button" disabled={dirty||busy} aria-pressed={id===item.id} onClick={()=>setId(item.id)}><Images size={20}/><strong>{item.name}</strong><span>{props.photos.filter(photo=>photo.serviceId===item.id).length} fotos</span></button>)}</div>}
     <ServicePhotoForm key={`${id}:${JSON.stringify(saved)}`} {...props} id={id} name={service.name} saved={saved} reportDirty={setDirty} reportBusy={value=>{setBusy(value);props.onBusyChange(value);}}/>
   </>;
 }

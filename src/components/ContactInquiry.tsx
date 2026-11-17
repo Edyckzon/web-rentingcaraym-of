@@ -9,13 +9,13 @@ import { useMarketing } from './MarketingProvider';
 
 export default function ContactInquiry() {
   const params = useSearchParams();
-  const { fleet, whatsappLink } = useMarketing();
+  const { fleet, whatsappLink,block } = useMarketing();
   const service = serviceOptions.find(item => item.value === params.get('servicio'));
   const vehicle = fleet.find(item => item.id === params.get('modelo'));
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   return <section className="quote-panel" id="cotizacion" aria-labelledby="contact-inquiry-title">
-    <h2 id="contact-inquiry-title">Cuéntenos qué necesita</h2>
+    <h2 id="contact-inquiry-title">{block('contact-form').title}</h2><p>{block('contact-form').body}</p>
     {vehicle && <p>Vehículo de interés: {vehicle.name}</p>}
     <form onChange={() => { setMessage(''); setError(''); }} onSubmit={event => {
       event.preventDefault();

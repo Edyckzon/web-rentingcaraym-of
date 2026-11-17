@@ -7,7 +7,9 @@ export type HeavyService = {
   applications: string[]; quoteFields: string[]; message: string;
   images: CatalogImage[];
   specifications?: { label: string; value: string }[];
+  guidanceTitle?:string;guidanceIntro?:string;conditions?:string;
 };
+export type ServiceContent=Omit<HeavyService,'images'|'specifications'>;
 
 export const baseHeavyServices: HeavyService[] = [
   {
@@ -36,10 +38,18 @@ export const baseHeavyServices: HeavyService[] = [
   },
 ];
 
-export function withServicePhotos(photos:ServicePhoto[]) {
-  return baseHeavyServices.map(service=>{
+export const baseServicePages:HeavyService[]=[
+  {id:'empresas',name:'Alquiler para empresas',equipment:'Movilidad empresarial',description:'Coordine la cantidad de unidades y el plazo de alquiler para su equipo.',applications:[],quoteFields:[],message:'Hola, deseo cotizar un alquiler para empresas.',images:[]},
+  {id:'maquinaria-y-transporte',name:'Maquinaria y transporte',equipment:'Línea pesada',description:'Excavadora CAT 330DL, volquetes y transporte de carga en Lima. Consulte operador, movilización y condiciones para su proyecto.',applications:[],quoteFields:[],message:'Hola, deseo cotizar maquinaria o transporte de carga.',images:[]},
+  ...baseHeavyServices,
+];
+export function withServicePhotos(photos:ServicePhoto[],contents:ServiceContent[]=[]) {
+  return baseServicePages.map(base=>{
+    const service={...base,...contents.find(item=>item.id===base.id)};
     const images=photos.filter(photo=>photo.serviceId===service.id).map(photo=>({src:photo.src,alt:photo.alt,reference:false}));
     return {...service,images:images.length?images:service.images};
   });
 }
-export const heavyServices=withServicePhotos((snapshot as {servicePhotos?:ServicePhoto[]}).servicePhotos??[]);
+const initial=snapshot as {servicePhotos?:ServicePhoto[];serviceContent?:ServiceContent[]};
+export const allServicePages=withServicePhotos(initial.servicePhotos??[],initial.serviceContent??[]);
+export const heavyServices=allServicePages.filter(service=>baseHeavyServices.some(base=>base.id===service.id));

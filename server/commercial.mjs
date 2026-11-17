@@ -25,7 +25,7 @@ export async function commercialCatalog(rest, bearer = null) {
       ...(row.campania_id ? { campaignId: row.campania_id, category: row.categoria_campania } : {}),
       starts: row.inicio, ends: row.fin, cents: row.precio_centimos, currency: row.moneda ?? 'PEN', regularCents: row.regular_centimos, published: row.publicada,
     })),
-    services: services.map(row => ({ id:row.servicio, cents:row.precio_centimos, currency:row.moneda ?? 'PEN', unit:row.unidad })),
+    services: services.map(row => ({ id:row.servicio, cents:row.precio_centimos, currency:row.moneda ?? 'PEN', unit:row.unidad,secondary:row.alternativa_centimos??null,secondaryMode:row.alternativa_modo??'tc' })),
   };
 }
 
@@ -65,9 +65,15 @@ export async function saveCommercial(path, input, rest, fail) {
   if (path === 'service-rate') {
     const { id, cents } = input;
     const unit = checkedText(input.unit, 40, cents !== null);
-    if (!['empresas','excavadora-cat-330dl','volquetes'].includes(id) || unit === null ||
+    if (!['empresas','maquinaria-y-transporte','excavadora-cat-330dl','volquetes','transporte-de-carga'].includes(id) || unit === null ||
       (cents !== null && !integer(cents, 1, 100000000))) fail(400, 'Revise el precio y la unidad del servicio.');
-    await rest(`tarifas_servicios?servicio=eq.${id}`, { method:'PATCH', body:JSON.stringify({ precio_centimos:cents, unidad:unit, ...money }) });
+    const alternative={};
+    if(input.secondary!==undefined||input.secondaryMode!==undefined){
+      if(!['manual','tc'].includes(input.secondaryMode)||(input.secondary!==null&&!integer(input.secondary,1,100000000))
+        ||(input.secondaryMode==='manual'&&cents!==null&&input.secondary===null))fail(400,'Digite el segundo precio o elija calcularlo con el TC.');
+      alternative.alternativa_centimos=input.secondary;alternative.alternativa_modo=input.secondaryMode;
+    }
+    await rest(`tarifas_servicios?servicio=eq.${id}`, { method:'PATCH', body:JSON.stringify({ precio_centimos:cents, unidad:unit, ...money,...alternative }) });
     return;
   }
   if (path === 'rental-rules') {
